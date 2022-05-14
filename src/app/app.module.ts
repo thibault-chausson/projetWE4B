@@ -5,20 +5,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarouselIndexComponent } from './carousel-index/carousel-index.component';
 import { MyFooterComponent } from './my-footer/my-footer.component';
-import { MyMenuBarComponent } from './my-menu-bar/my-menu-bar.component';
 import { CardCarouselComponent } from './card-carousel/card-carousel.component';
+import {RouterModule, Routes} from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import { AccueilComponent } from './accueil/accueil.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+
+const route:Routes=[
+ {path:'connexion', component:ConnexionComponent},
+  {path:'accueil', component:AccueilComponent},
+  {path:'',redirectTo:'/accueil', pathMatch:'full'}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     CarouselIndexComponent,
     MyFooterComponent,
-    MyMenuBarComponent,
-    CardCarouselComponent
+    CardCarouselComponent,
+    AccueilComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot(route)
   ],
   providers: [],
   bootstrap: [AppComponent]

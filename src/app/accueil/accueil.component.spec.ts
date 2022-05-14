@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MyMenuBarComponent } from './my-menu-bar.component';
+import { AccueilComponent } from './accueil.component';
 
-describe('MyMenuBarComponent', () => {
-  let component: MyMenuBarComponent;
-  let fixture: ComponentFixture<MyMenuBarComponent>;
+describe('AccueilComponent', () => {
+  let component: AccueilComponent;
+  let fixture: ComponentFixture<AccueilComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MyMenuBarComponent ]
+      declarations: [ AccueilComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MyMenuBarComponent);
+    fixture = TestBed.createComponent(AccueilComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
