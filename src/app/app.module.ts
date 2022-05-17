@@ -10,6 +10,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { LoginComponent } from './login/login.component';
+import {FirebaseService} from "./services/firebase.service";
 
 const route:Routes=[
  {path:'connexion', component:ConnexionComponent},
@@ -24,16 +26,27 @@ const route:Routes=[
     MyFooterComponent,
     CardCarouselComponent,
     AccueilComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(route),
-    AngularFireModule.initializeApp()
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyCmbXbwKnwP8IUx1Vkkt-HYgtooBotiBW8",
+      authDomain: "we4b-30eb7.firebaseapp.com",
+      databaseURL: "https://we4b-30eb7-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "we4b-30eb7",
+      storageBucket: "we4b-30eb7.appspot.com",
+      messagingSenderId: "552542801312",
+      appId: "1:552542801312:web:36c899627d4c518c3228c5",
+      measurementId: "G-ESJGG5DEXF"
+    })
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {}
