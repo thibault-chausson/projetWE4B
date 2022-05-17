@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AngularFireModule} from "@angular/fire/compat";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarouselIndexComponent } from './carousel-index/carousel-index.component';
@@ -30,7 +30,8 @@ const route:Routes=[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(route)
+    RouterModule.forRoot(route),
+    AngularFireModule.initializeApp()
   ],
   providers: [],
   bootstrap: [AppComponent]
