@@ -1,15 +1,3 @@
-<div *ngIf="!isSignedIn">
-  <h2>Se connecter</h2>
-  <input type="text" #emailSignup/>
-  <input type="test" #passwordSignup/>
-  <button (click)="onSignup(emailSignup.value,passwordSignup.value)" routerLink="/login">Se connecter</button>
-</div>
+<app-login></app-login>
 
-<div *ngIf="!isSignedIn">
-  <h2>S'inscire</h2>
-  <input type="text" #email/>
-  <input type="test" #password/>
-  <button (click)="onSignin(email.value,password.value)">S'inscire</button>
-</div>
-<app-login  *ngIf="!isSignedIn" (isLogout)="handleLogout()"></app-login>
 

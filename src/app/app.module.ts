@@ -12,6 +12,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { LoginComponent } from './login/login.component';
 import {FirebaseService} from "./services/firebase.service";
+import { RegisterUserComponent } from './register-user/register-user.component';
 
 const route:Routes=[
  {path:'connexion', component:ConnexionComponent},
@@ -27,10 +28,12 @@ const route:Routes=[
     CardCarouselComponent,
     AccueilComponent,
     ConnexionComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterUserComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(route),

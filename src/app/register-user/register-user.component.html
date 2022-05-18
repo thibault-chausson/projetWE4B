@@ -10,25 +10,25 @@
         <form>
           <div class="input-group mb-3">
             <div class="input-group-append">
-              <span class="input-group-text"><i class="fas fa-user"></i></span>
+              <span class="input-group-text"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
             </div>
             <input type="text" name="email" class="form-control input_user" value="" placeholder="email" [(ngModel)] = "email">
           </div>
           <div class="input-group mb-2">
             <div class="input-group-append">
-              <span class="input-group-text"><i class="fas fa-key"></i></span>
+              <span class="input-group-text"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
             </div>
             <input type="password" name="password" class="form-control input_pass" value="" placeholder="password" [(ngModel)] = "password">
           </div>
           <div class="d-flex justify-content-center mt-3 login_container">
-            <button type="button" name="loginButton" class="btn login_btn" (click)="login()">Login</button>
+            <button type="button" name="loginButton" class="btn login_btn" (click)="register()">Register</button>
           </div>
         </form>
       </div>
 
       <div class="mt-4">
         <div class="d-flex justify-content-center links">
-          Don't have an account?  <a href="register" class="ml-2">  Sign Up</a>
+          You already have an account ? <a href="login" class="ml-2"> Login</a>
         </div>
         <div class="d-flex justify-content-center links">
         </div>
@@ -36,3 +36,5 @@
     </div>
   </div>
 </div>
+
+

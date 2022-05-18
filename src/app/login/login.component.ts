@@ -8,15 +8,33 @@ import {FirebaseService} from "../services/firebase.service";
 })
 export class LoginComponent implements OnInit {
 
-  @Output() isLogout = new EventEmitter<void>()
-  constructor(public firebaseService: FirebaseService) { }
+  email : string = '';
+  password : string = '';
+  constructor(private auth : FirebaseService) { }
 
   ngOnInit(): void {
   }
-  logout(){
-    this.firebaseService.logout()
-    this.isLogout.emit()
+
+  login(){
+
+    if(this.email == ''){
+      alert('Please enter email');
+      return;
+    }
+
+    if(this.password == ''){
+      alert('Please enter password');
+      return;
+    }
+
+    this.auth.login(this.email, this.password);
+
+    this.email = '';
+    this.password = '';
+
+
 
   }
+
 
 }
