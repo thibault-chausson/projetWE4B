@@ -17,7 +17,10 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 const route:Routes=[
  {path:'connexion', component:ConnexionComponent},
   {path:'accueil', component:AccueilComponent},
-  {path:'',redirectTo:'/accueil', pathMatch:'full'}
+  {path: 'login', component: LoginComponent},
+  {path: 'accueil', component: AccueilComponent },
+  {path: 'register', component : RegisterUserComponent},
+  {path:'',redirectTo:'/accueil', pathMatch:'full'},
 ];
 
 @NgModule({
