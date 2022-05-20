@@ -4,7 +4,7 @@
 
 .logo_titre
 {
-  height: 32px;
+  height: 45px;
   margin: 0;
   padding-top: 6px;
 }
@@ -25,7 +25,7 @@ nav ul{
 
 nav li{
   float: left;
-  width: 16.5%;/*100% divisé par le nombre d'éléments de menu*/
+  width: 20%;/*100% divisé par le nombre d'éléments de menu*/
   text-align: center;/*Centre le texte dans les éléments de menu*/
 }
 
@@ -54,9 +54,6 @@ nav ul::after{
 
 
 
-nav a:hover{
-  color: orange;
-  border-bottom: 2px solid gold;
-}
+
 
 /*Fin menu*/

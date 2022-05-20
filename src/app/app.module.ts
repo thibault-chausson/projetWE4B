@@ -13,12 +13,15 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { LoginComponent } from './login/login.component';
 import {FirebaseService} from "./services/firebase.service";
 import { RegisterUserComponent } from './register-user/register-user.component';
+import { DomainesComponent } from './domaines/domaines.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 const route:Routes=[
- {path:'connexion', component:ConnexionComponent},
   {path:'accueil', component:AccueilComponent},
+  {path:'domaines', component:DomainesComponent},
+  {path:'categories', component:CategoriesComponent},
+  {path:'connexion', component:ConnexionComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'accueil', component: AccueilComponent },
   {path: 'register', component : RegisterUserComponent},
   {path:'',redirectTo:'/accueil', pathMatch:'full'},
 ];
@@ -32,7 +35,9 @@ const route:Routes=[
     AccueilComponent,
     ConnexionComponent,
     LoginComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    DomainesComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
