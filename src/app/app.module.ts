@@ -6,20 +6,22 @@ import { AppComponent } from './app.component';
 import { CarouselIndexComponent } from './carousel-index/carousel-index.component';
 import { MyFooterComponent } from './my-footer/my-footer.component';
 import { CardCarouselComponent } from './card-carousel/card-carousel.component';
-import {RouterModule, Routes} from "@angular/router";
-import {FormsModule} from "@angular/forms";
+import { RouterModule, Routes } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { LoginComponent } from './login/login.component';
-import {FirebaseService} from "./services/firebase.service";
+import { FirebaseService } from "./services/firebase.service";
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { DomainesComponent } from './domaines/domaines.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { RecherchesComponent } from './recherches/recherches.component';
 
 const route:Routes=[
   {path:'accueil', component:AccueilComponent},
   {path:'domaines', component:DomainesComponent},
   {path:'categories', component:CategoriesComponent},
+  {path:'recherches', component:RecherchesComponent},
   {path:'connexion', component:ConnexionComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component : RegisterUserComponent},
@@ -37,7 +39,8 @@ const route:Routes=[
     LoginComponent,
     RegisterUserComponent,
     DomainesComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    RecherchesComponent
   ],
   imports: [
     BrowserModule,

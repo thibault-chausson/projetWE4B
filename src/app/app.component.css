@@ -1,7 +1,5 @@
 /*Menu*/
 
-
-
 .logo_titre
 {
   height: 45px;
@@ -25,7 +23,7 @@ nav ul{
 
 nav li{
   float: left;
-  width: 20%;/*100% divisé par le nombre d'éléments de menu*/
+  width: 16.666%;/*100% divisé par le nombre d'éléments de menu*/
   text-align: center;/*Centre le texte dans les éléments de menu*/
 }
 
@@ -53,7 +51,14 @@ nav ul::after{
 }
 
 
-
-
-
+.logo_button{
+  height: 45px;
+  margin: 0;
+  padding-top: 6px;
+}
 /*Fin menu*/
+
+
+.dropdown-toggle::after{
+  display: none;
+}
