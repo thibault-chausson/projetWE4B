@@ -20,6 +20,12 @@
             </div>
             <input type="password" name="password" class="form-control input_pass" value="" placeholder="password" [(ngModel)] = "password">
           </div>
+          <div class="input-group mb-2">
+            <div class="input-group-append">
+            <span class="input-group-text"><i class="fa fa-check fa-lg" aria-hidden="true"></i></span>
+              </div>
+              <input type="password" id="form3Example4cd" class="form-control" name="passwordCheck" placeholder="password check" [(ngModel)]="passwordCheck"/>
+          </div>
           <div class="d-flex justify-content-center mt-3 login_container">
             <button type="button" name="loginButton" class="btn login_btn" (click)="register()">Register</button>
           </div>

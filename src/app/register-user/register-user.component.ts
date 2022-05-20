@@ -10,6 +10,7 @@ export class RegisterUserComponent implements OnInit {
 
   email: string = '';
   password: string = '';
+  passwordCheck : string = '';
 
   constructor(private auth: FirebaseService) {
   }
@@ -29,10 +30,16 @@ export class RegisterUserComponent implements OnInit {
       return;
     }
 
+    if(this.password != this.passwordCheck){
+      alert('Il y a une erreur dans la vérification du mot de passe !');
+      return;
+    }
+
     this.auth.register(this.email, this.password);
 
     this.email = '';
     this.password = '';
+    this.passwordCheck ='';
 
   }
 
