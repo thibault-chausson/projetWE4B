@@ -16,6 +16,7 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { DomainesComponent } from './domaines/domaines.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { RecherchesComponent } from './recherches/recherches.component';
+import { MenuComponent } from './menu/menu.component';
 
 const route:Routes=[
   {path:'accueil', component:AccueilComponent},
@@ -40,7 +41,8 @@ const route:Routes=[
     RegisterUserComponent,
     DomainesComponent,
     CategoriesComponent,
-    RecherchesComponent
+    RecherchesComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
