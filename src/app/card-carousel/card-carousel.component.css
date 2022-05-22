@@ -1,3 +1,7 @@
 .carousel-item {
   padding: 10%;
 }
+
+.card-body{
+  background-color: rgb(150,185,181);
+}

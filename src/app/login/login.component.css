@@ -1,9 +1,9 @@
 .user_card {
-  height: 400px;
+  height: 450px;
   width: 350px;
   margin-top: 5em;
   margin-bottom: auto;
-  background: #f39c12;
+  background: rgb(88,179,180);
   position: relative;
   display: flex;
   justify-content: center;
@@ -13,32 +13,50 @@
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
-
+  margin-bottom: 20px;
 }
+
 .brand_logo_container {
   position: absolute;
   height: 170px;
   width: 170px;
   top: -75px;
   border-radius: 50%;
-  background: #60a3bc;
+  background: rgb(229, 244, 246);
   padding: 10px;
   text-align: center;
 }
-.brand_logo {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
+
+.brand_logo_container2 {
   border: 2px solid white;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgb(156,229,225);
+}
+
+.brand_logo {
+  margin-top: 15px;
+  height: 100px;
 }
 .form_container {
   margin-top: 100px;
 }
 .login_btn {
   width: 100%;
-  background: #c0392b !important;
+  background: rgb(41,120,117) !important;
   color: white !important;
+  border-radius: 30px;
 }
+
+.login_btn2 {
+  text-align: center;
+  width: 80%;
+  background: rgb(156,229,225) !important;
+  color: rgb(21,80,72) !important;
+  margin-bottom: 20px;
+  border-radius: 30px;
+}
+
 .login_btn:focus {
   box-shadow: none !important;
   outline: 0px !important;
@@ -47,7 +65,7 @@
   padding: 0 2rem;
 }
 .input-group-text {
-  background: #c0392b !important;
+  background: rgb(21,80,72) !important;
   color: white !important;
   border: 0 !important;
   border-radius: 0.25rem 0 0 0.25rem !important;
@@ -58,6 +76,26 @@
   box-shadow: none !important;
   outline: 0px !important;
 }
+
+.centre{
+  text-align: center;
+}
+
+.seCo{
+  color: rgb(21,80,72);
+  font-size: 2em;
+}
+
+.links a {
+  color: rgb(21,80,72);
+}
+
+.links{
+  color: white;
+}
+
+
+
 
 
 
