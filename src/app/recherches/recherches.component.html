@@ -1,6 +1,44 @@
 <div class="pad">
 
-<h1>Barre de recherche</h1>
+  <br>
+
+  <div class="container">
+    <form class="form-inline" action="/recherche/" method="get">
+      <fieldset>
+        <div class="input-group">
+
+          <div class="input-group-prepend">
+            <select id="oDomaine" name="oDomaine" class="form-control">
+              <option selected="selected" value="0">Domaine</option>
+              <option value="1">...</option>
+            </select>
+          </div>
+
+          <div class="input-group-prepend">
+            <select id="oCategorie" name="oCategorie" class="form-control">
+              <option selected="selected" value="0">Catégorie</option>
+              <option value="1">...</option>
+            </select>
+          </div>
+
+          <div class="input-group-prepend">
+            <select id="oPrix" name="oPrix" class="form-control">
+              <option selected="selected" value="0">Prix maximal</option>
+              <option value="1">...</option>
+            </select>
+          </div>
+
+          <input id="oLocalisation" name="oLocalisation" type="text" class="form-control" aria-label="Localisation" placeholder="Localisation" required="required">
+
+          <input id="oSaisie" name="oSaisie" type="text" class="form-control" aria-label="Saisie de mots clés" placeholder="Activité" required="required">
+
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Recherche</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
 
 <h2>Prix bas</h2>
 
