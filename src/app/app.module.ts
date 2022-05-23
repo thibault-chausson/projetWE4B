@@ -17,6 +17,8 @@ import { DomainesComponent } from './domaines/domaines.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { RecherchesComponent } from './recherches/recherches.component';
 import { MenuComponent } from './menu/menu.component';
+import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
+import { RegisterProComponent } from './register-pro/register-pro.component';
 
 const route:Routes=[
   {path:'accueil', component:AccueilComponent},
@@ -26,6 +28,8 @@ const route:Routes=[
   {path:'connexion', component:ConnexionComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component : RegisterUserComponent},
+  {path: 'register-pro', component : RegisterProComponent},
+  {path: 'connexion-pro', component : ConnexionProComponent},
   {path:'',redirectTo:'/accueil', pathMatch:'full'},
 ];
 
@@ -42,7 +46,9 @@ const route:Routes=[
     DomainesComponent,
     CategoriesComponent,
     RecherchesComponent,
-    MenuComponent
+    MenuComponent,
+    ConnexionProComponent,
+    RegisterProComponent
   ],
   imports: [
     BrowserModule,

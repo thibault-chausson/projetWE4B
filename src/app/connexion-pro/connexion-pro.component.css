@@ -3,7 +3,7 @@
   width: 430px;
   margin-top: 5em;
   margin-bottom: auto;
-  background: rgb(88,179,180);
+  background: rgb(241,162,140);
   position: relative;
   display: flex;
   justify-content: center;
@@ -43,7 +43,7 @@
 }
 .login_btn {
   width: 100%;
-  background: rgb(41,120,117) !important;
+  background: rgb(150,85,66) !important;
   color: white !important;
   border-radius: 30px;
 }
@@ -51,8 +51,8 @@
 .login_btn2 {
   text-align: center;
   width: 80%;
-  background: rgb(156,229,225) !important;
-  color: rgb(21,80,72) !important;
+  background: rgb(241,212,204) !important;
+  color: rgb(150,85,66) !important;
   margin-bottom: 20px;
   border-radius: 30px;
 }
@@ -65,7 +65,7 @@
   padding: 0 2rem;
 }
 .input-group-text {
-  background: rgb(21,80,72) !important;
+  background: rgb(160,85,66) !important;
   color: white !important;
   border: 0 !important;
   border-radius: 0.25rem 0 0 0.25rem !important;
@@ -82,12 +82,12 @@
 }
 
 .seCo{
-  color: rgb(21,80,72);
+  color: rgb(150,85,66);
   font-size: 2em;
 }
 
 .links a {
-  color: rgb(21,80,72);
+  color: rgb(150,85,66);
 }
 
 .links{
