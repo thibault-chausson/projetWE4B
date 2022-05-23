@@ -1,6 +1,6 @@
 .user_card {
-  height: 450px;
-  width: 430px;
+  height: 600px;
+  width: 500px;
   margin-top: 5em;
   margin-bottom: auto;
   background: rgb(88,179,180);
@@ -18,8 +18,8 @@
 
 .brand_logo_container {
   position: absolute;
-  height: 170px;
-  width: 170px;
+  height: 200px;
+  width: 200px;
   top: -75px;
   border-radius: 50%;
   background: rgb(229, 244, 246);
@@ -29,14 +29,14 @@
 
 .brand_logo_container2 {
   border: 2px solid white;
-  height: 150px;
+  height: 180px;
   border-radius: 50%;
   background-color: rgb(156,229,225);
 }
 
 .brand_logo {
   margin-top: 15px;
-  height: 100px;
+  height: 125px;
 }
 .form_container {
   margin-top: 100px;
