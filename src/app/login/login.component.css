@@ -50,7 +50,7 @@
 
 .login_btn2 {
   text-align: center;
-  width: 80%;
+  width: 100%;
   background: rgb(156,229,225) !important;
   color: rgb(21,80,72) !important;
   margin-bottom: 20px;
@@ -61,6 +61,13 @@
   box-shadow: none !important;
   outline: 0px !important;
 }
+
+.login_btn2:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+
+
 .login_container {
   padding: 0 2rem;
 }
