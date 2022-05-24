@@ -57,7 +57,7 @@ const route:Routes=[
     FormsModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(route),
+    RouterModule.forRoot(route , { scrollPositionRestoration: 'enabled' } ),
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCmbXbwKnwP8IUx1Vkkt-HYgtooBotiBW8",
       authDomain: "we4b-30eb7.firebaseapp.com",
