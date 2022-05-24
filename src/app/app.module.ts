@@ -21,6 +21,7 @@ import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 import { RegisterProComponent } from './register-pro/register-pro.component';
 import { Error404Component} from "./error404/error404.component";
 
+
 const route:Routes=[
   {path:'accueil', component:AccueilComponent},
   {path:'domaines', component:DomainesComponent},

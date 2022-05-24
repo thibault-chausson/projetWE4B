@@ -17,19 +17,19 @@
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
             </div>
-            <input type="text" name="email" class="form-control input_user" value="" placeholder="Email" > <!--[(ngModel)] = "email"-->
+            <input type="text" name="emailPro" class="form-control input_user" value="" placeholder="Email"  [(ngModel)] = "emailPro"> <!--[(ngModel)] = "email"-->
           </div>
           <div class="input-group mb-2">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
             </div>
-            <input type="password" name="password" class="form-control input_pass" value="" placeholder="Mot de passe" > <!--[(ngModel)] = "password"-->
+            <input type="password" name="passwordPro" class="form-control input_pass" value="" placeholder="Mot de passe" [(ngModel)] = "passwordPro"> <!--[(ngModel)] = "password"-->
           </div>
           <div class="input-group mb-2">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa fa-check fa-lg" aria-hidden="true"></i></span>
             </div>
-            <input type="password" id="form3Example4cd" class="form-control" name="passwordCheck" placeholder="Vérification" /> <!--[(ngModel)]="passwordCheck"-->
+            <input type="password" id="form3Example4cd" class="form-control" name="passwordCheckPro" placeholder="Vérification" [(ngModel)] = "passwordCheckPro"/> <!--[(ngModel)]="passwordCheck"-->
           </div>
 
           <div class="seCo">
@@ -40,48 +40,48 @@
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-business-time"></i></span>
             </div>
-            <input type="text" name="nameEntreprise" class="form-control input_user" value="" placeholder="Le nom de votre entreprise" > <!--[(ngModel)] = "email"-->
+            <input type="text" name="nomEntreprise" class="form-control input_user" value="" placeholder="Le nom de votre entreprise" [(ngModel)] = "nomEntreprise"> <!--[(ngModel)] = "email"-->
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-road"></i></span>
             </div>
-            <input type="text" name="numNomRue" class="form-control input_user" value="" placeholder="Numéro et nom de rue" > <!--[(ngModel)] = "email"-->
+            <input type="text" name="numNomRue" class="form-control input_user" value="" placeholder="Numéro et nom de rue" [(ngModel)] = "numNomRue"> <!--[(ngModel)] = "email"-->
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-city"></i></span>
             </div>
-            <input type="text" name="ville" class="form-control input_user" value="" placeholder="Ville" > <!--[(ngModel)] = "email"-->
+            <input type="text" name="ville" class="form-control input_user" value="" placeholder="Ville" [(ngModel)] = "ville"> <!--[(ngModel)] = "email"-->
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-map-location-dot"></i></span>
             </div>
-            <input type="text" name="cP" class="form-control input_user" value="" placeholder="Code postal" > <!--[(ngModel)] = "email"-->
+            <input type="text" name="codePostale" class="form-control input_user" value="" placeholder="Code postal" [(ngModel)] = "codePostale"> <!--[(ngModel)] = "email"-->
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-earth-europe"></i></span>
             </div>
-            <input type="text" name="pays" class="form-control input_user" value="" placeholder="Pays" > <!--[(ngModel)] = "email"-->
+            <input type="text" name="pays" class="form-control input_user" value="" placeholder="Pays" [(ngModel)] = "pays"> <!--[(ngModel)] = "email"-->
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
             </div>
-            <input type="text" name="tel" class="form-control input_user" value="" placeholder="Téléphone" > <!--[(ngModel)] = "email"-->
+            <input type="text" name="telephone" class="form-control input_user" value="" placeholder="Téléphone" [(ngModel)] = "telephone"> <!---->
           </div>
 
 
 
           <div class="d-flex justify-content-center mt-3 login_container">
-            <button type="button" name="loginButton" class="btn login_btn" >S'inscrire</button> <!--(click)="register()"-->
+            <button type="button" name="loginButton" class="btn login_btn" (click)="registerPro()" >S'inscrire</button> <!--"-->
           </div>
         </form>
       </div>
