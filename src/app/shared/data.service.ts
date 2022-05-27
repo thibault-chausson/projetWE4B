@@ -12,9 +12,24 @@ export class DataService {
   //add professional
   addPro(pro : RegisterProComponent){
 
-    pro.idPro = this.db.createId();
-    alert('creation of the new super guide ID')
-    return this.db.collection('/professional').add(pro);
+    this.db.collection("professional").add({
+      emailPro: pro.emailPro,
+      nomEntreprise: pro.nomEntreprise,
+      numNomRue: pro.numNomRue,
+      ville: pro.ville,
+      codePostale: pro.codePostale,
+      pays: pro.pays,
+      telephone: pro.telephone,
+      typeCompte: pro.typeCompte
+
+    })
+      .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .catch((error) => {
+        console.error("Error adding document: ", error);
+      });
+
 
   }
 }

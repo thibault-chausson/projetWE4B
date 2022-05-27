@@ -22,6 +22,7 @@ export class RegisterProComponent implements OnInit {
   typeCompte : string = '';
 
 
+
   constructor(private auth : FirebaseService, private data : DataService) { }
 
   ngOnInit(): void {
@@ -71,18 +72,18 @@ export class RegisterProComponent implements OnInit {
 
     this.typeCompte = "pro";
     this.auth.register(this.emailPro, this.passwordPro);
-    this.data.addPro(this).then(() =>{
-      alert('registration successful');
-    }, err =>{
-      alert(err.message);
-    } )
-
-
+    this.data.addPro(this);
 
 
     this.emailPro = '';
     this.passwordPro = '';
     this.passwordCheckPro ='';
+    this.nomEntreprise = '';
+    this.numNomRue = '';
+    this.ville = '';
+    this.codePostale = '';
+    this.pays = '';
+    this.telephone = '';
 
   }
 
