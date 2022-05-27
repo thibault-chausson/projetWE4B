@@ -20,6 +20,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 import { RegisterProComponent } from './register-pro/register-pro.component';
 import { Error404Component} from "./error404/error404.component";
+import { AddActiviteComponent } from './add-activite/add-activite.component';
 
 
 const route:Routes=[
@@ -32,6 +33,7 @@ const route:Routes=[
   {path: 'register', component : RegisterUserComponent},
   {path: 'register-pro', component : RegisterProComponent},
   {path: 'connexion-pro', component : ConnexionProComponent},
+  {path: 'add-activite', component : AddActiviteComponent},
   {path:'',redirectTo:'/accueil', pathMatch:'full'},
   {path: '**', component : Error404Component},
 ];
@@ -51,7 +53,8 @@ const route:Routes=[
     RecherchesComponent,
     MenuComponent,
     ConnexionProComponent,
-    RegisterProComponent
+    RegisterProComponent,
+    AddActiviteComponent
   ],
   imports: [
     BrowserModule,
