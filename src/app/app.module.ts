@@ -34,7 +34,7 @@ import {
 
 
 
-const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
 
 
 const route:Routes=[
