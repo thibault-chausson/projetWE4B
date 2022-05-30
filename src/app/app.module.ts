@@ -25,7 +25,12 @@ import { AccueilLoggedComponent } from './accueil-logged/accueil-logged.componen
 import { CategoriesLoggedComponent } from './categories-logged/categories-logged.component';
 import { DomaineLoggedComponent } from './domaine-logged/domaine-logged.component';
 import { RecherchesLoggedComponent } from './recherches-logged/recherches-logged.component';
-import {AngularFireAuthGuard, loggedIn, redirectUnauthorizedTo} from '@angular/fire/compat/auth-guard';
+import {
+  AngularFireAuthGuard,
+  AngularFireAuthGuardModule,
+  loggedIn,
+  redirectUnauthorizedTo
+} from '@angular/fire/compat/auth-guard';
 
 
 
@@ -43,11 +48,11 @@ const route:Routes=[
   { path: 'login',     component: RecherchesComponent},
   {path: 'register', component : RegisterUserComponent},
   {path: 'register-pro', component : RegisterProComponent},
-  {path: 'add-activite', component : AddActiviteComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: loggedIn }},
-  { path: 'accueil-logged',      component: AccueilLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: loggedIn }},
-  { path: 'domaine-logged',     component: DomaineLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: loggedIn }},
-  { path: 'categories-logged',     component: CategoriesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: loggedIn }},
-  { path: 'recherches-logged',     component: RecherchesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: loggedIn }},
+  {path: 'add-activite', component : AddActiviteComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'accueil-logged',      component: AccueilLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'domaine-logged',     component: DomaineLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'categories-logged',     component: CategoriesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'recherches-logged',     component: RecherchesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: '**', component : Error404Component},
 
 ];
@@ -80,6 +85,7 @@ const route:Routes=[
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(route , { scrollPositionRestoration: 'enabled' } ),
+    AngularFireAuthGuardModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCmbXbwKnwP8IUx1Vkkt-HYgtooBotiBW8",
       authDomain: "we4b-30eb7.firebaseapp.com",
@@ -94,5 +100,6 @@ const route:Routes=[
   providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
+
 
 export class AppModule {}
