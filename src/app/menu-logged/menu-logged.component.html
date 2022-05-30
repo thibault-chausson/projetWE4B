@@ -9,10 +9,10 @@
           Domaines <img src="assets/ressources/icon/reseau.png" class="logo_button">
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-          <a class="dropdown-item" href="domaines">Nature</a>
-          <a class="dropdown-item" href="domaines">Sensation fore</a>
-          <a class="dropdown-item" href="domaines">Sport</a>
-          <a class="dropdown-item" href="domaines">Jeux</a>
+          <a class="dropdown-item" href="domaine-logged">Nature</a>
+          <a class="dropdown-item" href="domaine-logged">Sensation fore</a>
+          <a class="dropdown-item" href="domaine-logged">Sport</a>
+          <a class="dropdown-item" href="domaine-logged">Jeux</a>
         </ul>
       </div>
 
@@ -24,17 +24,18 @@
           Catégories <img src="assets/ressources/icon/categories.png" class="logo_button">
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <a class="dropdown-item" href="categories">En famille</a>
-          <a class="dropdown-item" href="categories">En couple</a>
-          <a class="dropdown-item" href="categories">Entre amis</a>
-          <a class="dropdown-item" href="categories">Tout seul</a>
+          <a class="dropdown-item" href="categories-logged">En famille</a>
+          <a class="dropdown-item" href="categories-logged">En couple</a>
+          <a class="dropdown-item" href="categories-logged">Entre amis</a>
+          <a class="dropdown-item" href="categories-logged">Tout seul</a>
         </ul>
       </div>
 
     </li>
-    <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/recherches">Recherches <img src="assets/ressources/icon/recherche.png" class="logo_button"></button></li>
+    <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/recherches-logged">Recherches <img src="assets/ressources/icon/recherche.png" class="logo_button"></button></li>
     <li class="menu"><button class="btn btn-secondary dropdown-toggle" (click)="logoutFunction()"><img src="assets/ressources/logout/logout.svg.png" class="logo_button"></button></li>
     <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/add-activite">Ajout activité</button></li>
+    <li class="menu"><button class="btn btn-secondary dropdown-toggle" >Profil</button></li>
   </ul>
 </nav>
 

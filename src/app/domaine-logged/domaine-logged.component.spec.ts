@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConnexionProComponent } from './connexion-pro.component';
+import { DomaineLoggedComponent } from './domaine-logged.component';
 
-describe('ConnexionProComponent', () => {
-  let component: ConnexionProComponent;
-  let fixture: ComponentFixture<ConnexionProComponent>;
+describe('DomaineLoggedComponent', () => {
+  let component: DomaineLoggedComponent;
+  let fixture: ComponentFixture<DomaineLoggedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConnexionProComponent ]
+      declarations: [ DomaineLoggedComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConnexionProComponent);
+    fixture = TestBed.createComponent(DomaineLoggedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

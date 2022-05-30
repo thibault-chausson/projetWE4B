@@ -17,26 +17,39 @@ import { DomainesComponent } from './domaines/domaines.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { RecherchesComponent } from './recherches/recherches.component';
 import { MenuComponent } from './menu/menu.component';
-import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 import { RegisterProComponent } from './register-pro/register-pro.component';
 import { Error404Component} from "./error404/error404.component";
 import { AddActiviteComponent } from './add-activite/add-activite.component';
 import { MenuLoggedComponent } from './menu-logged/menu-logged.component';
+import { AccueilLoggedComponent } from './accueil-logged/accueil-logged.component';
+import { CategoriesLoggedComponent } from './categories-logged/categories-logged.component';
+import { DomaineLoggedComponent } from './domaine-logged/domaine-logged.component';
+import { RecherchesLoggedComponent } from './recherches-logged/recherches-logged.component';
+import {AngularFireAuthGuard, loggedIn, redirectUnauthorizedTo} from '@angular/fire/compat/auth-guard';
+
+
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
 
 const route:Routes=[
-  {path:'accueil', component:AccueilComponent},
-  {path:'domaines', component:DomainesComponent},
-  {path:'categories', component:CategoriesComponent},
-  {path:'recherches', component:RecherchesComponent},
-  {path:'connexion', component:ConnexionComponent},
-  {path: 'login', component: LoginComponent},
+  {path:'', redirectTo:'/accueil', pathMatch:'full'},
+  { path: '',             component: AppComponent},
+  { path: 'accueil',      component: AccueilComponent},
+  { path: 'domaine',     component: DomainesComponent},
+  { path: 'categories',     component: CategoriesComponent},
+  { path: 'recherches',     component: RecherchesComponent},
+  { path: 'connexion',     component: ConnexionComponent},
+  { path: 'login',     component: RecherchesComponent},
   {path: 'register', component : RegisterUserComponent},
   {path: 'register-pro', component : RegisterProComponent},
-  {path: 'connexion-pro', component : ConnexionProComponent},
-  {path: 'add-activite', component : AddActiviteComponent},
-  {path:'',redirectTo:'/accueil', pathMatch:'full'},
-  {path: '**', component : Error404Component},
+  {path: 'add-activite', component : AddActiviteComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: loggedIn }},
+  { path: 'accueil-logged',      component: AccueilLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: loggedIn }},
+  { path: 'domaine-logged',     component: DomaineLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: loggedIn }},
+  { path: 'categories-logged',     component: CategoriesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: loggedIn }},
+  { path: 'recherches-logged',     component: RecherchesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: loggedIn }},
+  { path: '**', component : Error404Component},
+
 ];
 
 @NgModule({
@@ -53,10 +66,13 @@ const route:Routes=[
     CategoriesComponent,
     RecherchesComponent,
     MenuComponent,
-    ConnexionProComponent,
     RegisterProComponent,
     AddActiviteComponent,
-    MenuLoggedComponent
+    MenuLoggedComponent,
+    AccueilLoggedComponent,
+    CategoriesLoggedComponent,
+    DomaineLoggedComponent,
+    RecherchesLoggedComponent
   ],
   imports: [
     BrowserModule,

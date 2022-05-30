@@ -8,10 +8,9 @@ import {FirebaseService} from "./services/firebase.service";
 })
 export class AppComponent {
 
-  constructor(private logg : FirebaseService) { }
+
   title = 'webLoisir';
-  user = this.logg.logged
-  console = console;
+
 
 
 
