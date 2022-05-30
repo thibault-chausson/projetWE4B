@@ -21,6 +21,7 @@ import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 import { RegisterProComponent } from './register-pro/register-pro.component';
 import { Error404Component} from "./error404/error404.component";
 import { AddActiviteComponent } from './add-activite/add-activite.component';
+import { MenuLoggedComponent } from './menu-logged/menu-logged.component';
 
 
 const route:Routes=[
@@ -54,7 +55,8 @@ const route:Routes=[
     MenuComponent,
     ConnexionProComponent,
     RegisterProComponent,
-    AddActiviteComponent
+    AddActiviteComponent,
+    MenuLoggedComponent
   ],
   imports: [
     BrowserModule,
