@@ -1,0 +1,66 @@
+i{
+  margin-right: 20px;
+}
+
+.fa-star{
+  color : gold;
+}
+
+.note{
+  text-align: center;
+}
+
+.card-title {
+  text-align: center;
+}
+
+
+
+.parent2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding-bottom: 50px;
+}
+.cardNote {
+  grid-area: 1 / 1 / 2 / 2;
+
+}
+
+.categoriePop {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.graphe {
+  grid-area: 2 / 1 / 3 / 3;
+
+}
+
+
+.addAct{
+  text-align: center;
+  color: white;
+  background-color: rgb(50,155,156);
+  border-radius: 30px;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.addAct:hover{
+  text-align: center;
+  color: white;
+  background-color: rgb(186,209,210);
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.centre{
+  text-align: center;
+}
+
+
+.card{
+  margin-top: 20px;
+}

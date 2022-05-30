@@ -31,6 +31,14 @@ import {
   loggedIn,
   redirectUnauthorizedTo
 } from '@angular/fire/compat/auth-guard';
+import { GestionProComponent } from './gestion-pro/gestion-pro.component';
+import { MenuGestionProComponent } from './menu-gestion-pro/menu-gestion-pro.component';
+import { StatistiquesGestionProComponent } from './statistiques-gestion-pro/statistiques-gestion-pro.component';
+import { ProfilGestionProComponent } from './profil-gestion-pro/profil-gestion-pro.component';
+import { ActivitesGestionProComponent } from './activites-gestion-pro/activites-gestion-pro.component';
+import { AddActiviteGestionProComponent } from './add-activite-gestion-pro/add-activite-gestion-pro.component';
+import { AfficherActiviteComponent } from './afficher-activite/afficher-activite.component';
+import { ModifierActiviteGestionProComponent } from './modifier-activite-gestion-pro/modifier-activite-gestion-pro.component';
 
 
 
@@ -48,13 +56,13 @@ const route:Routes=[
   { path: 'login',     component: RecherchesComponent},
   {path: 'register', component : RegisterUserComponent},
   {path: 'register-pro', component : RegisterProComponent},
+  { path: 'gestion-pro',     component: GestionProComponent},
   {path: 'add-activite', component : AddActiviteComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'accueil-logged',      component: AccueilLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'domaine-logged',     component: DomaineLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'categories-logged',     component: CategoriesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'recherches-logged',     component: RecherchesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: '**', component : Error404Component},
-
 ];
 
 @NgModule({
@@ -77,7 +85,15 @@ const route:Routes=[
     AccueilLoggedComponent,
     CategoriesLoggedComponent,
     DomaineLoggedComponent,
-    RecherchesLoggedComponent
+    RecherchesLoggedComponent,
+    GestionProComponent,
+    MenuGestionProComponent,
+    StatistiquesGestionProComponent,
+    ProfilGestionProComponent,
+    ActivitesGestionProComponent,
+    AddActiviteGestionProComponent,
+    AfficherActiviteComponent,
+    ModifierActiviteGestionProComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,66 @@
+.form-control:focus {
+  box-shadow: none;
+  border-color: rgb(136, 76, 60);
+}
+
+.profile-button {
+  background: rgb(136, 76, 60);
+  border-radius: 40px;
+  width: 200px;
+  border: white;
+}
+
+.profile-button:hover {
+  border: white;
+  background-color: rgb(136, 76, 60);
+}
+
+.profile-button:focus {
+  background-color: rgb(136, 76, 60);
+  border: white;
+}
+
+.profile-button:active {
+  background-color: rgb(136, 76, 60);
+  border: white;
+}
+
+
+.rounded-circle {
+  border-radius: 50% !important;
+  width: 200px;
+  height: 200px;
+}
+
+
+.labels {
+  font-size: 1em;
+}
+
+
+
+
+.label-file {
+  cursor: pointer;
+  color: #00b1ca;
+  font-weight: bold;
+}
+.label-file:hover {
+  color: #25a5c4;
+}
+
+
+.input-file {
+  display: none;
+}
+
+.row{
+  background-color: rgb(234,153,132);
+  border-radius: 5px;
+}
+
+form {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

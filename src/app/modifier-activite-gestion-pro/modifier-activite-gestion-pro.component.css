@@ -1,0 +1,113 @@
+.carre {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.photo1 { grid-area: 1 / 1 / 4 / 7; }
+.photo2 { grid-area: 1 / 7 / 4 / 13; }
+.photo3 { grid-area: 4 / 1 / 7 / 7; }
+.photo4 { grid-area: 4 / 7 / 7 / 13; }
+
+.image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 10px;
+}
+
+
+.mainPhoto {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.mainGauche { grid-area: 1 / 1 / 5 / 7; }
+.mainDroit { grid-area: 1 / 7 / 5 / 13; }
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 10px;
+}
+.descrip {
+  grid-area: 1 / 1 / 2 / 10;
+  text-align: justify;
+}
+.adresse {
+  grid-area: 1 / 10 / 2 / 13;
+  padding-left: 20px;
+}
+
+
+.droite{
+  text-align: right;
+}
+
+.ad{
+  list-style: none;
+  padding-left: 20px;
+}
+
+.adInfo{
+  list-style: none;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.centre{
+  text-align: center;
+}
+
+
+
+
+
+/* Par défaut, une étoile est en gris,
+   avec un padding et un curseur en forme de main. */
+.stars .fa-star {
+  color: gray;
+  cursor: pointer;
+  padding: 0.0625rem;
+}
+/* Si elle porte en plus la classe '.gold', elle sera en jaune. */
+.stars .fa-star.gold {
+  color: #ffdc0f;
+}
+
+/* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Le groupe '.stars' positionne les étoiles
+     les unes à côté des autres sans espacements. */
+.stars {
+  display: inline-flex;
+  justify-content: center;
+  font-size: 3em;
+}
+
+/**
+ * Et là opère la magie du ':hover' !
+ */
+
+/* A l'état :hover sur le parent '.rating',
+     on force TOUTES les étoiles à passer en jaune. */
+.stars:hover .fa-star {
+  color: #ffdc0f;
+}
+/* Et si la souris survole une étoile en particulier,
+     on sélectionne toutes les étoiles qui sont APRÈS celle-ci
+     grâce à l'opérateur '~' et on les force en GRIS */
+.stars .fa-star:hover ~ .fa-star {
+  color: gray;
+}

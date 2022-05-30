@@ -1,0 +1,23 @@
+ul {
+  list-style:none;
+  margin-left:10px;
+  padding-left:0;
+}
+
+li{
+  margin-top: 20px;
+}
+
+a {
+  color: rgb(22,82,72);
+  text-decoration:none;
+  padding: 10px;
+
+}
+
+a:hover{
+  color: rgb(22,82,72);
+  background-color: rgb(231,241,244);
+  border-radius: 15px;
+  padding: 10px;
+}
