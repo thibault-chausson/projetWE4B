@@ -19,7 +19,8 @@ export class RegisterProComponent implements OnInit {
   codePostale : string = '';
   pays : string = '';
   telephone : string = '';
-  typeCompte : string = '';
+  pro : boolean = true;
+
 
 
 
@@ -70,8 +71,8 @@ export class RegisterProComponent implements OnInit {
       return;
     }
 
-    this.typeCompte = "pro";
-    this.auth.register(this.emailPro, this.passwordPro);
+
+    this.auth.register(this.emailPro, this.passwordPro, this.pro);
     this.data.addPro(this);
 
 

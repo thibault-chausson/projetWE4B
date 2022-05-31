@@ -11,6 +11,7 @@ export class RegisterUserComponent implements OnInit {
   email: string = '';
   password: string = '';
   passwordCheck : string = '';
+  pro : boolean = false;
 
   constructor(private auth: FirebaseService) {
   }
@@ -35,7 +36,7 @@ export class RegisterUserComponent implements OnInit {
       return;
     }
 
-    this.auth.register(this.email, this.password);
+    this.auth.register(this.email, this.password, this.pro);
 
     this.email = '';
     this.password = '';

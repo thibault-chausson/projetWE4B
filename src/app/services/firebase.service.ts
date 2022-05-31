@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class FirebaseService {
-
+  pro : boolean = false;
   constructor(private firebaseAuth : AngularFireAuth, private router : Router) { }
 
   console = console;
@@ -27,11 +27,11 @@ export class FirebaseService {
 
   }
 
-  register(email : string, password : string){
+  register(email : string, password : string, pro : boolean){
+    this.pro = pro;
     this.firebaseAuth.createUserWithEmailAndPassword(email,password).then( () =>{
-      alert('registration successful');
-      this.router.navigate(['/login']);
-
+        alert('registration successful');
+        this.router.navigate(['/login']);
       }, err =>{
       alert(err.message);
       this.router.navigate(['/login']);
