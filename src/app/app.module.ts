@@ -56,7 +56,21 @@ const route:Routes=[
   { path: 'login',     component: RecherchesComponent},
   {path: 'register', component : RegisterUserComponent},
   {path: 'register-pro', component : RegisterProComponent},
-  { path: 'gestion-pro',     component: GestionProComponent},
+  { path: 'gestion-pro',     component: GestionProComponent,
+    children: [
+      { path: '',             component: StatistiquesGestionProComponent},
+      {path:'statistiques', component: StatistiquesGestionProComponent},
+      {path:'profil', component: ProfilGestionProComponent},
+      {path:'activites', component: ActivitesGestionProComponent,
+      children: [
+        {path:'modifierActivite', component: ModifierActiviteGestionProComponent},
+      ],
+      },
+      {path:'addActivite', component: AddActiviteGestionProComponent},
+    ],
+
+  },
+
   {path: 'add-activite', component : AddActiviteComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'accueil-logged',      component: AccueilLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'domaine-logged',     component: DomaineLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
