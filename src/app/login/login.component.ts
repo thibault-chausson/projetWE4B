@@ -9,6 +9,7 @@ import {FirebaseService} from "../services/firebase.service";
 export class LoginComponent implements OnInit {
 
 
+  //création variable pour récupérer les données du formulaire
   email : string = '';
   password : string = '';
   constructor(private auth : FirebaseService) { }
