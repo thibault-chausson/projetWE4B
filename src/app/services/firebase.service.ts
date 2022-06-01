@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
-import {DataService} from "../shared/data.service";
+
 import {RegisterProComponent} from "../register-pro/register-pro.component";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
 
-  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private dt : DataService, private pro : RegisterProComponent) { }
+  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private pro : RegisterProComponent, private UserDb : AngularFirestore) { }
 
   console = console;
   Pro : boolean = false;
@@ -30,7 +31,10 @@ export class FirebaseService {
   }
 
   registerPro(pro : RegisterProComponent){
-    this.firebaseAuth.createUserWithEmailAndPassword(pro.emailPro, pro.passwordPro).then( () => {
+    this.firebaseAuth.createUserWithEmailAndPassword(pro.emailPro, pro.passwordPro).then( cred => {
+      return this.UserDb.collection('users').doc(cred?.user?.uid).set({
+        isPro : true,
+      });
       alert('register successful');
       this.router.navigate(['accueil-logged']);
     }, err => {
@@ -42,8 +46,10 @@ export class FirebaseService {
   }
 
   register(email : string, password : string){
-    this.firebaseAuth.createUserWithEmailAndPassword(email,password).then( () =>{
-        //custom claims
+    this.firebaseAuth.createUserWithEmailAndPassword(email,password).then( cred =>{
+      return this.UserDb.collection('users').doc(cred?.user?.uid).set({
+        isPro : false,
+      });
         alert('registration successful');
         this.router.navigate(['/login']);
       }, err =>{

@@ -73,6 +73,7 @@ export class RegisterProComponent implements OnInit {
 
 
     this.auth.registerPro(this);
+    this.data.addPro(this);
 
 
     this.emailPro = '';
