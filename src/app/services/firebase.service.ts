@@ -21,7 +21,6 @@ export class FirebaseService {
     this.firebaseAuth.signInWithEmailAndPassword(email,password).then( () => {
       alert('login successful');
       this.router.navigate(['accueil-logged']);
-
     }, err => {
       alert(err.message)
       this.router.navigate(['/login']);
@@ -34,7 +33,6 @@ export class FirebaseService {
     this.firebaseAuth.createUserWithEmailAndPassword(pro.emailPro, pro.passwordPro).then( () => {
       alert('register successful');
       this.router.navigate(['accueil-logged']);
-
     }, err => {
       alert(err.message)
       this.router.navigate(['/register-pro']);
