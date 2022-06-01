@@ -8,6 +8,7 @@ import {FirebaseService} from "../services/firebase.service";
 })
 export class LoginComponent implements OnInit {
 
+
   email : string = '';
   password : string = '';
   constructor(private auth : FirebaseService) { }
