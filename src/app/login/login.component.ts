@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {FirebaseService} from "../services/firebase.service";
 
 @Component({
@@ -33,8 +33,6 @@ export class LoginComponent implements OnInit {
 
     this.email = '';
     this.password = '';
-
-
 
   }
 
