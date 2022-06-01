@@ -30,6 +30,7 @@ export class FirebaseService {
   register(email : string, password : string, pro : boolean){
     this.pro = pro;
     this.firebaseAuth.createUserWithEmailAndPassword(email,password).then( () =>{
+        //custom claims
         alert('registration successful');
         this.router.navigate(['/login']);
       }, err =>{
