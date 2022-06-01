@@ -9,7 +9,7 @@ import {FirebaseService} from "../services/firebase.service";
 })
 export class RegisterProComponent implements OnInit {
 
-  idPro : string = '';
+
   emailPro : string = '';
   passwordPro : string = '';
   passwordCheckPro : string = '';
@@ -19,7 +19,7 @@ export class RegisterProComponent implements OnInit {
   codePostale : string = '';
   pays : string = '';
   telephone : string = '';
-  pro : boolean = true;
+
 
 
 
@@ -72,8 +72,7 @@ export class RegisterProComponent implements OnInit {
     }
 
 
-    this.auth.register(this.emailPro, this.passwordPro, this.pro);
-    this.data.addPro(this);
+    this.auth.registerPro(this);
 
 
     this.emailPro = '';
