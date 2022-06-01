@@ -20,7 +20,7 @@ export class DataService {
       codePostale: pro.codePostale,
       pays: pro.pays,
       telephone: pro.telephone,
-      //typeCompte: pro.typeCompte
+      typeCompte: pro.typeCompte
 
     })
       .then((docRef) => {
