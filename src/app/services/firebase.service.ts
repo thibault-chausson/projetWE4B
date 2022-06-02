@@ -10,10 +10,10 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 })
 export class FirebaseService {
 
-  constructor(private firebaseAuth : AngularFireAuth, private router : Router) { }
+  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore) { }
 
   console = console;
- 
+
 
 
 
@@ -32,10 +32,11 @@ export class FirebaseService {
   }
 
   registerPro(email : string, password : string){
-    this.firebaseAuth.createUserWithEmailAndPassword(email, password).then( () => {
-      // return this.UserDb.collection('users').doc(cred?.user?.uid).set({
-      //   isPro : true,
-      // });
+    this.firebaseAuth.createUserWithEmailAndPassword(email, password).then( cred => {
+      return this.UserDb.collection('users').doc(cred?.user?.uid).set({
+        isPro: true,
+      });
+    }).then( () => {
       alert('register successful');
       this.router.navigate(['accueil-logged']);
     }, err => {
@@ -47,10 +48,11 @@ export class FirebaseService {
   }
 
   register(email : string, password : string){
-    this.firebaseAuth.createUserWithEmailAndPassword(email,password).then( () =>{
-      // return this.UserDb.collection('users').doc(cred?.user?.uid).set({
-      //   isPro : false,
-      // });
+    this.firebaseAuth.createUserWithEmailAndPassword(email,password).then( cred => {
+      return this.UserDb.collection('users').doc(cred?.user?.uid).set({
+        isPro: false,
+      });
+    }).then( () => {
         alert('registration successful');
         this.router.navigate(['/login']);
       }, err =>{
