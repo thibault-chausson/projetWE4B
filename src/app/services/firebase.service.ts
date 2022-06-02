@@ -19,10 +19,20 @@ export class FirebaseService {
 
   //login method
   login(email : string, password : string){
-    this.firebaseAuth.signInWithEmailAndPassword(email,password).then( () => {
-      alert('login successful');
-      this.router.navigate(['accueil-logged']);
-
+    this.firebaseAuth.signInWithEmailAndPassword(email,password).then( cred => {
+      this.UserDb.collection('users').doc(cred?.user?.uid).ref.get().then(user => {
+        if (user.get('isPro') == true){
+          console.log("Document data:", user.data());
+          alert("Vous êtes connecté en tant que professionnel");
+          this.router.navigate(['/accueil-logged']);
+        } else {
+          alert("Vous êtes connecté en tant que particulier");
+          console.log("Cet utilisateur n'est pas un professionnel");
+          this.router.navigate(['/recherches-logged']);
+        }
+      }).catch(function(error) {
+        console.log("Error getting document:", error);
+      });
     }, err => {
       alert(err.message)
       this.router.navigate(['/login']);
