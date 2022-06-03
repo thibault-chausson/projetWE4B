@@ -22,7 +22,6 @@ export class FirebaseService {
     this.firebaseAuth.signInWithEmailAndPassword(email,password).then( cred => {
       this.UserDb.collection('users').doc(cred?.user?.uid).ref.get().then(user => {
         if (user.get('isPro') == true){
-
           console.log("Document data:", user.data());
           alert("Vous êtes connecté en tant que professionnel");
           this.router.navigate(['/accueil-logged']);
