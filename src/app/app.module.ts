@@ -28,7 +28,7 @@ import { RecherchesLoggedComponent } from './recherches-logged/recherches-logged
 import {
   AngularFireAuthGuard,
   AngularFireAuthGuardModule,
-  loggedIn,
+  loggedIn, redirectLoggedInTo,
   redirectUnauthorizedTo
 } from '@angular/fire/compat/auth-guard';
 import { GestionProComponent } from './gestion-pro/gestion-pro.component';
@@ -43,7 +43,7 @@ import { ModifierActiviteGestionProComponent } from './modifier-activite-gestion
 
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
-
+const redirectLoggedUserIntoHome = () => redirectLoggedInTo(['gestion-pro']);
 
 const route:Routes=[
   {path:'', redirectTo:'/accueil', pathMatch:'full'},
@@ -68,10 +68,8 @@ const route:Routes=[
       },
       {path:'addActivite', component: AddActiviteGestionProComponent},
     ],
-
   },
-
-  {path: 'add-activite', component : AddActiviteComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'add-activite', component : AddActiviteComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'accueil-logged',      component: AccueilLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'domaine-logged',     component: DomaineLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'categories-logged',     component: CategoriesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},

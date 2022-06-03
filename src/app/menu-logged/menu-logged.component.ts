@@ -8,14 +8,17 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class MenuLoggedComponent implements OnInit {
 
-  constructor(private log : FirebaseService) { }
+  constructor(public log : FirebaseService) { }
 
   ngOnInit(): void {
+    console.log(this.log.userIsPro);
   }
 
   logoutFunction() {
     this.log.logout()
   }
+
+
 
 
 

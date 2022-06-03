@@ -34,8 +34,11 @@
     </li>
     <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/recherches-logged">Recherches <img src="assets/ressources/icon/recherche.png" class="logo_button"></button></li>
     <li class="menu"><button class="btn btn-secondary dropdown-toggle" (click)="logoutFunction()"><img src="assets/ressources/logout/logout.svg.png" class="logo_button"></button></li>
-    <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/add-activite">Add activités</button></li>
     <li class="menu"><button class="btn btn-secondary dropdown-toggle" >Profil</button></li>
+    <div *ngIf="this.log.userIsPro">
+       <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/gestion-pro">Tableau de bord</button></li>
+    </div>
+
   </ul>
 </nav>
 

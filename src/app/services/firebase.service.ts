@@ -8,9 +8,13 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class FirebaseService {
 
+  userIsPro : boolean = false;
   constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore) { }
+
 
   console = console;
 
@@ -22,13 +26,15 @@ export class FirebaseService {
     this.firebaseAuth.signInWithEmailAndPassword(email,password).then( cred => {
       this.UserDb.collection('users').doc(cred?.user?.uid).ref.get().then(user => {
         if (user.get('isPro') == true){
+          this.userIsPro = true;
           console.log("Document data:", user.data());
           alert("Vous êtes connecté en tant que professionnel");
           this.router.navigate(['/accueil-logged']);
         } else {
+          this.userIsPro = false;
           alert("Vous êtes connecté en tant que particulier");
           console.log("Cet utilisateur n'est pas un professionnel");
-          this.router.navigate(['/recherches-logged']);
+          this.router.navigate(['/accueil-logged']);
         }
       }).catch(function(error) {
         console.log("Error getting document:", error);
