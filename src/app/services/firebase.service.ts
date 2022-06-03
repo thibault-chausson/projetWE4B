@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
-
+import { customClaims} from "@angular/fire/compat/auth-guard";
 import {RegisterProComponent} from "../register-pro/register-pro.component";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 
@@ -16,7 +16,9 @@ export class FirebaseService {
   constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore) { }
 
 
+
   console = console;
+
 
 
 
