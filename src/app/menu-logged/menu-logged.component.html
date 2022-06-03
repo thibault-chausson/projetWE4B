@@ -32,13 +32,44 @@
       </div>
 
     </li>
+
     <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/recherches-logged">Recherches <img src="assets/ressources/icon/recherche.png" class="logo_button"></button></li>
-    <li class="menu"><button class="btn btn-secondary dropdown-toggle" (click)="logoutFunction()"><img src="assets/ressources/logout/logout.svg.png" class="logo_button"></button></li>
-    <li class="menu"><button class="btn btn-secondary dropdown-toggle" >Profil</button></li>
-    <div *ngIf="this.log.userIsPro">
-       <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/gestion-pro">Tableau de bord</button></li>
+
+
+    <div *ngIf="this.log.userIsPro; else nonPro">
+       <li class="menu">
+
+         <div class="dropdown">
+           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonPro" data-bs-toggle="dropdown" aria-expanded="false">
+             <img src="assets/ressources/icon/perso.png" class="logo_button">
+           </button>
+           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+             <a class="dropdown-item" routerLink="/gestion-pro">Tableau de bord</a>
+             <button (click)="logoutFunction()"><img src="assets/ressources/logout/logout.svg.png" class="logo_button"></button>
+           </ul>
+         </div>
+       </li>
     </div>
+    <ng-template #nonPro>
+
+      <li class="menu">
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonUser" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="assets/ressources/icon/perso.png" class="logo_button">
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+            <a class="dropdown-item" routerLink="/gestion-pro">Profil</a>
+            <button (click)="logoutFunction()"><img src="assets/ressources/logout/logout.svg.png" class="logo_button"></button>
+          </ul>
+        </div>
+      </li>
+
+    </ng-template>
 
   </ul>
 </nav>
+
+
+
 

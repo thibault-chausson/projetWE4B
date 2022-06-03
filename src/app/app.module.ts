@@ -40,10 +40,11 @@ import { AddActiviteGestionProComponent } from './add-activite-gestion-pro/add-a
 import { AfficherActiviteComponent } from './afficher-activite/afficher-activite.component';
 import { ModifierActiviteGestionProComponent } from './modifier-activite-gestion-pro/modifier-activite-gestion-pro.component';
 
-
+import { customClaims } from '@angular/fire/compat/auth-guard';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
 const redirectLoggedUserIntoHome = () => redirectLoggedInTo(['gestion-pro']);
+
 
 const route:Routes=[
   {path:'', redirectTo:'/accueil', pathMatch:'full'},
