@@ -1,9 +1,43 @@
-import * as functions from "firebase-functions";
+// import * as functions from "firebase-functions";
+import * as admin from "firebase-admin";
+//admin.initializeApp();
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
+// export const addproRole = functions.https.onCall((data, context) => {
+//   //get user and add custom claim
+//   return admin
+//     .auth()
+//     .getUserByEmail(data.email)
+//     .then(user => {
+//       return admin.auth().setCustomUserClaims(user.uid, {
+//         pro: true
+//       });
+//     })
+//     .then(() => {
+//       return {
+//         message: `Success! ${data.email} has been made a pro`
+//       };
+//     })
+//     .catch(err => {
+//       return err;
+//     });
 // });
+
+export async function addProRole(email: string) {
+  //get user and add custom claim
+  return admin
+    .auth()
+    .getUserByEmail(email)
+    .then(user => {
+      return admin.auth().setCustomUserClaims(user.uid, {
+        pro: true
+      });
+    })
+    .then(() => {
+      return {
+        message: `Success! ${email} has been made a pro`
+      };
+    })
+    .catch(err => {
+      return err;
+    });
+}

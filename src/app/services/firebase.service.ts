@@ -4,6 +4,14 @@ import {Router} from "@angular/router";
 import { customClaims} from "@angular/fire/compat/auth-guard";
 import {RegisterProComponent} from "../register-pro/register-pro.component";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
+import { addProRole} from "../../../functions/src";
+
+
+
+
+
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +23,7 @@ export class FirebaseService {
   userIsPro : boolean = false;
   constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore) { }
 
-
-
   console = console;
-
-
-
 
 
   //login method
@@ -92,5 +95,4 @@ export class FirebaseService {
 
   }
 }
-
-
+// End of file

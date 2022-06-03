@@ -43,7 +43,7 @@ import { ModifierActiviteGestionProComponent } from './modifier-activite-gestion
 import { customClaims } from '@angular/fire/compat/auth-guard';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
-const redirectLoggedUserIntoHome = () => redirectLoggedInTo(['gestion-pro']);
+const redirectLoggedUserIntoHome = () => redirectLoggedInTo(['accueil-logged']);
 
 
 const route:Routes=[
