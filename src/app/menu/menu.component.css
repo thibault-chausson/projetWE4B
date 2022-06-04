@@ -88,5 +88,14 @@ nav ul::after{
   background-color: deepskyblue;
 }
 
+.dropdown-menu{
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  width: 90%;
+  text-align: center;
+}
 
 /*Fin Dropdown*/

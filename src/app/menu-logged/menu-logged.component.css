@@ -69,9 +69,10 @@ nav ul::after{
   background-color: white;
   color: black;
   border: none;
-  border-radius: 10px 100px / 120px;
+  border-radius: 30px;
   height: 60px;
   font-size: 1em;
+  width: 90%;
 }
 
 .dropdown-toggle:after{
@@ -87,6 +88,24 @@ nav ul::after{
   background-color: deepskyblue;
 }
 
+.dropdown-menu{
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  width: 90%;
+  text-align: center;
+}
+
+.botLogOut{
+  border: none;
+  background-color: white;
+}
+
+.botLogOut:hover{
+  background-color: rgb(230,233,236);
+  width: 100%;
+}
 
 /*Fin Dropdown*/
-
