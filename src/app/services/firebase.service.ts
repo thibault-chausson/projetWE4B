@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
-
+import { customClaims} from "@angular/fire/compat/auth-guard";
 import {RegisterProComponent} from "../register-pro/register-pro.component";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
+import { addProRole} from "../../../functions/src";
+import {getAuth} from "@angular/fire/auth";
+
+
+
+
+
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +22,11 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 export class FirebaseService {
 
   userIsPro : boolean = false;
-  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore) { }
+  isLogin: boolean = false;
+  roleAs: string | null | undefined;
 
+
+  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore) { }
 
   console = console;
 
@@ -26,11 +38,17 @@ export class FirebaseService {
     this.firebaseAuth.signInWithEmailAndPassword(email,password).then( cred => {
       this.UserDb.collection('users').doc(cred?.user?.uid).ref.get().then(user => {
         if (user.get('isPro') == true){
+          localStorage.setItem('STATE', 'true');
+          this.roleAs = 'pro';
+          localStorage.setItem('ROLE', this.roleAs);
           this.userIsPro = true;
           console.log("Document data:", user.data());
           alert("Vous êtes connecté en tant que professionnel");
           this.router.navigate(['/accueil-logged']);
         } else {
+          localStorage.setItem('STATE', 'true');
+          this.roleAs = 'user';
+          localStorage.setItem('ROLE', this.roleAs);
           this.userIsPro = false;
           alert("Vous êtes connecté en tant que particulier");
           console.log("Cet utilisateur n'est pas un professionnel");
@@ -79,6 +97,9 @@ export class FirebaseService {
 
   logout(){
     this.firebaseAuth.signOut().then( () =>{
+      this.isLogin = false;
+      this.roleAs = '';
+      localStorage.removeItem('ROLE');
       this.router.navigate(['/accueil']).then(r =>
         alert('logout successful'));
 
@@ -89,6 +110,19 @@ export class FirebaseService {
     })
 
   }
+
+  isLoggedIn() {
+    const loggedIn = localStorage.getItem('STATE');
+    if (loggedIn == 'true')
+      this.isLogin = true;
+    else
+      this.isLogin = false;
+    return this.isLogin;
+  }
+
+  getRole() {
+    this.roleAs = localStorage.getItem('ROLE');
+    return this.roleAs;
+  }
 }
-
-
+// End of file
