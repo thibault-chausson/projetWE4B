@@ -62,7 +62,7 @@ const route:Routes=[
   { path: 'gestion-pro',     component: GestionProComponent, children: [ { path: '',             component: StatistiquesGestionProComponent},
                                                                          {path:'statistiques', component: StatistiquesGestionProComponent},
                                                                          {path:'profil', component: ProfilGestionProComponent},
-                                                                         {path:'activites', component: ActivitesGestionProComponent, children: [{path:'modifierActivite', component: ModifierActiviteGestionProComponent},],},
+                                                                         {path:'activites', component: ActivitesGestionProComponent, children: [{path:'modifierActivite', component: ModifierActiviteGestionProComponent}, ],},
                                                                          {path:'addActivite', component: AddActiviteGestionProComponent},],
     canActivate: [AuthGuard],
     data: {

@@ -111,3 +111,20 @@
 .stars .fa-star:hover ~ .fa-star {
   color: gray;
 }
+
+.pad{
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.fa-star{
+  color: #ffdc0f;
+}
+
+.fa-location-dot{
+  color: red;
+}
+
+.fa-money-bill-1-wave{
+  color: green;
+}

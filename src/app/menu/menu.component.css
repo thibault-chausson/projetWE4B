@@ -69,9 +69,10 @@ nav ul::after{
   background-color: white;
   color: black;
   border: none;
-  border-radius: 10px 100px / 120px;
+  border-radius: 30px;
   height: 60px;
   font-size: 1em;
+  width: 90%;
 }
 
 .dropdown-toggle:after{
