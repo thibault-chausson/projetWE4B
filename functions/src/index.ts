@@ -22,11 +22,11 @@ import * as admin from "firebase-admin";
 //     });
 // });
 
-export async function addProRole(email: string) {
+export async function addProRole(uid: string) {
   //get user and add custom claim
   return admin
     .auth()
-    .getUserByEmail(email)
+    .getUser(uid)
     .then(user => {
       return admin.auth().setCustomUserClaims(user.uid, {
         pro: true
@@ -34,7 +34,7 @@ export async function addProRole(email: string) {
     })
     .then(() => {
       return {
-        message: `Success! ${email} has been made a pro`
+        message: `Success! ${uid} has been made a pro`
       };
     })
     .catch(err => {

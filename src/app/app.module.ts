@@ -41,9 +41,11 @@ import { AfficherActiviteComponent } from './afficher-activite/afficher-activite
 import { ModifierActiviteGestionProComponent } from './modifier-activite-gestion-pro/modifier-activite-gestion-pro.component';
 
 import { customClaims } from '@angular/fire/compat/auth-guard';
+import {AuthGuard} from "./auth.guard";
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
-const redirectLoggedUserIntoHome = () => redirectLoggedInTo(['accueil-logged']);
+
+
 
 
 const route:Routes=[
@@ -57,18 +59,16 @@ const route:Routes=[
   { path: 'login',     component: RecherchesComponent},
   {path: 'register', component : RegisterUserComponent},
   {path: 'register-pro', component : RegisterProComponent},
-  { path: 'gestion-pro',     component: GestionProComponent,
-    children: [
-      { path: '',             component: StatistiquesGestionProComponent},
-      {path:'statistiques', component: StatistiquesGestionProComponent},
-      {path:'profil', component: ProfilGestionProComponent},
-      {path:'activites', component: ActivitesGestionProComponent,
-      children: [
-        {path:'modifierActivite', component: ModifierActiviteGestionProComponent},
-      ],
-      },
-      {path:'addActivite', component: AddActiviteGestionProComponent},
-    ],
+  { path: 'gestion-pro',     component: GestionProComponent, children: [ { path: '',             component: StatistiquesGestionProComponent},
+                                                                         {path:'statistiques', component: StatistiquesGestionProComponent},
+                                                                         {path:'profil', component: ProfilGestionProComponent},
+                                                                         {path:'activites', component: ActivitesGestionProComponent, children: [{path:'modifierActivite', component: ModifierActiviteGestionProComponent},],},
+                                                                         {path:'addActivite', component: AddActiviteGestionProComponent},],
+    canActivate: [AuthGuard],
+    data: {
+      role: 'pro'
+    }
+
   },
   { path: 'add-activite', component : AddActiviteComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'accueil-logged',      component: AccueilLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
