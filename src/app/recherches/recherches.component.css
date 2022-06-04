@@ -1,4 +1,45 @@
 .pad{
+  padding-top: 20px;
   padding-right: 30px;
   padding-left: 30px;
 }
+
+
+h2{
+  padding-top: 25px;
+}
+
+
+/* Champ recherche */
+
+.rech{
+  padding: 20px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.container{
+  width: 45em;
+}
+
+#oLocalisation{
+  border: none;
+  font-size: 25px;
+  text-align: center;
+}
+
+.input-group:focus{
+  outline: none ;
+}
+
+.btn-primary{
+  background-color: white;
+  border-color: white;
+}
+
+.imaRech{
+  height: 30px;
+}
+
+
+/* Fin champ recherche */

@@ -1,1 +1,12 @@
+.slide{
+  padding-top: 20px;
+  background-color: white;
+  height: 80vh;
+  margin-bottom: 10px;
+}
+
+.w-100{
+  object-fit: cover;
+  height: 80vh;
+}
 
