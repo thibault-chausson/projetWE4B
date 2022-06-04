@@ -1,17 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
-import { customClaims} from "@angular/fire/compat/auth-guard";
-import {RegisterProComponent} from "../register-pro/register-pro.component";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
-import { addProRole} from "../../../functions/src";
-import {getAuth} from "@angular/fire/auth";
-
-
-
-
-
-
 
 
 @Injectable({
