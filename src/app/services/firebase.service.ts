@@ -11,6 +11,7 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 export class FirebaseService {
 
+
   userIsPro : boolean = false;
   isLogin: boolean = false;
   roleAs: string | null | undefined;
