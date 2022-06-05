@@ -3,13 +3,11 @@
   <h1>Erreur 404</h1>
   <h2>Il me semble que vous êtes perdu !!!</h2>
 
+  <div>
+    <a href="accueil">Retrouve ton chemin sur la page d'accueil !</a>
+  </div>
 
-    <div *ngIf="this.isLogged; else logged">
-       <a href="accueil-logged">Retrouve ton chemin sur la page d'accueil !</a>
-    </div>
-    <ng-template #logged>
-       <a href="accueil">Retrouve ton chemin sur la page d'accueil !</a>
-    </ng-template>
+
 
   <img src="assets/ressources/404/explorateur-removebg-preview.png">
 

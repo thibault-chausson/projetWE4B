@@ -8,6 +8,7 @@ import {FirebaseService} from "../services/firebase.service";
   styleUrls: ['./error404.component.css']
 })
 
+
 export class Error404Component implements OnInit {
 
   isLogged : boolean = false;
@@ -17,6 +18,7 @@ export class Error404Component implements OnInit {
   ngOnInit(): void {
     this.isLogged = this.fs.isLoggedIn();
     console.log(this.isLogged);
+    console.log(this.fs.userIsPro);
 
   }
 

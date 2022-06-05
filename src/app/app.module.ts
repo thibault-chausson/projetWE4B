@@ -28,7 +28,6 @@ import { RecherchesLoggedComponent } from './recherches-logged/recherches-logged
 import {
   AngularFireAuthGuard,
   AngularFireAuthGuardModule,
-  loggedIn, redirectLoggedInTo,
   redirectUnauthorizedTo
 } from '@angular/fire/compat/auth-guard';
 import { GestionProComponent } from './gestion-pro/gestion-pro.component';
@@ -39,9 +38,8 @@ import { ActivitesGestionProComponent } from './activites-gestion-pro/activites-
 import { AddActiviteGestionProComponent } from './add-activite-gestion-pro/add-activite-gestion-pro.component';
 import { AfficherActiviteComponent } from './afficher-activite/afficher-activite.component';
 import { ModifierActiviteGestionProComponent } from './modifier-activite-gestion-pro/modifier-activite-gestion-pro.component';
-
-import { customClaims } from '@angular/fire/compat/auth-guard';
 import {AuthGuard} from "./auth.guard";
+import { Erreur404LoggedComponent } from './erreur404-logged/erreur404-logged.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
 
@@ -76,10 +74,13 @@ const route:Routes=[
   { path: 'categories-logged',     component: CategoriesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'recherches-logged',     component: RecherchesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: '**', component : Error404Component},
+  { path: '***', component : Erreur404LoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
 ];
 
 @NgModule({
   declarations: [
+    Erreur404LoggedComponent,
+    Error404Component,
     AppComponent,
     CarouselIndexComponent,
     MyFooterComponent,
@@ -106,7 +107,8 @@ const route:Routes=[
     ActivitesGestionProComponent,
     AddActiviteGestionProComponent,
     AfficherActiviteComponent,
-    ModifierActiviteGestionProComponent
+    ModifierActiviteGestionProComponent,
+    Erreur404LoggedComponent
   ],
   imports: [
     BrowserModule,
