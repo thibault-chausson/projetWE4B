@@ -120,19 +120,24 @@ export class FirebaseService {
     return this.roleAs;
   }
 
-  addActivite(nomActivite : string, nomEntreprise : string, nomResponsable : string, numNomRue : string, ville : string, pays : string, codePostale : string, telephone : string, description : string, prix : number ){
+
+
+
+  addActivite(inputNomActi : string, inputNomRes : string, inputAddress : string, inputAddress2 : string, inputCity : string, inputState : string, inputZip : string, inputTel : string, inputPrix : number, inputCate : string, inputDoma : string, inputDes : string){
     this.firebaseAuth.currentUser.then( user => {
       return this.UserDb.collection('activites').doc(user?.uid).set({
-        nomActivite: nomActivite,
-        nomEntreprise: nomEntreprise,
-        nomResponsable: nomResponsable,
-        numNomRue: numNomRue,
-        ville: ville,
-        pays: pays,
-        codePostale: codePostale,
-        telephone: telephone,
-        description: description,
-        prix: prix,
+        inputNomActi: inputNomActi,
+        inputNomRes: inputNomRes,
+        inputAddress: inputAddress,
+        inputAddress2: inputAddress2,
+        inputCity: inputCity,
+        inputState: inputState,
+        inputZip: inputZip,
+        inputTel: inputTel,
+        inputPrix: inputPrix,
+        inputCate: inputCate,
+        inputDoma: inputDoma,
+        inputDes: inputDes,
       }).then( () => {
         alert('activité ajoutée');
         this.router.navigate(['/gestion-pro']);

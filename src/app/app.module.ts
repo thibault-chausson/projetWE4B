@@ -19,7 +19,6 @@ import { RecherchesComponent } from './recherches/recherches.component';
 import { MenuComponent } from './menu/menu.component';
 import { RegisterProComponent } from './register-pro/register-pro.component';
 import { Error404Component} from "./error404/error404.component";
-import { AddActiviteComponent } from './add-activite/add-activite.component';
 import { MenuLoggedComponent } from './menu-logged/menu-logged.component';
 import { AccueilLoggedComponent } from './accueil-logged/accueil-logged.component';
 import { CategoriesLoggedComponent } from './categories-logged/categories-logged.component';
@@ -58,7 +57,7 @@ const route:Routes=[
   {path: 'register-pro', component : RegisterProComponent},
   { path: 'gestion-pro',     component: GestionProComponent, children: [ { path: '',           component: StatistiquesGestionProComponent},
                                                                          {path:'statistiques', component: StatistiquesGestionProComponent},
-                                                                         {path:'addActivite', component: AddActiviteComponent},
+                                                                         {path:'addActivite', component: AddActiviteGestionProComponent},
                                                                          {path:'profil', component: ProfilGestionProComponent},
                                                                          {path:'activites', component: ActivitesGestionProComponent, children: [{path:'modifierActivite', component: ModifierActiviteGestionProComponent},]},
                                                                           ],
@@ -68,7 +67,7 @@ const route:Routes=[
     }
 
   },
-  { path: 'add-activite', component : AddActiviteComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'add-activite', component : AddActiviteGestionProComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'accueil-logged',      component: AccueilLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'domaine-logged',     component: DomaineLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'categories-logged',     component: CategoriesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
@@ -92,7 +91,6 @@ const route:Routes=[
     RecherchesComponent,
     MenuComponent,
     RegisterProComponent,
-    AddActiviteComponent,
     MenuLoggedComponent,
     AccueilLoggedComponent,
     CategoriesLoggedComponent,
