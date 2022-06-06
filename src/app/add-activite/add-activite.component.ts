@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../shared/data.service";
+import {FirebaseService} from "../services/firebase.service";
 
 @Component({
   selector: 'app-add-activite',
@@ -19,7 +19,7 @@ export class AddActiviteComponent implements OnInit {
   telephone : string = '';
   prix : number = 0;
 
-  constructor(private data : DataService) { }
+  constructor(private db : FirebaseService) { }
 
   ngOnInit(): void {
   }

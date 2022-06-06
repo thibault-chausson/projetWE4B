@@ -131,3 +131,21 @@
   border-radius: 30px;
   border: none;
 }
+
+@font-face {
+  font-family: 'LouisGeorge';
+  src: url('src/assets/ressources/Font/Louis George Cafe.ttf');
+}
+
+@font-face {
+  font-family: 'LouisGeorgeBold';
+  src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'LouisGeorgeBold';
+}
+
+p{
+  font-family: 'LouisGeorge';
+}

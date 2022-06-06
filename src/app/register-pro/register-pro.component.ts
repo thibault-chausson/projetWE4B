@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../shared/data.service";
 import {FirebaseService} from "../services/firebase.service";
 
 @Component({
@@ -24,7 +23,7 @@ export class RegisterProComponent implements OnInit {
 
 
 
-  constructor(private auth : FirebaseService, private data : DataService) { }
+  constructor(private auth : FirebaseService) { }
 
   ngOnInit(): void {
   }
@@ -73,7 +72,6 @@ export class RegisterProComponent implements OnInit {
 
 
     this.auth.registerPro(this.emailPro, this.passwordPro);
-    this.data.addPro(this);
 
 
     this.emailPro = '';
