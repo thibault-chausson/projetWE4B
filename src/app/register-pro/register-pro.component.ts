@@ -71,7 +71,7 @@ export class RegisterProComponent implements OnInit {
     }
 
 
-    this.auth.registerPro(this.emailPro, this.passwordPro);
+    this.auth.registerPro(this.emailPro, this.passwordPro, this.nomEntreprise, this.numNomRue, this.ville,  this.pays, this.codePostale, this.telephone);
 
 
     this.emailPro = '';

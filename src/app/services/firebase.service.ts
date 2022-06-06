@@ -22,8 +22,6 @@ export class FirebaseService {
   console = console;
 
 
-
-
   //login method
   login(email : string, password : string){
     this.firebaseAuth.signInWithEmailAndPassword(email,password).then( cred => {
@@ -56,8 +54,17 @@ export class FirebaseService {
 
   }
 
-  registerPro(email : string, password : string){
+  registerPro(email : string, password : string, nomEntreprise: string, numNomRue : string, ville : string, pays : string, codePostale : string, telephone : string ){
     this.firebaseAuth.createUserWithEmailAndPassword(email, password).then( cred => {
+      this.UserDb.collection('professional').doc(cred?.user?.uid).set({
+        emailPro: email,
+        nomEntreprise: nomEntreprise,
+        numNomRue: numNomRue,
+        ville: ville,
+        pays: pays,
+        codePostale: codePostale,
+        telephone: telephone,
+      })
       return this.UserDb.collection('users').doc(cred?.user?.uid).set({
         isPro: true,
       });
@@ -93,9 +100,6 @@ export class FirebaseService {
       localStorage.removeItem('ROLE');
       this.router.navigate(['/accueil']).then(r =>
         alert('logout successful'));
-
-
-
     }, err =>{
       alert(err.message);
     })
@@ -115,5 +119,30 @@ export class FirebaseService {
     this.roleAs = localStorage.getItem('ROLE');
     return this.roleAs;
   }
+
+  addActivite(nomActivite : string, nomEntreprise : string, nomResponsable : string, numNomRue : string, ville : string, pays : string, codePostale : string, telephone : string, description : string, prix : number ){
+    this.firebaseAuth.currentUser.then( user => {
+      return this.UserDb.collection('activites').doc(user?.uid).set({
+        nomActivite: nomActivite,
+        nomEntreprise: nomEntreprise,
+        nomResponsable: nomResponsable,
+        numNomRue: numNomRue,
+        ville: ville,
+        pays: pays,
+        codePostale: codePostale,
+        telephone: telephone,
+        description: description,
+        prix: prix,
+      }).then( () => {
+        alert('activité ajoutée');
+        this.router.navigate(['/gestion-pro']);
+      });
+    });
+
+
+  }
 }
+
+
+
 // End of file

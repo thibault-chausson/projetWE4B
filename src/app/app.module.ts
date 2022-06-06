@@ -34,11 +34,11 @@ import { GestionProComponent } from './gestion-pro/gestion-pro.component';
 import { MenuGestionProComponent } from './menu-gestion-pro/menu-gestion-pro.component';
 import { StatistiquesGestionProComponent } from './statistiques-gestion-pro/statistiques-gestion-pro.component';
 import { ProfilGestionProComponent } from './profil-gestion-pro/profil-gestion-pro.component';
-import { ActivitesGestionProComponent } from './activites-gestion-pro/activites-gestion-pro.component';
 import { AddActiviteGestionProComponent } from './add-activite-gestion-pro/add-activite-gestion-pro.component';
 import { AfficherActiviteComponent } from './afficher-activite/afficher-activite.component';
 import { ModifierActiviteGestionProComponent } from './modifier-activite-gestion-pro/modifier-activite-gestion-pro.component';
 import {AuthGuard} from "./auth.guard";
+import { ActivitesGestionProComponent } from './activites-gestion-pro/activites-gestion-pro.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
 
@@ -56,11 +56,12 @@ const route:Routes=[
   { path: 'login',     component: RecherchesComponent},
   {path: 'register', component : RegisterUserComponent},
   {path: 'register-pro', component : RegisterProComponent},
-  { path: 'gestion-pro',     component: GestionProComponent, children: [ { path: '',             component: StatistiquesGestionProComponent},
+  { path: 'gestion-pro',     component: GestionProComponent, children: [ { path: '',           component: StatistiquesGestionProComponent},
                                                                          {path:'statistiques', component: StatistiquesGestionProComponent},
+                                                                         {path:'addActivite', component: AddActiviteComponent},
                                                                          {path:'profil', component: ProfilGestionProComponent},
-                                                                         {path:'activites', component: ActivitesGestionProComponent, children: [{path:'modifierActivite', component: ModifierActiviteGestionProComponent},
-                                                                                                                                                {path:'addActivite', component: AddActiviteGestionProComponent}, ],}],
+                                                                         {path:'activites', component: ActivitesGestionProComponent, children: [{path:'modifierActivite', component: ModifierActiviteGestionProComponent},]},
+                                                                          ],
     canActivate: [AuthGuard],
     data: {
       role: 'pro'
@@ -101,10 +102,10 @@ const route:Routes=[
     MenuGestionProComponent,
     StatistiquesGestionProComponent,
     ProfilGestionProComponent,
-    ActivitesGestionProComponent,
     AddActiviteGestionProComponent,
     AfficherActiviteComponent,
     ModifierActiviteGestionProComponent,
+    ActivitesGestionProComponent,
   ],
   imports: [
     BrowserModule,
