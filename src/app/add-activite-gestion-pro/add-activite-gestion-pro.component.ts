@@ -22,7 +22,6 @@ export class AddActiviteGestionProComponent implements OnInit {
   inputDes : string = '';
 
 
-
   constructor(private db : FirebaseService) { }
 
   ngOnInit(): void {
