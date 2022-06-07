@@ -35,7 +35,7 @@ export class FirebaseService {
           this.userIsPro = true;
           console.log("Document data:", user.data());
           alert("Vous êtes connecté en tant que professionnel");
-          this.router.navigate(['/accueil-logged']);
+          this.router.navigate(['/gestion-pro']);
         } else {
           localStorage.setItem('STATE', 'true');
           this.roleAs = 'user';
@@ -50,7 +50,7 @@ export class FirebaseService {
       });
     }, err => {
       alert(err.message)
-      this.router.navigate(['/login']);
+      this.router.navigate(['/connexion']);
 
     })
 
@@ -72,7 +72,7 @@ export class FirebaseService {
       });
     }).then( () => {
       alert('register successful');
-      this.router.navigate(['accueil-logged']);
+      this.router.navigate(['gestion-pro']);
     }, err => {
       alert(err.message)
       this.router.navigate(['/register-pro']);
@@ -88,10 +88,10 @@ export class FirebaseService {
       });
     }).then( () => {
         alert('registration successful');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/accueil-logged']);
       }, err =>{
       alert(err.message);
-      this.router.navigate(['/login']);
+      this.router.navigate(['/register']);
     } )
   }
 
