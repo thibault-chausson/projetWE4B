@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {toBase64String} from "@angular/compiler/src/output/source_map";
-import firebase from "firebase/compat";
-import Blob = firebase.firestore.Blob;
+
+
 
 
 @Injectable({
@@ -20,7 +19,7 @@ export class FirebaseService {
   roleAs: string | null | undefined;
 
 
-  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore, private blob : Blob) { }
+  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore) { }
 
   console = console;
 

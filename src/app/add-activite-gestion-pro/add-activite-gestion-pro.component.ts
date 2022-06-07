@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from "../services/firebase.service";
-import firebase from "firebase/compat";
-import Blob = firebase.firestore.Blob;
-import {toBase64String} from "@angular/compiler/src/output/source_map";
+
+
 
 @Component({
   selector: 'app-add-activite-gestion-pro',
@@ -31,7 +30,7 @@ export class AddActiviteGestionProComponent implements OnInit {
   ngOnInit(): void {
   }
 
-/*
+
   onFileSelected(event: any) {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
@@ -47,7 +46,7 @@ export class AddActiviteGestionProComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
-*/
+
 
   addActivite() {
 
