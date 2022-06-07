@@ -145,6 +145,7 @@ export class FirebaseService {
         image3: image3,
         image4: image4,
         image5: image5,
+        heure : Date(),
       }).then( () => {
         alert('activité ajoutée');
         this.router.navigate(['/gestion-pro']);

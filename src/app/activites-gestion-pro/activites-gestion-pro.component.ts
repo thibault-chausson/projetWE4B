@@ -17,7 +17,7 @@ export class ActivitesGestionProComponent implements OnInit {
     this.db.collection('activites').doc('0lCtDUyu6GaNIWsMJIRUx6CnCsK2').get().subscribe( (doc) =>{
 
       if (doc.exists) {
-        this.imagePath = this._sanitizer.bypassSecurityTrustResourceUrl(doc.get('image'));
+        this.imagePath = this._sanitizer.bypassSecurityTrustResourceUrl(doc.get('image1'));
 
       } else {
         // doc.data() will be undefined in this case
