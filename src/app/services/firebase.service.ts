@@ -150,7 +150,7 @@ export class FirebaseService {
         jour : jour,
       }).then( () => {
         alert('activité ajoutée');
-        this.router.navigate(['/gestion-pro']);
+        this.router.navigate(['/gestion-pro/statistiques']);
       });
     });
 
