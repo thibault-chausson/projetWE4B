@@ -14,7 +14,7 @@ export class ActivitesGestionProComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.db.collection('activites').doc('0lCtDUyu6GaNIWsMJIRUx6CnCsK2').get().subscribe( (doc) =>{
+    this.db.collection('activites').doc('0lCtDUyu6GaNIWsMJIRUx6CnCsK2').collection('sous-acti').doc('8LpsMnOACMzmavu7bgoB').get().subscribe( (doc) =>{
 
       if (doc.exists) {
         this.imagePath = this._sanitizer.bypassSecurityTrustResourceUrl(doc.get('image1'));
