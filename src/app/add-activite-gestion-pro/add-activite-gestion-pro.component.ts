@@ -31,13 +31,23 @@ export class AddActiviteGestionProComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onFileSelected(event : any){
-    if(event.target.files.length > 0)
-    {
-      console.log(event.target.files[0].name);
-      this.image = toBase64String(event.target.files[0]);
+/*
+  onFileSelected(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const image = new Image();
+        image.src = e.target.result;
+        image.onload = rs => {
+          const imgBase64Path = e.target.result;
+          this.image = imgBase64Path;
+          console.log(imgBase64Path);
+        };
+      };
+      reader.readAsDataURL(event.target.files[0]);
     }
   }
+*/
 
   addActivite() {
 
