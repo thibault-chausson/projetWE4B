@@ -45,6 +45,7 @@ export class FirebaseService {
           console.log("Cet utilisateur n'est pas un professionnel");
           this.router.navigate(['/accueil-logged']);
         }
+        return user;
       }).catch(function(error) {
         console.log("Error getting document:", error);
       });
