@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {toBase64String} from "@angular/compiler/src/output/source_map";
+import firebase from "firebase/compat";
+import Blob = firebase.firestore.Blob;
 
 
 @Injectable({
@@ -17,7 +20,7 @@ export class FirebaseService {
   roleAs: string | null | undefined;
 
 
-  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore) { }
+  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore, private blob : Blob) { }
 
   console = console;
 
@@ -123,7 +126,7 @@ export class FirebaseService {
 
 
 
-  addActivite(inputNomActi : string, inputNomRes : string, inputAddress : string, inputAddress2 : string, inputCity : string, inputState : string, inputZip : string, inputTel : string, inputPrix : number, inputCate : string, inputDoma : string, inputDes : string){
+  addActivite(inputNomActi : string, inputNomRes : string, inputAddress : string, inputAddress2 : string, inputCity : string, inputState : string, inputZip : string, inputTel : string, inputPrix : number, inputCate : string, inputDoma : string, inputDes : string, image : string){
     this.firebaseAuth.currentUser.then( user => {
       return this.UserDb.collection('activites').doc(user?.uid).set({
         inputNomActi: inputNomActi,
@@ -138,6 +141,7 @@ export class FirebaseService {
         inputCate: inputCate,
         inputDoma: inputDoma,
         inputDes: inputDes,
+        image: image,
       }).then( () => {
         alert('activité ajoutée');
         this.router.navigate(['/gestion-pro']);

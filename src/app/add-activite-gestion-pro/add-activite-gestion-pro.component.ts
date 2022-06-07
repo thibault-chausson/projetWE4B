@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from "../services/firebase.service";
+import firebase from "firebase/compat";
+import Blob = firebase.firestore.Blob;
+import {toBase64String} from "@angular/compiler/src/output/source_map";
 
 @Component({
   selector: 'app-add-activite-gestion-pro',
@@ -20,6 +23,7 @@ export class AddActiviteGestionProComponent implements OnInit {
   inputCate : string = '';
   inputDoma : string = '';
   inputDes : string = '';
+  image : string = '' ;
 
 
   constructor(private db : FirebaseService) { }
@@ -27,7 +31,17 @@ export class AddActiviteGestionProComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addActivite(){
+  onFileSelected(event : any){
+    if(event.target.files.length > 0)
+    {
+      console.log(event.target.files[0].name);
+      this.image = toBase64String(event.target.files[0]);
+    }
+  }
+
+  addActivite() {
+
+
     if(this.inputNomActi == ''){
       alert('Veuillez entrer un nom d\'activité');
       return;
@@ -73,7 +87,8 @@ export class AddActiviteGestionProComponent implements OnInit {
       return;
     }
 
-    this.db.addActivite(this.inputNomActi, this.inputNomRes, this.inputAddress, this.inputAddress2, this.inputCity, this.inputState, this.inputZip, this.inputTel, this.inputPrix, this.inputCate, this.inputDoma, this.inputDes);
+
+    this.db.addActivite(this.inputNomActi, this.inputNomRes, this.inputAddress, this.inputAddress2, this.inputCity, this.inputState, this.inputZip, this.inputTel, this.inputPrix, this.inputCate, this.inputDoma, this.inputDes, this.image);
 
     this.inputNomActi = '';
     this.inputNomRes = '';
@@ -87,7 +102,10 @@ export class AddActiviteGestionProComponent implements OnInit {
     this.inputCate = '';
     this.inputDoma = '';
     this.inputDes = '';
+    this.image = '';
 
   }
+
+
 
 }
