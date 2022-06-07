@@ -6,7 +6,7 @@ import {FirebaseService} from "../services/firebase.service";
 @Component({
   selector: 'app-add-activite-gestion-pro',
   templateUrl: './add-activite-gestion-pro.component.html',
-  styleUrls: ['./add-activite-gestion-pro.component.css']
+  styleUrls: ['./add-activite-gestion-pro.component.css'],
 })
 export class AddActiviteGestionProComponent implements OnInit {
 
@@ -27,12 +27,15 @@ export class AddActiviteGestionProComponent implements OnInit {
   image3 : string = '' ;
   image4 : string = '' ;
   image5 : string = '' ;
+  heure : string = '';
+  jour : string = '';
 
 
   constructor(private db : FirebaseService) { }
 
   ngOnInit(): void {
   }
+
 
 
   onFileSelected1(event: any) {
@@ -191,9 +194,11 @@ export class AddActiviteGestionProComponent implements OnInit {
       return;
     }
 
+  this.heure = new Date().getHours() + ':' + new Date().getMinutes() + ':'+  new Date().getSeconds();
+  this.jour = new Date().getDate() + '/' + (new Date().getMonth()+1) + '/' + new Date().getFullYear();
 
 
-    this.db.addActivite(this.inputNomActi, this.inputNomRes, this.inputAddress, this.inputAddress2, this.inputCity, this.inputState, this.inputZip, this.inputTel, this.inputPrix, this.inputCate, this.inputDoma, this.inputDes, this.image1, this.image2, this.image3, this.image4, this.image5);
+    this.db.addActivite(this.inputNomActi, this.inputNomRes, this.inputAddress, this.inputAddress2, this.inputCity, this.inputState, this.inputZip, this.inputTel, this.inputPrix, this.inputCate, this.inputDoma, this.inputDes, this.image1, this.image2, this.image3, this.image4, this.image5, this.heure, this.jour);
 
     this.inputNomActi = '';
     this.inputNomRes = '';
@@ -212,6 +217,8 @@ export class AddActiviteGestionProComponent implements OnInit {
     this.image3 = '';
     this.image4 = '';
     this.image5 = '';
+    this.heure = '';
+    this.jour = '';
 
   }
 
