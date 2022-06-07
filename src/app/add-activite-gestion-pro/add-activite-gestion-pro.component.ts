@@ -22,7 +22,11 @@ export class AddActiviteGestionProComponent implements OnInit {
   inputCate : string = '';
   inputDoma : string = '';
   inputDes : string = '';
-  image : string = '' ;
+  image1 : string = '' ;
+  image2 : string = '' ;
+  image3 : string = '' ;
+  image4 : string = '' ;
+  image5 : string = '' ;
 
 
   constructor(private db : FirebaseService) { }
@@ -31,7 +35,7 @@ export class AddActiviteGestionProComponent implements OnInit {
   }
 
 
-  onFileSelected(event: any) {
+  onFileSelected1(event: any) {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
@@ -39,13 +43,79 @@ export class AddActiviteGestionProComponent implements OnInit {
         image.src = e.target.result;
         image.onload = rs => {
           const imgBase64Path = e.target.result;
-          this.image = imgBase64Path;
+          this.image1 = imgBase64Path;
           console.log(imgBase64Path);
         };
       };
       reader.readAsDataURL(event.target.files[0]);
     }
   }
+
+  onFileSelected2(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const image = new Image();
+        image.src = e.target.result;
+        image.onload = rs => {
+          const imgBase64Path = e.target.result;
+          this.image2 = imgBase64Path;
+          console.log(imgBase64Path);
+        };
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
+  onFileSelected3(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const image = new Image();
+        image.src = e.target.result;
+        image.onload = rs => {
+          const imgBase64Path = e.target.result;
+          this.image3 = imgBase64Path;
+          console.log(imgBase64Path);
+        };
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
+  onFileSelected4(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const image = new Image();
+        image.src = e.target.result;
+        image.onload = rs => {
+          const imgBase64Path = e.target.result;
+          this.image4 = imgBase64Path;
+          console.log(imgBase64Path);
+        };
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
+  onFileSelected5(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const image = new Image();
+        image.src = e.target.result;
+        image.onload = rs => {
+          const imgBase64Path = e.target.result;
+          this.image5 = imgBase64Path;
+          console.log(imgBase64Path);
+        };
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
+
 
 
   addActivite() {
@@ -95,9 +165,35 @@ export class AddActiviteGestionProComponent implements OnInit {
       alert('Veuillez entrer un domaine');
       return;
     }
+    if(this.inputDoma == ''){
+      alert('Veuillez entrer un domaine');
+      return;
+    }
+
+    let compte = 0;
+    if (this.image1 != '') {
+      compte=compte+1;
+    }
+    if (this.image2 != '') {
+      compte=compte+1;
+    }
+    if (this.image3 != '') {
+      compte=compte+1;
+    }
+    if (this.image4 != '') {
+      compte=compte+1;
+    }
+    if (this.image5 != '') {
+      compte=compte+1;
+    }
+    if(compte <2){
+      alert('Mettez deux images');
+      return;
+    }
 
 
-    this.db.addActivite(this.inputNomActi, this.inputNomRes, this.inputAddress, this.inputAddress2, this.inputCity, this.inputState, this.inputZip, this.inputTel, this.inputPrix, this.inputCate, this.inputDoma, this.inputDes, this.image);
+
+    this.db.addActivite(this.inputNomActi, this.inputNomRes, this.inputAddress, this.inputAddress2, this.inputCity, this.inputState, this.inputZip, this.inputTel, this.inputPrix, this.inputCate, this.inputDoma, this.inputDes, this.image1, this.image2, this.image3, this.image4, this.image5);
 
     this.inputNomActi = '';
     this.inputNomRes = '';
@@ -111,7 +207,11 @@ export class AddActiviteGestionProComponent implements OnInit {
     this.inputCate = '';
     this.inputDoma = '';
     this.inputDes = '';
-    this.image = '';
+    this.image1 = '';
+    this.image2 = '';
+    this.image3 = '';
+    this.image4 = '';
+    this.image5 = '';
 
   }
 

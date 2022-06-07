@@ -322,8 +322,30 @@
 
 
   <div class="col-12">
-    <label for="image" class="label-file">Ajoute une image pour décrire ton activité</label>
-    <input type="file" id="image" name="image" class="input-file" (change)="onFileSelected($event)"> <!---->
+    <p>Ajoute une image pour décrire ton activité (ajoutez entre 2 et 5 photos)</p>
+    <ul>
+      <li>
+        <label for="image1" class="label-file">Image 1 : </label>
+        <input type="file" id="image1" name="image1" class="input-file" (change)="onFileSelected1($event)">
+      </li>
+      <li>
+        <label for="image2" class="label-file">Image 2 : </label>
+        <input type="file" id="image2" name="image2" class="input-file" (change)="onFileSelected2($event)">
+      </li>
+      <li>
+        <label for="image3" class="label-file">Image 3 : </label>
+        <input type="file" id="image3" name="image3" class="input-file" (change)="onFileSelected3($event)">
+      </li>
+      <li>
+        <label for="image4" class="label-file">Image 4 : </label>
+        <input type="file" id="image4" name="image4" class="input-file" (change)="onFileSelected4($event)">
+      </li>
+      <li>
+        <label for="image5" class="label-file">Image 5 : </label>
+        <input type="file" id="image5" name="image5" class="input-file" (change)="onFileSelected5($event)">
+      </li>
+    </ul>
+
   </div>
 
 

@@ -125,7 +125,7 @@ export class FirebaseService {
 
 
 
-  addActivite(inputNomActi : string, inputNomRes : string, inputAddress : string, inputAddress2 : string, inputCity : string, inputState : string, inputZip : string, inputTel : string, inputPrix : number, inputCate : string, inputDoma : string, inputDes : string, image : string){
+  addActivite(inputNomActi : string, inputNomRes : string, inputAddress : string, inputAddress2 : string, inputCity : string, inputState : string, inputZip : string, inputTel : string, inputPrix : number, inputCate : string, inputDoma : string, inputDes : string, image1 : string, image2 : string, image3 : string, image4 : string, image5 : string){
     this.firebaseAuth.currentUser.then( user => {
       return this.UserDb.collection('activites').doc(user?.uid).set({
         inputNomActi: inputNomActi,
@@ -140,7 +140,11 @@ export class FirebaseService {
         inputCate: inputCate,
         inputDoma: inputDoma,
         inputDes: inputDes,
-        image: image,
+        image1: image1,
+        image2: image2,
+        image3: image3,
+        image4: image4,
+        image5: image5,
       }).then( () => {
         alert('activité ajoutée');
         this.router.navigate(['/gestion-pro']);
