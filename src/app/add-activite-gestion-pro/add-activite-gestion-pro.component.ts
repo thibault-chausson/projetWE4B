@@ -20,6 +20,7 @@ export class AddActiviteGestionProComponent implements OnInit {
   inputCate : string = '';
   inputDoma : string = '';
   inputDes : string = '';
+  inputUrlImage : string = '';
 
 
   constructor(private db : FirebaseService) { }
@@ -73,7 +74,7 @@ export class AddActiviteGestionProComponent implements OnInit {
       return;
     }
 
-    this.db.addActivite(this.inputNomActi, this.inputNomRes, this.inputAddress, this.inputAddress2, this.inputCity, this.inputState, this.inputZip, this.inputTel, this.inputPrix, this.inputCate, this.inputDoma, this.inputDes);
+    this.db.addActivite(this.inputNomActi, this.inputNomRes, this.inputAddress, this.inputAddress2, this.inputCity, this.inputState, this.inputZip, this.inputTel, this.inputPrix, this.inputCate, this.inputDoma, this.inputDes, this.inputUrlImage);
 
     this.inputNomActi = '';
     this.inputNomRes = '';
