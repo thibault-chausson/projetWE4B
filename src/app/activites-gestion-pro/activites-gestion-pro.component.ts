@@ -10,7 +10,6 @@ import {Activite} from "../classes/activites";
   styleUrls: ['./activites-gestion-pro.component.css']
 })
 export class ActivitesGestionProComponent implements OnInit {
-  imagePath: any;
   nom: string = '';
   description: string = '';
   identifiant: string = '';
@@ -28,7 +27,6 @@ export class ActivitesGestionProComponent implements OnInit {
       this.db.collection('activites').doc(user?.uid).collection('sous-acti').get().subscribe(querrySnapshot => {
         querrySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
           this.nom = doc.get('inputNomActi');
           this.description = doc.get('inputDes');
           this.identifiant = doc.id;
