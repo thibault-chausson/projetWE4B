@@ -180,8 +180,8 @@ export class FirebaseService {
         heure : heure,
         jour : jour,
       }).then( () => {
-        alert('activité ajoutée');
-        this.router.navigate(['/gestion-pro/statistiques']);
+        alert('activité modifiée');
+        this.router.navigate(['/gestion-pro/activites']);
       });
     });
 
