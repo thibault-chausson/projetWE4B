@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import {Activite} from "../classes/activites";
+import {ActivatedRoute, Router, Routes} from "@angular/router";
+
 
 @Component({
   selector: 'app-card-activite-gestion-pro',
@@ -10,7 +12,12 @@ export class CardActiviteGestionProComponent implements OnInit {
   @Input() activite!: Activite;
 
 
-  constructor() { }
+
+  constructor(private router: Router) { }
+
+  readMore() {
+    this.router.navigate(['/', 'gestion-pro', 'activites', 'modifierActivite', this.activite.idActivite]);
+  }
 
   ngOnInit(): void {
     /*this.nomActivite = "Activité 1";
