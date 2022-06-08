@@ -1,9 +1,18 @@
 <h1>Modifie cette activité</h1>
 
-<div class="pad">
-  <h1>{{nomActivite}}</h1>
+<form>
 
-  <h2><i class="fa-solid fa-star"></i>X,X ------- <i class="fa-solid fa-location-dot"></i> {{ville}} <i class="fa-solid fa-money-bill-1-wave"></i> {{prix}} <i class="fa-solid fa-phone"></i> {{telephone}}</h2>
+<div class="pad">
+
+  <h1>
+    <input type="text"  id="inputNomActi" name="inputNomActi" value="{{nomActivite}}" [(ngModel)]="nomActivite">
+  </h1>
+
+  <h2>
+    <input type="text" class="form-control" id="inputNomRes" name="inputNomRes"  [(ngModel)]="nomResponsable" value="nomResponsable">
+  </h2>
+
+  <h2><i class="fa-solid fa-star"></i>X,X -------  <i class="fa-solid fa-money-bill-1-wave"></i> <input type="text" class="form-control" id="inputPrix" name="inputPrix" value="{{prix}}"> <i class="fa-solid fa-phone"></i> <input type="tel" class="form-control" id="inputTel" name="inputTel" value="{{telephone}}"></h2>
 
 
 
@@ -11,20 +20,25 @@
 
   <div class="mainPhoto">
     <div class="mainGauche">
+      <input type="file" id="image1" name="image1" class="input-file" (change)="onFileSelected1($event)">
       <img src={{image1}} class="image">
     </div>
     <div class="mainDroit">
       <div class="carre">
         <div class="photo1">
+          <input type="file" id="image2" name="image1" class="input-file" (change)="onFileSelected2($event)">
           <img src={{image2}} class="image">
         </div>
         <div class="photo2">
+          <input type="file" id="image3" name="image1" class="input-file" (change)="onFileSelected3($event)">
           <img src={{image3}} class="image">
         </div>
         <div class="photo3">
+          <input type="file" id="image4" name="image1" class="input-file" (change)="onFileSelected4($event)">
           <img src={{image4}} class="image">
         </div>
         <div class="photo4">
+          <input type="file" id="image5" name="image1" class="input-file" (change)="onFileSelected5($event)">
           <img src={{image5}} class="image">
         </div>
       </div>
@@ -36,7 +50,16 @@
     <div class="descrip">
       <h2>Description</h2>
       <p>
-        {{descriptionActivite}}
+        <textarea type="text" class="form-control" id="inputDes" name="inputDes" value="{{descriptionActivite}}" [(ngModel)]="descriptionActivite"></textarea>
+      </p>
+      <p> <samp class="adInfo"> Domaine :</samp>
+
+        <input id="inputDoma" class="form-select" name="inputDoma" value="{{domaine}}" [(ngModel)]="domaine">
+      </p>
+
+      <p> <samp class="adInfo"> Catégorie :</samp>
+
+        <input id="inputCate" class="form-select" name="inputCate" value="{{categorie}}" [(ngModel)]="categorie">
       </p>
       <p class="droite">
         Dernière modification le {{jour}}
@@ -46,20 +69,30 @@
       <h2 class="centre">Adresse :</h2>
       <ul>
         <li class="adInfo">Rue :</li>
-        <li class="ad">{{adresse1}}, {{adresse2}}</li>
+        <li class="ad"> <input type="text" class="form-control" id="inputAddress" name="inputAddress" value="{{adresse1}}" [(ngModel)]="adresse1">
+
+          , <input type="text" class="form-control" id="inputAddress2" name="inputAddress2" value="{{adresse2}}" [(ngModel)]="adresse2"></li>
         <li class="adInfo">Ville :</li>
-        <li class="ad">{{ville}}</li>
+        <li class="ad">
+          <input type="text" class="form-control" id="inputCity" name="inputCity" value="{{ville}}" [(ngModel)]="ville">
+        </li>
         <li class="adInfo">Code postal :</li>
-        <li class="ad">{{codePostal}}</li>
+        <li class="ad">
+          <input type="text" class="form-control" id="inputZip" name="inputZip" value="{{codePostal}}" [(ngModel)]="codePostal">
+        </li>
         <li class="adInfo">Pays :</li>
-        <li class="ad">{{pays}}</li>
+        <li class="ad">
+          <input id="inputState" class="form-select" name="inputState" value="{{pays}}" [(ngModel)]="pays">
+        </li>
       </ul>
 
     </div>
   </div>
 </div>
 
+  <button type="submit" class="btn btn-primary" (click)="modifActivite()">Modifier l'activité</button>
 
+</form>
 
 
 

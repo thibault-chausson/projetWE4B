@@ -156,6 +156,37 @@ export class FirebaseService {
 
 
   }
+
+  modifActivite(inputNomActi : string, inputNomRes : string, inputAddress : string, inputAddress2 : string, inputCity : string, inputState : string, inputZip : string, inputTel : string, inputPrix : number, inputCate : string, inputDoma : string, inputDes : string, image1 : string, image2 : string, image3 : string, image4 : string, image5 : string, heure : string, jour : string, idAci : string){
+    this.firebaseAuth.currentUser.then( user => {
+      return this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').doc(idAci).set({
+        inputNomActi: inputNomActi,
+        inputNomRes: inputNomRes,
+        inputAddress: inputAddress,
+        inputAddress2: inputAddress2,
+        inputCity: inputCity,
+        inputState: inputState,
+        inputZip: inputZip,
+        inputTel: inputTel,
+        inputPrix: inputPrix,
+        inputCate: inputCate,
+        inputDoma: inputDoma,
+        inputDes: inputDes,
+        image1: image1,
+        image2: image2,
+        image3: image3,
+        image4: image4,
+        image5: image5,
+        heure : heure,
+        jour : jour,
+      }).then( () => {
+        alert('activité ajoutée');
+        this.router.navigate(['/gestion-pro/statistiques']);
+      });
+    });
+
+
+  }
 }
 
 
