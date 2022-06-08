@@ -38,6 +38,7 @@ import { AfficherActiviteComponent } from './afficher-activite/afficher-activite
 import { ModifierActiviteGestionProComponent } from './modifier-activite-gestion-pro/modifier-activite-gestion-pro.component';
 import {AuthGuard} from "./auth.guard";
 import { ActivitesGestionProComponent } from './activites-gestion-pro/activites-gestion-pro.component';
+import { CardActiviteGestionProComponent } from './card-activite-gestion-pro/card-activite-gestion-pro.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
 
@@ -104,6 +105,7 @@ const route:Routes=[
     AfficherActiviteComponent,
     ModifierActiviteGestionProComponent,
     ActivitesGestionProComponent,
+    CardActiviteGestionProComponent,
   ],
   imports: [
     BrowserModule,

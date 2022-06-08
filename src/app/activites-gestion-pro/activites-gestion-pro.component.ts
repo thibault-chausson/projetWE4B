@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {DomSanitizer} from "@angular/platform-browser";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {Activite} from "../classes/activites";
 
 @Component({
   selector: 'app-activites-gestion-pro',
@@ -9,23 +11,33 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 })
 export class ActivitesGestionProComponent implements OnInit {
   imagePath: any;
+  nom: string = '';
+  description: string = '';
+  identifiant: string = '';
+  date: string = '';
+  photo: any;
 
-  constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore) {
+  ActiviteArray : Activite[] = [];
+
+  constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth) {
   }
 
   ngOnInit(): void {
-    this.db.collection('activites').doc('0lCtDUyu6GaNIWsMJIRUx6CnCsK2').collection('sous-acti').doc('8LpsMnOACMzmavu7bgoB').get().subscribe( (doc) =>{
+    this.auth.currentUser.then(user => {
+      console.log(user?.uid);
+      this.db.collection('activites').doc(user?.uid).collection('sous-acti').get().subscribe(querrySnapshot => {
+        querrySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+          this.nom = doc.get('inputNomActi');
+          this.description = doc.get('inputDes');
+          this.identifiant = doc.id;
+          this.date = doc.get('jour');
+          this.photo = doc.get('image1');
 
-      if (doc.exists) {
-        this.imagePath = this._sanitizer.bypassSecurityTrustResourceUrl(doc.get('image1'));
-
-      } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-      }
-    })
-
-
+          this.ActiviteArray.push(new Activite(this.nom, this.description, this.date, this.identifiant, this.photo));
+        });
+      });
+    });
   }
-
 }

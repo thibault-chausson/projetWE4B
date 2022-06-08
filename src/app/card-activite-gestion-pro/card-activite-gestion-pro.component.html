@@ -1,0 +1,15 @@
+<div class="card mb-3" style="max-width: 740px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{activite.imagePath}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{activite.nomActivite}}</h5>
+        <p class="card-text">{{activite.descriptionActivite}}</p>
+        <p class="card-text"><small class="text-muted">{{activite.dateActivite}}</small></p>
+        <a routerLink="modifierActivite">Lien a faire : {{activite.idActivite}}</a>
+      </div>
+    </div>
+  </div>
+</div>

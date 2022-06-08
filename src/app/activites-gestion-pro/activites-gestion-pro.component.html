@@ -3,42 +3,13 @@
 
 <br>
 
-<div class="centre">
-  <a routerLink="addActivite" class="addAct">Ajouter une nouvelle activité</a>
-</div>
-<br>
+
 
 <h1>La liste de vos activités</h1>
 
 
-<div class="card mb-3" style="max-width: 740px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="./assets/imageDev/piscine.jpeg" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Nom de l'activité</h5>
-        <p class="card-text">Description</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <a routerLink="modifierActivite">Modifier activité</a>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="card mb-3" style="max-width: 740px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img [src]="imagePath" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Nom de l'activité</h5>
-        <p class="card-text">Description</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <a routerLink="modifierActivite">Modifier activité</a>
-      </div>
-    </div>
-  </div>
-</div>
+<app-card-activite-gestion-pro *ngFor="let activiteVar of ActiviteArray" [activite]="activiteVar"></app-card-activite-gestion-pro>
+
+
+
