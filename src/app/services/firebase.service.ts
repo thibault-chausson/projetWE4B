@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {ActivitesGestionProComponent} from "../activites-gestion-pro/activites-gestion-pro.component";
+import {Activite} from "../classes/activites";
 
 
 
@@ -124,7 +126,23 @@ export class FirebaseService {
   }
 
 
+ modifierActivite(acti : ActivitesGestionProComponent){
+   this.firebaseAuth.currentUser.then(user => {
+     console.log(user?.uid);
+     this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').get().subscribe(querrySnapshot => {
+       querrySnapshot.forEach((doc) => {
+         // doc.data() is never undefined for query doc snapshots
+         acti.nom = doc.get('inputNomActi');
+         acti.description = doc.get('inputDes');
+         acti.identifiant = doc.id;
+         acti.date = doc.get('jour');
+         acti.photo = doc.get('image1');
 
+         acti.ActiviteArray.push(new Activite(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo));
+       });
+     });
+   });
+ }
 
   addActivite(inputNomActi : string, inputNomRes : string, inputAddress : string, inputAddress2 : string, inputCity : string, inputState : string, inputZip : string, inputTel : string, inputPrix : number, inputCate : string, inputDoma : string, inputDes : string, image1 : string, image2 : string, image3 : string, image4 : string, image5 : string, heure : string, jour : string){
     this.firebaseAuth.currentUser.then( user => {
