@@ -42,6 +42,7 @@ nav ul::after{
   clear: both;
 }
 
+
 .menu{
   display: block; /*Toute la surface sera cliquable*/
   text-decoration: none;
