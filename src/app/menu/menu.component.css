@@ -1,9 +1,8 @@
-/*Menu*/
-
 .logo_titre
 {
-  height: 65px;
-  margin: 0;
+  height: 75px;
+
+  margin-left: -2em;
   padding-top: 6px;
   padding-bottom: -20px;
   margin-bottom: -20px;
@@ -12,14 +11,14 @@
 
 nav{
   width: 100%;
-  margin: 5px auto 0px auto;
   background-color: #ffffff;
   position: sticky;
   top: 0px;
   z-index: 10;
   font-size: 22px;
-  margin-bottom: -20px;
+  margin: 5px auto -20px;
   padding-bottom: 1px;
+
 }
 
 nav ul{
@@ -53,11 +52,18 @@ nav ul::after{
   color: black;
   border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
   padding: 2px 0cm;/*Agrandit le menu et espace la bordure du texte*/
+  font-family: 'LouisGeorge';
 }
 
+.logo_button2{
+  height: 70px;
+  margin-top: -0.2em;
+  margin-right: -0.5em;
+
+}
 
 .logo_button{
-  height: 45px;
+  height: 35px;
   margin: 0;
   padding-top: 6px;
 }
@@ -65,14 +71,40 @@ nav ul::after{
 
 /*Dropdown*/
 
-.dropdown-toggle{
-  background-color: white;
+.drop_login_icon{
+  background-color: #ffffff;
   color: black;
   border: none;
   border-radius: 30px;
   height: 60px;
   font-size: 1em;
+  width: 100%;
+
+}
+
+.drop_login_icon:after{
+  display: none;
+}
+
+
+
+
+
+.drop_login_icon:focus{
+  border: none;
+
+}
+
+.dropdown-toggle{
+  background-color: #ffffff;
+  color: black;
+  border: none;
+  border-radius: 30px;
+  height: 55px;
+  font-size: 1em;
   width: 90%;
+  margin-top: 0.5em;
+
 }
 
 .dropdown-toggle:after{
@@ -80,22 +112,23 @@ nav ul::after{
 }
 
 .dropdown-toggle:hover{
-  background-color: deepskyblue;
+  background-color: #E5F4F6;
 }
 
 .dropdown-toggle:focus{
-  border: none;
-  background-color: deepskyblue;
+  border-color: #E5F4F6 ;
+  background-color: #E5F4F6;
 }
 
 .dropdown-menu{
-  background-color: white;
+  background-color: #ffffff;
   color: black;
   border: none;
   border-radius: 10px;
   font-size: 1em;
   width: 90%;
   text-align: center;
+  font-family: 'LouisGeorgeBold'
 }
 
 @font-face {
@@ -117,3 +150,4 @@ p{
   font-family: 'LouisGeorge';
 }
 /*Fin Dropdown*/
+
