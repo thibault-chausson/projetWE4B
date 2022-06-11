@@ -199,7 +199,7 @@ export class FirebaseService {
         jour : jour,
       }).then( () => {
         alert('activité modifiée');
-        this.router.navigate(['/gestion-pro/activites']);
+        this.router.navigateByUrl('/', {skipLocationChange : true}).then( () => this.router.navigate(['/gestion-pro/activites']));
       });
     });
 

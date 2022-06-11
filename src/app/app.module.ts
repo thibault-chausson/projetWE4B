@@ -60,7 +60,7 @@ const route:Routes=[
                                                                          {path:'statistiques', component: StatistiquesGestionProComponent},
                                                                          {path:'addActivite', component: AddActiviteGestionProComponent},
                                                                          {path:'profil', component: ProfilGestionProComponent},
-                                                                         {path:'activites', component: ActivitesGestionProComponent, children: [{path:'modifierActivite/:id', component: ModifierActiviteGestionProComponent},]},
+                                                                         {path:'activites', component: ActivitesGestionProComponent, children: [{path:'modifierActivite/:id', component: ModifierActiviteGestionProComponent},],  canActivate: [AngularFireAuthGuard], runGuardsAndResolvers: 'always',},
                                                                           ],
     canActivate: [AuthGuard],
     data: {
@@ -70,7 +70,7 @@ const route:Routes=[
   },
   { path: 'add-activite', component : AddActiviteGestionProComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'accueil-logged',      component: AccueilLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
-  { path: 'domaine-logged/:id',     component: DomaineLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'domaines-logged/:id',     component: DomaineLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'categories-logged',     component: CategoriesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'recherches-logged',     component: RecherchesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: '**', component : Error404Component},
@@ -112,7 +112,7 @@ const route:Routes=[
     FormsModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(route , { scrollPositionRestoration: 'enabled' } ),
+    RouterModule.forRoot(route , { scrollPositionRestoration: 'enabled', onSameUrlNavigation: "reload"} ),
     AngularFireAuthGuardModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCmbXbwKnwP8IUx1Vkkt-HYgtooBotiBW8",
