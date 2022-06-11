@@ -126,6 +126,7 @@ export class FirebaseService {
   }
 
 
+
  modifierActivite(acti : ActivitesGestionProComponent){
    this.firebaseAuth.currentUser.then(user => {
      console.log(user?.uid);
@@ -143,6 +144,7 @@ export class FirebaseService {
      });
    });
  }
+
 
   addActivite(inputNomActi : string, inputNomRes : string, inputAddress : string, inputAddress2 : string, inputCity : string, inputState : string, inputZip : string, inputTel : string, inputPrix : number, inputCate : string, inputDoma : string, inputDes : string, image1 : string, image2 : string, image3 : string, image4 : string, image5 : string, heure : string, jour : string){
     this.firebaseAuth.currentUser.then( user => {

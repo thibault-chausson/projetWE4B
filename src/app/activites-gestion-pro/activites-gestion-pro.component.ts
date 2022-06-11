@@ -22,7 +22,16 @@ export class ActivitesGestionProComponent implements OnInit {
   constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService) {
   }
 
+  refresh(): void {
+    window.location.reload();
+  }
+
   ngOnInit(): void {
     this.fb.modifierActivite(this);
   }
+
+
+
+
+
 }
