@@ -8,6 +8,7 @@ import {DomainesComponent} from "../domaines/domaines.component";
 import {ActivitesPres} from "../classes/activitesPres";
 import {where, query} from "firebase/firestore";
 import {getDocs} from "@angular/fire/firestore";
+import {DomaineLoggedComponent} from "../domaine-logged/domaine-logged.component";
 
 
 
@@ -229,6 +230,26 @@ export class FirebaseService {
           acti.ActivitesPresArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo, acti.prix));
         });
       });
+  }
+
+  afficheDomaineActiviteLog(acti : DomaineLoggedComponent, domaine : any){
+    console.log("Salut");
+    this.UserDb.collection('activites').doc().collection('sous-acti').get().subscribe(querrySnapshot => {
+      querrySnapshot.forEach((doc) => {
+        console.log("hello");
+        // doc.data() is never undefined for query doc snapshots
+        if(doc.get('inputDoma') == domaine) {
+          acti.nom = doc.get('inputNomActi');
+          acti.description = doc.get('inputDes');
+          acti.identifiant = doc.id;
+          acti.date = doc.get('jour');
+          acti.photo = doc.get('image1');
+          acti.prix = doc.get('inputPrix');
+        }
+
+        acti.ActivitesPresArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo, acti.prix));
+      });
+    });
   }
 
 }
