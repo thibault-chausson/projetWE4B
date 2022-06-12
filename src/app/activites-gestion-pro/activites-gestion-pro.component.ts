@@ -23,6 +23,6 @@ export class ActivitesGestionProComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fb.modifierActivite(this);
+    this.fb.afficheProActivite(this);
   }
 }

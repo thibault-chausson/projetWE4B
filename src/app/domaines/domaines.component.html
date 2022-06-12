@@ -1,5 +1,9 @@
 <app-menu></app-menu>
 
 <div class="pad">
-  <p>domaines works!</p>
+  <br>
+  <h1>Voici des activités proposés par domaine</h1>
+  <app-card-domaine></app-card-domaine>
+  <app-card-domaine *ngFor="let activitesPresVar of ActivitesPresArray" [activitesPres]="activitesPresVar"></app-card-domaine>
+  <br>
 </div>

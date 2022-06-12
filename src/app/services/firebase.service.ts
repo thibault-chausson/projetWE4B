@@ -4,6 +4,10 @@ import {Router} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {ActivitesGestionProComponent} from "../activites-gestion-pro/activites-gestion-pro.component";
 import {Activite} from "../classes/activites";
+import {DomainesComponent} from "../domaines/domaines.component";
+import {ActivitesPres} from "../classes/activitesPres";
+import {where, query} from "firebase/firestore";
+import {getDocs} from "@angular/fire/firestore";
 
 
 
@@ -126,7 +130,7 @@ export class FirebaseService {
   }
 
 
- modifierActivite(acti : ActivitesGestionProComponent){
+ afficheProActivite(acti : ActivitesGestionProComponent){
    this.firebaseAuth.currentUser.then(user => {
      console.log(user?.uid);
      this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').get().subscribe(querrySnapshot => {
@@ -205,7 +209,32 @@ export class FirebaseService {
 
 
   }
+
+  //where("inputDoma", "==", "nature")
+
+
+  afficheDomaineActivite(acti : DomainesComponent, domaine : any){
+    this.UserDb.collection('activites').doc().collection('sous-acti').get().subscribe(querrySnapshot => {
+      querrySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+        if(doc.get('inputDoma') == domaine) {
+          acti.nom = doc.get('inputNomActi');
+          acti.description = doc.get('inputDes');
+          acti.identifiant = doc.id;
+          acti.date = doc.get('jour');
+          acti.photo = doc.get('image1');
+          acti.prix = doc.get('inputPrix');
+        }
+
+          acti.ActivitesPresArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo, acti.prix));
+        });
+      });
+  }
+
 }
+
+
+
 
 
 
