@@ -51,7 +51,7 @@ const route:Routes=[
   { path: '',             component: AppComponent},
   { path: 'accueil',      component: AccueilComponent},
   { path: 'domaines/:id',     component: DomainesComponent},
-  { path: 'categories',     component: CategoriesComponent},
+  { path: 'categories/:id',     component: CategoriesComponent},
   { path: 'recherches',     component: RecherchesComponent},
   { path: 'connexion',     component: ConnexionComponent},
   { path: 'login',     component: RecherchesComponent},
@@ -72,7 +72,7 @@ const route:Routes=[
   { path: 'add-activite', component : AddActiviteGestionProComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'accueil-logged',      component: AccueilLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'domaines-logged/:id',     component: DomaineLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
-  { path: 'categories-logged',     component: CategoriesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'categories-logged/:id',     component: CategoriesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: 'recherches-logged',     component: RecherchesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: '**', component : Error404Component},
 ];
