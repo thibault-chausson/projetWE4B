@@ -296,6 +296,9 @@ export class FirebaseService {
 
 
   afficheRecherche(acti : RecherchesComponent){
+    acti.ActivitesPresArray = [];
+    console.log('hello');
+    console.log(acti.lieu);
     this.UserDb.collectionGroup('sous-acti', ref => ref.where("inputCity", "==", acti.lieu)).get().subscribe(querrySnapshot => {
       querrySnapshot.forEach((doc) => {
         console.log('hello');
@@ -311,8 +314,10 @@ export class FirebaseService {
         acti.reche= true;
       });
     });
-    if (acti.ActivitesPresArray.length == 0){
+    console.log(acti.ActivitesPresArray.length);
+    if (acti.ActivitesPresArray === []){
       acti.trouve= false;
+      console.log('vide');
     }
   }
 

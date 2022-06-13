@@ -13,7 +13,7 @@
           <div class="input-group">
 
 
-            <input id="oLocalisation" name="oLocalisation" type="text" class="form-control" aria-label="Localisation" placeholder="Localisation" required="required" [ngModel]="lieu">
+            <input id="oLocalisation" name="oLocalisation" type="text" class="form-control" aria-label="Localisation" placeholder="Localisation" required="required" [(ngModel)]="lieu">
 
             <div class="input-group-append">
               <button class="btn btn-primary" type="submit"><img class="imaRech" src="assets/ressources/icon/recherche.png" alt="" (click)="lancherRecherche()"></button>
@@ -24,7 +24,7 @@
   </div>
 
 
-
+  <app-card-domaine *ngFor="let activitesPresVar of ActivitesPresArray" [activitesPres]="activitesPresVar"></app-card-domaine>
 
 
 
