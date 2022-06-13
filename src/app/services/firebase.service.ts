@@ -11,6 +11,7 @@ import {getDocs} from "@angular/fire/firestore";
 import {DomaineLoggedComponent} from "../domaine-logged/domaine-logged.component";
 import {CategoriesComponent} from "../categories/categories.component";
 import {CategoriesLoggedComponent} from "../categories-logged/categories-logged.component";
+import {RecherchesComponent} from "../recherches/recherches.component";
 
 
 
@@ -290,6 +291,29 @@ export class FirebaseService {
 
       });
     });
+  }
+
+
+
+  afficheRecherche(acti : RecherchesComponent){
+    this.UserDb.collectionGroup('sous-acti', ref => ref.where("inputCity", "==", acti.lieu)).get().subscribe(querrySnapshot => {
+      querrySnapshot.forEach((doc) => {
+        console.log('hello');
+        console.log(doc.data());
+        acti.nom = doc.get('inputNomActi');
+        acti.description = doc.get('inputDes');
+        acti.identifiant = doc.id;
+        acti.date = doc.get('jour');
+        acti.photo = doc.get('image1');
+        acti.prix = doc.get('inputPrix');
+
+        acti.ActivitesPresArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo, acti.prix));
+        acti.reche= true;
+      });
+    });
+    if (acti.ActivitesPresArray.length == 0){
+      acti.trouve= false;
+    }
   }
 
 }

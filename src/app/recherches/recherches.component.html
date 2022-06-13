@@ -2,6 +2,9 @@
 
 <div class="pad">
 
+
+
+
   <br>
 
   <div class="container">
@@ -10,15 +13,54 @@
           <div class="input-group">
 
 
-            <input id="oLocalisation" name="oLocalisation" type="text" class="form-control" aria-label="Localisation" placeholder="Localisation" required="required">
+            <input id="oLocalisation" name="oLocalisation" type="text" class="form-control" aria-label="Localisation" placeholder="Localisation" required="required" [ngModel]="lieu">
 
             <div class="input-group-append">
-              <button class="btn btn-primary" type="submit"><img class="imaRech" src="assets/ressources/icon/recherche.png"></button>
+              <button class="btn btn-primary" type="submit"><img class="imaRech" src="assets/ressources/icon/recherche.png" alt="" (click)="lancherRecherche()"></button>
             </div>
           </div>
       </form>
     </div>
   </div>
+
+
+
+
+
+
+  <div *ngIf="reche; else elseBlock">
+
+    <h1>Votre recherche</h1>
+    <div *ngIf="trouve; else elseBlock2">
+      <app-card-domaine *ngFor="let activitesPresVar of ActivitesPresArray" [activitesPres]="activitesPresVar"></app-card-domaine>
+    </div>
+    <ng-template #elseBlock2>  Pas de résultats </ng-template>
+
+  </div>
+  <ng-template #elseBlock>  Mettre des suggestions </ng-template>
+
+
+  <br>
+  <br>
+  <br><br><br>
+  <br>
+  <br>
+  <br>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h2>Prix bas</h2>
 
