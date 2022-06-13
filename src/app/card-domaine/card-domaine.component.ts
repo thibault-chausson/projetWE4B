@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Activite} from "../classes/activites";
 import {ActivitesPres} from "../classes/activitesPres";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -18,6 +17,7 @@ export class CardDomaineComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.activitesPres);
   }
 
 }

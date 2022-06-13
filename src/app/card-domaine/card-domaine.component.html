@@ -1,14 +1,16 @@
-<div class="card" style="width: 18rem;">
-  <img src="{{activitesPres.imagePath}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{activitesPres.nomActivite}}</h5>
-    <p class="card-text">{{activitesPres.descriptionActivite}}</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{activitesPres.prix}}</li>
-    <li class="list-group-item">{{activitesPres.dateActivite}}</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
+<div class="card mb-3" style="max-width: 740px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{activitesPres.imagePath}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{activitesPres.nomActivite}}</h5>
+        <p class="card-text">{{activitesPres.descriptionActivite}}</p>
+        <p class="card-text">{{activitesPres.prix}}</p>
+        <p class="card-text"><small class="text-muted">{{activitesPres.dateActivite}}</small></p>
+        <button type="button" class="btn btn-primary" (click)="readMore()">lire l'activité</button>
+      </div>
+    </div>
   </div>
 </div>
