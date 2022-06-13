@@ -311,14 +311,8 @@ export class FirebaseService {
         acti.prix = doc.get('inputPrix');
 
         acti.ActivitesPresArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo, acti.prix));
-        acti.reche= true;
       });
     });
-    console.log(acti.ActivitesPresArray.length);
-    if (acti.ActivitesPresArray === []){
-      acti.trouve= false;
-      console.log('vide');
-    }
   }
 
 }

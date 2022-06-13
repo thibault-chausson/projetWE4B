@@ -24,14 +24,12 @@
   </div>
 
 
-  <app-card-domaine *ngFor="let activitesPresVar of ActivitesPresArray" [activitesPres]="activitesPresVar"></app-card-domaine>
-
 
 
   <div *ngIf="reche; else elseBlock">
 
     <h1>Votre recherche</h1>
-    <div *ngIf="trouve; else elseBlock2">
+    <div *ngIf="ActivitesPresArray.length != 0; else elseBlock2">
       <app-card-domaine *ngFor="let activitesPresVar of ActivitesPresArray" [activitesPres]="activitesPresVar"></app-card-domaine>
     </div>
     <ng-template #elseBlock2>  Pas de résultats </ng-template>

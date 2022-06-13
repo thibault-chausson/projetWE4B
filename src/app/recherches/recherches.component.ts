@@ -35,6 +35,7 @@ export class RecherchesComponent implements OnInit {
 
   lancherRecherche(){
     console.log(this.lieu);
+    this.reche= true;
     this.fb.afficheRecherche(this);
   }
 
