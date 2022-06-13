@@ -23,7 +23,7 @@ export class DomaineLoggedComponent implements OnInit {
 
   ActivitesPresArray : ActivitesPres[] = [];
 
-  numeroActi : any;
+  domaineActi : any;
 
 
 
@@ -31,9 +31,10 @@ export class DomaineLoggedComponent implements OnInit {
   constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService) { }
 
   ngOnInit(): void {
-    this.numeroActi = this.activatedroute.snapshot.paramMap.get('id');
-    console.log(this.numeroActi);
-    this.fb.afficheDomaineActiviteLog(this, this.numeroActi);
+    this.domaineActi = this.activatedroute.snapshot.paramMap.get('id');
+    console.log(this.domaineActi);
+    this.fb.afficheDomaineActiviteLog(this, this.domaineActi);
+    console.log(this.ActivitesPresArray);
 
   }
 

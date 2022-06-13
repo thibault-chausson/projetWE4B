@@ -54,7 +54,14 @@
       </p>
       <p> <samp class="adInfo"> Domaine :</samp>
 
-        <input id="inputDoma" class="form-select" name="inputDoma" value="{{domaine}}" [(ngModel)]="domaine">
+        <select id="inputDoma" class="form-select" name="inputDoma" value="{{domaine}}" [(ngModel)]="domaine">
+          <option selected>Choisir...</option>
+          <option value="nature">Nature</option>
+          <option value="sensationForte">Sensation forte</option>
+          <option value="Sport">Sport</option>
+          <option value="jeux">Jeux</option>
+          <option value="autre">autre</option>
+        </select>
       </p>
 
       <p> <samp class="adInfo"> Catégorie :</samp>
