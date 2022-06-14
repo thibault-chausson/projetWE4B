@@ -11,6 +11,7 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 export class MenuLoggedComponent implements OnInit {
 
   isPro : boolean = false;
+  isUser : boolean = false;
   role : string | null | undefined;
 
   constructor(public log : FirebaseService, private auth : AngularFireAuth, private db : AngularFirestore) { }
@@ -19,6 +20,9 @@ export class MenuLoggedComponent implements OnInit {
    this.role = localStorage.getItem('ROLE');
    if(this.role == 'pro'){
      this.isPro = true;
+   }
+   if (this.role == 'user'){
+     this.isUser = true;
    }
   }
 

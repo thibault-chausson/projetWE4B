@@ -37,23 +37,23 @@
 
     <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/recherches-logged">Recherches <img src="assets/ressources/icon/recherche.png" class="logo_button"></button></li>
 
+    <div *ngIf="this.isPro">
+      <li class="menu">
 
-    <div *ngIf="this.isPro; else nonPro">
-       <li class="menu">
-
-         <div class="dropdown">
-           <button class="btn " type="button" id="dropdownMenuButtonPro" data-bs-toggle="dropdown" aria-expanded="false">
-             <img src="assets/ressources/connexion/Illustration_sans_titre.png" class="logo_button2">
-           </button>
-           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonPro">
-             <a class="dropdown-item" routerLink="/gestion-pro">Tableau de bord</a>
-             <a  class="dropdown-item" (click)="logoutFunction()">Deconnection</a>
-           </ul>
-         </div>
-       </li>
+        <div class="dropdown">
+          <button class="btn " type="button" id="dropdownMenuButtonPro" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="assets/ressources/connexion/Illustration_sans_titre.png" class="logo_button2">
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonPro">
+            <a class="dropdown-item" routerLink="/gestion-pro">Tableau de bord</a>
+            <a  class="dropdown-item" (click)="logoutFunction()">Deconnection</a>
+          </ul>
+        </div>
+      </li>
     </div>
-    <ng-template #nonPro>
 
+
+    <div *ngIf="this.isUser">
       <li class="menu">
 
         <div class="dropdown">
@@ -66,8 +66,12 @@
           </ul>
         </div>
       </li>
+    </div>
 
-    </ng-template>
+
+    <div *ngIf="!this.isUser && !this.isPro">
+      <li class="menu"><button class="btn  drop_login_icon" routerLink="/connexion"><img src="assets/ressources/accueil/kisspng-computer-icons-user-login-swiggy-5b242906b59ed4.4170042515290964547439.png" class="logo_button2"></button></li>
+    </div>
 
   </ul>
 </nav>
