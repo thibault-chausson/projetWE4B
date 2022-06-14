@@ -1,6 +1,8 @@
 import { Component, OnInit, Input} from '@angular/core';
 import {Activite} from "../classes/activites";
 import {ActivatedRoute, Router, Routes} from "@angular/router";
+import firebase from "firebase/compat";
+import {FirebaseService} from "../services/firebase.service";
 
 
 @Component({
@@ -13,10 +15,15 @@ export class CardActiviteGestionProComponent implements OnInit {
 
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private db : FirebaseService) { }
 
   readMore() {
     this.router.navigate(['/', 'gestion-pro', 'activites', 'modifierActivite', this.activite.idActivite]);
+  }
+
+  delecteActivite() {
+    this.db.supprimerActivite(this.activite.idActivite);
+    window.location.reload();
   }
 
   ngOnInit(): void {

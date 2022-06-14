@@ -323,6 +323,13 @@ export class FirebaseService {
       });
     });
   }
+
+  supprimerActivite(idActivite : string){
+    this.firebaseAuth.currentUser.then( user => {
+      return this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').doc(idActivite).delete();
+    });
+  }
+
 }
 
 
