@@ -1,4 +1,6 @@
-
+.pad {
+  padding-top: 30px;
+}
 .carre {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -70,47 +72,21 @@
 
 
 
-/* Par défaut, une étoile est en gris,
-   avec un padding et un curseur en forme de main. */
-.stars .fa-star {
-  color: gray;
-  cursor: pointer;
-  padding: 0.0625rem;
-}
-/* Si elle porte en plus la classe '.gold', elle sera en jaune. */
-.stars .fa-star.gold {
-  color: #ffdc0f;
-}
-
-/* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
 .rating {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  direction: rtl;
 }
-
-/* Le groupe '.stars' positionne les étoiles
-     les unes à côté des autres sans espacements. */
-.stars {
-  display: inline-flex;
-  justify-content: center;
+.rating a {
+  color: #aaa;
+  text-decoration: none;
   font-size: 3em;
+  transition: color .4s;
 }
-
-/**
- * Et là opère la magie du ':hover' !
- */
-
-/* A l'état :hover sur le parent '.rating',
-     on force TOUTES les étoiles à passer en jaune. */
-.stars:hover .fa-star {
-  color: #ffdc0f;
-}
-/* Et si la souris survole une étoile en particulier,
-     on sélectionne toutes les étoiles qui sont APRÈS celle-ci
-     grâce à l'opérateur '~' et on les force en GRIS */
-.stars .fa-star:hover ~ .fa-star {
-  color: gray;
+.rating a:hover,
+.rating a:focus,
+.rating a:hover ~ a,
+.rating a:focus ~ a {
+  color: orange;
+  cursor: pointer;
 }
 
 @font-face {

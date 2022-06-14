@@ -315,6 +315,14 @@ export class FirebaseService {
     });
   }
 
+  noter(note : number, id : string){
+    console.log(note);
+    this.firebaseAuth.currentUser.then( user => {
+      return this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').doc(id).set({
+        note: note,
+      });
+    });
+  }
 }
 
 

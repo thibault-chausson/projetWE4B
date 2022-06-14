@@ -13,7 +13,7 @@ export class CardDomaineComponent implements OnInit {
   constructor(private router: Router) { }
 
   readMore() {
-    this.router.navigate(['/', 'domaines', this.activitesPres.idActivite]);
+    this.router.navigate(['/', 'afficher-activite', this.activitesPres.idActivite]);
   }
 
   ngOnInit(): void {

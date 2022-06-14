@@ -3,6 +3,8 @@ import {ActivatedRoute} from "@angular/router";
 import {DomSanitizer} from "@angular/platform-browser";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
+import firebase from "firebase/compat";
+import {FirebaseService} from "../services/firebase.service";
 
 @Component({
   selector: 'app-afficher-activite',
@@ -10,6 +12,9 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
   styleUrls: ['./afficher-activite.component.css']
 })
 export class AfficherActiviteComponent implements OnInit {
+
+
+
 
   numeroActi : any;
 
@@ -35,7 +40,7 @@ export class AfficherActiviteComponent implements OnInit {
   image4: any;
   image5: any;
 
-  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth) { }
+  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService) { }
 
   ngOnInit(): void {
     this.auth.currentUser.then(user => {
@@ -67,6 +72,11 @@ export class AfficherActiviteComponent implements OnInit {
       });
     });
 
+  }
+
+  onActivite(note : number) {
+    this.numeroActi = this.activatedroute.snapshot.paramMap.get('id')
+    this.fb.noter(note, this.numeroActi);
   }
 
 }
