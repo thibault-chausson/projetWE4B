@@ -57,7 +57,7 @@ const route:Routes=[
   { path: 'login',     component: RecherchesComponent},
   {path: 'register', component : RegisterUserComponent},
   {path: 'register-pro', component : RegisterProComponent},
-  {path: 'afficher-activite/:id', component : AfficherActiviteComponent, canActivate: [AngularFireAuthGuard], runGuardsAndResolvers: 'always',},
+  {path: 'afficher-activite/:id', component : AfficherActiviteComponent},
   { path: 'gestion-pro',     component: GestionProComponent, children: [ { path: '',           component: StatistiquesGestionProComponent},
                                                                          {path:'statistiques', component: StatistiquesGestionProComponent},
                                                                          {path:'addActivite', component: AddActiviteGestionProComponent},

@@ -13,6 +13,7 @@ export class CardDomaineComponent implements OnInit {
   constructor(private router: Router) { }
 
   readMore() {
+    console.log(this.activitesPres.idActivite);
     this.router.navigate(['/', 'afficher-activite', this.activitesPres.idActivite]);
   }
 
