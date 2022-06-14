@@ -1,7 +1,7 @@
 <nav>
   <ul>
-    <li class="menu"><a href="accueil-logged"><img src="./assets/ressources/logo/logoRightOf.png" class="logo_titre"></a></li>
-    <li class="menu"><button class="btn  dropdown-toggle"  routerLink="/accueil-logged">Accueil</button></li>
+    <li class="menu"><a href="accueil"><img src="./assets/ressources/logo/logoRightOf.png" class="logo_titre"></a></li>
+    <li class="menu"><button class="btn  dropdown-toggle"  routerLink="/accueil">Accueil</button></li>
     <li class="menu">
 
       <div class="dropdown">
@@ -9,11 +9,11 @@
           Domaines <img src="assets/ressources/icon/reseau.png" class="logo_button">
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-          <a class="dropdown-item" href="domaines-logged/nature">Nature</a>
-          <a class="dropdown-item" href="domaines-logged/sensationForte">Sensation fore</a>
-          <a class="dropdown-item" href="domaines-logged/sport">Sport</a>
-          <a class="dropdown-item" href="domaines-logged/jeux">Jeux</a>
-          <a class="dropdown-item" href="domaines-logged/autre">Autre</a>
+          <a class="dropdown-item" href="domaines/nature">Nature</a>
+          <a class="dropdown-item" href="domaines/sensationForte">Sensation fore</a>
+          <a class="dropdown-item" href="domaines/sport">Sport</a>
+          <a class="dropdown-item" href="domaines/jeux">Jeux</a>
+          <a class="dropdown-item" href="domaines/autre">Autre</a>
         </ul>
       </div>
 
@@ -25,19 +25,19 @@
           Catégories <img src="assets/ressources/icon/categories.png" class="logo_button">
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <a class="dropdown-item" href="categories-logged/famille">En famille</a>
-          <a class="dropdown-item" href="categories-logged/couple">En couple</a>
-          <a class="dropdown-item" href="categories-logged/amis">Entre amis</a>
-          <a class="dropdown-item" href="categories-logged/seul">Tout seul</a>
-          <a class="dropdown-item" href="categories-logged/autre">Autre</a>
+          <a class="dropdown-item" href="categories/famille">En famille</a>
+          <a class="dropdown-item" href="categories/couple">En couple</a>
+          <a class="dropdown-item" href="categories/amis">Entre amis</a>
+          <a class="dropdown-item" href="categories/seul">Tout seul</a>
+          <a class="dropdown-item" href="categories/autre">Autre</a>
         </ul>
       </div>
 
     </li>
 
-    <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/recherches-logged">Recherches <img src="assets/ressources/icon/recherche.png" class="logo_button"></button></li>
+    <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/recherches">Recherches <img src="assets/ressources/icon/recherche.png" class="logo_button"></button></li>
 
-    <div *ngIf="this.isPro">
+    <div *ngIf="this.role == 'pro', else else1">
       <li class="menu">
 
         <div class="dropdown">
@@ -52,8 +52,10 @@
       </li>
     </div>
 
+    <ng-template #else1>
 
-    <div *ngIf="this.isUser">
+
+    <div *ngIf="this.role == 'user', else else2">
       <li class="menu">
 
         <div class="dropdown">
@@ -68,10 +70,12 @@
       </li>
     </div>
 
-
-    <div *ngIf="!this.isUser && !this.isPro">
+    <ng-template #else2>
+    <div>
       <li class="menu"><button class="btn  drop_login_icon" routerLink="/connexion"><img src="assets/ressources/accueil/kisspng-computer-icons-user-login-swiggy-5b242906b59ed4.4170042515290964547439.png" class="logo_button2"></button></li>
     </div>
+      </ng-template>
+    </ng-template>
 
   </ul>
 </nav>

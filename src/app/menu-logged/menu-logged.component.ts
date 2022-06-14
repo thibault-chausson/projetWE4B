@@ -14,23 +14,26 @@ export class MenuLoggedComponent implements OnInit {
   isUser : boolean = false;
   role : string | null | undefined;
 
+
+
+
+
   constructor(public log : FirebaseService, private auth : AngularFireAuth, private db : AngularFirestore) { }
 
   ngOnInit(): void {
-   this.role = localStorage.getItem('ROLE');
-   if(this.role == 'pro'){
-     this.isPro = true;
-   }
-   if (this.role == 'user'){
-     this.isUser = true;
-   }
+    this.role = localStorage.getItem('ROLE');
+    if(this.role == 'pro'){
+      this.isPro = true;
+    }
+    if (this.role == 'user'){
+      this.isUser = true;
+    }
   }
 
   logoutFunction() {
     this.log.logout()
+    window.location.replace('/accueil');
   }
-
-
 
 
 

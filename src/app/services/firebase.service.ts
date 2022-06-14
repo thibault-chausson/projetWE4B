@@ -45,7 +45,7 @@ export class FirebaseService {
           this.userIsPro = true;
           console.log("Document data:", user.data());
           alert("Vous êtes connecté en tant que professionnel");
-          this.router.navigate(['/gestion-pro']);
+          window.location.replace('/gestion-pro');
         } else {
           localStorage.setItem('STATE', 'true');
           this.roleAs = 'user';
@@ -53,7 +53,7 @@ export class FirebaseService {
           this.userIsPro = false;
           alert("Vous êtes connecté en tant que particulier");
           console.log("Cet utilisateur n'est pas un professionnel");
-          this.router.navigate(['/accueil-logged']);
+          window.location.replace('/accueil');
         }
         return user;
       }).catch(function(error) {
