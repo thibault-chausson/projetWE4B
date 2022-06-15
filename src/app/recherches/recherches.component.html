@@ -28,52 +28,35 @@
 
   <div *ngIf="reche; else elseBlock">
 
-    <h1>Votre recherche</h1>
+
     <div *ngIf="ActivitesPresArray.length != 0; else elseBlock2">
+      <div class="centre">
+        <h1>Votre recherche</h1>
+        <p>Profiter des activités de cette ville</p>
+      </div>
       <app-card-domaine *ngFor="let activitesPresVar of ActivitesPresArray" [activitesPres]="activitesPresVar"></app-card-domaine>
     </div>
-    <ng-template #elseBlock2>  Pas de résultats </ng-template>
+    <ng-template #elseBlock2>
+      <div class="centre">
+        <h1>A mince il n'y a pas d'activité de disponible dans cette ville !</h1>
+        <p>Essayer une autre ville !!</p>
+        <img class="image" src="assets/ressources/recherhce/notFound.png" alt="">
+      </div>
+    </ng-template>
 
   </div>
-  <ng-template #elseBlock>  Mettre des suggestions </ng-template>
-
-
+  <ng-template #elseBlock>
+    <div class="centre">
+      <h1>A vous de jouer, rechercher une activité par localisation !</h1>
+      <p>Taper le nom d'une ville est découvrer les activités à proximité</p>
+      <img class="image" src="assets/ressources/recherhce/recherche2.png" alt="">
+    </div>
+  </ng-template>
   <br>
-  <br>
-  <br><br><br>
-  <br>
-  <br>
-  <br>
-  <br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-<h2>Prix bas</h2>
-
-<app-card-carousel></app-card-carousel>
-
-<h2>Suggestions</h2>
-
-<app-card-carousel></app-card-carousel>
-
-<h2>Les plus populaires</h2>
-
-<app-card-carousel></app-card-carousel>
-
-<h2>Les mieux notés</h2>
-
-<app-card-carousel></app-card-carousel>
 
 </div>

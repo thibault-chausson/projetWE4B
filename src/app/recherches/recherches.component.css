@@ -61,3 +61,12 @@ p{
 }
 
 /* Fin champ recherche */
+
+.centre{
+  text-align: center;
+}
+
+.image{
+
+  height: 55vh;
+}
