@@ -1,5 +1,6 @@
 .centre{
   text-align: center;
+  margin-top: 2em;
 }
 
 @font-face {
@@ -18,5 +19,9 @@ h1, h2, h3, h4, h5, h6{
 }
 
 p{
+  font-family: 'LouisGeorge';
+}
+
+a{
   font-family: 'LouisGeorge';
 }
