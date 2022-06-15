@@ -20,7 +20,6 @@ import { MenuComponent } from './menu/menu.component';
 import { RegisterProComponent } from './register-pro/register-pro.component';
 import { Error404Component} from "./error404/error404.component";
 import { MenuLoggedComponent } from './menu-logged/menu-logged.component';
-import { RecherchesLoggedComponent } from './recherches-logged/recherches-logged.component';
 import {
   AngularFireAuthGuard,
   AngularFireAuthGuardModule,
@@ -68,7 +67,6 @@ const route:Routes=[
 
   },
   { path: 'add-activite', component : AddActiviteGestionProComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
-  { path: 'recherches-logged',     component: RecherchesLoggedComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: '**', component : Error404Component},
 ];
 
@@ -89,7 +87,6 @@ const route:Routes=[
     MenuComponent,
     RegisterProComponent,
     MenuLoggedComponent,
-    RecherchesLoggedComponent,
     GestionProComponent,
     MenuGestionProComponent,
     StatistiquesGestionProComponent,
