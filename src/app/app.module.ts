@@ -16,7 +16,6 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { DomainesComponent } from './domaines/domaines.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { RecherchesComponent } from './recherches/recherches.component';
-import { MenuComponent } from './menu/menu.component';
 import { RegisterProComponent } from './register-pro/register-pro.component';
 import { Error404Component} from "./error404/error404.component";
 import { MenuLoggedComponent } from './menu-logged/menu-logged.component';
@@ -84,7 +83,6 @@ const route:Routes=[
     DomainesComponent,
     CategoriesComponent,
     RecherchesComponent,
-    MenuComponent,
     RegisterProComponent,
     MenuLoggedComponent,
     GestionProComponent,
