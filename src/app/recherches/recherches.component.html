@@ -2,28 +2,21 @@
 
 <div class="pad">
 
-
-
-
   <br>
 
   <div class="container">
     <div class="rech">
       <form class="form-inline" action="/recherche/" method="get">
           <div class="input-group">
-
-
             <input id="oLocalisation" name="oLocalisation" type="text" class="form-control" aria-label="Localisation" placeholder="Localisation" required="required" [(ngModel)]="lieu">
 
             <div class="input-group-append">
-              <button class="btn btn-primary" type="submit"><img class="imaRech" src="assets/ressources/icon/recherche.png" alt="" (click)="lancherRecherche()"></button>
+              <button class="btn" type="submit"><img class="imaRech" src="assets/ressources/icon/recherche.png" alt="" (click)="lancherRecherche()"></button>
             </div>
           </div>
       </form>
     </div>
   </div>
-
-
 
 
   <div *ngIf="reche; else elseBlock">

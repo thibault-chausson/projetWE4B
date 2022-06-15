@@ -1,6 +1,7 @@
 .pad{
   padding-right: 30px;
   padding-left: 30px;
+  min-height: 46em;
 }
 
 @font-face {
