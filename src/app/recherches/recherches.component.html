@@ -30,10 +30,8 @@
 
 
     <div *ngIf="ActivitesPresArray.length != 0; else elseBlock2">
-      <div class="centre">
-        <h1>Votre recherche</h1>
-        <p>Profiter des activités de cette ville</p>
-      </div>
+      <h1>Votre recherche</h1>
+      <p>Profiter des activités de cette ville</p>
       <app-card-domaine *ngFor="let activitesPresVar of ActivitesPresArray" [activitesPres]="activitesPresVar"></app-card-domaine>
     </div>
     <ng-template #elseBlock2>

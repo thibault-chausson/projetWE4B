@@ -62,9 +62,15 @@ nav ul::after{
 }
 
 .logo_button2{
-  height: 4em;
+  height: 55px;
+
   margin-right: -0.5em;
 
+}
+
+.drop_login_icon{
+  margin-top: 10px;
+  height: 70px;
 }
 
 .logo_button3{
