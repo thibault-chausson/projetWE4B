@@ -1,22 +1,17 @@
 .parent {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  display: flex;
 }
 
 .menuGauche {
-  grid-area: 1 / 1 / 13 / 3;
-  background-color: rgb(186,209,210);
+  flex: 1;
+  background-color: #C0D7D8;
 }
 .titre {
-  grid-area: 1 / 3 / 3 / 13;
   background-color: rgb(231,213,207);
 }
 .board {
-  grid-area: 1 / 3 / 13 / 13;
-  background-color: rgb(231,241,244);
+  flex: 3;
+  background-color: #E5F4F6;
   padding-left: 5em;
   padding-right: 5em;
   padding-top: 20px;
@@ -33,10 +28,10 @@
 }
 .gauche {
   grid-area: 1 / 1 / 2 / 3;
-  background-color: rgb(186,209,210);
+  background-color: #C0D7D8;
 }
 .titre{
-  grid-area: 1 / 3 / 2 / 13;
+  grid-area: 1 / 1 / 2 / 13;
   padding-top: 10px;
   padding-left: 3em;
 }
