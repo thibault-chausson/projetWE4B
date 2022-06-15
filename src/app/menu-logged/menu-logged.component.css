@@ -71,6 +71,7 @@ nav ul::after{
 .drop_login_icon{
   margin-top: 10px;
   height: 70px;
+  margin-bottom: -40px;
 }
 
 .logo_button3{
