@@ -1,31 +1,23 @@
 /*Footer*/
 
+
+
 .copy
 {
   text-align: center;
   color: #9b9b9b;
 }
 
-#trait
-{
-  border-top: 0px solid #ffffff;
-  width : 0cm;
-}
+
 
 #box2
 {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
-footer .active{
-  text-align: center;
-}
-
-.center{
-  text-align: center;
-}
 
 @font-face {
   font-family: 'LouisGeorge';
