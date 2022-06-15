@@ -9,7 +9,6 @@ import {ActivitesPres} from "../classes/activitesPres";
 import {where, query} from "firebase/firestore";
 import {getDocs} from "@angular/fire/firestore";
 import {CategoriesComponent} from "../categories/categories.component";
-import {CategoriesLoggedComponent} from "../categories-logged/categories-logged.component";
 import {RecherchesComponent} from "../recherches/recherches.component";
 
 
@@ -253,26 +252,6 @@ export class FirebaseService {
       });
     });
   }
-
-  afficheCategorieActiviteLog(acti : CategoriesLoggedComponent, categorie : any){
-    this.UserDb.collectionGroup('sous-acti', ref => ref.where("inputCate", "==", categorie)).get().subscribe(querrySnapshot => {
-      querrySnapshot.forEach((doc) => {
-        console.log('hello');
-        console.log(doc.data());
-        acti.nom = doc.get('inputNomActi');
-        acti.description = doc.get('inputDes');
-        acti.identifiant = doc.id;
-        acti.date = doc.get('jour');
-        acti.photo = doc.get('image1');
-        acti.prix = doc.get('inputPrix');
-
-
-        acti.ActivitesPresArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo, acti.prix));
-
-      });
-    });
-  }
-
 
 
   afficheRecherche(acti : RecherchesComponent){
