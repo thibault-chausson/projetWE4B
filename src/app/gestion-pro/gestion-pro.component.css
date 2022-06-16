@@ -5,16 +5,23 @@
 .menuGauche {
   flex: 1;
   background-color: #C0D7D8;
+  min-height: 41em;
 }
 .titre {
-  background-color: rgb(231,213,207);
+  background-color: #EBDAD4;
+  font-family: 'Austein';
 }
 .board {
   flex: 3;
-  background-color: #E5F4F6;
+  background-color: #E1F4F5;
   padding-left: 5em;
   padding-right: 5em;
   padding-top: 20px;
+}
+
+@font-face {
+  font-family: 'Austein';
+  src: url('src/assets/ressources/Font/Austein.ttf');
 }
 
 .parent2 {
@@ -33,7 +40,13 @@
 .titre{
   grid-area: 1 / 1 / 2 / 13;
   padding-top: 10px;
-  padding-left: 3em;
+  padding-left: 1em;
+}
+
+.titre h1{
+  font-family: 'Austein';
+  font-size: 2.3em;
+  color: #681300;
 }
 
 @font-face {
