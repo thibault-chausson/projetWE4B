@@ -24,6 +24,7 @@
   src: url('src/assets/ressources/Font/Austein.ttf');
 }
 
+
 .parent2 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
