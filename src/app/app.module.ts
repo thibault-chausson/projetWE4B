@@ -56,7 +56,7 @@ const route:Routes=[
   { path: 'gestion-pro',     component: GestionProComponent, children: [ { path: '',           component: StatistiquesGestionProComponent},
                                                                          {path:'statistiques', component: StatistiquesGestionProComponent},
                                                                          {path:'addActivite', component: AddActiviteGestionProComponent},
-                                                                         {path:'profil', component: ProfilGestionProComponent},
+                                                                         {path:'profil', component: ProfilGestionProComponent, canActivate: [AngularFireAuthGuard], runGuardsAndResolvers: 'always',},
                                                                          {path:'activites', component: ActivitesGestionProComponent, children: [{path:'modifierActivite/:id', component: ModifierActiviteGestionProComponent},],  canActivate: [AngularFireAuthGuard], runGuardsAndResolvers: 'always',},
                                                                           ],
     canActivate: [AuthGuard],

@@ -289,7 +289,26 @@ export class FirebaseService {
     });
   }
 
+
+  modifProfil( nomEntreprise: string, numNomRue : string, ville : string, pays : string, codePostale : string, telephone : string ) {
+    this.firebaseAuth.currentUser.then(user => {
+      return this.UserDb.collection('professional').doc(user?.uid).set({
+        nomEntreprise: nomEntreprise,
+        numNomRue: numNomRue,
+        ville: ville,
+        pays: pays,
+        codePostale: codePostale,
+        telephone: telephone,
+      }).then(() => {
+        alert('profil modifié');
+        this.router.navigateByUrl('/', {skipLocationChange : true}).then( () => this.router.navigate(['/gestion-pro/profil']));
+      });
+    });
+  }
+
 }
+
+
 
 
 
