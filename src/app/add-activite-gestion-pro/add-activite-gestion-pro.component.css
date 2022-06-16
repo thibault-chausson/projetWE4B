@@ -4,6 +4,8 @@
 
 textarea{
   min-height: 15em;
+  font-family: LouisGeorge;
+  white-space: pre-wrap;
 }
 @font-face {
   font-family: 'LouisGeorge';
@@ -19,6 +21,67 @@ h1, h2, h3, h4, h5, h6{
   font-family: 'LouisGeorgeBold';
 }
 
-p{
+p, label{
   font-family: 'LouisGeorge';
+}
+
+.input-file{
+  margin-top: 1em;
+  margin-left: 1em;
+  font-family: LouisGeorgeBold;
+  color: #666666;
+}
+
+input{
+  font-family: LouisGeorge;
+}
+
+
+input::-webkit-file-upload-button{
+  border: none;
+  text-align: center;
+  font-family: LouisGeorge;
+  background-color: #53938c;
+  height: 2.3em;
+  border-radius: 25px;
+  width: 10em;
+  margin-right: 1em;
+}
+
+input::-webkit-file-upload-button:hover{
+  border: none;
+  text-align: center;
+  font-family: LouisGeorgeBold;
+  background-color: #a0d9d2;
+  height: 2.3em;
+  border-radius: 25px;
+  width: 10em;
+}
+
+
+button:focus{
+  border: none;
+}
+
+button:hover{
+  border: none;
+  background-color: #5ad9ca;
+  font-family: LouisGeorgeBold;
+}
+
+button:after{
+  border: none;
+}
+
+button{
+
+  margin-top: 1em;
+  border: none;
+  font-family: LouisGeorgeBold;
+  text-align: left;
+  font-size: 1.5em;
+  background-color: #00c5af;
+  min-width: 10em;
+  text-align: center;
+  border-radius: 25px;
 }
