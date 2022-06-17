@@ -36,6 +36,7 @@ import { ActivitesGestionProComponent } from './activites-gestion-pro/activites-
 import { CardActiviteGestionProComponent } from './card-activite-gestion-pro/card-activite-gestion-pro.component';
 import { CardDomaineComponent } from './card-domaine/card-domaine.component';
 import { CardForIndexComponent } from './card-for-index/card-for-index.component';
+import { SousCarouselCardComponent } from './sous-carousel-card/sous-carousel-card.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
 
@@ -97,6 +98,7 @@ const route:Routes=[
     CardActiviteGestionProComponent,
     CardDomaineComponent,
     CardForIndexComponent,
+    SousCarouselCardComponent,
   ],
   imports: [
     BrowserModule,

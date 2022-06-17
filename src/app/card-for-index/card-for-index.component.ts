@@ -10,19 +10,16 @@ import {Activite} from "../classes/activites";
 export class CardForIndexComponent implements OnInit {
 
   @Input() ActiviteArray!: Activite[];
-  ActiviteArrayPres: Activite[][] = [[]];
+  ActiviteArrayPres: Activite[][] = [];
   nbTrio: number = 0;
 
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.ActiviteArray);
-    //console.log(this.ActiviteArrayPres);
     this.nbTrio = ~~(this.ActiviteArray.length/3);
     for (let j= 0; j < this.nbTrio; j++) {
-      for (let i = 0; i < 3; i++) {
-        this.ActiviteArrayPres[j][i] = this.ActiviteArray[j*3+i];
-      }
+      this.ActiviteArrayPres.push(this.ActiviteArray.slice(j*3, (j+1)*3));
     }
     console.log(this.ActiviteArrayPres);
   }
