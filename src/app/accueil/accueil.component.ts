@@ -12,4 +12,8 @@ export class AccueilComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getResolution() {
+    alert("Votre résolution d'écran est: " + window.innerWidth + "x" + window.innerHeight);
+  }
+
 }
