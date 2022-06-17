@@ -2,11 +2,12 @@
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div>
-      <div class="carousel-item active" data-bs-interval="10000">
+
         <!--Card-->
-        <app-card-for-index></app-card-for-index>
-        <!--Fin Card-->
+      <div *ngIf="filtersLoaded2 | async">
+        <app-card-for-index [ActiviteArray]="activiteArray"></app-card-for-index>
       </div>
+        <!--Fin Card-->
     </div>
 
   </div>

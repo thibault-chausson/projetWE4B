@@ -21,7 +21,7 @@ export class CarouselIndexComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.ActiviteArray);
+
 
   }
 

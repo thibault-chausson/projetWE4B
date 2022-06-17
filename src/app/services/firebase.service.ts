@@ -381,6 +381,8 @@ export class FirebaseService {
 
         acti.activiteArray.push(new Activite(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo));
       });
+
+      acti.filtersLoaded2 = Promise.resolve(true);
     });
   }
 

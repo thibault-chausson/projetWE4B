@@ -14,7 +14,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./card-carousel.component.css']
 })
 export class CardCarouselComponent implements OnInit {
-  nbTrio: number = 0;
+
 
   nom: string = '';
   description: string = '';
@@ -24,20 +24,15 @@ export class CardCarouselComponent implements OnInit {
 
   activiteArray: Activite[] = [];
 
-  activitePres: Activite[][] = [];
+
+
+  filtersLoaded2!: Promise<boolean>;
 
   constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService, private router: Router) { }
 
   ngOnInit(): void {
-    /*this.fb.afficheActiviteLittleCarousel(this);
-    console.log(this.activiteArray);
-    this.nbTrio = ~~(this.activiteArray.length/3);
-    for (let j= 0; j < this.nbTrio; j++) {
-      for (let i = 0; i < 3; i++) {
-        this.activitePres[j][i] = this.activiteArray[j*3+i];
-      }
-    }
-    console.log(this.activitePres);*/
+    this.fb.afficheActiviteLittleCarousel(this);
+
   }
 
 

@@ -28,10 +28,8 @@ export class AccueilComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.ActiviteArray);
     this.fb.afficheActiviteBigCarousel(this);
-    console.log("salut");
-    console.log(this.ActiviteArray);
+
   }
 
 
