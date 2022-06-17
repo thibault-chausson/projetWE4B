@@ -19,6 +19,8 @@ export class AccueilComponent implements OnInit {
   date: string = '';
   photo: any;
   prix : number = 0;
+  filtersLoaded!: Promise<boolean>;
+
 
   ActiviteArray: ActivitesPres[] = [];
 
@@ -27,7 +29,7 @@ export class AccueilComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.ActiviteArray);
-    //this.fb.afficheActiviteBigCarousel(this);
+    this.fb.afficheActiviteBigCarousel(this);
     console.log("salut");
     console.log(this.ActiviteArray);
   }

@@ -317,9 +317,9 @@ export class FirebaseService {
   }
 
 
-   async afficheActiviteBigCarousel(acti : AccueilComponent){
+   afficheActiviteBigCarousel(acti : AccueilComponent){
     acti.ActiviteArray = [];
-    await this.UserDb.collectionGroup('sous-acti', ref => ref.limit(3)).get().subscribe(querrySnapshot => {
+    this.UserDb.collectionGroup('sous-acti', ref => ref.limit(3)).get().subscribe(querrySnapshot => {
       querrySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
           acti.nom = doc.get('inputNomActi');
@@ -347,6 +347,7 @@ export class FirebaseService {
           acti.ActiviteArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo, acti.prix));
 
         });
+      acti.filtersLoaded = Promise.resolve(true);
       console.log(acti.ActiviteArray);
       });
 

@@ -1,7 +1,7 @@
 
-
-<!--<app-carousel-index [ActiviteArray]="ActiviteArray"></app-carousel-index>-->
-
+<div *ngIf="filtersLoaded | async">
+<app-carousel-index [ActiviteArray]="ActiviteArray"></app-carousel-index>
+</div>
 
 <div class="pad">
 
