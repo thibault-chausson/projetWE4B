@@ -6,10 +6,17 @@ import {ActivitesGestionProComponent} from "../activites-gestion-pro/activites-g
 import {Activite} from "../classes/activites";
 import {DomainesComponent} from "../domaines/domaines.component";
 import {ActivitesPres} from "../classes/activitesPres";
-import {where, query} from "firebase/firestore";
+import {where, query, orderBy, limit} from "firebase/firestore";
 import {getDocs} from "@angular/fire/firestore";
 import {CategoriesComponent} from "../categories/categories.component";
 import {RecherchesComponent} from "../recherches/recherches.component";
+import {CarouselIndexComponent} from "../carousel-index/carousel-index.component";
+import firebase from "firebase/compat";
+
+
+
+
+
 
 
 
@@ -304,6 +311,37 @@ export class FirebaseService {
         this.router.navigateByUrl('/', {skipLocationChange : true}).then( () => this.router.navigate(['/gestion-pro/profil']));
       });
     });
+  }
+
+
+  afficheActiviteBigCarousel(acti : CarouselIndexComponent){
+    this.UserDb.collectionGroup('sous-acti', ref => ref.limit(3)).get().subscribe(querrySnapshot => {
+      querrySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          acti.nom = doc.get('inputNomActi');
+          acti.description = doc.get('inputDes');
+          acti.identifiant = doc.id;
+          acti.date = doc.get('jour');
+          if (doc.get('image1') != null){
+            acti.photo = doc.get('image1');
+          }
+          else if (doc.get('image2') != null){
+            acti.photo = doc.get('image2');
+          }
+          else if (doc.get('image3') != null){
+            acti.photo = doc.get('image3');
+          }
+          else if (doc.get('image4') != null){
+            acti.photo = doc.get('image4');
+          }
+          else if (doc.get('image5') != null){
+            acti.photo = doc.get('image5');
+          }
+
+
+          acti.ActiviteArray.push(new Activite(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo));
+        });
+      });
   }
 
 }
