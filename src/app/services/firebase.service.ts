@@ -348,7 +348,6 @@ export class FirebaseService {
 
         });
       acti.filtersLoaded = Promise.resolve(true);
-      console.log(acti.ActiviteArray);
       });
 
   }
