@@ -12,6 +12,9 @@ import {CategoriesComponent} from "../categories/categories.component";
 import {RecherchesComponent} from "../recherches/recherches.component";
 import {CarouselIndexComponent} from "../carousel-index/carousel-index.component";
 import firebase from "firebase/compat";
+import {CardCarouselComponent} from "../card-carousel/card-carousel.component";
+import {AccueilComponent} from "../accueil/accueil.component";
+
 
 
 
@@ -314,8 +317,9 @@ export class FirebaseService {
   }
 
 
-  afficheActiviteBigCarousel(acti : CarouselIndexComponent){
-    this.UserDb.collectionGroup('sous-acti', ref => ref.limit(3)).get().subscribe(querrySnapshot => {
+   async afficheActiviteBigCarousel(acti : AccueilComponent){
+    acti.ActiviteArray = [];
+    await this.UserDb.collectionGroup('sous-acti', ref => ref.limit(3)).get().subscribe(querrySnapshot => {
       querrySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
           acti.nom = doc.get('inputNomActi');
@@ -337,11 +341,47 @@ export class FirebaseService {
           else if (doc.get('image5') != null){
             acti.photo = doc.get('image5');
           }
+          acti.prix = doc.get('inputPrix');
 
 
-          acti.ActiviteArray.push(new Activite(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo));
+          acti.ActiviteArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo, acti.prix));
+
         });
+      console.log(acti.ActiviteArray);
       });
+
+  }
+
+
+  afficheActiviteLittleCarousel(acti : CardCarouselComponent){
+    this.UserDb.collectionGroup('sous-acti').get().subscribe(querrySnapshot => {
+      querrySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        acti.nom = doc.get('inputNomActi');
+        acti.description = doc.get('inputDes');
+        acti.identifiant = doc.id;
+        acti.date = doc.get('jour');
+        if (doc.get('image1') != null){
+          acti.photo = doc.get('image1');
+        }
+        else if (doc.get('image2') != null){
+          acti.photo = doc.get('image2');
+        }
+        else if (doc.get('image3') != null){
+          acti.photo = doc.get('image3');
+        }
+        else if (doc.get('image4') != null){
+          acti.photo = doc.get('image4');
+        }
+        else if (doc.get('image5') != null){
+          acti.photo = doc.get('image5');
+        }
+
+
+
+        acti.activiteArray.push(new Activite(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo));
+      });
+    });
   }
 
 }
