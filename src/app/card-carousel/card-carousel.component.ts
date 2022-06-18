@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Activite} from "../classes/activites";
 import {DomSanitizer} from "@angular/platform-browser";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {FirebaseService} from "../services/firebase.service";
 import {Router} from "@angular/router";
+import {Carouselinfo} from "../classes/carouselinfo";
 
 
 
@@ -23,6 +24,8 @@ export class CardCarouselComponent implements OnInit {
   photo: any;
 
   activiteArray: Activite[] = [];
+
+  @Input() carouse!: Carouselinfo;
 
 
 
