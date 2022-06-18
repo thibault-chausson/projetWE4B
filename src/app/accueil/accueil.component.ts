@@ -33,7 +33,7 @@ export class AccueilComponent implements OnInit {
 
   ngOnInit(): void {
     this.carouselCard1 = new Carouselinfo("jour", "carouselExampleDark1");
-    this.carouselCard2 = new Carouselinfo("prix", "carouselExampleDark2");
+    this.carouselCard2 = new Carouselinfo("inputPrix", "carouselExampleDark2");
     this.fb.afficheActiviteBigCarousel(this);
 
   }

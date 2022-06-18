@@ -354,7 +354,7 @@ export class FirebaseService {
 
 
   afficheActiviteLittleCarousel(acti : CardCarouselComponent){
-    this.UserDb.collectionGroup('sous-acti').get().subscribe(querrySnapshot => {
+    this.UserDb.collectionGroup('sous-acti', ref => ref.orderBy(acti.carouse.tri)).get().subscribe(querrySnapshot => {
       querrySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         acti.nom = doc.get('inputNomActi');
