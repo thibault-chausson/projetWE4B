@@ -39,7 +39,7 @@ export class AfficherActiviteComponent implements OnInit {
   image4: any;
   image5: any;
 
-  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService) { }
+  constructor(private activatedroute : ActivatedRoute, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService) { }
   /*this.numeroActi*/
   ngOnInit(): void {
     this.auth.currentUser.then(user => {

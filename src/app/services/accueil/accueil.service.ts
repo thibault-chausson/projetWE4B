@@ -3,8 +3,6 @@ import {AccueilComponent} from "../../accueil/accueil.component";
 import {ActivitesPres} from "../../classes/activitesPres";
 import {CardCarouselComponent} from "../../card-carousel/card-carousel.component";
 import {Activite} from "../../classes/activites";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {Router} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Injectable({
@@ -12,7 +10,7 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 })
 export class AccueilService {
 
-  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore) { }
+  constructor(private UserDb : AngularFirestore) { }
 
   afficheActiviteBigCarousel(acti : AccueilComponent){
     acti.ActiviteArray = [];

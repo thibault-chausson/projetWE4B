@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivitesPres} from "../classes/activitesPres";
-import {DomSanitizer} from "@angular/platform-browser";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {FirebaseService} from "../services/firebase.service";
-import {Router} from "@angular/router";
 import {Carouselinfo} from "../classes/carouselinfo";
 import {AccueilService} from "../services/accueil/accueil.service";
 
@@ -29,7 +24,7 @@ export class AccueilComponent implements OnInit {
   carouselCard1 !:Carouselinfo;
   carouselCard2 !:Carouselinfo;
 
-  constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private accueil : AccueilService, private router: Router) {
+  constructor(private accueil : AccueilService) {
   }
 
   ngOnInit(): void {

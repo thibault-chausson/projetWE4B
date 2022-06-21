@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {DomSanitizer} from "@angular/platform-browser";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {FirebaseService} from "../services/firebase.service";
 import {GestionProService} from "../services/gestionPro/gestion-pro.service";
 
 @Component({
@@ -41,7 +39,7 @@ export class ModifierActiviteGestionProComponent implements OnInit {
 
 
 
-  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db2 : AngularFirestore, private auth : AngularFireAuth, private gestion : GestionProService) {  }
+  constructor(private activatedroute : ActivatedRoute, private db2 : AngularFirestore, private auth : AngularFireAuth, private gestion : GestionProService) {  }
 
   ngOnInit(): void {
     this.auth.currentUser.then(user => {

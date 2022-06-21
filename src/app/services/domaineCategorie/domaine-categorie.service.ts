@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import {DomainesComponent} from "../../domaines/domaines.component";
 import {ActivitesPres} from "../../classes/activitesPres";
 import {CategoriesComponent} from "../../categories/categories.component";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {Router} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Injectable({
@@ -11,7 +9,7 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 })
 export class DomaineCategorieService {
 
-  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore) { }
+  constructor(private UserDb : AngularFirestore) { }
 
   afficheDomaineActivite(acti : DomainesComponent, domaine : any){
     this.UserDb.collectionGroup('sous-acti', ref => ref.where("inputDoma", "==", domaine)).get().subscribe(querrySnapshot => {

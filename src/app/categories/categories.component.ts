@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivitesPres} from "../classes/activitesPres";
 import {ActivatedRoute} from "@angular/router";
-import {DomSanitizer} from "@angular/platform-browser";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {DomaineCategorieService} from "../services/domaineCategorie/domaine-categorie.service";
 
 @Component({
@@ -27,7 +24,7 @@ export class CategoriesComponent implements OnInit {
 
 
 
-  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private domaineCate : DomaineCategorieService) { }
+  constructor(private activatedroute : ActivatedRoute, private domaineCate : DomaineCategorieService) { }
 
   ngOnInit(): void {
     this.categorieActi = this.activatedroute.snapshot.paramMap.get('id');

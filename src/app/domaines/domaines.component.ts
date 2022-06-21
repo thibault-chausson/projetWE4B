@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {DomSanitizer} from "@angular/platform-browser";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {FirebaseService} from "../services/firebase.service";
 import {ActivitesPres} from "../classes/activitesPres";
 import {ActivatedRoute} from "@angular/router";
 import {DomaineCategorieService} from "../services/domaineCategorie/domaine-categorie.service";
@@ -28,7 +24,7 @@ export class DomainesComponent implements OnInit {
 
 
 
-  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private domaineCat : DomaineCategorieService) { }
+  constructor(private activatedroute : ActivatedRoute, private domaineCat : DomaineCategorieService) { }
 
   ngOnInit(): void {
     this.domaineActi = this.activatedroute.snapshot.paramMap.get('id');

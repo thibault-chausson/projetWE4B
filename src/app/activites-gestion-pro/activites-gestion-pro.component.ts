@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DomSanitizer} from "@angular/platform-browser";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Activite} from "../classes/activites";
-import {FirebaseService} from "../services/firebase.service";
 import {GestionProService} from "../services/gestionPro/gestion-pro.service";
 
 @Component({
@@ -20,7 +16,7 @@ export class ActivitesGestionProComponent implements OnInit {
 
   ActiviteArray : Activite[] = [];
 
-  constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private gestion : GestionProService) {
+  constructor(private gestion : GestionProService) {
   }
 
   ngOnInit(): void {

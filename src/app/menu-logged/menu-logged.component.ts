@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
-import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Component({
   selector: 'app-menu-logged',
@@ -18,7 +16,7 @@ export class MenuLoggedComponent implements OnInit {
 
 
 
-  constructor(public log : FirebaseService, private auth : AngularFireAuth, private db : AngularFirestore) { }
+  constructor(public log : FirebaseService) { }
 
   ngOnInit(): void {
     this.role = localStorage.getItem('ROLE');

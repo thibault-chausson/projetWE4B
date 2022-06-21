@@ -19,7 +19,6 @@ export class GestionProService {
   }
 
 
-
   afficheProActivite(acti : ActivitesGestionProComponent){
     this.firebaseAuth.currentUser.then(user => {
       console.log(user?.uid);
