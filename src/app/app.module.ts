@@ -41,8 +41,6 @@ import { SousCarouselCardComponent } from './sous-carousel-card/sous-carousel-ca
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
 
 
-
-
 const route:Routes=[
   {path:'', redirectTo:'/accueil', pathMatch:'full'},
   { path: '',             component: AppComponent},
@@ -65,7 +63,6 @@ const route:Routes=[
     data: {
       role: 'pro'
     }
-
   },
   { path: 'add-activite', component : AddActiviteGestionProComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
   { path: '**', component : Error404Component},

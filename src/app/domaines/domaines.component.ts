@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Activite} from "../classes/activites";
 import {DomSanitizer} from "@angular/platform-browser";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";

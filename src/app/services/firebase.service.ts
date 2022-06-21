@@ -6,22 +6,10 @@ import {ActivitesGestionProComponent} from "../activites-gestion-pro/activites-g
 import {Activite} from "../classes/activites";
 import {DomainesComponent} from "../domaines/domaines.component";
 import {ActivitesPres} from "../classes/activitesPres";
-import {where, query, orderBy, limit} from "firebase/firestore";
-import {getDocs} from "@angular/fire/firestore";
 import {CategoriesComponent} from "../categories/categories.component";
 import {RecherchesComponent} from "../recherches/recherches.component";
-import {CarouselIndexComponent} from "../carousel-index/carousel-index.component";
-import firebase from "firebase/compat";
 import {CardCarouselComponent} from "../card-carousel/card-carousel.component";
 import {AccueilComponent} from "../accueil/accueil.component";
-
-
-
-
-
-
-
-
 
 
 @Injectable({
@@ -293,12 +281,6 @@ export class FirebaseService {
     });
   }
 
-  supprimerActivite(idActivite : string){
-    this.firebaseAuth.currentUser.then( user => {
-      return this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').doc(idActivite).delete();
-    });
-  }
-
 
   modifProfil( nomEntreprise: string, numNomRue : string, ville : string, pays : string, codePostale : string, telephone : string ) {
     this.firebaseAuth.currentUser.then(user => {
@@ -387,10 +369,6 @@ export class FirebaseService {
   }
 
 }
-
-
-
-
 
 
 

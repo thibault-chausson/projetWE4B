@@ -3,6 +3,7 @@ import {Activite} from "../classes/activites";
 import {ActivatedRoute, Router, Routes} from "@angular/router";
 import firebase from "firebase/compat";
 import {FirebaseService} from "../services/firebase.service";
+import {GestionProService} from "../services/gestionPro/gestion-pro.service";
 
 
 @Component({
@@ -15,14 +16,14 @@ export class CardActiviteGestionProComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private db : FirebaseService) { }
+  constructor(private router: Router, private gestion : GestionProService) { }
 
   readMore() {
     this.router.navigate(['/', 'gestion-pro', 'activites', 'modifierActivite', this.activite.idActivite]);
   }
 
   delecteActivite() {
-    this.db.supprimerActivite(this.activite.idActivite);
+    this.gestion.supprimerActivite(this.activite.idActivite);
     window.location.reload();
   }
 

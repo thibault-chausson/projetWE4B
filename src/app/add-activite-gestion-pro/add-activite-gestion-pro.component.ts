@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from "../services/firebase.service";
 
 
-
 @Component({
   selector: 'app-add-activite-gestion-pro',
   templateUrl: './add-activite-gestion-pro.component.html',

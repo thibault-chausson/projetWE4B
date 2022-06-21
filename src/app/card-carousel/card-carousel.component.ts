@@ -8,7 +8,6 @@ import {Router} from "@angular/router";
 import {Carouselinfo} from "../classes/carouselinfo";
 
 
-
 @Component({
   selector: 'app-card-carousel',
   templateUrl: './card-carousel.component.html',
