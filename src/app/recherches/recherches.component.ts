@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {DomSanitizer} from "@angular/platform-browser";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {FirebaseService} from "../services/firebase.service";
 import {ActivitesPres} from "../classes/activitesPres";
+import {RechercheService} from "../services/recherche/recherche.service";
 
 @Component({
   selector: 'app-recherches',
@@ -27,7 +23,7 @@ export class RecherchesComponent implements OnInit {
 
   ActivitesPresArray : ActivitesPres[] = [];
 
-  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService) { }
+  constructor(private recherche : RechercheService) { }
 
   ngOnInit(): void {
 
@@ -36,7 +32,7 @@ export class RecherchesComponent implements OnInit {
   lancherRecherche(){
     console.log(this.lieu);
     this.reche= true;
-    this.fb.afficheRecherche(this);
+    this.recherche.afficheRecherche(this);
   }
 
 }

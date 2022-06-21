@@ -5,6 +5,7 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {FirebaseService} from "../services/firebase.service";
 import {ActivitesPres} from "../classes/activitesPres";
 import {ActivatedRoute} from "@angular/router";
+import {DomaineCategorieService} from "../services/domaineCategorie/domaine-categorie.service";
 
 @Component({
   selector: 'app-domaines',
@@ -27,12 +28,12 @@ export class DomainesComponent implements OnInit {
 
 
 
-  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService) { }
+  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private domaineCat : DomaineCategorieService) { }
 
   ngOnInit(): void {
     this.domaineActi = this.activatedroute.snapshot.paramMap.get('id');
     console.log(this.domaineActi);
-    this.fb.afficheDomaineActivite(this, this.domaineActi);
+    this.domaineCat.afficheDomaineActivite(this, this.domaineActi);
     console.log(this.ActivitesPresArray);
 
   }

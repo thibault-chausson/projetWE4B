@@ -6,6 +6,7 @@ import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {FirebaseService} from "../services/firebase.service";
 import {Router} from "@angular/router";
 import {Carouselinfo} from "../classes/carouselinfo";
+import {AccueilService} from "../services/accueil/accueil.service";
 
 @Component({
   selector: 'app-accueil',
@@ -28,13 +29,13 @@ export class AccueilComponent implements OnInit {
   carouselCard1 !:Carouselinfo;
   carouselCard2 !:Carouselinfo;
 
-  constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService, private router: Router) {
+  constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private accueil : AccueilService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.carouselCard1 = new Carouselinfo("jour", "carouselExampleDark1");
     this.carouselCard2 = new Carouselinfo("inputPrix", "carouselExampleDark2");
-    this.fb.afficheActiviteBigCarousel(this);
+    this.accueil.afficheActiviteBigCarousel(this);
 
   }
 

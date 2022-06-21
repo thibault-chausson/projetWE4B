@@ -4,6 +4,7 @@ import {DomSanitizer} from "@angular/platform-browser";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {FirebaseService} from "../services/firebase.service";
+import {GestionProService} from "../services/gestionPro/gestion-pro.service";
 
 @Component({
   selector: 'app-modifier-activite-gestion-pro',
@@ -40,7 +41,7 @@ export class ModifierActiviteGestionProComponent implements OnInit {
 
 
 
-  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db2 : AngularFirestore, private auth : AngularFireAuth, private db : FirebaseService) {  }
+  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db2 : AngularFirestore, private auth : AngularFireAuth, private gestion : GestionProService) {  }
 
   ngOnInit(): void {
     this.auth.currentUser.then(user => {
@@ -233,7 +234,7 @@ modifActivite() {
   this.jour = new Date().getDate() + '/' + (new Date().getMonth()+1) + '/' + new Date().getFullYear();
 
 
-  this.db.modifActivite(this.nomActivite, this.nomResponsable, this.adresse1, this.adresse2, this.ville, this.pays, this.codePostal, this.telephone, this.prix, this.categorie, this.domaine, this.descriptionActivite, this.image1, this.image2, this.image3, this.image4, this.image5, this.heure, this.jour, this.numeroActi);
+  this.gestion.modifActivite(this.nomActivite, this.nomResponsable, this.adresse1, this.adresse2, this.ville, this.pays, this.codePostal, this.telephone, this.prix, this.categorie, this.domaine, this.descriptionActivite, this.image1, this.image2, this.image3, this.image4, this.image5, this.heure, this.jour, this.numeroActi);
 
   this.nomActivite = '';
   this.nomResponsable = '';

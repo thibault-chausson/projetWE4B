@@ -3,9 +3,8 @@ import {Activite} from "../classes/activites";
 import {DomSanitizer} from "@angular/platform-browser";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {FirebaseService} from "../services/firebase.service";
-import {Router} from "@angular/router";
 import {Carouselinfo} from "../classes/carouselinfo";
+import {AccueilService} from "../services/accueil/accueil.service";
 
 
 @Component({
@@ -30,10 +29,10 @@ export class CardCarouselComponent implements OnInit {
 
   filtersLoaded2!: Promise<boolean>;
 
-  constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService, private router: Router) { }
+  constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private accueil : AccueilService) { }
 
   ngOnInit(): void {
-    this.fb.afficheActiviteLittleCarousel(this);
+    this.accueil.afficheActiviteLittleCarousel(this);
 
   }
 

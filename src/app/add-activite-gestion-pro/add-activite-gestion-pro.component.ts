@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from "../services/firebase.service";
+import {GestionProService} from "../services/gestionPro/gestion-pro.service";
 
 
 @Component({
@@ -30,7 +31,7 @@ export class AddActiviteGestionProComponent implements OnInit {
   jour : string = '';
 
 
-  constructor(private db : FirebaseService) { }
+  constructor(private gestion : GestionProService) { }
 
   ngOnInit(): void {
   }
@@ -197,7 +198,7 @@ export class AddActiviteGestionProComponent implements OnInit {
   this.jour = new Date().getDate() + '/' + (new Date().getMonth()+1) + '/' + new Date().getFullYear();
 
 
-    this.db.addActivite(this.inputNomActi, this.inputNomRes, this.inputAddress, this.inputAddress2, this.inputCity, this.inputState, this.inputZip, this.inputTel, this.inputPrix, this.inputCate, this.inputDoma, this.inputDes, this.image1, this.image2, this.image3, this.image4, this.image5, this.heure, this.jour);
+    this.gestion.addActivite(this.inputNomActi, this.inputNomRes, this.inputAddress, this.inputAddress2, this.inputCity, this.inputState, this.inputZip, this.inputTel, this.inputPrix, this.inputCate, this.inputDoma, this.inputDes, this.image1, this.image2, this.image3, this.image4, this.image5, this.heure, this.jour);
 
     this.inputNomActi = '';
     this.inputNomRes = '';

@@ -4,7 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {DomSanitizer} from "@angular/platform-browser";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {FirebaseService} from "../services/firebase.service";
+import {DomaineCategorieService} from "../services/domaineCategorie/domaine-categorie.service";
 
 @Component({
   selector: 'app-categories',
@@ -27,12 +27,12 @@ export class CategoriesComponent implements OnInit {
 
 
 
-  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService) { }
+  constructor(private activatedroute : ActivatedRoute, private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private domaineCate : DomaineCategorieService) { }
 
   ngOnInit(): void {
     this.categorieActi = this.activatedroute.snapshot.paramMap.get('id');
     console.log(this.categorieActi);
-    this.fb.afficheCategorieActivite(this, this.categorieActi);
+    this.domaineCate.afficheCategorieActivite(this, this.categorieActi);
     console.log(this.ActivitesPresArray);
 
   }

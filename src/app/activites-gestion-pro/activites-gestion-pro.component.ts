@@ -4,6 +4,7 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Activite} from "../classes/activites";
 import {FirebaseService} from "../services/firebase.service";
+import {GestionProService} from "../services/gestionPro/gestion-pro.service";
 
 @Component({
   selector: 'app-activites-gestion-pro',
@@ -19,10 +20,10 @@ export class ActivitesGestionProComponent implements OnInit {
 
   ActiviteArray : Activite[] = [];
 
-  constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService) {
+  constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private gestion : GestionProService) {
   }
 
   ngOnInit(): void {
-    this.fb.afficheProActivite(this);
+    this.gestion.afficheProActivite(this);
   }
 }
