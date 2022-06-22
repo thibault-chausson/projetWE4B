@@ -17,40 +17,28 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-
+  padding: 5px;
 
 }
+
 
 
 .mainPhoto {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
 
 }
-
+.mainGauche { grid-area: 1 / 1 / 5 / 7; }
+.mainDroit { grid-area: 1 / 7 / 5 / 13; }
 
 .info {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  padding: 10px;
-}
-.descrip {
-  grid-area: 1 / 1 / 2 / 10;
-  text-align: justify;
-}
-.adresse {
-  grid-area: 1 / 10 / 2 / 13;
-  padding-left: 20px;
+
 }
 
 
-.droite{
-  text-align: right;
-}
+
 
 .ad{
   list-style: none;
@@ -66,10 +54,6 @@
 .centre{
   text-align: center;
 }
-
-
-
-
 
 .rating {
   direction: rtl;
@@ -99,13 +83,39 @@
 }
 
 h1, h2, h3, h4, h5, h6{
-  font-family: 'LouisGeorgeBold';
+  font-family: 'LouisGeorge';
   margin-left: 20px;
 }
 
 h1{
-  font-size: 3em;
+  font-size: 3.6vw;
 
+}
+
+.info-rapide h2{
+  display: inline-block;
+  padding-left: 1vw;
+  font-size: 2.3vw;
+}
+
+.fa-star{
+  color : gold;
+}
+
+.fa-cog{
+  font-size: 1.3vw;
+}
+
+.fa-location-dot{
+  color : #fc2222;
+}
+
+.fa-money-bill-1-wave{
+  color : #62be4d;
+}
+
+.info-rapide{
+  padding-bottom: 0.5vw;
 }
 
 p{
@@ -114,7 +124,7 @@ p{
 }
 
 hr{
-  width: 76em;
+  width: 95vw;
   margin: auto;
   padding-bottom: 1em;
 

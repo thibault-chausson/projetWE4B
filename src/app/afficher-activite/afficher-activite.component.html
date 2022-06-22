@@ -1,22 +1,22 @@
 <div class="pad">
   <h1>Voici votre activité</h1>
-  <div class="row">
-    <div class="col-4">
-      <img src={{image1}} class="image" style="max-width: 500px; max-height: 500px; ">
+  <div class="mainPhoto">
+    <div class="mainGauche">
+      <img src={{image1}} class="image" >
     </div>
-    <div class="col-8">
+    <div class="mainDroit">
       <div class="carre">
         <div class="photo1">
-          <img src={{image2}} class="image" style="max-width: 250px; max-height: 250px">
+          <img src={{image2}} class="image">
         </div>
         <div class="photo2">
-          <img src={{image3}} class="image" style="max-width: 250px; max-height: 250px">
+          <img src={{image3}} class="image">
         </div>
         <div class="photo3">
-          <img src={{image4}} class="image" style="max-width: 250px; max-height: 250px">
+          <img src={{image4}} class="image">
         </div>
         <div class="photo4">
-          <img src={{image5}} class="image" style="max-width: 250px; max-height: 250px">
+          <img src={{image5}} class="image">
         </div>
       </div>
     </div>
@@ -24,12 +24,19 @@
 
 
 
+
   <h1>{{nomActivite}}</h1>
 
   <hr>
 
-  <h2><i class="fa-solid fa-star"></i>X,X ------- <i class="fa-solid fa-location-dot"></i> {{ville}} <i class="fa-solid fa-money-bill-1-wave"></i> {{prix}} <i class="fa-solid fa-phone"></i> {{telephone}}</h2>
+  <div class="info-rapide">
+  <h2><i class="fa-solid fa-star"></i><i class="fa-solid fa-cog fa-spin"></i> En construction !</h2>
+    <h2><i class="fa-solid fa-location-dot"></i> {{ville}} </h2>
+    <h2><i class="fa-solid fa-money-bill-1-wave"></i> {{prix}} </h2>
+    <h2><i class="fa-solid fa-phone"></i> {{telephone}}</h2>
+  </div>
 
+  <hr>
 
 
   <div class="info">
@@ -38,22 +45,20 @@
       <p>
         {{descriptionActivite}}
       </p>
-      <p class="droite">
+      <p>
         Dernière modification le {{jour}}
       </p>
     </div>
     <div class="adresse">
-      <h2 class="centre">Adresse :</h2>
-      <ul>
-        <li class="adInfo">Rue :</li>
-        <li class="ad">{{adresse1}}, {{adresse2}}</li>
-        <li class="adInfo">Ville :</li>
-        <li class="ad">{{ville}}</li>
-        <li class="adInfo">Code postal :</li>
-        <li class="ad">{{codePostal}}</li>
-        <li class="adInfo">Pays :</li>
-        <li class="ad">{{pays}}</li>
-      </ul>
+      <h2>Adresse :</h2>
+
+        <p>Rue :  {{adresse1}}, {{adresse2}}</p>
+
+        <p>Ville :   {{ville}}</p>
+        <p>Code postal :   {{codePostal}}</p>
+
+        <p>Pays :    {{pays}}</p>
+       
 
     </div>
   </div>
