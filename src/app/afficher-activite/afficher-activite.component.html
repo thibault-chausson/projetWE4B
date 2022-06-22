@@ -1,33 +1,35 @@
 <div class="pad">
-
   <h1>Voici votre activité</h1>
-
-  <h1>{{nomActivite}}</h1>
-
-  <h2><i class="fa-solid fa-star"></i>X,X ------- <i class="fa-solid fa-location-dot"></i> {{ville}} <i class="fa-solid fa-money-bill-1-wave"></i> {{prix}} <i class="fa-solid fa-phone"></i> {{telephone}}</h2>
-
-
-  <div class="mainPhoto">
-    <div class="mainGauche">
-      <img src={{image1}} class="image">
+  <div class="row">
+    <div class="col-4">
+      <img src={{image1}} class="image" style="max-width: 500px; max-height: 500px; ">
     </div>
-    <div class="mainDroit">
+    <div class="col-8">
       <div class="carre">
         <div class="photo1">
-          <img src={{image2}} class="image">
+          <img src={{image2}} class="image" style="max-width: 250px; max-height: 250px">
         </div>
         <div class="photo2">
-          <img src={{image3}} class="image">
+          <img src={{image3}} class="image" style="max-width: 250px; max-height: 250px">
         </div>
         <div class="photo3">
-          <img src={{image4}} class="image">
+          <img src={{image4}} class="image" style="max-width: 250px; max-height: 250px">
         </div>
         <div class="photo4">
-          <img src={{image5}} class="image">
+          <img src={{image5}} class="image" style="max-width: 250px; max-height: 250px">
         </div>
       </div>
     </div>
   </div>
+
+
+
+  <h1>{{nomActivite}}</h1>
+
+  <hr>
+
+  <h2><i class="fa-solid fa-star"></i>X,X ------- <i class="fa-solid fa-location-dot"></i> {{ville}} <i class="fa-solid fa-money-bill-1-wave"></i> {{prix}} <i class="fa-solid fa-phone"></i> {{telephone}}</h2>
+
 
 
   <div class="info">
