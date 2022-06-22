@@ -26,6 +26,7 @@ export class CardActiviteGestionProComponent implements OnInit {
     window.location.reload();
   }
 
+
   ngOnInit(): void {
     /*this.nomActivite = "Activité 1";
     this.descriptionActivite = 'zdadazec';
