@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {ActivitesGestionProComponent} from "../../activites-gestion-pro/activites-gestion-pro.component";
@@ -103,6 +103,45 @@ export class GestionProService {
     });
 
 
+  }
+
+  onFileSelected(event: any, numero : number, ajoutActi : GestionProActi){
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const image = new Image();
+        image.src = e.target.result;
+        image.onload = rs => {
+          const imgBase64Path = e.target.result;
+          switch (numero){
+            case 1 : {
+              ajoutActi.image1 = imgBase64Path;
+              break;
+            }
+            case 2 : {
+              ajoutActi.image2 = imgBase64Path;
+              break;
+            }
+            case 3 : {
+              ajoutActi.image3 = imgBase64Path;
+              break;
+            }
+            case 4 : {
+              ajoutActi.image4 = imgBase64Path;
+              break;
+            }
+            case 5 : {
+              ajoutActi.image5 = imgBase64Path;
+              break;
+            }
+            default:{
+              console.log("problème lecture photo")
+            }
+          }
+        };
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
   }
 
 
