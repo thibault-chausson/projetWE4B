@@ -4,12 +4,16 @@
 
 
     <div class="card">
-      <img src="{{ActiviteArray[0].imagePath}}" class="card-img-top" alt="...">
+      <img src="{{ActiviteArray[0].imagePath}}" class="card-img-top img-fluid" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ActiviteArray[0].nomActivite}}</h5>
-        <p class="card-text">{{ActiviteArray[0].descriptionActivite}}</p>
+        <div class="description">
+        <p class="card-text max">{{ActiviteArray[0].descriptionActivite}}</p>
+        </div>
         <p class="card-text"><small class="text-muted">{{ActiviteArray[0].dateActivite}}</small></p>
-        <button type="button" class="btn btn-primary" (click)="readMore(0)">lire l'activité</button>
+        <div class="centre">
+        <button type="button" class="btn" (click)="readMore(0)">Découvrir l'activité</button>
+          </div>
       </div>
     </div>
 
@@ -18,9 +22,11 @@
       <img src="{{ActiviteArray[1].imagePath}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ActiviteArray[1].nomActivite}}</h5>
-        <p class="card-text">{{ActiviteArray[1].descriptionActivite}}</p>
+        <div class="description">
+          <p class="card-text max">{{ActiviteArray[1].descriptionActivite}}</p>
+        </div>
         <p class="card-text"><small class="text-muted">{{ActiviteArray[1].dateActivite}}</small></p>
-        <button type="button" class="btn btn-primary" (click)="readMore(1)">lire l'activité</button>
+        <button type="button" class="btn" (click)="readMore(1)">Découvrir l'activité</button>
       </div>
     </div>
 
@@ -28,9 +34,11 @@
       <img src="{{ActiviteArray[2].imagePath}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ActiviteArray[2].nomActivite}}</h5>
-        <p class="card-text">{{ActiviteArray[2].descriptionActivite}}</p>
+        <div class="description">
+          <p class="card-text max">{{ActiviteArray[2].descriptionActivite}}</p>
+        </div>
         <p class="card-text"><small class="text-muted">{{ActiviteArray[2].dateActivite}}</small></p>
-        <button type="button" class="btn btn-primary" (click)="readMore(2)">lire l'activité</button>
+        <button type="button" class="btn" (click)="readMore(2)">Découvrir l'activité</button>
       </div>
     </div>
 

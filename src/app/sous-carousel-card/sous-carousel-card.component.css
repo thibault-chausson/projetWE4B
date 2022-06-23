@@ -1,11 +1,21 @@
 .card-body{
   background-color: rgb(150,185,181);
+  height: 15em;
 }
 
+.btn{
+  display: block;
+  margin: auto;
+  width: 50%;
+  font-size: 120%;
+}
 
 .card{
   margin-left: 10px;
   margin-right: 10px;
+  background-color: rgba(178, 216, 218, 0.76);
+  boder: none;
+
 }
 
 @font-face {
@@ -20,11 +30,69 @@
 
 h1, h2, h3, h4, h5, h6{
   font-family: 'LouisGeorgeBold';
+  font-size: 1.5em;
+  color: black;
+
 }
 
 p{
   font-family: 'LouisGeorge';
 }
 
+.card-img-top {
+  width: 100%;
+  height: 20vw;
+  object-fit: cover;
+}
+
+.description{
+  max-width: 600px;
+}
+
+.max{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}
+
+.text-muted{
+  font-size: 1em;
+  font-family: 'LouisGeorgeBold';
+  color: #666666;
+}
+
+button:focus{
+  border: none;
+}
+
+button:hover{
+  color: white;
+  border: none;
+  background-color: #7bd7cb;
+  font-family: 'LouisGeorgeBold';
+}
+
+button:after{
+  border: none;
+}
+
+.centre{
+  display: block;
+  margin: 0 auto;
+}
+
+button{
 
 
+  border: none;
+  font-family: LouisGeorgeBold;
+  background-color: #429f94;
+  text-align: center;
+  border-radius: 25px;
+}
+
+p{
+  font-family: 'LouisGeorge';
+  color: black;
+}
