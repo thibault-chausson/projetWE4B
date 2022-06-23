@@ -37,7 +37,7 @@ export class AddActiviteGestionProComponent implements OnInit {
 
 
 
-  onFileSelected1(event: any) {
+  onFileSelected(event: any, numero : number) {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
@@ -45,78 +45,37 @@ export class AddActiviteGestionProComponent implements OnInit {
         image.src = e.target.result;
         image.onload = rs => {
           const imgBase64Path = e.target.result;
-          this.image1 = imgBase64Path;
-          console.log(imgBase64Path);
+          switch (numero){
+            case 1 : {
+              this.image1 = imgBase64Path;
+              break;
+            }
+            case 2 : {
+              this.image2 = imgBase64Path;
+              break;
+            }
+            case 3 : {
+              this.image3 = imgBase64Path;
+              break;
+            }
+            case 4 : {
+              this.image4 = imgBase64Path;
+              break;
+            }
+            case 5 : {
+              this.image5 = imgBase64Path;
+              break;
+            }
+            default:{
+              console.log("problème lecture photo")
+            }
+          }
+          //console.log(imgBase64Path);
         };
       };
       reader.readAsDataURL(event.target.files[0]);
     }
   }
-
-  onFileSelected2(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        const image = new Image();
-        image.src = e.target.result;
-        image.onload = rs => {
-          const imgBase64Path = e.target.result;
-          this.image2 = imgBase64Path;
-          console.log(imgBase64Path);
-        };
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
-  }
-
-  onFileSelected3(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        const image = new Image();
-        image.src = e.target.result;
-        image.onload = rs => {
-          const imgBase64Path = e.target.result;
-          this.image3 = imgBase64Path;
-          console.log(imgBase64Path);
-        };
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
-  }
-
-  onFileSelected4(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        const image = new Image();
-        image.src = e.target.result;
-        image.onload = rs => {
-          const imgBase64Path = e.target.result;
-          this.image4 = imgBase64Path;
-          console.log(imgBase64Path);
-        };
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
-  }
-
-  onFileSelected5(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        const image = new Image();
-        image.src = e.target.result;
-        image.onload = rs => {
-          const imgBase64Path = e.target.result;
-          this.image5 = imgBase64Path;
-          console.log(imgBase64Path);
-        };
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
-  }
-
 
 
 
