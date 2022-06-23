@@ -12,6 +12,10 @@ export class MenuLoggedComponent implements OnInit {
   isUser : boolean = false;
   role : string | null | undefined;
 
+  des1 : boolean = false;
+  des2 : boolean = false;
+  des3 : boolean = false;
+
 
   ordi !: boolean;
   innerWidth !: number;
@@ -53,6 +57,24 @@ export class MenuLoggedComponent implements OnInit {
   logoutFunction() {
     this.log.logout()
     window.location.replace('/accueil');
+  }
+
+  des(num : number) {
+    if (num == 1) {
+      this.des1 = !this.des1;
+      this.des2 = false;
+      this.des3 = false;
+    }
+    else if (num == 2) {
+      this.des2 = !this.des2;
+      this.des1 = false;
+      this.des3 = false;
+    }
+    else if (num == 3) {
+      this.des3 = !this.des3;
+      this.des1 = false;
+      this.des2 = false;
+    }
   }
 
 
