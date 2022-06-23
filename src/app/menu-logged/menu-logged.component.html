@@ -1,86 +1,88 @@
-<nav>
-  <ul>
-    <li class="menu"><a href="accueil"><img src="./assets/ressources/logo/logoRightOf.png" class="logo_titre"></a></li>
-    <li class="menu"><button class="btn  dropdown-toggle"  routerLink="/accueil">Accueil</button></li>
-    <li class="menu">
-
-      <div class="dropdown">
-        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-          Domaines <img src="assets/ressources/icon/reseau.png" class="logo_button">
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-          <a class="dropdown-item" href="domaines/nature">Nature</a>
-          <a class="dropdown-item" href="domaines/sensationForte">Sensation fore</a>
-          <a class="dropdown-item" href="domaines/sport">Sport</a>
-          <a class="dropdown-item" href="domaines/jeux">Jeux</a>
-          <a class="dropdown-item" href="domaines/autre">Autre</a>
-        </ul>
-      </div>
-
-    </li>
-    <li class="menu">
-
-      <div class="dropdown">
-        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Catégories <img src="assets/ressources/icon/categories.png" class="logo_button">
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <a class="dropdown-item" href="categories/famille">En famille</a>
-          <a class="dropdown-item" href="categories/couple">En couple</a>
-          <a class="dropdown-item" href="categories/amis">Entre amis</a>
-          <a class="dropdown-item" href="categories/seul">Tout seul</a>
-          <a class="dropdown-item" href="categories/autre">Autre</a>
-        </ul>
-      </div>
-
-    </li>
-
-    <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/recherches">Recherches <img src="assets/ressources/icon/recherche.png" class="logo_button"></button></li>
-
-    <div *ngIf="this.role == 'pro', else else1">
+<div *ngIf="ordi">
+  <nav>
+    <ul>
+      <li class="menu"><a href="accueil"><img src="./assets/ressources/logo/logoRightOf.png" class="logo_titre"></a></li>
+      <li class="menu"><button class="btn  dropdown-toggle"  routerLink="/accueil">Accueil</button></li>
       <li class="menu">
 
         <div class="dropdown">
-          <button class="btn dropdown-toggle2" type="button" id="dropdownMenuButtonPro" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="assets/ressources/connexion/Illustration_sans_titre.png" class="logo_button2">
+          <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            Domaines <img src="assets/ressources/icon/reseau.png" class="logo_button">
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonPro">
-            <a class="dropdown-item" routerLink="/gestion-pro">Tableau de bord</a>
-            <a  class="dropdown-item" (click)="logoutFunction()">Deconnection</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+            <a class="dropdown-item" href="domaines/nature">Nature</a>
+            <a class="dropdown-item" href="domaines/sensationForte">Sensation fore</a>
+            <a class="dropdown-item" href="domaines/sport">Sport</a>
+            <a class="dropdown-item" href="domaines/jeux">Jeux</a>
+            <a class="dropdown-item" href="domaines/autre">Autre</a>
           </ul>
         </div>
+
       </li>
-    </div>
-
-    <ng-template #else1>
-
-
-    <div *ngIf="this.role == 'user', else else2">
       <li class="menu">
 
         <div class="dropdown">
-          <button class="btn dropdown-toggle2" type="button" id="dropdownMenuButtonUser" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="assets/ressources/accueil/Hamburger_icon.svg" class="logo_button3">
+          <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Catégories <img src="assets/ressources/icon/categories.png" class="logo_button">
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonUser">
-            <a class="dropdown-item">Profil <i class="fa-solid fa-cog fa-spin"></i> En construction !</a>
-            <a  class="dropdown-item" (click)="logoutFunction()">Déconnexion</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <a class="dropdown-item" href="categories/famille">En famille</a>
+            <a class="dropdown-item" href="categories/couple">En couple</a>
+            <a class="dropdown-item" href="categories/amis">Entre amis</a>
+            <a class="dropdown-item" href="categories/seul">Tout seul</a>
+            <a class="dropdown-item" href="categories/autre">Autre</a>
           </ul>
         </div>
-      </li>
-    </div>
 
-    <ng-template #else2>
-    <div>
-      <li class="menu">
-        <button class="btn  drop_login_icon" routerLink="/connexion"><img src="assets/ressources/accueil/kisspng-computer-icons-user-login-swiggy-5b242906b59ed4.4170042515290964547439.png" class="logo_button2"></button>
       </li>
-    </div>
+
+      <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/recherches">Recherches <img src="assets/ressources/icon/recherche.png" class="logo_button"></button></li>
+
+      <div *ngIf="this.role == 'pro', else else1">
+        <li class="menu">
+
+          <div class="dropdown">
+            <button class="btn dropdown-toggle2" type="button" id="dropdownMenuButtonPro" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="assets/ressources/connexion/Illustration_sans_titre.png" class="logo_button2">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonPro">
+              <a class="dropdown-item" routerLink="/gestion-pro">Tableau de bord</a>
+              <a  class="dropdown-item" (click)="logoutFunction()">Deconnection</a>
+            </ul>
+          </div>
+        </li>
+      </div>
+
+      <ng-template #else1>
+
+
+      <div *ngIf="this.role == 'user', else else2">
+        <li class="menu">
+
+          <div class="dropdown">
+            <button class="btn dropdown-toggle2" type="button" id="dropdownMenuButtonUser" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="assets/ressources/accueil/Hamburger_icon.svg" class="logo_button3">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonUser">
+              <a class="dropdown-item">Profil <i class="fa-solid fa-cog fa-spin"></i> En construction !</a>
+              <a  class="dropdown-item" (click)="logoutFunction()">Déconnexion</a>
+            </ul>
+          </div>
+        </li>
+      </div>
+
+      <ng-template #else2>
+      <div>
+        <li class="menu">
+          <button class="btn  drop_login_icon" routerLink="/connexion"><img src="assets/ressources/accueil/kisspng-computer-icons-user-login-swiggy-5b242906b59ed4.4170042515290964547439.png" class="logo_button2"></button>
+        </li>
+      </div>
+        </ng-template>
       </ng-template>
-    </ng-template>
 
-  </ul>
-</nav>
+    </ul>
+  </nav>
+</div>
 
 
 

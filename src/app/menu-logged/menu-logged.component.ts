@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
 
 @Component({
@@ -13,7 +13,8 @@ export class MenuLoggedComponent implements OnInit {
   role : string | null | undefined;
 
 
-
+  ordi !: boolean;
+  innerWidth !: number;
 
 
   constructor(public log : FirebaseService) { }
@@ -26,7 +27,28 @@ export class MenuLoggedComponent implements OnInit {
     if (this.role == 'user'){
       this.isUser = true;
     }
+
+    if (window.innerWidth < 1127) { //768px portrait
+      this.ordi = false;
+    }
+    else {
+      this.ordi = true;
+    }
+
+
   }
+
+  @HostListener('window:resize', ['$event'])
+    onResize(event : any) {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth < 1127) { //768px portrait
+      this.ordi = false;
+    }
+    else {
+      this.ordi = true;
+    }
+  }
+
 
   logoutFunction() {
     this.log.logout()
