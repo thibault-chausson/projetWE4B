@@ -35,7 +35,4 @@ export class AccueilComponent implements OnInit {
   }
 
 
-  getResolution() {
-    alert("Votre résolution d'écran est: " + window.innerWidth + "x" + window.innerHeight);
-  }
 }
