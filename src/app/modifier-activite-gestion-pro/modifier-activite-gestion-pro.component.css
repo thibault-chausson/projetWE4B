@@ -17,6 +17,98 @@
   padding: 10px;
 }
 
+.name{
+  display: flex;
+  padding-bottom: 1.3em;
+}
+
+input{
+  color: #606060;
+  font-family: 'LouisGeorge';
+}
+
+.name1{
+  flex: 1;
+  text-align: left;
+  padding-right: 1em;
+  font-family: 'LouisGeorgeBold';
+  font-size: 1.5em;
+  color: black;
+
+}
+
+.descrip textarea{
+  min-height: 150px;
+}
+
+.fa-signature{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+.name2{
+  flex: 1;
+  text-align: left;
+  font-family: 'LouisGeorgeBold';
+  font-size: 1.5em;
+}
+
+.fa-user-tie{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+hr{
+  width: 65vw;
+  margin: auto;
+  padding-bottom: 1em;
+
+}
+
+.info2{
+  display: flex;
+}
+
+.domaine{
+  flex: 1;
+  padding-right: 1em;
+}
+
+.categorie{
+  flex: 1;
+
+}
+
+.prix{
+  flex: 1;
+  padding-left: 1em;
+}
+
+.telephone{
+  flex: 1;
+  padding-left: 1em;
+}
+
+.fa-phone{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-dollar-sign{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-tags{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+
+
+.fa-list{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
 
 .mainPhoto {
   display: grid;
@@ -41,8 +133,57 @@
   text-align: justify;
 }
 .adresse {
-  grid-area: 1 / 10 / 2 / 13;
   padding-left: 20px;
+  padding-bottom: 2em;
+}
+
+.block1{
+  display: flex;
+}
+
+.block2{
+  display: flex;
+  padding-left: 1em;
+}
+
+.ville {
+  flex: 1;
+  padding-right: 1em;
+}
+
+.code{
+  flex: 1;
+  padding-left: 1em;
+}
+
+.pays {
+  flex: 1;
+  padding-left: 1em;
+}
+
+.fa-location-dot{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-map-location{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-city{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-location-crosshairs{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-earth-africa{
+  font-size: 1.1em;
+  padding-right: 0.5em;
 }
 
 
@@ -113,21 +254,10 @@
 }
 
 .pad{
-  padding-left: 1em;
+
   padding-right: 1em;
 }
 
-.fa-star{
-  color: #ffdc0f;
-}
-
-.fa-location-dot{
-  color: red;
-}
-
-.fa-money-bill-1-wave{
-  color: green;
-}
 
 @font-face {
   font-family: 'LouisGeorge';
@@ -146,4 +276,13 @@ h1, h2, h3, h4, h5, h6{
 
 p{
   font-family: 'LouisGeorge';
+}
+
+h2{
+  font-size: 1.5em;
+}
+
+.fa-feather{
+  font-size: 1.1em;
+  padding-right: 0.5em;
 }
