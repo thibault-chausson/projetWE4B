@@ -13,7 +13,7 @@ export class RechercheService {
 
   afficheRecherche(acti : RecherchesComponent){
     acti.ActivitesPresArray = [];
-    this.UserDb.collectionGroup('sous-acti', ref => ref.where("inputCity", "==", acti.lieu)).get().subscribe(querrySnapshot => {
+    this.UserDb.collectionGroup('sous-acti', ref => ref.where("inputCity", "==", acti.lieu[0].toUpperCase() + acti.lieu.slice(1),)).get().subscribe(querrySnapshot => {
       querrySnapshot.forEach((doc) => {
         acti.nom = doc.get('inputNomActi');
         acti.description = doc.get('inputDes');
