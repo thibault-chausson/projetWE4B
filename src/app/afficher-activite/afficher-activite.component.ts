@@ -31,10 +31,10 @@ export class AfficherActiviteComponent implements OnInit {
 
 
 
-  onActivite(note : number) {
+  /*onActivite(note : number) {
     this.numeroActi = this.activatedroute.snapshot.paramMap.get('id')
     this.fb.noter(note, this.numeroActi);
-  }
+  }*/
 
 }
 

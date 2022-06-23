@@ -27,11 +27,6 @@ export class CardActiviteGestionProComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /*this.nomActivite = "Activité 1";
-    this.descriptionActivite = 'zdadazec';
-    this.dateActivite = "2020-01-01";
-    this.idActivite = "1";
-    this.imagePath = "../../../assets/images/activite.jpg";*/
   }
 
 }

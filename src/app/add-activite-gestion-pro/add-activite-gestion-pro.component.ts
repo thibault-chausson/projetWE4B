@@ -55,7 +55,6 @@ export class AddActiviteGestionProComponent implements OnInit {
               console.log("problème lecture photo")
             }
           }
-          //console.log(imgBase64Path);
         };
       };
       reader.readAsDataURL(event.target.files[0]);
