@@ -35,13 +35,11 @@ export class RegisterProComponent implements OnInit {
 
   get email(): AbstractControl | null {
     this.emailPro = this.inscriptionPro.get('emailPro')?.value;
-    console.log(this.emailPro);
     return this.inscriptionPro.get('emailPro');
   }
 
   get password(): AbstractControl | null {
     this.passwordPro = this.inscriptionPro.get('passwordPro')?.value;
-    console.log(this.passwordPro);
     return this.inscriptionPro.get('passwordPro');
   }
 

@@ -1,30 +1,58 @@
 <h1>Ajoute-ton activité super guide</h1>
 
 
-<form class="row g-3">
+<form [formGroup]="ajoutActivite" (ngSubmit)='doSth' class="row g-3">
   <div class="col-md-6">
     <label for="inputNomActi" class="form-label">Nom de l'activité<span class="rouge">*</span></label>
-    <input type="text" class="form-control" id="inputNomActi" name="inputNomActi" [(ngModel)]="ajoutActi.inputNomActi">
+    <input type="text" class="form-control" id="inputNomActi" name="inputNomActi" formControlName='nomActi'>
+
+    <div *ngIf="nom?.invalid && (nom?.dirty || nom?.touched)">
+      <div *ngIf="nom?.errors?.['required']">Name is required</div>
+    </div>
+
+
   </div>
   <div class="col-md-6">
     <label for="inputNomRes" class="form-label">Nom du responsable<span class="rouge">*</span></label>
-    <input type="text" class="form-control" id="inputNomRes" name="inputNomRes" [(ngModel)]="ajoutActi.inputNomRes">
+    <input type="text" class="form-control" id="inputNomRes" name="inputNomRes" formControlName='NomRes'>
+
+    <div *ngIf="nomRespon?.invalid && (nomRespon?.dirty || nomRespon?.touched)">
+      <div *ngIf="nomRespon?.errors?.['required']">Leader name is required</div>
+    </div>
+
+
   </div>
   <div class="col-12">
     <label for="inputAddress" class="form-label">Numéro et nom de rue<span class="rouge">*</span></label>
-    <input type="text" class="form-control" id="inputAddress" name="inputAddress" [(ngModel)]="ajoutActi.inputAddress">
+    <input type="text" class="form-control" id="inputAddress" name="inputAddress" formControlName='adresseOne'>
+
+    <div *ngIf="addr1?.invalid && (addr1?.dirty || addr1?.touched)">
+      <div *ngIf="addr1?.errors?.['required']">Addresse is required</div>
+    </div>
+
+
   </div>
   <div class="col-12">
     <label for="inputAddress2" class="form-label">Complément d'adresse<span class="rouge">*</span></label>
-    <input type="text" class="form-control" id="inputAddress2" name="inputAddress2" [(ngModel)]="ajoutActi.inputAddress2">
+    <input type="text" class="form-control" id="inputAddress2" name="inputAddress2" formControlName='adresseTwo'>
+
+    <div *ngIf="addr2?.invalid && (addr2?.dirty || addr2?.touched)">
+      <div *ngIf="addr2?.errors?.['required']">Addresse is required</div>
+    </div>
+
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Ville<span class="rouge">*</span></label>
-    <input type="text" class="form-control" id="inputCity" name="inputCity" [(ngModel)]="ajoutActi.inputCity">
+    <input type="text" class="form-control" id="inputCity" name="inputCity" formControlName='ville'>
+
+    <div *ngIf="city?.invalid && (city?.dirty || city?.touched)">
+      <div *ngIf="city?.errors?.['required']">City is required</div>
+    </div>
+
   </div>
   <div class="col-md-4">
     <label for="inputState" class="form-label">Pays<span class="rouge">*</span></label>
-    <select id="inputState" class="form-select" name="inputState" [(ngModel)]="ajoutActi.inputState">
+    <select id="inputState" class="form-select" name="inputState" formControlName='pays'>
       <option value="France" selected="selected">France </option>
       <option value="Afghanistan">Afghanistan </option>
       <option value="Afrique_Centrale">Afrique_Centrale </option>
@@ -255,25 +283,48 @@
       <option value="Zambie">Zambie </option>
       <option value="Zimbabwe">Zimbabwe </option>
     </select>
+
+    <div *ngIf="state?.invalid && (state?.dirty || state?.touched)">
+      <div *ngIf="state?.errors?.['required']">State is required</div>
+    </div>
+
   </div>
   <div class="col-md-2">
     <label for="inputZip" class="form-label">Code postal<span class="rouge">*</span></label>
-    <input type="text" class="form-control" id="inputZip" name="inputZip" [(ngModel)]="ajoutActi.inputZip">
+    <input type="text" class="form-control" id="inputZip" name="inputZip" formControlName='codePos'>
+
+    <div *ngIf="zipCode?.invalid && (zipCode?.dirty || zipCode?.touched)">
+      <div *ngIf="zipCode?.errors?.['required']">Zip Code is required</div>
+    </div>
+
+
   </div>
 
   <div class="col-md-6">
     <label for="inputTel" class="form-label">Numéro de téléphone<span class="rouge">*</span></label>
-    <input type="tel" class="form-control" id="inputTel" name="inputTel" [(ngModel)]="ajoutActi.inputTel">
+    <input type="tel" class="form-control" id="inputTel" name="inputTel" formControlName='telephone'>
+
+    <div *ngIf="tel?.invalid && (tel?.dirty || tel?.touched)">
+      <div *ngIf="tel?.errors?.['required']">Phone is required</div>
+    </div>
+
+
   </div>
   <div class="col-md-6">
     <label for="inputPrix" class="form-label">Prix de l'activité<span class="rouge">*</span></label>
-    <input type="text" class="form-control" id="inputPrix" name="inputPrix" [(ngModel)]="ajoutActi.inputPrix">
+    <input type="text" class="form-control" id="inputPrix" name="inputPrix" formControlName='prix'>
+
+    <div *ngIf="price?.invalid && (price?.dirty || price?.touched)">
+      <div *ngIf="price?.errors?.['required']">Price is required</div>
+      <div *ngIf="price?.errors?.['pattern']">Price must be a number</div>
+    </div>
+
   </div>
 
 
   <div class="col-md-6">
     <label for="inputCate" class="form-label">Catégorie<span class="rouge">*</span></label>
-    <select id="inputCate" class="form-select" name="inputCate" [(ngModel)]="ajoutActi.inputCate">
+    <select id="inputCate" class="form-select" name="inputCate" formControlName='categorie'>
       <option selected>Choisir...</option>
       <option value="famille">En famille</option>
       <option value="couple">En couple</option>
@@ -281,10 +332,16 @@
       <option value="seul">Tout seul</option>
       <option value="autre">autre</option>
     </select>
+
+    <div *ngIf="category?.invalid && (category?.dirty || category?.touched)">
+      <div *ngIf="category?.errors?.['required']">Category is required</div>
+    </div>
+
+
   </div>
   <div class="col-md-6">
     <label for="inputDoma" class="form-label">Domaine<span class="rouge">*</span></label>
-    <select id="inputDoma" class="form-select" name="inputDoma" [(ngModel)]="ajoutActi.inputDoma">
+    <select id="inputDoma" class="form-select" name="inputDoma" formControlName='domaine'>
       <option selected>Choisir...</option>
       <option value="nature">Nature</option>
       <option value="sensationForte">Sensation forte</option>
@@ -292,11 +349,21 @@
       <option value="jeux">Jeux</option>
       <option value="autre">Autre</option>
     </select>
+
+    <div *ngIf="doma?.invalid && (doma?.dirty || doma?.touched)">
+      <div *ngIf="doma?.errors?.['required']">Domaine is required</div>
+    </div>
+
   </div>
 
   <div class="col-12">
     <label for="inputDes" class="form-label">Description de l'activité<span class="rouge">*</span></label>
-    <textarea type="text" class="form-control" id="inputDes" placeholder="Décriver du mieux possible votre activité" name="inputDes" [(ngModel)]="ajoutActi.inputDes"></textarea>
+    <textarea type="text" class="form-control" id="inputDes" placeholder="Décriver du mieux possible votre activité" name="inputDes" formControlName='description'></textarea>
+
+    <div *ngIf="desc?.invalid && (desc?.dirty || desc?.touched)">
+      <div *ngIf="desc?.errors?.['required']">Description is required</div>
+    </div>
+
   </div>
 
 
