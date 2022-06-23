@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {ActivitesPres} from "../../classes/activitesPres";
-import {CategoriesComponent} from "../../categories/categories.component";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Injectable({
@@ -13,8 +12,6 @@ export class DomaineCategorieService {
   afficheDomaineCategorieActivite(nom : string, description : string, identifiant : string, photo : any, date : string, prix : number, ActivitesPresArray : ActivitesPres[], domaineActi : string, cateDoma : string){
     this.UserDb.collectionGroup('sous-acti', ref => ref.where(cateDoma, "==", domaineActi)).get().subscribe(querrySnapshot => {
       querrySnapshot.forEach((doc) => {
-        console.log('hello');
-        console.log(doc.data());
         nom = doc.get('inputNomActi');
         description = doc.get('inputDes');
         identifiant = doc.id;

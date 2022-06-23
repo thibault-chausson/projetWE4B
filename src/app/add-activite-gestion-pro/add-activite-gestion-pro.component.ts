@@ -31,7 +31,6 @@ export class AddActiviteGestionProComponent implements OnInit {
 
   addActivite() {
 
-    console.log(this.ajoutActi);
 
     if(this.ajoutActi.inputNomActi == ''){
       alert('Veuillez entrer un nom d\'activité');

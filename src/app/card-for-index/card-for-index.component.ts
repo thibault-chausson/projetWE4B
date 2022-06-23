@@ -16,12 +16,10 @@ export class CardForIndexComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.ActiviteArray);
     this.nbTrio = ~~(this.ActiviteArray.length/3);
     for (let j= 0; j < this.nbTrio; j++) {
       this.ActiviteArrayPres.push(this.ActiviteArray.slice(j*3, (j+1)*3));
     }
-    console.log(this.ActiviteArrayPres);
   }
 
 }
