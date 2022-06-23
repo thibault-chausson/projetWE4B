@@ -23,10 +23,9 @@ export class AfficherActiviteComponent implements OnInit {
 
 
   constructor(private activatedroute : ActivatedRoute, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService, private afficher : AffichageService) { }
-  /*this.numeroActi*/
   ngOnInit(): void {
     this.numeroActi = this.activatedroute.snapshot.paramMap.get('id');
-    this.afficher.afficher(this);
+    this.afficher.afficher(this.filtersLoaded, this.infoActi, this.numeroActi);
   }
 
 
