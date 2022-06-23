@@ -70,7 +70,8 @@ export class FirebaseService {
       });
     }).then( () => {
       alert('register successful');
-      this.router.navigate(['gestion-pro']);
+      this.login(email, password)
+      //this.router.navigate(['gestion-pro']);
     }, err => {
       alert(err.message)
       this.router.navigate(['/register-pro']);
@@ -86,7 +87,8 @@ export class FirebaseService {
       });
     }).then( () => {
         alert('registration successful');
-        this.router.navigate(['/accueil-logged']);
+        this.login(email, password)
+        //this.router.navigate(['/accueil']);
       }, err =>{
       alert(err.message);
       this.router.navigate(['/register']);
