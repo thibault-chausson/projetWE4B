@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-center form_container">
-        <form>
+        <form [formGroup]="user" (ngSubmit)='doSth'>
           <div class="seCo">
             <p class="centre">Rejoins-nous explorateur</p>
           </div>
@@ -20,19 +20,44 @@
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
             </div>
-            <input type="text" name="email" class="form-control input_user" value="" placeholder="Email" [(ngModel)] = "email">
+            <input type="text" name="email" class="form-control input_user" value="" placeholder="Email" formControlName='email'>
           </div>
+
+          <div class="input-group mb-3">
+            <div *ngIf="emailControl?.invalid && (emailControl?.dirty || emailControl?.touched)">
+              <div *ngIf="emailControl?.errors?.['required']">Email is required</div>
+              <div *ngIf="emailControl?.errors?.['email']">Email is invalid</div>
+            </div>
+          </div>
+
           <div class="input-group mb-2">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
             </div>
-            <input type="password" name="password" class="form-control input_pass" value="" placeholder="Mot de passe" [(ngModel)] = "password">
+            <input type="password" name="password" class="form-control input_pass" value="" placeholder="Mot de passe" formControlName='pwd'>
+
           </div>
+
+          <div class="input-group mb-2">
+            <div *ngIf="pass1?.invalid && (pass1?.dirty || pass1?.touched)">
+              <div *ngIf="pass1?.errors?.['required']">Pwd is required</div>
+            </div>
+          </div>
+
+
+
+
+
           <div class="input-group mb-2">
             <div class="input-group-append">
             <span class="input-group-text"><i class="fa fa-check fa-lg" aria-hidden="true"></i></span>
               </div>
-              <input type="password" id="form3Example4cd" class="form-control" name="passwordCheck" placeholder="Vérification" [(ngModel)]="passwordCheck"/>
+              <input type="password" id="form3Example4cd" class="form-control" name="passwordCheck" placeholder="Vérification" formControlName='pwdCheck'/>
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="pass2?.invalid && (pass2?.dirty || pass2?.touched)">
+              <div *ngIf="pass2?.errors?.['required']">Pwd is required</div>
+            </div>
           </div>
           <div class="d-flex justify-content-center mt-3 login_container">
             <button type="button" name="loginButton" class="btn login_btn" (click)="register()">S'inscrire</button>

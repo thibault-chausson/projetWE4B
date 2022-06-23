@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from "../services/firebase.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-register-user',
@@ -12,11 +13,36 @@ export class RegisterUserComponent implements OnInit {
   password: string = '';
   passwordCheck : string = '';
 
+  user = new FormGroup({
+    email : new FormControl('', [Validators.required, Validators.email]),
+    pwd : new FormControl('', [Validators.required]),
+    pwdCheck : new FormControl('', [Validators.required]),
 
-  constructor(private auth: FirebaseService) {
+  });
+
+  get emailControl() {
+    this.email = this.user.get('email')?.value;
+    return this.user.get('email');
   }
 
+  get pass1() {
+    this.password = this.user.get('pwd')?.value;
+    return this.user.get('pwd');
+  }
+
+  get pass2() {
+    this.passwordCheck = this.user.get('pwdCheck')?.value;
+    return this.user.get('pwdCheck');
+  }
+
+
+  constructor(private auth: FirebaseService) {}
+
   ngOnInit(): void {
+  }
+
+  doSth() {
+
   }
 
   register() {
