@@ -74,28 +74,28 @@ export class GestionProService {
 
   }
 
-  modifActivite(inputNomActi : string, inputNomRes : string, inputAddress : string, inputAddress2 : string, inputCity : string, inputState : string, inputZip : string, inputTel : string, inputPrix : number, inputCate : string, inputDoma : string, inputDes : string, image1 : string, image2 : string, image3 : string, image4 : string, image5 : string, heure : string, jour : string, idAci : string){
+  modifActivite(actiAdd : GestionProActi, idActivite : string){
     this.firebaseAuth.currentUser.then( user => {
-      return this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').doc(idAci).set({
-        inputNomActi: inputNomActi,
-        inputNomRes: inputNomRes,
-        inputAddress: inputAddress,
-        inputAddress2: inputAddress2,
-        inputCity: inputCity,
-        inputState: inputState,
-        inputZip: inputZip,
-        inputTel: inputTel,
-        inputPrix: inputPrix,
-        inputCate: inputCate,
-        inputDoma: inputDoma,
-        inputDes: inputDes,
-        image1: image1,
-        image2: image2,
-        image3: image3,
-        image4: image4,
-        image5: image5,
-        heure : heure,
-        jour : jour,
+      return this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').doc(idActivite).set({
+        inputNomActi: actiAdd.inputNomActi,
+        inputNomRes: actiAdd.inputNomRes,
+        inputAddress: actiAdd.inputAddress,
+        inputAddress2: actiAdd.inputAddress2,
+        inputCity: actiAdd.inputCity,
+        inputState: actiAdd.inputState,
+        inputZip: actiAdd.inputZip,
+        inputTel: actiAdd.inputTel,
+        inputPrix: actiAdd.inputPrix,
+        inputCate: actiAdd.inputCate,
+        inputDoma: actiAdd.inputDoma,
+        inputDes: actiAdd.inputDes,
+        image1: actiAdd.image1,
+        image2: actiAdd.image2,
+        image3: actiAdd.image3,
+        image4: actiAdd.image4,
+        image5: actiAdd.image5,
+        heure : actiAdd.heure,
+        jour : actiAdd.jour,
       }).then( () => {
         alert('activité modifiée');
         this.router.navigateByUrl('/', {skipLocationChange : true}).then( () => this.router.navigate(['/gestion-pro/activites']));

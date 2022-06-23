@@ -5,14 +5,14 @@
 <div class="pad">
 
   <h1>
-    <input type="text"  id="inputNomActi" name="inputNomActi" value="{{nomActivite}}" [(ngModel)]="nomActivite">
+    <input type="text"  id="inputNomActi" name="inputNomActi" value="{{infoActi.inputNomActi}}" [(ngModel)]="infoActi.inputNomActi">
   </h1>
 
   <h2>
-    <input type="text" class="form-control" id="inputNomRes" name="inputNomRes"  [(ngModel)]="nomResponsable" value="nomResponsable">
+    <input type="text" class="form-control" id="inputNomRes" name="inputNomRes"  [(ngModel)]="infoActi.inputNomRes" value="{{infoActi.inputNomRes}}">
   </h2>
 
-  <h2><i class="fa-solid fa-star"></i>X,X -------  <i class="fa-solid fa-money-bill-1-wave"></i> <input type="text" class="form-control" id="inputPrix" name="inputPrix" value="{{prix}}"> <i class="fa-solid fa-phone"></i> <input type="tel" class="form-control" id="inputTel" name="inputTel" value="{{telephone}}"></h2>
+  <h2><i class="fa-solid fa-star"></i>X,X -------  <i class="fa-solid fa-money-bill-1-wave"></i> <input type="text" class="form-control" id="inputPrix" name="inputPrix" value="{{infoActi.inputPrix}}" [(ngModel)]="infoActi.inputPrix"> <i class="fa-solid fa-phone"></i> <input type="tel" class="form-control" id="inputTel" name="inputTel" value="{{infoActi.inputTel}}" [(ngModel)]="infoActi.inputTel"></h2>
 
 
 
@@ -20,26 +20,26 @@
 
   <div class="mainPhoto">
     <div class="mainGauche">
-      <input type="file" id="image1" name="image1" class="input-file" (change)="onFileSelected1($event)">
-      <img src={{image1}} class="image">
+      <input type="file" id="image1" name="image1" class="input-file" (change)="onClick($event, 1)">
+      <img src="{{infoActi.image1}}" class="image">
     </div>
     <div class="mainDroit">
       <div class="carre">
         <div class="photo1">
-          <input type="file" id="image2" name="image1" class="input-file" (change)="onFileSelected2($event)">
-          <img src={{image2}} class="image">
+          <input type="file" id="image2" name="image1" class="input-file" (change)="onClick($event, 2)">
+          <img src="{{infoActi.image2}}" class="image">
         </div>
         <div class="photo2">
-          <input type="file" id="image3" name="image1" class="input-file" (change)="onFileSelected3($event)">
-          <img src={{image3}} class="image">
+          <input type="file" id="image3" name="image1" class="input-file" (change)="onClick($event, 3)">
+          <img src="{{infoActi.image3}}" class="image">
         </div>
         <div class="photo3">
-          <input type="file" id="image4" name="image1" class="input-file" (change)="onFileSelected4($event)">
-          <img src={{image4}} class="image">
+          <input type="file" id="image4" name="image1" class="input-file" (change)="onClick($event, 4)">
+          <img src="{{infoActi.image4}}" class="image">
         </div>
         <div class="photo4">
-          <input type="file" id="image5" name="image1" class="input-file" (change)="onFileSelected5($event)">
-          <img src={{image5}} class="image">
+          <input type="file" id="image5" name="image1" class="input-file" (change)="onClick($event, 5)">
+          <img src="{{infoActi.image5}}" class="image">
         </div>
       </div>
     </div>
@@ -50,11 +50,11 @@
     <div class="descrip">
       <h2>Description</h2>
       <p>
-        <textarea type="text" class="form-control" id="inputDes" name="inputDes" value="{{descriptionActivite}}" [(ngModel)]="descriptionActivite"></textarea>
+        <textarea type="text" class="form-control" id="inputDes" name="inputDes" value="{{infoActi.inputDes}}" [(ngModel)]="infoActi.inputDes"></textarea>
       </p>
       <p> <samp class="adInfo"> Domaine :</samp>
 
-        <select id="inputDoma" class="form-select" name="inputDoma" value="{{domaine}}" [(ngModel)]="domaine">
+        <select id="inputDoma" class="form-select" name="inputDoma" value="{{infoActi.inputDoma}}" [(ngModel)]="infoActi.inputDoma">
           <option selected>Choisir...</option>
           <option value="nature">Nature</option>
           <option value="sensationForte">Sensation forte</option>
@@ -66,30 +66,30 @@
 
       <p> <samp class="adInfo"> Catégorie :</samp>
 
-        <input id="inputCate" class="form-select" name="inputCate" value="{{categorie}}" [(ngModel)]="categorie">
+        <input id="inputCate" class="form-select" name="inputCate" value="{{infoActi.inputCate}}" [(ngModel)]="infoActi.inputCate">
       </p>
       <p class="droite">
-        Dernière modification le {{jour}}
+        Dernière modification le {{infoActi.jour}}
       </p>
     </div>
     <div class="adresse">
       <h2 class="centre">Adresse :</h2>
       <ul>
         <li class="adInfo">Rue :</li>
-        <li class="ad"> <input type="text" class="form-control" id="inputAddress" name="inputAddress" value="{{adresse1}}" [(ngModel)]="adresse1">
+        <li class="ad"> <input type="text" class="form-control" id="inputAddress" name="inputAddress" value="{{infoActi.inputAddress}}" [(ngModel)]="infoActi.inputAddress">
 
-          , <input type="text" class="form-control" id="inputAddress2" name="inputAddress2" value="{{adresse2}}" [(ngModel)]="adresse2"></li>
+          , <input type="text" class="form-control" id="inputAddress2" name="inputAddress2" value="{{infoActi.inputAddress2}}" [(ngModel)]="infoActi.inputAddress2"></li>
         <li class="adInfo">Ville :</li>
         <li class="ad">
-          <input type="text" class="form-control" id="inputCity" name="inputCity" value="{{ville}}" [(ngModel)]="ville">
+          <input type="text" class="form-control" id="inputCity" name="inputCity" value="{{infoActi.inputCity}}" [(ngModel)]="infoActi.inputCity">
         </li>
         <li class="adInfo">Code postal :</li>
         <li class="ad">
-          <input type="text" class="form-control" id="inputZip" name="inputZip" value="{{codePostal}}" [(ngModel)]="codePostal">
+          <input type="text" class="form-control" id="inputZip" name="inputZip" value="{{infoActi.inputZip}}" [(ngModel)]="infoActi.inputZip">
         </li>
         <li class="adInfo">Pays :</li>
         <li class="ad">
-          <input id="inputState" class="form-select" name="inputState" value="{{pays}}" [(ngModel)]="pays">
+          <input id="inputState" class="form-select" name="inputState" value="{{infoActi.inputState}}" [(ngModel)]="infoActi.inputState">
         </li>
       </ul>
 

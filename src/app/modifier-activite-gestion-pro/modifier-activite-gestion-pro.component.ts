@@ -3,6 +3,8 @@ import {ActivatedRoute} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {GestionProService} from "../services/gestionPro/gestion-pro.service";
+import {GestionProActi} from "../classes/gestionProActi";
+import {AffichageService} from "../services/afficher/affichage.service";
 
 @Component({
   selector: 'app-modifier-activite-gestion-pro',
@@ -11,149 +13,30 @@ import {GestionProService} from "../services/gestionPro/gestion-pro.service";
 })
 export class ModifierActiviteGestionProComponent implements OnInit {
 
+  filtersLoaded!: Promise<boolean>;
+
+  infoActi : GestionProActi = new GestionProActi( "",  "",  "", "", "", "",  "",  "",  "",  "",  "",  "",  "", 0, "", "", "",  "",  "");
+
+
   numeroActi : any;
-  nomActivite : string = '';
-  adresse1: string = '';
-  adresse2: string = '';
-  codePostal: string = '';
-  ville: string = '';
-  telephone: string = '';
-  domaine: string = '';
-  categorie: string = '';
-  jour: string = '';
-  pays: string = '';
-  nomResponsable: string = '';
-  prix : number = 0;
-  descriptionActivite: string = '';
-  image1: string = '';
-  image2: string = '';
-  image3: string = '';
-  image4: string = '';
-  image5: string= '';
-  heure: string = '';
 
 
 
 
 
-
-
-
-  constructor(private activatedroute : ActivatedRoute, private db2 : AngularFirestore, private auth : AngularFireAuth, private gestion : GestionProService) {  }
+  constructor(private activatedroute : ActivatedRoute, private db2 : AngularFirestore, private auth : AngularFireAuth, private gestion : GestionProService, private afficher : AffichageService) {  }
 
   ngOnInit(): void {
-    this.auth.currentUser.then(user => {
-      console.log(user?.uid);
-      console.log(this.numeroActi = this.activatedroute.snapshot.paramMap.get('id'));
-      this.db2.collection('activites').doc(user?.uid).collection('sous-acti').doc(this.numeroActi).get().subscribe((doc) => {
-        console.log(doc.get('inputNomActi'));
-        this.nomActivite = doc.get('inputNomActi');
-        this.adresse1 = doc.get('inputAddress');
-        this.adresse2 = doc.get('inputAddress2');
-        this.codePostal = doc.get('inputZip');
-        this.ville = doc.get('inputCity');
-        this.telephone = doc.get('inputTel');
-        this.domaine = doc.get('inputDoma');
-        this.categorie = doc.get('inputCate');
-        this.jour = doc.get('jour');
-        this.pays = doc.get('inputState');
-        this.nomResponsable = doc.get('inputNomRes');
-        this.prix = doc.get('inputPrix');
-        this.nomActivite = doc.get('inputNomActi');
-        this.descriptionActivite = doc.get('inputDes');
-        this.image1 = doc.get('image1');
-        this.image2 = doc.get('image2');
-        this.image3 = doc.get('image3');
-        this.image4 = doc.get('image4');
-        this.image5 = doc.get('image5');
-
-
-      });
-    });
+    this.numeroActi = this.activatedroute.snapshot.paramMap.get('id');
+    this.afficher.afficher(this.filtersLoaded, this.infoActi, this.numeroActi);
 
   }
 
 
 
-onFileSelected1(event: any) {
-  if (event.target.files && event.target.files[0]) {
-    const reader = new FileReader();
-    reader.onload = (e: any) => {
-      const image = new Image();
-      image.src = e.target.result;
-      image.onload = rs => {
-        const imgBase64Path = e.target.result;
-        this.image1 = imgBase64Path;
-        console.log(imgBase64Path);
-      };
-    };
-    reader.readAsDataURL(event.target.files[0]);
+  onClick(event : any, number : number) {
+    this.gestion.onFileSelected(event, number, this.infoActi);
   }
-}
-
-onFileSelected2(event: any) {
-  if (event.target.files && event.target.files[0]) {
-    const reader = new FileReader();
-    reader.onload = (e: any) => {
-      const image = new Image();
-      image.src = e.target.result;
-      image.onload = rs => {
-        const imgBase64Path = e.target.result;
-        this.image2 = imgBase64Path;
-        console.log(imgBase64Path);
-      };
-    };
-    reader.readAsDataURL(event.target.files[0]);
-  }
-}
-
-onFileSelected3(event: any) {
-  if (event.target.files && event.target.files[0]) {
-    const reader = new FileReader();
-    reader.onload = (e: any) => {
-      const image = new Image();
-      image.src = e.target.result;
-      image.onload = rs => {
-        const imgBase64Path = e.target.result;
-        this.image3 = imgBase64Path;
-        console.log(imgBase64Path);
-      };
-    };
-    reader.readAsDataURL(event.target.files[0]);
-  }
-}
-
-onFileSelected4(event: any) {
-  if (event.target.files && event.target.files[0]) {
-    const reader = new FileReader();
-    reader.onload = (e: any) => {
-      const image = new Image();
-      image.src = e.target.result;
-      image.onload = rs => {
-        const imgBase64Path = e.target.result;
-        this.image4 = imgBase64Path;
-        console.log(imgBase64Path);
-      };
-    };
-    reader.readAsDataURL(event.target.files[0]);
-  }
-}
-
-onFileSelected5(event: any) {
-  if (event.target.files && event.target.files[0]) {
-    const reader = new FileReader();
-    reader.onload = (e: any) => {
-      const image = new Image();
-      image.src = e.target.result;
-      image.onload = rs => {
-        const imgBase64Path = e.target.result;
-        this.image5 = imgBase64Path;
-        console.log(imgBase64Path);
-      };
-    };
-    reader.readAsDataURL(event.target.files[0]);
-  }
-}
 
 
 
@@ -161,66 +44,69 @@ onFileSelected5(event: any) {
 modifActivite() {
 
 
-  if(this.nomActivite == ''){
+  if(this.infoActi.inputNomActi == ''){
     alert('Veuillez entrer un nom d\'activité');
     return;
   }
-  if(this.nomResponsable == ''){
+  if(this.infoActi.inputNomRes == ''){
     alert('Veuillez entrer un nom de responsable');
     return;
   }
-  if(this.adresse1 == ''){
+  if(this.infoActi.inputAddress == ''){
     alert('Veuillez entrer un numéro de rue');
     return;
   }
-  if(this.ville == ''){
+  if(this.infoActi.inputCity == ''){
     alert('Veuillez entrer une ville');
     return;
   }
-  if(this.codePostal == ''){
+  if(this.infoActi.inputZip == ''){
     alert('Veuillez entrer un code postal');
     return;
   }
-  if(this.pays == ''){
+  if(this.infoActi.inputState == ''){
     alert('Veuillez entrer un pays');
     return;
   }
-  if(this.telephone == ''){
+  if(this.infoActi.inputTel == ''){
     alert('Veuillez entrer un numéro de téléphone');
     return;
   }
-  if(this.prix == 0){
+  if(this.infoActi.inputPrix == 0){
     alert('Veuillez entrer un prix');
     return;
   }
-  if(this.descriptionActivite == ''){
+  if(this.infoActi.inputDes == ''){
     alert('Veuillez entrer une description');
     return;
   }
-  if(this.categorie == ''){
+  if(this.infoActi.inputCate == ''){
     alert('Veuillez entrer une catégorie');
     return;
   }
-  if(this.domaine == ''){
+  if(this.infoActi.inputDoma == ''){
+    alert('Veuillez entrer un domaine');
+    return;
+  }
+  if(this.infoActi.inputDoma == ''){
     alert('Veuillez entrer un domaine');
     return;
   }
 
-
   let compte = 0;
-  if (this.image1 != '') {
+  if (this.infoActi.image1 != '') {
     compte=compte+1;
   }
-  if (this.image2 != '') {
+  if (this.infoActi.image2 != '') {
     compte=compte+1;
   }
-  if (this.image3 != '') {
+  if (this.infoActi.image3 != '') {
     compte=compte+1;
   }
-  if (this.image4 != '') {
+  if (this.infoActi.image4 != '') {
     compte=compte+1;
   }
-  if (this.image5 != '') {
+  if (this.infoActi.image5 != '') {
     compte=compte+1;
   }
   if(compte <2){
@@ -228,32 +114,11 @@ modifActivite() {
     return;
   }
 
-  this.heure = new Date().getHours() + ':' + new Date().getMinutes() + ':'+  new Date().getSeconds();
-  this.jour = new Date().getDate() + '/' + (new Date().getMonth()+1) + '/' + new Date().getFullYear();
+  this.infoActi.heure = new Date().getHours() + ':' + new Date().getMinutes() + ':'+  new Date().getSeconds();
+  this.infoActi.jour = new Date().getDate() + '/' + (new Date().getMonth()+1) + '/' + new Date().getFullYear();
 
 
-  this.gestion.modifActivite(this.nomActivite, this.nomResponsable, this.adresse1, this.adresse2, this.ville, this.pays, this.codePostal, this.telephone, this.prix, this.categorie, this.domaine, this.descriptionActivite, this.image1, this.image2, this.image3, this.image4, this.image5, this.heure, this.jour, this.numeroActi);
-
-  this.nomActivite = '';
-  this.nomResponsable = '';
-  this.adresse1 = '';
-  this.adresse2 = '';
-  this.ville = '';
-  this.pays = '';
-  this.codePostal = '';
-  this.telephone = '';
-  this.prix = 0;
-  this.categorie = '';
-  this.domaine = '';
-  this.descriptionActivite = '';
-  this.image1 = '';
-  this.image2 = '';
-  this.image3 = '';
-  this.image4 = '';
-  this.image5 = '';
-  this.heure = '';
-  this.jour = '';
-  this.numeroActi = '';
+  this.gestion.modifActivite(this.infoActi, this.numeroActi);
 
 }
 }
