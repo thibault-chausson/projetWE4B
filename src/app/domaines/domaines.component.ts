@@ -21,6 +21,8 @@ export class DomainesComponent implements OnInit {
 
   domaineActi : any;
 
+  cateDoma : string = "inputDoma";
+
 
 
 
@@ -28,10 +30,7 @@ export class DomainesComponent implements OnInit {
 
   ngOnInit(): void {
     this.domaineActi = this.activatedroute.snapshot.paramMap.get('id');
-    console.log(this.domaineActi);
-    this.domaineCat.afficheDomaineActivite(this, this.domaineActi);
-    console.log(this.ActivitesPresArray);
-
+    this.domaineCat.afficheDomaineCategorieActivite(this.nom, this.description, this.identifiant, this.photo, this.date, this.prix, this.ActivitesPresArray, this.domaineActi, this.cateDoma);
   }
 
 }

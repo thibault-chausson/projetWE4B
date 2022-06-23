@@ -21,6 +21,8 @@ export class CategoriesComponent implements OnInit {
 
   categorieActi : any;
 
+  cateDoma : string = "inputCate";
+
 
 
 
@@ -28,9 +30,7 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.categorieActi = this.activatedroute.snapshot.paramMap.get('id');
-    console.log(this.categorieActi);
-    this.domaineCate.afficheCategorieActivite(this, this.categorieActi);
-    console.log(this.ActivitesPresArray);
+    this.domaineCate.afficheDomaineCategorieActivite(this.nom, this.description, this.identifiant, this.photo, this.date, this.prix, this.ActivitesPresArray, this.categorieActi, this.cateDoma);
 
   }
 

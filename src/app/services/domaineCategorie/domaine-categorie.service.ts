@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {DomainesComponent} from "../../domaines/domaines.component";
 import {ActivitesPres} from "../../classes/activitesPres";
 import {CategoriesComponent} from "../../categories/categories.component";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
@@ -11,42 +10,24 @@ export class DomaineCategorieService {
 
   constructor(private UserDb : AngularFirestore) { }
 
-  afficheDomaineActivite(acti : DomainesComponent, domaine : any){
-    this.UserDb.collectionGroup('sous-acti', ref => ref.where("inputDoma", "==", domaine)).get().subscribe(querrySnapshot => {
+  afficheDomaineCategorieActivite(nom : string, description : string, identifiant : string, photo : any, date : string, prix : number, ActivitesPresArray : ActivitesPres[], domaineActi : string, cateDoma : string){
+    this.UserDb.collectionGroup('sous-acti', ref => ref.where(cateDoma, "==", domaineActi)).get().subscribe(querrySnapshot => {
       querrySnapshot.forEach((doc) => {
         console.log('hello');
         console.log(doc.data());
-        acti.nom = doc.get('inputNomActi');
-        acti.description = doc.get('inputDes');
-        acti.identifiant = doc.id;
-        acti.date = doc.get('jour');
-        acti.photo = doc.get('image1');
-        acti.prix = doc.get('inputPrix');
+        nom = doc.get('inputNomActi');
+        description = doc.get('inputDes');
+        identifiant = doc.id;
+        date = doc.get('jour');
+        photo = doc.get('image1');
+        prix = doc.get('inputPrix');
 
 
-        acti.ActivitesPresArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo, acti.prix));
+        ActivitesPresArray.push(new ActivitesPres(nom, description, date, identifiant, photo, prix));
 
       });
     });
   }
 
-  afficheCategorieActivite(acti : CategoriesComponent, categorie : any){
-    this.UserDb.collectionGroup('sous-acti', ref => ref.where("inputCate", "==", categorie)).get().subscribe(querrySnapshot => {
-      querrySnapshot.forEach((doc) => {
-        console.log('hello');
-        console.log(doc.data());
-        acti.nom = doc.get('inputNomActi');
-        acti.description = doc.get('inputDes');
-        acti.identifiant = doc.id;
-        acti.date = doc.get('jour');
-        acti.photo = doc.get('image1');
-        acti.prix = doc.get('inputPrix');
-
-
-        acti.ActivitesPresArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo, acti.prix));
-
-      });
-    });
-  }
 
 }
