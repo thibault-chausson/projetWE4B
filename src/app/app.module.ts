@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CarouselIndexComponent } from './carousel-index/carousel-index.component';
 import { MyFooterComponent } from './my-footer/my-footer.component';
 import { CardCarouselComponent } from './card-carousel/card-carousel.component';
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { LoginComponent } from './login/login.component';
@@ -78,7 +78,8 @@ import { SousCarouselCardComponent } from './sous-carousel-card/sous-carousel-ca
       messagingSenderId: "552542801312",
       appId: "1:552542801312:web:36c899627d4c518c3228c5",
       measurementId: "G-ESJGG5DEXF"
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]

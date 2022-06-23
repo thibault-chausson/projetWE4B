@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-center form_container">
-        <form>
+        <form [formGroup]="inscriptionPro" (ngSubmit)='doSth'>
           <div class="seCo">
             <p class="centre">Rejoins-nous Super Guide</p>
           </div>
@@ -19,19 +19,39 @@
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
             </div>
-            <input type="text" name="emailPro" class="form-control input_user" value="" placeholder="Email"  [(ngModel)] = "emailPro"> <!--[(ngModel)] = "email"-->
+            <input formControlName='emailPro' type="text" name="emailPro" class="form-control input_user" value="" placeholder="Email"  > <!--[(ngModel)] = "emailPro"-->
           </div>
+          <div class="input-group mb-2">
+            <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+              <div *ngIf="email?.errors?.['required']">Email is required</div>
+              <div *ngIf="email?.errors?.['email']">Invalid Email</div>
+            </div>
+          </div>
+
           <div class="input-group mb-2">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
             </div>
-            <input type="password" name="passwordPro" class="form-control input_pass" value="" placeholder="Mot de passe" [(ngModel)] = "passwordPro"> <!--[(ngModel)] = "password"-->
+            <input type="password" name="passwordPro" class="form-control input_pass" value="" placeholder="Mot de passe" formControlName='passwordPro'> <!--[(ngModel)] = "password"-->
           </div>
+          <div class="input-group mb-2">
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+              <div *ngIf="password?.errors?.['required']">Password is required</div>
+              <div *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters</div>
+            </div>
+          </div>
+
           <div class="input-group mb-2">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa fa-check fa-lg" aria-hidden="true"></i></span>
             </div>
-            <input type="password" id="form3Example4cd" class="form-control" name="passwordCheckPro" placeholder="Vérification" [(ngModel)] = "passwordCheckPro"/> <!--[(ngModel)]="passwordCheck"-->
+            <input type="password" id="form3Example4cd" class="form-control" name="passwordCheckPro" placeholder="Vérification" formControlName='passwordCheckPro'/> <!--[(ngModel)]="passwordCheck"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="passwordCheck?.invalid && (passwordCheck?.dirty || passwordCheck?.touched)">
+              <div *ngIf="passwordCheck?.errors?.['required']">Password is required</div>
+              <div *ngIf="passwordCheck?.errors?.['minlength']">Password must be at least 6 characters</div>
+            </div>
           </div>
 
           <div class="seCo">
@@ -42,42 +62,73 @@
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-business-time"></i></span>
             </div>
-            <input type="text" name="nomEntreprise" class="form-control input_user" value="" placeholder="Le nom de votre entreprise" [(ngModel)] = "nomEntreprise"> <!--[(ngModel)] = "email"-->
+            <input type="text" name="nomEntreprise" class="form-control input_user" value="" placeholder="Le nom de votre entreprise" formControlName='nomEntreprise'> <!--[(ngModel)] = "email"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="nomEntre?.invalid && (nomEntre?.dirty || nomEntre?.touched)">
+              <div *ngIf="nomEntre?.errors?.['required']">Name firme is required</div>
+            </div>
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-road"></i></span>
             </div>
-            <input type="text" name="numNomRue" class="form-control input_user" value="" placeholder="Numéro et nom de rue" [(ngModel)] = "numNomRue"> <!--[(ngModel)] = "email"-->
+            <input type="text" name="numNomRue" class="form-control input_user" value="" placeholder="Numéro et nom de rue" formControlName='numNomRue'> <!--[(ngModel)] = "email"-->
           </div>
+          <div class="input-group mb-2">
+            <div *ngIf="numEtNomRue?.invalid && (numEtNomRue?.dirty || numEtNomRue?.touched)">
+              <div *ngIf="numEtNomRue?.errors?.['required']">Name of street and number is required</div>
+            </div>
+          </div>
+
 
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-city"></i></span>
             </div>
-            <input type="text" name="ville" class="form-control input_user" value="" placeholder="Ville" [(ngModel)] = "ville"> <!--[(ngModel)] = "email"-->
+            <input type="text" name="ville" class="form-control input_user" value="" placeholder="Ville" formControlName='ville'> <!--[(ngModel)] = "email"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="villeEntre?.invalid && (villeEntre?.dirty || villeEntre?.touched)">
+              <div *ngIf="villeEntre?.errors?.['required']">A city is required</div>
+            </div>
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-map-location-dot"></i></span>
             </div>
-            <input type="text" name="codePostale" class="form-control input_user" value="" placeholder="Code postal" [(ngModel)] = "codePostale"> <!--[(ngModel)] = "email"-->
+            <input type="text" name="codePostale" class="form-control input_user" value="" placeholder="Code postal" formControlName='codePostale'> <!--[(ngModel)] = "email"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="codePost?.invalid && (codePost?.dirty || codePost?.touched)">
+              <div *ngIf="codePost?.errors?.['required']">A zip is required</div>
+            </div>
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-earth-europe"></i></span>
             </div>
-            <input type="text" name="pays" class="form-control input_user" value="" placeholder="Pays" [(ngModel)] = "pays"> <!--[(ngModel)] = "email"-->
+            <input type="text" name="pays" class="form-control input_user" value="" placeholder="Pays" formControlName='pays'> <!--[(ngModel)] = "email"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="paysEntre?.invalid && (paysEntre?.dirty || paysEntre?.touched)">
+              <div *ngIf="paysEntre?.errors?.['required']">A country is required</div>
+            </div>
           </div>
 
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
             </div>
-            <input type="text" name="telephone" class="form-control input_user" value="" placeholder="Téléphone" [(ngModel)] = "telephone"> <!---->
+            <input type="text" name="telephone" class="form-control input_user" value="" placeholder="Téléphone" formControlName='telephone'> <!---->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="telEntre?.invalid && (telEntre?.dirty || telEntre?.touched)">
+              <div *ngIf="telEntre?.errors?.['required']">A phone is required</div>
+            </div>
           </div>
 
 

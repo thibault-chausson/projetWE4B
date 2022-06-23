@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from "../services/firebase.service";
+import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-register-pro',
@@ -20,6 +21,67 @@ export class RegisterProComponent implements OnInit {
   telephone : string = '';
 
 
+  inscriptionPro = new FormGroup({
+    emailPro : new FormControl('', [Validators.required, Validators.email]),
+    passwordPro : new FormControl('', [Validators.required, Validators.minLength(6)]),
+    passwordCheckPro : new FormControl('', [Validators.required, Validators.minLength(6)]),
+    nomEntreprise : new FormControl('', [Validators.required]),
+    numNomRue : new FormControl('', [Validators.required]),
+    ville : new FormControl('', [Validators.required]),
+    codePostale : new FormControl('', [Validators.required]),
+    pays : new FormControl('', [Validators.required]),
+    telephone : new FormControl('', [Validators.required])
+  });
+
+  get email(): AbstractControl | null {
+    this.emailPro = this.inscriptionPro.get('emailPro')?.value;
+    console.log(this.emailPro);
+    return this.inscriptionPro.get('emailPro');
+  }
+
+  get password(): AbstractControl | null {
+    this.passwordPro = this.inscriptionPro.get('passwordPro')?.value;
+    console.log(this.passwordPro);
+    return this.inscriptionPro.get('passwordPro');
+  }
+
+  get passwordCheck(): AbstractControl | null {
+    this.passwordCheckPro = this.inscriptionPro.get('passwordCheckPro')?.value;
+    return this.inscriptionPro.get('passwordCheckPro');
+  }
+
+  get nomEntre(): AbstractControl | null {
+    this.nomEntreprise = this.inscriptionPro.get('nomEntreprise')?.value;
+    return this.inscriptionPro.get('nomEntreprise');
+  }
+
+  get numEtNomRue(): AbstractControl | null {
+    this.numNomRue = this.inscriptionPro.get('numNomRue')?.value;
+    return this.inscriptionPro.get('numNomRue');
+  }
+
+  get villeEntre(): AbstractControl | null {
+    this.ville = this.inscriptionPro.get('ville')?.value;
+    return this.inscriptionPro.get('ville');
+  }
+
+  get codePost(): AbstractControl | null {
+    this.codePostale = this.inscriptionPro.get('codePostale')?.value;
+    return this.inscriptionPro.get('codePostale');
+  }
+
+  get paysEntre(): AbstractControl | null {
+    this.pays = this.inscriptionPro.get('pays')?.value;
+    return this.inscriptionPro.get('pays');
+  }
+
+  get telEntre(): AbstractControl | null {
+    this.telephone = this.inscriptionPro.get('telephone')?.value;
+    return this.inscriptionPro.get('telephone');
+  }
+
+
+
 
 
 
@@ -28,7 +90,11 @@ export class RegisterProComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  doSth(){
+  }
+
   registerPro() {
+
 
     if (this.emailPro == '') {
       alert('Please enter email');
