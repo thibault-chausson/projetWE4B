@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { CarouselIndexComponent } from './carousel-index/carousel-index.component';
 import { MyFooterComponent } from './my-footer/my-footer.component';
 import { CardCarouselComponent } from './card-carousel/card-carousel.component';
-import { RouterModule, Routes } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
@@ -19,11 +18,7 @@ import { RecherchesComponent } from './recherches/recherches.component';
 import { RegisterProComponent } from './register-pro/register-pro.component';
 import { Error404Component} from "./error404/error404.component";
 import { MenuLoggedComponent } from './menu-logged/menu-logged.component';
-import {
-  AngularFireAuthGuard,
-  AngularFireAuthGuardModule,
-  redirectUnauthorizedTo
-} from '@angular/fire/compat/auth-guard';
+import {  AngularFireAuthGuardModule,} from '@angular/fire/compat/auth-guard';
 import { GestionProComponent } from './gestion-pro/gestion-pro.component';
 import { MenuGestionProComponent } from './menu-gestion-pro/menu-gestion-pro.component';
 import { StatistiquesGestionProComponent } from './statistiques-gestion-pro/statistiques-gestion-pro.component';
@@ -31,42 +26,13 @@ import { ProfilGestionProComponent } from './profil-gestion-pro/profil-gestion-p
 import { AddActiviteGestionProComponent } from './add-activite-gestion-pro/add-activite-gestion-pro.component';
 import { AfficherActiviteComponent } from './afficher-activite/afficher-activite.component';
 import { ModifierActiviteGestionProComponent } from './modifier-activite-gestion-pro/modifier-activite-gestion-pro.component';
-import {AuthGuard} from "./auth.guard";
 import { ActivitesGestionProComponent } from './activites-gestion-pro/activites-gestion-pro.component';
 import { CardActiviteGestionProComponent } from './card-activite-gestion-pro/card-activite-gestion-pro.component';
 import { CardDomaineComponent } from './card-domaine/card-domaine.component';
 import { CardForIndexComponent } from './card-for-index/card-for-index.component';
 import { SousCarouselCardComponent } from './sous-carousel-card/sous-carousel-card.component';
 
-const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
 
-
-const route:Routes=[
-  {path:'', redirectTo:'/accueil', pathMatch:'full'},
-  { path: '',             component: AppComponent},
-  { path: 'accueil',      component: AccueilComponent},
-  { path: 'domaines/:id',     component: DomainesComponent},
-  { path: 'categories/:id',     component: CategoriesComponent},
-  { path: 'recherches',     component: RecherchesComponent},
-  { path: 'connexion',     component: ConnexionComponent},
-  { path: 'login',     component: RecherchesComponent},
-  {path: 'register', component : RegisterUserComponent},
-  {path: 'register-pro', component : RegisterProComponent},
-  {path: 'afficher-activite/:id', component : AfficherActiviteComponent},
-  { path: 'gestion-pro',     component: GestionProComponent, children: [ { path: '',           component: StatistiquesGestionProComponent},
-                                                                         {path:'statistiques', component: StatistiquesGestionProComponent},
-                                                                         {path:'addActivite', component: AddActiviteGestionProComponent},
-                                                                         {path:'profil', component: ProfilGestionProComponent, canActivate: [AngularFireAuthGuard], runGuardsAndResolvers: 'always',},
-                                                                         {path:'activites', component: ActivitesGestionProComponent, children: [{path:'modifierActivite/:id', component: ModifierActiviteGestionProComponent},],  canActivate: [AngularFireAuthGuard], runGuardsAndResolvers: 'always',},
-                                                                          ],
-    canActivate: [AuthGuard],
-    data: {
-      role: 'pro'
-    }
-  },
-  { path: 'add-activite', component : AddActiviteGestionProComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
-  { path: '**', component : Error404Component},
-];
 
 @NgModule({
   declarations: [
@@ -102,7 +68,6 @@ const route:Routes=[
     FormsModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(route , { scrollPositionRestoration: 'enabled', onSameUrlNavigation: "reload"} ),
     AngularFireAuthGuardModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCmbXbwKnwP8IUx1Vkkt-HYgtooBotiBW8",

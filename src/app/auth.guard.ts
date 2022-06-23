@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate {
     if (this.authFireService.isLoggedIn()) {
       const userRole = this.authFireService.getRole();
       if (route.data['role'] && route.data['role'].indexOf(userRole) === -1) {
-        this.router.navigate(['/accueil-logged']);
+        this.router.navigate(['/connexion']);
         return false;
       }
       return true;
