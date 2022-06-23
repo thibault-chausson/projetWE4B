@@ -85,3 +85,7 @@ button{
   text-align: center;
   border-radius: 25px;
 }
+
+.rouge{
+  color: #ff0000;
+}

@@ -3,27 +3,27 @@
 
 <form class="row g-3">
   <div class="col-md-6">
-    <label for="inputNomActi" class="form-label">Nom de l'activité</label>
+    <label for="inputNomActi" class="form-label">Nom de l'activité<span class="rouge">*</span></label>
     <input type="text" class="form-control" id="inputNomActi" name="inputNomActi" [(ngModel)]="ajoutActi.inputNomActi">
   </div>
   <div class="col-md-6">
-    <label for="inputNomRes" class="form-label">Nom du responsable</label>
+    <label for="inputNomRes" class="form-label">Nom du responsable<span class="rouge">*</span></label>
     <input type="text" class="form-control" id="inputNomRes" name="inputNomRes" [(ngModel)]="ajoutActi.inputNomRes">
   </div>
   <div class="col-12">
-    <label for="inputAddress" class="form-label">Numéro et nom de rue</label>
+    <label for="inputAddress" class="form-label">Numéro et nom de rue<span class="rouge">*</span></label>
     <input type="text" class="form-control" id="inputAddress" name="inputAddress" [(ngModel)]="ajoutActi.inputAddress">
   </div>
   <div class="col-12">
-    <label for="inputAddress2" class="form-label">Complément d'adresse</label>
+    <label for="inputAddress2" class="form-label">Complément d'adresse<span class="rouge">*</span></label>
     <input type="text" class="form-control" id="inputAddress2" name="inputAddress2" [(ngModel)]="ajoutActi.inputAddress2">
   </div>
   <div class="col-md-6">
-    <label for="inputCity" class="form-label">Ville</label>
+    <label for="inputCity" class="form-label">Ville<span class="rouge">*</span></label>
     <input type="text" class="form-control" id="inputCity" name="inputCity" [(ngModel)]="ajoutActi.inputCity">
   </div>
   <div class="col-md-4">
-    <label for="inputState" class="form-label">Pays</label>
+    <label for="inputState" class="form-label">Pays<span class="rouge">*</span></label>
     <select id="inputState" class="form-select" name="inputState" [(ngModel)]="ajoutActi.inputState">
       <option value="France" selected="selected">France </option>
       <option value="Afghanistan">Afghanistan </option>
@@ -257,22 +257,22 @@
     </select>
   </div>
   <div class="col-md-2">
-    <label for="inputZip" class="form-label">Code postal</label>
+    <label for="inputZip" class="form-label">Code postal<span class="rouge">*</span></label>
     <input type="text" class="form-control" id="inputZip" name="inputZip" [(ngModel)]="ajoutActi.inputZip">
   </div>
 
   <div class="col-md-6">
-    <label for="inputTel" class="form-label">Numéro de téléphone</label>
+    <label for="inputTel" class="form-label">Numéro de téléphone<span class="rouge">*</span></label>
     <input type="tel" class="form-control" id="inputTel" name="inputTel" [(ngModel)]="ajoutActi.inputTel">
   </div>
   <div class="col-md-6">
-    <label for="inputPrix" class="form-label">Prix de l'activité</label>
+    <label for="inputPrix" class="form-label">Prix de l'activité<span class="rouge">*</span></label>
     <input type="text" class="form-control" id="inputPrix" name="inputPrix" [(ngModel)]="ajoutActi.inputPrix">
   </div>
 
 
   <div class="col-md-6">
-    <label for="inputCate" class="form-label">Catégorie</label>
+    <label for="inputCate" class="form-label">Catégorie<span class="rouge">*</span></label>
     <select id="inputCate" class="form-select" name="inputCate" [(ngModel)]="ajoutActi.inputCate">
       <option selected>Choisir...</option>
       <option value="famille">En famille</option>
@@ -283,7 +283,7 @@
     </select>
   </div>
   <div class="col-md-6">
-    <label for="inputDoma" class="form-label">Domaine</label>
+    <label for="inputDoma" class="form-label">Domaine<span class="rouge">*</span></label>
     <select id="inputDoma" class="form-select" name="inputDoma" [(ngModel)]="ajoutActi.inputDoma">
       <option selected>Choisir...</option>
       <option value="nature">Nature</option>
@@ -295,13 +295,13 @@
   </div>
 
   <div class="col-12">
-    <label for="inputDes" class="form-label">Description de l'activité</label>
+    <label for="inputDes" class="form-label">Description de l'activité<span class="rouge">*</span></label>
     <textarea type="text" class="form-control" id="inputDes" placeholder="Décriver du mieux possible votre activité" name="inputDes" [(ngModel)]="ajoutActi.inputDes"></textarea>
   </div>
 
 
   <div class="col-12">
-    <p>Ajoute une image pour décrire ton activité (ajoutez entre 2 et 5 photos)</p>
+    <p>Ajoute cinq images pour décrire ton activité<span class="rouge">*</span></p>
     <ul>
       <li>
         <label for="image1" class="label-file">Image 1 : </label>
@@ -329,12 +329,7 @@
 
 
   <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        En ajoutant une activité vous consentez à la politique de gestion des données personnelles
-      </label>
-    </div>
+    <p>Ces champs sont obligatoires<span class="rouge">*</span></p>
   </div>
 
   <div class="centre">
