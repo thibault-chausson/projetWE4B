@@ -19,7 +19,7 @@
             <div class="input-group-append">
               <span class="input-group-text"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
             </div>
-            <input formControlName='emailPro' type="text" name="emailPro" class="form-control input_user" value="" placeholder="Email"  > <!--[(ngModel)] = "emailPro"-->
+            <input formControlName='emailPro' type="email" name="emailPro" class="form-control input_user" value="" placeholder="Email"  > <!--[(ngModel)] = "emailPro"-->
           </div>
           <div class="input-group mb-2">
             <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
@@ -126,8 +126,9 @@
             <input type="text" name="telephone" class="form-control input_user" value="" placeholder="Téléphone" formControlName='telephone'> <!---->
           </div>
           <div class="input-group mb-2">
-            <div *ngIf="telEntre?.invalid && (telEntre?.dirty || telEntre?.touched)">
+            <div class="rouge" *ngIf="telEntre?.invalid && (telEntre?.dirty || telEntre?.touched)">
               <div *ngIf="telEntre?.errors?.['required']">A phone is required</div>
+              <div *ngIf="telEntre?.errors?.['minlength']">Tel must be at least 10 characters</div>
             </div>
           </div>
 

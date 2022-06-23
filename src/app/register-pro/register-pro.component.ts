@@ -30,7 +30,7 @@ export class RegisterProComponent implements OnInit {
     ville : new FormControl('', [Validators.required]),
     codePostale : new FormControl('', [Validators.required]),
     pays : new FormControl('', [Validators.required]),
-    telephone : new FormControl('', [Validators.required])
+    telephone : new FormControl('', [Validators.required, Validators.minLength(10)])
   });
 
   get email(): AbstractControl | null {
