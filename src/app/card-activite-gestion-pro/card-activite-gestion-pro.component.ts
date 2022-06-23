@@ -11,6 +11,7 @@ import {GestionProService} from "../services/gestionPro/gestion-pro.service";
 })
 export class CardActiviteGestionProComponent implements OnInit {
   @Input() activite!: Activite;
+  filtersLoaded!: Promise<boolean>;
 
 
 
@@ -22,8 +23,7 @@ export class CardActiviteGestionProComponent implements OnInit {
   }
 
   delecteActivite() {
-    this.gestion.supprimerActivite(this.activite.idActivite);
-    window.location.reload();
+    this.gestion.supprimerActivite(this.activite.idActivite, this.filtersLoaded);
   }
 
   ngOnInit(): void {

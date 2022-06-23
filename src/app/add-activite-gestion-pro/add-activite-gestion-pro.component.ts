@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GestionProService} from "../services/gestionPro/gestion-pro.service";
+import {GestionProActi} from "../classes/gestionProActi";
 
 
 @Component({
@@ -9,25 +10,9 @@ import {GestionProService} from "../services/gestionPro/gestion-pro.service";
 })
 export class AddActiviteGestionProComponent implements OnInit {
 
-  inputNomActi : string = '';
-  inputNomRes : string = '';
-  inputAddress : string = '';
-  inputAddress2 : string = '';
-  inputCity : string = '';
-  inputState : string = '';
-  inputZip : string = '';
-  inputTel : string = '';
-  inputPrix : number = 0;
-  inputCate : string = '';
-  inputDoma : string = '';
-  inputDes : string = '';
-  image1 : string = '' ;
-  image2 : string = '' ;
-  image3 : string = '' ;
-  image4 : string = '' ;
-  image5 : string = '' ;
-  heure : string = '';
-  jour : string = '';
+  ajoutActi: GestionProActi = new GestionProActi( "",  "",  "", "", "", "",  "",  "",  "",  "",  "",  "",  "", 0, "", "", "",  "",  "");
+
+
 
 
   constructor(private gestion : GestionProService) { }
@@ -47,23 +32,23 @@ export class AddActiviteGestionProComponent implements OnInit {
           const imgBase64Path = e.target.result;
           switch (numero){
             case 1 : {
-              this.image1 = imgBase64Path;
+              this.ajoutActi.image1 = imgBase64Path;
               break;
             }
             case 2 : {
-              this.image2 = imgBase64Path;
+              this.ajoutActi.image2 = imgBase64Path;
               break;
             }
             case 3 : {
-              this.image3 = imgBase64Path;
+              this.ajoutActi.image3 = imgBase64Path;
               break;
             }
             case 4 : {
-              this.image4 = imgBase64Path;
+              this.ajoutActi.image4 = imgBase64Path;
               break;
             }
             case 5 : {
-              this.image5 = imgBase64Path;
+              this.ajoutActi.image5 = imgBase64Path;
               break;
             }
             default:{
@@ -81,70 +66,71 @@ export class AddActiviteGestionProComponent implements OnInit {
 
   addActivite() {
 
+    console.log(this.ajoutActi);
 
-    if(this.inputNomActi == ''){
+    if(this.ajoutActi.inputNomActi == ''){
       alert('Veuillez entrer un nom d\'activité');
       return;
     }
-    if(this.inputNomRes == ''){
+    if(this.ajoutActi.inputNomRes == ''){
       alert('Veuillez entrer un nom de responsable');
       return;
     }
-    if(this.inputAddress == ''){
+    if(this.ajoutActi.inputAddress == ''){
       alert('Veuillez entrer un numéro de rue');
       return;
     }
-    if(this.inputCity == ''){
+    if(this.ajoutActi.inputCity == ''){
       alert('Veuillez entrer une ville');
       return;
     }
-    if(this.inputZip == ''){
+    if(this.ajoutActi.inputZip == ''){
       alert('Veuillez entrer un code postal');
       return;
     }
-    if(this.inputState == ''){
+    if(this.ajoutActi.inputState == ''){
       alert('Veuillez entrer un pays');
       return;
     }
-    if(this.inputTel == ''){
+    if(this.ajoutActi.inputTel == ''){
       alert('Veuillez entrer un numéro de téléphone');
       return;
     }
-    if(this.inputPrix == 0){
+    if(this.ajoutActi.inputPrix == 0){
       alert('Veuillez entrer un prix');
       return;
     }
-    if(this.inputDes == ''){
+    if(this.ajoutActi.inputDes == ''){
       alert('Veuillez entrer une description');
       return;
     }
-    if(this.inputCate == ''){
+    if(this.ajoutActi.inputCate == ''){
       alert('Veuillez entrer une catégorie');
       return;
     }
-    if(this.inputDoma == ''){
+    if(this.ajoutActi.inputDoma == ''){
       alert('Veuillez entrer un domaine');
       return;
     }
-    if(this.inputDoma == ''){
+    if(this.ajoutActi.inputDoma == ''){
       alert('Veuillez entrer un domaine');
       return;
     }
 
     let compte = 0;
-    if (this.image1 != '') {
+    if (this.ajoutActi.image1 != '') {
       compte=compte+1;
     }
-    if (this.image2 != '') {
+    if (this.ajoutActi.image2 != '') {
       compte=compte+1;
     }
-    if (this.image3 != '') {
+    if (this.ajoutActi.image3 != '') {
       compte=compte+1;
     }
-    if (this.image4 != '') {
+    if (this.ajoutActi.image4 != '') {
       compte=compte+1;
     }
-    if (this.image5 != '') {
+    if (this.ajoutActi.image5 != '') {
       compte=compte+1;
     }
     if(compte <2){
@@ -152,31 +138,13 @@ export class AddActiviteGestionProComponent implements OnInit {
       return;
     }
 
-  this.heure = new Date().getHours() + ':' + new Date().getMinutes() + ':'+  new Date().getSeconds();
-  this.jour = new Date().getDate() + '/' + (new Date().getMonth()+1) + '/' + new Date().getFullYear();
+    this.ajoutActi.heure = new Date().getHours() + ':' + new Date().getMinutes() + ':'+  new Date().getSeconds();
+    this.ajoutActi.jour = new Date().getDate() + '/' + (new Date().getMonth()+1) + '/' + new Date().getFullYear();
 
 
-    this.gestion.addActivite(this.inputNomActi, this.inputNomRes, this.inputAddress, this.inputAddress2, this.inputCity, this.inputState, this.inputZip, this.inputTel, this.inputPrix, this.inputCate, this.inputDoma, this.inputDes, this.image1, this.image2, this.image3, this.image4, this.image5, this.heure, this.jour);
+    this.gestion.addActivite(this.ajoutActi);
 
-    this.inputNomActi = '';
-    this.inputNomRes = '';
-    this.inputAddress = '';
-    this.inputAddress2 = '';
-    this.inputCity = '';
-    this.inputState = '';
-    this.inputZip = '';
-    this.inputTel = '';
-    this.inputPrix = 0;
-    this.inputCate = '';
-    this.inputDoma = '';
-    this.inputDes = '';
-    this.image1 = '';
-    this.image2 = '';
-    this.image3 = '';
-    this.image4 = '';
-    this.image5 = '';
-    this.heure = '';
-    this.jour = '';
+
 
   }
 
