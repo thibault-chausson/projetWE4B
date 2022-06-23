@@ -86,7 +86,7 @@
 
 <ng-template #taille>
 
-
+<nav>
     <div class="navbar">
       <div class="container nav-container">
         <input class="checkbox" type="checkbox" name="" id="" />
@@ -126,8 +126,6 @@
           </li>
           <li><a href="/recherches">Recherche</a></li>
 
-
-
           <div *ngIf="this.role == 'pro', else else1">
 
 
@@ -142,12 +140,7 @@
             </li>
 
 
-
-
-
           </div>
-
-
 
           <ng-template #else1>
 
@@ -175,7 +168,7 @@
         </div>
       </div>
     </div>
-
+</nav>
 
 
 </ng-template>
