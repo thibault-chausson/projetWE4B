@@ -1,4 +1,4 @@
-<div class="card mb-3" style="">
+<div class="card mb-3" style="max-width: 740px;">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="{{activite.imagePath}}" class="card-img-top img-fluid" alt="...">
@@ -6,7 +6,9 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{activite.nomActivite}}</h5>
-        <p class="card-text">{{activite.descriptionActivite}}</p>
+        <div class="description">
+          <p class="card-text max">{{activite.descriptionActivite}}</p>
+        </div>
         <p class="card-text"><small class="text-muted">{{activite.dateActivite}}</small></p>
         <button type="button" class="btn " (click)="readMore()">Modifier l'activité</button>
         <button type="button" class="btn " (click)="delecteActivite()">Supprimer l'activité</button>
