@@ -14,7 +14,7 @@
   </div>
   <div class="col-md-6">
     <label for="inputNomRes" class="form-label">Nom du responsable<span class="rouge">*</span></label>
-    <input type="text" class="form-control" id="inputNomRes" name="inputNomRes" formControlName='NomRes'>
+    <input type="text" class="form-control" id="inputNomRes" name="inputNomRes" formControlName='nomRes'>
 
     <div *ngIf="nomRespon?.invalid && (nomRespon?.dirty || nomRespon?.touched)">
       <div *ngIf="nomRespon?.errors?.['required']">Leader name is required</div>
@@ -24,7 +24,7 @@
   </div>
   <div class="col-12">
     <label for="inputAddress" class="form-label">Numéro et nom de rue<span class="rouge">*</span></label>
-    <input type="text" class="form-control" id="inputAddress" name="inputAddress" formControlName='adresseOne'>
+    <input type="text" class="form-control" id="inputAddress" name="inputAddress" formControlName='addresseOne'>
 
     <div *ngIf="addr1?.invalid && (addr1?.dirty || addr1?.touched)">
       <div *ngIf="addr1?.errors?.['required']">Addresse is required</div>
@@ -34,7 +34,7 @@
   </div>
   <div class="col-12">
     <label for="inputAddress2" class="form-label">Complément d'adresse<span class="rouge">*</span></label>
-    <input type="text" class="form-control" id="inputAddress2" name="inputAddress2" formControlName='adresseTwo'>
+    <input type="text" class="form-control" id="inputAddress2" name="inputAddress2" formControlName='addresseTwo'>
 
     <div *ngIf="addr2?.invalid && (addr2?.dirty || addr2?.touched)">
       <div *ngIf="addr2?.errors?.['required']">Addresse is required</div>
