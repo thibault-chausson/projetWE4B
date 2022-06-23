@@ -30,6 +30,7 @@
 
     <hr>
 
+
     <div class="info-rapide">
     <h2><i class="fa-solid fa-star"></i><i class="fa-solid fa-cog fa-spin"></i> En construction !</h2>
       <h2><i class="fa-solid fa-location-dot"></i> {{infoActi.inputCity}} </h2>
@@ -40,8 +41,8 @@
     <hr>
 
 
-    <div class="info">
-      <div class="descrip">
+    <div class="row">
+      <div class="col-sm-8">
         <h2>Description</h2>
         <p>
           {{infoActi.inputDes}}
@@ -50,7 +51,7 @@
           Dernière modification le {{infoActi.jour}}
         </p>
       </div>
-      <div class="adresse">
+      <div class="col-sm-4">
         <h2>Adresse :</h2>
 
           <p>Rue :  {{infoActi.inputAddress}}, {{infoActi.inputAddress2}}</p>
