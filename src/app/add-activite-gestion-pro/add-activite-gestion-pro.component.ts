@@ -177,7 +177,7 @@ export class AddActiviteGestionProComponent implements OnInit {
     if (this.ajoutActi.image5 != '') {
       compte=compte+1;
     }
-    if(compte <2){
+    if(compte !=5){
       alert('Mettez deux images');
       return;
     }

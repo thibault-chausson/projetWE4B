@@ -101,7 +101,7 @@ export class ModifierActiviteGestionProComponent implements OnInit {
     if (this.infoActi.image5 != '') {
       compte=compte+1;
     }
-    if(compte <2){
+    if(compte !=5){
       alert('Mettez deux images');
       return;
     }
