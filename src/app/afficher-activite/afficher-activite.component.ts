@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {DomSanitizer} from "@angular/platform-browser";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {FirebaseService} from "../services/firebase.service";
+import {GestionProActi} from "../classes/gestionProActi";
+import {AffichageService} from "../services/afficher/affichage.service";
 
 @Component({
   selector: 'app-afficher-activite',
@@ -12,68 +13,21 @@ import {FirebaseService} from "../services/firebase.service";
 })
 export class AfficherActiviteComponent implements OnInit {
 
+  filtersLoaded!: Promise<boolean>;
 
+  infoActi : GestionProActi = new GestionProActi( "",  "",  "", "", "", "",  "",  "",  "",  "",  "",  "",  "", 0, "", "", "",  "",  "");
 
 
   numeroActi : any;
 
 
-  nomActivite : string = '';
-  adresse1: string = '';
-  adresse2: string = '';
-  codePostal: string = '';
-  ville: string = '';
-  telephone: string = '';
-  domaine: string = '';
-  categorie: string = '';
-  jour: string = '';
-  pays: string = '';
-  nomResponsable: string = '';
-  prix : number = 0;
 
-  descriptionActivite: string = '';
-
-  image1: any;
-  image2: any;
-  image3: any;
-  image4: any;
-  image5: any;
-
-  constructor(private activatedroute : ActivatedRoute, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService) { }
+  constructor(private activatedroute : ActivatedRoute, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService, private afficher : AffichageService) { }
   /*this.numeroActi*/
   ngOnInit(): void {
-    this.auth.currentUser.then(user => {
-      console.log(this.numeroActi = this.activatedroute.snapshot.paramMap.get('id'));
-      this.db.collectionGroup('sous-acti').get().subscribe(querrySnapshot => {
-        querrySnapshot.forEach((doc) => {
-          console.log(doc.get('inputNomActi'));
-          if (doc.id == this.numeroActi) {
-            this.nomActivite = doc.get('inputNomActi');
-            this.adresse1 = doc.get('inputAddress');
-            this.adresse2 = doc.get('inputAddress2');
-            this.codePostal = doc.get('inputZip');
-            this.ville = doc.get('inputCity');
-            this.telephone = doc.get('inputTel');
-            this.domaine = doc.get('inputDoma');
-            this.categorie = doc.get('inputCate');
-            this.jour = doc.get('jour');
-            this.pays = doc.get('inputState');
-            this.nomResponsable = doc.get('inputNomRes');
-            this.prix = doc.get('inputPrix');
-            this.nomActivite = doc.get('inputNomActi');
-            this.descriptionActivite = doc.get('inputDes');
-            this.image1 = doc.get('image1');
-            this.image2 = doc.get('image2');
-            this.image3 = doc.get('image3');
-            this.image4 = doc.get('image4');
-            this.image5 = doc.get('image5');
-          }
-
-        });
-      });
-    });
-
-    }
+    this.numeroActi = this.activatedroute.snapshot.paramMap.get('id');
+    this.afficher.afficher(this);
+  }
 
 
 
