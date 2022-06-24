@@ -23,8 +23,8 @@
           </div>
           <div class="input-group mb-2">
             <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
-              <div *ngIf="email?.errors?.['required']">Email is required</div>
-              <div *ngIf="email?.errors?.['email']">Invalid Email</div>
+              <div  class="rouge" *ngIf="email?.errors?.['required']">Une email est requise</div>
+              <div  class="rouge" *ngIf="email?.errors?.['email']">Email invalide</div>
             </div>
           </div>
 
@@ -36,8 +36,8 @@
           </div>
           <div class="input-group mb-2">
             <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
-              <div *ngIf="password?.errors?.['required']">Password is required</div>
-              <div *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters</div>
+              <div  class="rouge" *ngIf="password?.errors?.['required']">Un mot de passe est requis</div>
+              <div  class="rouge" *ngIf="password?.errors?.['minlength']">Le mot de passe doit être supérieur à 6 caractères</div>
             </div>
           </div>
 
@@ -49,8 +49,7 @@
           </div>
           <div class="input-group mb-2">
             <div *ngIf="passwordCheck?.invalid && (passwordCheck?.dirty || passwordCheck?.touched)">
-              <div *ngIf="passwordCheck?.errors?.['required']">Password is required</div>
-              <div *ngIf="passwordCheck?.errors?.['minlength']">Password must be at least 6 characters</div>
+              <div  class="rouge"*ngIf="passwordCheck?.errors?.['required']">La confirmation de votre mot de passe est requise</div>
             </div>
           </div>
 
@@ -66,7 +65,7 @@
           </div>
           <div class="input-group mb-2">
             <div *ngIf="nomEntre?.invalid && (nomEntre?.dirty || nomEntre?.touched)">
-              <div *ngIf="nomEntre?.errors?.['required']">Name firme is required</div>
+              <div  class="rouge" *ngIf="nomEntre?.errors?.['required']">Le nom de l'entreprise est requise</div>
             </div>
           </div>
 
@@ -78,7 +77,7 @@
           </div>
           <div class="input-group mb-2">
             <div *ngIf="numEtNomRue?.invalid && (numEtNomRue?.dirty || numEtNomRue?.touched)">
-              <div *ngIf="numEtNomRue?.errors?.['required']">Name of street and number is required</div>
+              <div  class="rouge" *ngIf="numEtNomRue?.errors?.['required']">L'adresse de l'entreprise est obligatoire</div>
             </div>
           </div>
 
@@ -91,7 +90,7 @@
           </div>
           <div class="input-group mb-2">
             <div *ngIf="villeEntre?.invalid && (villeEntre?.dirty || villeEntre?.touched)">
-              <div *ngIf="villeEntre?.errors?.['required']">A city is required</div>
+              <div  class="rouge" *ngIf="villeEntre?.errors?.['required']">La ville est obligatoire</div>
             </div>
           </div>
 
@@ -103,7 +102,7 @@
           </div>
           <div class="input-group mb-2">
             <div *ngIf="codePost?.invalid && (codePost?.dirty || codePost?.touched)">
-              <div *ngIf="codePost?.errors?.['required']">A zip is required</div>
+              <div  class="rouge" *ngIf="codePost?.errors?.['required']">Le code postale est obligatoire</div>
             </div>
           </div>
 
@@ -115,7 +114,7 @@
           </div>
           <div class="input-group mb-2">
             <div *ngIf="paysEntre?.invalid && (paysEntre?.dirty || paysEntre?.touched)">
-              <div *ngIf="paysEntre?.errors?.['required']">A country is required</div>
+              <div  class="rouge" *ngIf="paysEntre?.errors?.['required']">Le pays est obligatoire</div>
             </div>
           </div>
 
@@ -127,8 +126,8 @@
           </div>
           <div class="input-group mb-2">
             <div class="rouge" *ngIf="telEntre?.invalid && (telEntre?.dirty || telEntre?.touched)">
-              <div *ngIf="telEntre?.errors?.['required']">A phone is required</div>
-              <div *ngIf="telEntre?.errors?.['minlength']">Tel must be at least 10 characters</div>
+              <div  class="rouge" *ngIf="telEntre?.errors?.['required']">Le numéro de téléphone est obligatoire</div>
+              <div  class="rouge" *ngIf="telEntre?.errors?.['minlength']">Le numéro de téléphone n'est pas valide</div>
             </div>
           </div>
 
