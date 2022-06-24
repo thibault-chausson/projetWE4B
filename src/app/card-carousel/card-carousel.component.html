@@ -4,20 +4,26 @@
     <div>
 
         <!--Card-->
-      <div *ngIf="filtersLoaded2 | async">
+      <div *ngIf="filtersLoaded2 | async;else chargement">
         <app-card-for-index [ActiviteArray]="activiteArray"></app-card-for-index>
+        <button class="carousel-control-prev" type="button" attr.data-bs-target="#{{carouse.numero}}" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" attr.data-bs-target="#{{carouse.numero}}" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
+    <ng-template #chargement>
+      <div class="chargement">
+        <i class="fa-solid fa-circle-notch fa-spin"></i>
+      </div>
+    </ng-template>
         <!--Fin Card-->
     </div>
 
   </div>
-  <button class="carousel-control-prev" type="button" attr.data-bs-target="#{{carouse.numero}}" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" attr.data-bs-target="#{{carouse.numero}}" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+
 </div>
 </div>

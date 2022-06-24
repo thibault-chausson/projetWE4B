@@ -39,6 +39,11 @@ input{
 
 .descrip textarea{
   min-height: 150px;
+
+}
+
+.descrip p{
+  padding-bottom: 1em;
 }
 
 .fa-signature{
@@ -61,6 +66,7 @@ hr{
   width: 65vw;
   margin: auto;
   padding-bottom: 1em;
+  padding-top: 1em;
 
 }
 
@@ -131,19 +137,66 @@ hr{
 .descrip {
   grid-area: 1 / 1 / 2 / 10;
   text-align: justify;
+
 }
 .adresse {
-  padding-left: 20px;
+  grid-area: 1 / 1 / 2 / 10;
+  text-align: justify;
   padding-bottom: 2em;
+
+}
+
+.input-file{
+  margin-top: 1em;
+  margin-left: 1em;
+  font-family: LouisGeorgeBold;
+  color: #666666;
+}
+
+input{
+  font-family: LouisGeorge;
+}
+
+
+input::-webkit-file-upload-button{
+  border: none;
+  text-align: center;
+  font-family: LouisGeorge;
+  background-color: #53938c;
+  height: 2.3em;
+  border-radius: 25px;
+  width: 10em;
+  margin-right: 1em;
+}
+
+input::-webkit-file-upload-button:hover{
+  border: none;
+  text-align: center;
+  font-family: LouisGeorgeBold;
+  background-color: #a0d9d2;
+  height: 2.3em;
+  border-radius: 25px;
+  width: 10em;
+}
+
+
+.adresse2{
+  flex:1;
+  padding-right: 1em;
+}
+
+.adresse3{
+  flex:1;
 }
 
 .block1{
   display: flex;
+  padding-bottom: 1.3em;
 }
 
 .block2{
   display: flex;
-  padding-left: 1em;
+
 }
 
 .ville {
@@ -153,7 +206,7 @@ hr{
 
 .code{
   flex: 1;
-  padding-left: 1em;
+
 }
 
 .pays {
@@ -204,53 +257,6 @@ hr{
 
 .centre{
   text-align: center;
-}
-
-
-
-
-
-/* Par défaut, une étoile est en gris,
-   avec un padding et un curseur en forme de main. */
-.stars .fa-star {
-  color: gray;
-  cursor: pointer;
-  padding: 0.0625rem;
-}
-/* Si elle porte en plus la classe '.gold', elle sera en jaune. */
-.stars .fa-star.gold {
-  color: #ffdc0f;
-}
-
-/* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
-.rating {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Le groupe '.stars' positionne les étoiles
-     les unes à côté des autres sans espacements. */
-.stars {
-  display: inline-flex;
-  justify-content: center;
-  font-size: 3em;
-}
-
-/**
- * Et là opère la magie du ':hover' !
- */
-
-/* A l'état :hover sur le parent '.rating',
-     on force TOUTES les étoiles à passer en jaune. */
-.stars:hover .fa-star {
-  color: #ffdc0f;
-}
-/* Et si la souris survole une étoile en particulier,
-     on sélectionne toutes les étoiles qui sont APRÈS celle-ci
-     grâce à l'opérateur '~' et on les force en GRIS */
-.stars .fa-star:hover ~ .fa-star {
-  color: gray;
 }
 
 .pad{
