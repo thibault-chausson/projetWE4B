@@ -67,7 +67,6 @@ export class GestionProService {
         heure: actiAdd.heure,
         jour: actiAdd.jour,
       }).then(() => {
-        alert('activité ajoutée');
         this.router.navigate(['/gestion-pro/statistiques']);
       });
     });

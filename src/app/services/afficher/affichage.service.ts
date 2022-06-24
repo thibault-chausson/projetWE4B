@@ -38,7 +38,6 @@ export class AffichageService {
             infoActi.image5 = doc.get('image5');
           }
         });
-        console.log(infoActi);
         filtersLoaded = Promise.resolve(true);
       });
     });

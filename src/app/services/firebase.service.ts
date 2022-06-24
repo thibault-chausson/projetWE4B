@@ -32,14 +32,12 @@ export class FirebaseService {
           localStorage.setItem('ROLE', this.roleAs);
           this.userIsPro = true;
           console.log("Document data:", user.data());
-          alert("Vous êtes connecté en tant que professionnel");
           window.location.replace('/gestion-pro');
         } else {
           localStorage.setItem('STATE', 'true');
           this.roleAs = 'user';
           localStorage.setItem('ROLE', this.roleAs);
           this.userIsPro = false;
-          alert("Vous êtes connecté en tant que particulier");
           console.log("Cet utilisateur n'est pas un professionnel");
           window.location.replace('/accueil');
         }
@@ -70,7 +68,6 @@ export class FirebaseService {
         isPro: true,
       });
     }).then(() => {
-      alert('register successful');
       this.login(email, password)
       //this.router.navigate(['gestion-pro']);
     }, err => {
@@ -87,7 +84,6 @@ export class FirebaseService {
         isPro: false,
       });
     }).then(() => {
-      alert('registration successful');
       this.login(email, password)
       //this.router.navigate(['/accueil']);
     }, err => {
@@ -101,8 +97,7 @@ export class FirebaseService {
       this.isLogin = false;
       this.roleAs = '';
       localStorage.removeItem('ROLE');
-      this.router.navigate(['/accueil']).then(r =>
-        alert('logout successful'));
+      this.router.navigate(['/accueil'])
     }, err => {
       alert(err.message);
     })
@@ -125,7 +120,6 @@ export class FirebaseService {
 
 
   noter(note: number, id: string) {
-    console.log(note);
     this.firebaseAuth.currentUser.then(user => {
       return this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').doc(id).set({
         note: note,
@@ -144,7 +138,6 @@ export class FirebaseService {
         codePostale: codePostale,
         telephone: telephone,
       }).then(() => {
-        alert('profil modifié');
         this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/gestion-pro/profil']));
       });
     });
