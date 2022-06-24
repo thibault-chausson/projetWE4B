@@ -10,7 +10,8 @@ import {Router} from "@angular/router";
 export class CardDomaineComponent implements OnInit {
   @Input() activitesPres!: ActivitesPres;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   readMore() {
     this.router.navigate(['/', 'afficher-activite', this.activitesPres.idActivite]);

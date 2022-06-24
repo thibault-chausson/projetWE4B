@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FirebaseService} from "./services/firebase.service";
 
 @Component({
@@ -10,8 +10,6 @@ export class AppComponent {
 
 
   title = 'webLoisir';
-
-
 
 
 }

@@ -1,17 +1,13 @@
 /*Footer*/
 
 
-
-.copy
-{
+.copy {
   text-align: center;
   color: #9b9b9b;
 }
 
 
-
-#box2
-{
+#box2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,12 +25,12 @@
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'LouisGeorgeBold';
 
 }
 
-p{
+p {
   font-family: 'LouisGeorge';
 }
 

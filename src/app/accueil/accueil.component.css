@@ -1,14 +1,14 @@
-.etoile{
+.etoile {
   height: 1em;
 }
 
-.pad{
+.pad {
   padding-left: 30px;
   padding-right: 30px;
 
 }
 
-.espace{
+.espace {
   padding-top: 30px;
 }
 
@@ -22,7 +22,7 @@
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h2{
+h2 {
   font-family: 'LouisGeorgeBold';
 }
 

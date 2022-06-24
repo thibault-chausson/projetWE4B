@@ -1,18 +1,15 @@
 
-
-
-
-.name{
+.name {
   display: flex;
   padding-bottom: 1.3em;
 }
 
-input{
+input {
   color: #606060;
   font-family: 'LouisGeorge';
 }
 
-.name1{
+.name1 {
   flex: 1;
   text-align: left;
   padding-right: 1em;
@@ -22,32 +19,33 @@ input{
 
 }
 
-.descrip textarea{
+.descrip textarea {
   min-height: 150px;
 
 }
 
-.descrip p{
+.descrip p {
   padding-bottom: 1em;
 }
 
-.fa-signature{
+.fa-signature {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
-.name2{
+
+.name2 {
   flex: 1;
   text-align: left;
   font-family: 'LouisGeorgeBold';
   font-size: 1.5em;
 }
 
-.fa-user-tie{
+.fa-user-tie {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
 
-hr{
+hr {
   width: 65vw;
   margin: auto;
   padding-bottom: 1em;
@@ -55,58 +53,56 @@ hr{
 
 }
 
-.info2{
+.info2 {
   display: flex;
 }
 
-.domaine{
+.domaine {
   flex: 1;
   padding-right: 1em;
 }
 
-.categorie{
+.categorie {
   flex: 1;
 
 }
 
-.prix{
-  flex: 1;
-  padding-left: 1em;
-}
-
-.telephone{
+.prix {
   flex: 1;
   padding-left: 1em;
 }
 
-.fa-phone{
+.telephone {
+  flex: 1;
+  padding-left: 1em;
+}
+
+.fa-phone {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
 
-.fa-dollar-sign{
+.fa-dollar-sign {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
 
-.fa-tags{
+.fa-tags {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
 
 
-
-.fa-list{
+.fa-list {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
 
-.mainPhoto2{
+.mainPhoto2 {
   display: flex;
 
   padding-bottom: 3em;
 }
-
 
 
 .mainPhoto {
@@ -117,20 +113,17 @@ hr{
 
 }
 
-.mainPhoto img{
+.mainPhoto img {
   max-width: 200px;
   min-height: 200px;
 }
 
-.image{
+.image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   padding: 10px;
 }
-
-
-
 
 
 .info {
@@ -141,11 +134,13 @@ hr{
   grid-row-gap: 0px;
   padding: 10px;
 }
+
 .descrip {
   grid-area: 1 / 1 / 2 / 10;
   text-align: justify;
 
 }
+
 .adresse {
   grid-area: 1 / 1 / 2 / 10;
   text-align: justify;
@@ -153,19 +148,19 @@ hr{
 
 }
 
-.input-file{
+.input-file {
   margin-top: 1em;
   margin-left: 1em;
   font-family: LouisGeorgeBold;
   color: #666666;
 }
 
-input{
+input {
   font-family: LouisGeorge;
 }
 
 
-input::-webkit-file-upload-button{
+input::-webkit-file-upload-button {
   border: none;
   text-align: center;
   font-family: LouisGeorge;
@@ -176,7 +171,7 @@ input::-webkit-file-upload-button{
   margin-right: 1em;
 }
 
-input::-webkit-file-upload-button:hover{
+input::-webkit-file-upload-button:hover {
   border: none;
   text-align: center;
   font-family: LouisGeorgeBold;
@@ -187,21 +182,21 @@ input::-webkit-file-upload-button:hover{
 }
 
 
-.adresse2{
-  flex:1;
+.adresse2 {
+  flex: 1;
   padding-right: 1em;
 }
 
-.adresse3{
-  flex:1;
+.adresse3 {
+  flex: 1;
 }
 
-.block1{
+.block1 {
   display: flex;
   padding-bottom: 1.3em;
 }
 
-.block2{
+.block2 {
   display: flex;
 
 }
@@ -211,7 +206,7 @@ input::-webkit-file-upload-button:hover{
   padding-right: 1em;
 }
 
-.code{
+.code {
   flex: 1;
 
 }
@@ -221,57 +216,55 @@ input::-webkit-file-upload-button:hover{
   padding-left: 1em;
 }
 
-.fa-location-dot{
+.fa-location-dot {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
 
-.fa-map-location{
+.fa-map-location {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
 
-.fa-city{
+.fa-city {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
 
-.fa-location-crosshairs{
+.fa-location-crosshairs {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
 
-.fa-earth-africa{
+.fa-earth-africa {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
 
 
-.droite{
+.droite {
   text-align: right;
 }
 
-.ad{
+.ad {
   list-style: none;
   padding-left: 20px;
 }
 
-.adInfo{
+.adInfo {
   list-style: none;
   text-decoration: underline;
   font-weight: bold;
 }
 
-.centre{
+.centre {
   text-align: center;
 }
 
-.pad{
+.pad {
 
   padding-right: 1em;
 }
-
-
 
 
 @font-face {
@@ -284,39 +277,39 @@ input::-webkit-file-upload-button:hover{
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'LouisGeorgeBold';
 
 }
 
-p{
+p {
   font-family: 'LouisGeorge';
 }
 
-h2{
+h2 {
   font-size: 1.5em;
 }
 
-.fa-feather{
+.fa-feather {
   font-size: 1.1em;
   padding-right: 0.5em;
 }
 
-button:focus{
+button:focus {
   border: none;
 }
 
-button:hover{
+button:hover {
   border: none;
   background-color: #5ad9ca;
   font-family: LouisGeorgeBold;
 }
 
-button:after{
+button:after {
   border: none;
 }
 
-button{
+button {
   align-items: center;
   justify-content: center;
   border: none;

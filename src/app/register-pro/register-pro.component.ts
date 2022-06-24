@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FirebaseService} from "../services/firebase.service";
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 
@@ -10,27 +10,27 @@ import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/form
 export class RegisterProComponent implements OnInit {
 
 
-  emailPro : string = '';
-  passwordPro : string = '';
-  passwordCheckPro : string = '';
-  nomEntreprise : string = '';
-  numNomRue : string = '';
-  ville : string = '';
-  codePostale : string = '';
-  pays : string = '';
-  telephone : string = '';
+  emailPro: string = '';
+  passwordPro: string = '';
+  passwordCheckPro: string = '';
+  nomEntreprise: string = '';
+  numNomRue: string = '';
+  ville: string = '';
+  codePostale: string = '';
+  pays: string = '';
+  telephone: string = '';
 
 
   inscriptionPro = new FormGroup({
-    emailPro : new FormControl('', [Validators.required, Validators.email]),
-    passwordPro : new FormControl('', [Validators.required, Validators.minLength(6)]),
-    passwordCheckPro : new FormControl('', [Validators.required, Validators.minLength(6)]),
-    nomEntreprise : new FormControl('', [Validators.required]),
-    numNomRue : new FormControl('', [Validators.required]),
-    ville : new FormControl('', [Validators.required]),
-    codePostale : new FormControl('', [Validators.required]),
-    pays : new FormControl('', [Validators.required]),
-    telephone : new FormControl('', [Validators.required, Validators.minLength(10)])
+    emailPro: new FormControl('', [Validators.required, Validators.email]),
+    passwordPro: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    passwordCheckPro: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    nomEntreprise: new FormControl('', [Validators.required]),
+    numNomRue: new FormControl('', [Validators.required]),
+    ville: new FormControl('', [Validators.required]),
+    codePostale: new FormControl('', [Validators.required]),
+    pays: new FormControl('', [Validators.required]),
+    telephone: new FormControl('', [Validators.required, Validators.minLength(10)])
   });
 
   get email(): AbstractControl | null {
@@ -79,16 +79,13 @@ export class RegisterProComponent implements OnInit {
   }
 
 
-
-
-
-
-  constructor(private auth : FirebaseService) { }
+  constructor(private auth: FirebaseService) {
+  }
 
   ngOnInit(): void {
   }
 
-  doSth(){
+  doSth() {
   }
 
   registerPro() {
@@ -104,43 +101,43 @@ export class RegisterProComponent implements OnInit {
       return;
     }
 
-    if(this.passwordPro != this.passwordCheckPro){
+    if (this.passwordPro != this.passwordCheckPro) {
       alert('Il y a une erreur dans la vérification du mot de passe !');
       return;
     }
 
-    if(this.nomEntreprise == ''){
+    if (this.nomEntreprise == '') {
       alert("Le nom de l'entreprise est obligatoire");
       return;
     }
-    if(this.numNomRue == ''){
+    if (this.numNomRue == '') {
       alert("l'adresse de l'entreprise est obligatoire");
       return;
     }
-    if(this.codePostale == ''){
+    if (this.codePostale == '') {
       alert("le code postale de l'entreprise est obligatoire");
       return;
     }
-    if(this.ville == ''){
+    if (this.ville == '') {
       alert("la ville de l'entreprise est obligatoire");
       return;
     }
-    if(this.pays == ''){
+    if (this.pays == '') {
       alert("Le pays d'origine de l'entreprise est obligatoire");
       return;
     }
-    if(this.telephone == ''){
+    if (this.telephone == '') {
       alert("le numéro de téléphone de l'entreprise est obligatoire");
       return;
     }
 
 
-    this.auth.registerPro(this.emailPro, this.passwordPro, this.nomEntreprise, this.numNomRue, this.ville,  this.pays, this.codePostale, this.telephone);
+    this.auth.registerPro(this.emailPro, this.passwordPro, this.nomEntreprise, this.numNomRue, this.ville, this.pays, this.codePostale, this.telephone);
 
 
     this.emailPro = '';
     this.passwordPro = '';
-    this.passwordCheckPro ='';
+    this.passwordCheckPro = '';
     this.nomEntreprise = '';
     this.numNomRue = '';
     this.ville = '';

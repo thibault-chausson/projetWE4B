@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import {FirebaseService} from "./services/firebase.service";
 
 @Injectable({
@@ -27,8 +27,7 @@ export class AuthGuard implements CanActivate {
         return false;
       }
       return true;
-    }
-    else{
+    } else {
       this.router.navigate(['/accueil']);
       return false;
     }

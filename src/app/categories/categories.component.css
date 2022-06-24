@@ -1,4 +1,4 @@
-.pad{
+.pad {
   padding-right: 30px;
   padding-left: 30px;
   min-height: 46em;
@@ -14,11 +14,11 @@
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'LouisGeorgeBold';
 
 }
 
-p{
+p {
   font-family: 'LouisGeorge';
 }

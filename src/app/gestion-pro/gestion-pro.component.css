@@ -7,10 +7,12 @@
   background-color: #C0D7D8;
   min-height: 41em;
 }
+
 .titre {
   background-color: #EBDAD4;
   font-family: 'Austein';
 }
+
 .board {
   flex: 3;
   background-color: #E1F4F5;
@@ -34,17 +36,19 @@
   margin-top: 16px;
   padding-top: 5px;
 }
+
 .gauche {
   grid-area: 1 / 1 / 2 / 3;
   background-color: #C0D7D8;
 }
-.titre{
+
+.titre {
   grid-area: 1 / 1 / 2 / 13;
   padding-top: 10px;
   padding-left: 1em;
 }
 
-.titre h1{
+.titre h1 {
   font-family: 'Austein';
   font-size: 2.3em;
   color: #681300;
@@ -60,12 +64,12 @@
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'LouisGeorgeBold';
 
 }
 
-p{
+p {
   font-family: 'LouisGeorge';
 }
 

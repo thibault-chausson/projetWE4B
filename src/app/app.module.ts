@@ -1,37 +1,38 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AngularFireModule} from "@angular/fire/compat";
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CarouselIndexComponent } from './carousel-index/carousel-index.component';
-import { MyFooterComponent } from './my-footer/my-footer.component';
-import { CardCarouselComponent } from './card-carousel/card-carousel.component';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AngularFireModule} from "@angular/fire/compat";
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {CarouselIndexComponent} from './carousel-index/carousel-index.component';
+import {MyFooterComponent} from './my-footer/my-footer.component';
+import {CardCarouselComponent} from './card-carousel/card-carousel.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { AccueilComponent } from './accueil/accueil.component';
-import { ConnexionComponent } from './connexion/connexion.component';
-import { LoginComponent } from './login/login.component';
-import { FirebaseService } from "./services/firebase.service";
-import { RegisterUserComponent } from './register-user/register-user.component';
-import { DomainesComponent } from './domaines/domaines.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { RecherchesComponent } from './recherches/recherches.component';
-import { RegisterProComponent } from './register-pro/register-pro.component';
-import { Error404Component} from "./error404/error404.component";
-import { MenuLoggedComponent } from './menu-logged/menu-logged.component';
-import {  AngularFireAuthGuardModule,} from '@angular/fire/compat/auth-guard';
-import { GestionProComponent } from './gestion-pro/gestion-pro.component';
-import { MenuGestionProComponent } from './menu-gestion-pro/menu-gestion-pro.component';
-import { StatistiquesGestionProComponent } from './statistiques-gestion-pro/statistiques-gestion-pro.component';
-import { ProfilGestionProComponent } from './profil-gestion-pro/profil-gestion-pro.component';
-import { AddActiviteGestionProComponent } from './add-activite-gestion-pro/add-activite-gestion-pro.component';
-import { AfficherActiviteComponent } from './afficher-activite/afficher-activite.component';
-import { ModifierActiviteGestionProComponent } from './modifier-activite-gestion-pro/modifier-activite-gestion-pro.component';
-import { ActivitesGestionProComponent } from './activites-gestion-pro/activites-gestion-pro.component';
-import { CardActiviteGestionProComponent } from './card-activite-gestion-pro/card-activite-gestion-pro.component';
-import { CardDomaineComponent } from './card-domaine/card-domaine.component';
-import { CardForIndexComponent } from './card-for-index/card-for-index.component';
-import { SousCarouselCardComponent } from './sous-carousel-card/sous-carousel-card.component';
-
+import {AccueilComponent} from './accueil/accueil.component';
+import {ConnexionComponent} from './connexion/connexion.component';
+import {LoginComponent} from './login/login.component';
+import {FirebaseService} from "./services/firebase.service";
+import {RegisterUserComponent} from './register-user/register-user.component';
+import {DomainesComponent} from './domaines/domaines.component';
+import {CategoriesComponent} from './categories/categories.component';
+import {RecherchesComponent} from './recherches/recherches.component';
+import {RegisterProComponent} from './register-pro/register-pro.component';
+import {Error404Component} from "./error404/error404.component";
+import {MenuLoggedComponent} from './menu-logged/menu-logged.component';
+import {AngularFireAuthGuardModule,} from '@angular/fire/compat/auth-guard';
+import {GestionProComponent} from './gestion-pro/gestion-pro.component';
+import {MenuGestionProComponent} from './menu-gestion-pro/menu-gestion-pro.component';
+import {StatistiquesGestionProComponent} from './statistiques-gestion-pro/statistiques-gestion-pro.component';
+import {ProfilGestionProComponent} from './profil-gestion-pro/profil-gestion-pro.component';
+import {AddActiviteGestionProComponent} from './add-activite-gestion-pro/add-activite-gestion-pro.component';
+import {AfficherActiviteComponent} from './afficher-activite/afficher-activite.component';
+import {
+  ModifierActiviteGestionProComponent
+} from './modifier-activite-gestion-pro/modifier-activite-gestion-pro.component';
+import {ActivitesGestionProComponent} from './activites-gestion-pro/activites-gestion-pro.component';
+import {CardActiviteGestionProComponent} from './card-activite-gestion-pro/card-activite-gestion-pro.component';
+import {CardDomaineComponent} from './card-domaine/card-domaine.component';
+import {CardForIndexComponent} from './card-for-index/card-for-index.component';
+import {SousCarouselCardComponent} from './sous-carousel-card/sous-carousel-card.component';
 
 
 @NgModule({
@@ -86,4 +87,5 @@ import { SousCarouselCardComponent } from './sous-carousel-card/sous-carousel-ca
 })
 
 
-export class AppModule {}
+export class AppModule {
+}

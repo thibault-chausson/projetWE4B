@@ -1,11 +1,10 @@
 
-
-.centre{
+.centre {
   text-align: center;
 }
 
 
-.card{
+.card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -24,7 +23,7 @@
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'LouisGeorgeBold';
   font-size: 1.5em;
   color: black;
@@ -38,33 +37,33 @@ h1, h2, h3, h4, h5, h6{
 }
 
 
-p{
+p {
   font-family: 'LouisGeorge';
   color: black;
 }
 
-.text-muted{
+.text-muted {
   font-size: 1em;
   font-family: 'LouisGeorgeBold';
   color: #666666;
 }
 
-button:focus{
+button:focus {
   border: none;
 }
 
-button:hover{
+button:hover {
   color: white;
   border: none;
   background-color: #6ac2b7;
   font-family: LouisGeorgeBold;
 }
 
-button:after{
+button:after {
   border: none;
 }
 
-button{
+button {
 
   margin-right: 0.5em;
   margin-bottom: 0.5em;
@@ -76,11 +75,11 @@ button{
   border-radius: 25px;
 }
 
-.description{
+.description {
   max-width: 600px;
 }
 
-.max{
+.max {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Activite} from "../classes/activites";
 
 
@@ -13,12 +13,13 @@ export class CardForIndexComponent implements OnInit {
   ActiviteArrayPres: Activite[][] = [];
   nbTrio: number = 0;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    this.nbTrio = ~~(this.ActiviteArray.length/3);
-    for (let j= 0; j < this.nbTrio; j++) {
-      this.ActiviteArrayPres.push(this.ActiviteArray.slice(j*3, (j+1)*3));
+    this.nbTrio = ~~(this.ActiviteArray.length / 3);
+    for (let j = 0; j < this.nbTrio; j++) {
+      this.ActiviteArrayPres.push(this.ActiviteArray.slice(j * 3, (j + 1) * 3));
     }
   }
 

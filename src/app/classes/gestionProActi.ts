@@ -1,5 +1,5 @@
 export class GestionProActi {
-  constructor (
+  constructor(
     public image1: any,
     public image2: any,
     public image3: any,
@@ -19,28 +19,27 @@ export class GestionProActi {
     public inputDoma: string,
     public heure: string,
     public jour: string
+  ) {
 
-    ) {
-
-    this.image1=image1;
-    this.image2=image2;
-    this.image3=image3;
-    this.image4=image4;
-    this.image5=image5;
-    this.inputNomActi=inputNomActi;
-    this.inputNomRes=inputNomRes;
-    this.inputAddress=inputAddress;
-    this.inputAddress2=inputAddress2;
-    this.inputCity=inputCity;
-    this.inputZip=inputZip;
-    this.inputState=inputState;
-    this.inputTel=inputTel;
-    this.inputPrix=inputPrix;
-    this.inputDes=inputDes;
-    this.inputCate=inputCate;
-    this.inputDoma=inputDoma;
-    this.heure=heure;
-    this.jour=jour;
+    this.image1 = image1;
+    this.image2 = image2;
+    this.image3 = image3;
+    this.image4 = image4;
+    this.image5 = image5;
+    this.inputNomActi = inputNomActi;
+    this.inputNomRes = inputNomRes;
+    this.inputAddress = inputAddress;
+    this.inputAddress2 = inputAddress2;
+    this.inputCity = inputCity;
+    this.inputZip = inputZip;
+    this.inputState = inputState;
+    this.inputTel = inputTel;
+    this.inputPrix = inputPrix;
+    this.inputDes = inputDes;
+    this.inputCate = inputCate;
+    this.inputDoma = inputDoma;
+    this.heure = heure;
+    this.jour = jour;
 
   }
 }

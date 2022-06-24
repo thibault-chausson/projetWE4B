@@ -11,13 +11,14 @@ import {GestionProActi} from "../../classes/gestionProActi";
 })
 export class GestionProService {
 
-  constructor(private firebaseAuth : AngularFireAuth , private UserDb : AngularFirestore, private router : Router) { }
+  constructor(private firebaseAuth: AngularFireAuth, private UserDb: AngularFirestore, private router: Router) {
+  }
 
-  supprimerActivite(idActivite : string, filtersLoaded : Promise<boolean>){
-    this.firebaseAuth.currentUser.then( user => {
+  supprimerActivite(idActivite: string, filtersLoaded: Promise<boolean>) {
+    this.firebaseAuth.currentUser.then(user => {
       this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').doc(idActivite).delete();
       filtersLoaded = Promise.resolve(true);
-      if(filtersLoaded != null){
+      if (filtersLoaded != null) {
         window.location.reload();
       }
     });
@@ -25,7 +26,7 @@ export class GestionProService {
   }
 
 
-  afficheProActivite(acti : ActivitesGestionProComponent){
+  afficheProActivite(acti: ActivitesGestionProComponent) {
     this.firebaseAuth.currentUser.then(user => {
       this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').get().subscribe(querrySnapshot => {
         querrySnapshot.forEach((doc) => {
@@ -43,8 +44,8 @@ export class GestionProService {
   }
 
 
-  addActivite(actiAdd : GestionProActi){
-    this.firebaseAuth.currentUser.then( user => {
+  addActivite(actiAdd: GestionProActi) {
+    this.firebaseAuth.currentUser.then(user => {
       return this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').doc().set({
         inputNomActi: actiAdd.inputNomActi,
         inputNomRes: actiAdd.inputNomRes,
@@ -63,9 +64,9 @@ export class GestionProService {
         image3: actiAdd.image3,
         image4: actiAdd.image4,
         image5: actiAdd.image5,
-        heure : actiAdd.heure,
-        jour : actiAdd.jour,
-      }).then( () => {
+        heure: actiAdd.heure,
+        jour: actiAdd.jour,
+      }).then(() => {
         alert('activité ajoutée');
         this.router.navigate(['/gestion-pro/statistiques']);
       });
@@ -74,8 +75,8 @@ export class GestionProService {
 
   }
 
-  modifActivite(actiAdd : GestionProActi, idActivite : string){
-    this.firebaseAuth.currentUser.then( user => {
+  modifActivite(actiAdd: GestionProActi, idActivite: string) {
+    this.firebaseAuth.currentUser.then(user => {
       return this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').doc(idActivite).set({
         inputNomActi: actiAdd.inputNomActi,
         inputNomRes: actiAdd.inputNomRes,
@@ -94,18 +95,18 @@ export class GestionProService {
         image3: actiAdd.image3,
         image4: actiAdd.image4,
         image5: actiAdd.image5,
-        heure : actiAdd.heure,
-        jour : actiAdd.jour,
-      }).then( () => {
+        heure: actiAdd.heure,
+        jour: actiAdd.jour,
+      }).then(() => {
         alert('activité modifiée');
-        this.router.navigateByUrl('/', {skipLocationChange : true}).then( () => this.router.navigate(['/gestion-pro/activites']));
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/gestion-pro/activites']));
       });
     });
 
 
   }
 
-  onFileSelected(event: any, numero : number, ajoutActi : GestionProActi){
+  onFileSelected(event: any, numero: number, ajoutActi: GestionProActi) {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
@@ -113,7 +114,7 @@ export class GestionProService {
         image.src = e.target.result;
         image.onload = rs => {
           const imgBase64Path = e.target.result;
-          switch (numero){
+          switch (numero) {
             case 1 : {
               ajoutActi.image1 = imgBase64Path;
               break;
@@ -134,7 +135,7 @@ export class GestionProService {
               ajoutActi.image5 = imgBase64Path;
               break;
             }
-            default:{
+            default: {
               console.log("problème lecture photo")
             }
           }

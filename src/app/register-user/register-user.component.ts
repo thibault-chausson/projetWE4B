@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FirebaseService} from "../services/firebase.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
@@ -11,12 +11,12 @@ export class RegisterUserComponent implements OnInit {
 
   email: string = '';
   password: string = '';
-  passwordCheck : string = '';
+  passwordCheck: string = '';
 
   user = new FormGroup({
-    email : new FormControl('', [Validators.required, Validators.email]),
-    pwd : new FormControl('', [Validators.required, Validators.minLength(6)]),
-    pwdCheck : new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    pwd: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    pwdCheck: new FormControl('', [Validators.required]),
 
   });
 
@@ -36,7 +36,8 @@ export class RegisterUserComponent implements OnInit {
   }
 
 
-  constructor(private auth: FirebaseService) {}
+  constructor(private auth: FirebaseService) {
+  }
 
   ngOnInit(): void {
   }
@@ -57,7 +58,7 @@ export class RegisterUserComponent implements OnInit {
       return;
     }
 
-    if(this.password != this.passwordCheck){
+    if (this.password != this.passwordCheck) {
       alert('Il y a une erreur dans la vérification du mot de passe !');
       return;
     }
@@ -66,7 +67,7 @@ export class RegisterUserComponent implements OnInit {
 
     this.email = '';
     this.password = '';
-    this.passwordCheck ='';
+    this.passwordCheck = '';
 
   }
 

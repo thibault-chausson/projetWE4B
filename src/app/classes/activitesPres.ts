@@ -1,11 +1,11 @@
 export class ActivitesPres {
-  constructor (
+  constructor(
     public nomActivite: string,
     public descriptionActivite: string,
     public dateActivite: string,
     public idActivite: string,
     public imagePath: any,
-    public prix : number,) {
+    public prix: number,) {
 
     this.nomActivite = nomActivite
     this.descriptionActivite = descriptionActivite

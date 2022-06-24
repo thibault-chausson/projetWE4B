@@ -3,7 +3,7 @@
   width: 500px;
   margin-top: 5em;
   margin-bottom: auto;
-  background: rgb(88,179,180);
+  background: rgb(88, 179, 180);
   position: relative;
   display: flex;
   justify-content: center;
@@ -31,19 +31,21 @@
   border: 2px solid white;
   height: 180px;
   border-radius: 50%;
-  background-color: rgb(156,229,225);
+  background-color: rgb(156, 229, 225);
 }
 
 .brand_logo {
   margin-top: 15px;
   height: 125px;
 }
+
 .form_container {
   margin-top: 100px;
 }
+
 .login_btn {
   width: 100%;
-  background: rgb(41,120,117) !important;
+  background: rgb(41, 120, 117) !important;
   color: white !important;
   border-radius: 30px;
 }
@@ -51,8 +53,8 @@
 .login_btn2 {
   text-align: center;
   width: 67%;
-  background: rgb(156,229,225) !important;
-  color: rgb(21,80,72) !important;
+  background: rgb(156, 229, 225) !important;
+  color: rgb(21, 80, 72) !important;
   margin-bottom: 20px;
   border-radius: 30px;
 }
@@ -71,39 +73,40 @@
 .login_container {
   padding: 0 2rem;
 }
+
 .input-group-text {
-  background: rgb(21,80,72) !important;
+  background: rgb(21, 80, 72) !important;
   color: white !important;
   border: 0 !important;
   border-radius: 0.25rem 0 0 0.25rem !important;
   height: 2.5em;
 }
+
 .input_user,
 .input_pass:focus {
   box-shadow: none !important;
   outline: 0px !important;
 }
 
-.centre{
+.centre {
   text-align: center;
 }
 
-.seCo{
-  color: rgb(21,80,72);
+.seCo {
+  color: rgb(21, 80, 72);
   font-size: 2em;
 }
 
 .links a {
-  color: rgb(21,80,72);
+  color: rgb(21, 80, 72);
 }
 
-.links{
+.links {
   color: white;
 }
 
 
-
-.h-100{
+.h-100 {
   padding-top: 20px;
 }
 
@@ -117,11 +120,11 @@
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'LouisGeorgeBold';
 
 }
 
-p{
+p {
   font-family: 'LouisGeorge';
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {ActivatedRoute} from "@angular/router";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
@@ -9,10 +9,11 @@ import {GestionProActi} from "../../classes/gestionProActi";
 })
 export class AffichageService {
 
-  constructor(private activatedroute : ActivatedRoute, private db : AngularFirestore, private auth : AngularFireAuth) { }
+  constructor(private activatedroute: ActivatedRoute, private db: AngularFirestore, private auth: AngularFireAuth) {
+  }
 
 
-  afficher(filtersLoaded : Promise<boolean>, infoActi : GestionProActi, numeroActi : string) {
+  afficher(filtersLoaded: Promise<boolean>, infoActi: GestionProActi, numeroActi: string) {
     this.auth.currentUser.then(user => {
       this.db.collectionGroup('sous-acti').get().subscribe(querrySnapshot => {
         querrySnapshot.forEach((doc) => {
@@ -42,7 +43,6 @@ export class AffichageService {
       });
     });
   }
-
 
 
 }

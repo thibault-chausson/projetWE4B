@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {AngularFireAuthGuard, redirectUnauthorizedTo} from "@angular/fire/compat/auth-guard";
 import {AppComponent} from "./app.component";
 import {AccueilComponent} from "./accueil/accueil.component";
@@ -25,39 +25,59 @@ import {Error404Component} from "./error404/error404.component";
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['connexion']);
 
 
-const route:Routes=[
-  {path:'', redirectTo:'/accueil', pathMatch:'full'},
-  { path: '',             component: AppComponent},
-  { path: 'accueil',      component: AccueilComponent},
-  { path: 'domaines/:id',     component: DomainesComponent},
-  { path: 'categories/:id',     component: CategoriesComponent},
-  { path: 'recherches',     component: RecherchesComponent},
-  { path: 'connexion',     component: ConnexionComponent},
-  { path: 'login',     component: RecherchesComponent},
-  {path: 'register', component : RegisterUserComponent},
-  {path: 'register-pro', component : RegisterProComponent},
-  {path: 'afficher-activite/:id', component : AfficherActiviteComponent},
-  { path: 'gestion-pro',     component: GestionProComponent, children: [ { path: '',           component: StatistiquesGestionProComponent},
-      {path:'statistiques', component: StatistiquesGestionProComponent},
-      {path:'addActivite', component: AddActiviteGestionProComponent},
-      {path:'profil', component: ProfilGestionProComponent, canActivate: [AngularFireAuthGuard], runGuardsAndResolvers: 'always',},
-      {path:'activites', component: ActivitesGestionProComponent, children: [{path:'modifierActivite/:id', component: ModifierActiviteGestionProComponent},],  canActivate: [AngularFireAuthGuard], runGuardsAndResolvers: 'always',},
+const route: Routes = [
+  {path: '', redirectTo: '/accueil', pathMatch: 'full'},
+  {path: '', component: AppComponent},
+  {path: 'accueil', component: AccueilComponent},
+  {path: 'domaines/:id', component: DomainesComponent},
+  {path: 'categories/:id', component: CategoriesComponent},
+  {path: 'recherches', component: RecherchesComponent},
+  {path: 'connexion', component: ConnexionComponent},
+  {path: 'login', component: RecherchesComponent},
+  {path: 'register', component: RegisterUserComponent},
+  {path: 'register-pro', component: RegisterProComponent},
+  {path: 'afficher-activite/:id', component: AfficherActiviteComponent},
+  {
+    path: 'gestion-pro',
+    component: GestionProComponent,
+    children: [{path: '', component: StatistiquesGestionProComponent},
+      {path: 'statistiques', component: StatistiquesGestionProComponent},
+      {path: 'addActivite', component: AddActiviteGestionProComponent},
+      {
+        path: 'profil',
+        component: ProfilGestionProComponent,
+        canActivate: [AngularFireAuthGuard],
+        runGuardsAndResolvers: 'always',
+      },
+      {
+        path: 'activites',
+        component: ActivitesGestionProComponent,
+        children: [{path: 'modifierActivite/:id', component: ModifierActiviteGestionProComponent},],
+        canActivate: [AngularFireAuthGuard],
+        runGuardsAndResolvers: 'always',
+      },
     ],
     canActivate: [AuthGuard],
     data: {
       role: 'pro'
     }
   },
-  { path: 'add-activite', component : AddActiviteGestionProComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
-  { path: '**', component : Error404Component},
+  {
+    path: 'add-activite',
+    component: AddActiviteGestionProComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: {authGuardPipe: redirectUnauthorizedToLogin}
+  },
+  {path: '**', component: Error404Component},
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(route , { scrollPositionRestoration: 'enabled', onSameUrlNavigation: "reload"} ),
+    RouterModule.forRoot(route, {scrollPositionRestoration: 'enabled', onSameUrlNavigation: "reload"}),
   ],
   exports: [
     RouterModule
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

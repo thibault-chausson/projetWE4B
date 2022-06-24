@@ -1,14 +1,13 @@
 
-
-.menu{
+.menu {
   margin-left: 0.5em;
   display: block; /*Toute la surface sera cliquable*/
   text-decoration: none;
-  border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
+  border-bottom: 2px solid transparent; /*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
   font-family: 'LouisGeorge';
 }
 
-.dropdown-toggle{
+.dropdown-toggle {
 
   border: none;
   border-radius: 30px;
@@ -18,41 +17,41 @@
 
 }
 
-.dropdown-toggle:after{
+.dropdown-toggle:after {
   display: none;
 }
 
-.dropdown-toggle:hover{
+.dropdown-toggle:hover {
   color: #005d52;
-  background-color: rgb(231,241,244);
+  background-color: rgb(231, 241, 244);
 }
 
-.dropdown-toggle:focus{
-  border-color: #E5F4F6 ;
+.dropdown-toggle:focus {
+  border-color: #E5F4F6;
   background-color: #E5F4F6;
 }
 
 
-button:focus{
+button:focus {
   border: none;
 }
 
-button:hover{
+button:hover {
   border: none;
 }
 
-button:after{
+button:after {
   border: none;
 }
 
-button{
+button {
   margin-top: 2em;
   border: none;
   color: #005d52;
   text-align: left;
 }
 
-i{
+i {
   padding-right: 15px;
 }
 
@@ -67,11 +66,11 @@ i{
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'LouisGeorgeBold';
 
 }
 
-p{
+p {
   font-family: 'LouisGeorge';
 }

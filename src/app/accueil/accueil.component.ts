@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivitesPres} from "../classes/activitesPres";
 import {Carouselinfo} from "../classes/carouselinfo";
 import {AccueilService} from "../services/accueil/accueil.service";
@@ -15,16 +15,16 @@ export class AccueilComponent implements OnInit {
   identifiant: string = '';
   date: string = '';
   photo: any;
-  prix : number = 0;
+  prix: number = 0;
   filtersLoaded!: Promise<boolean>;
 
 
   ActiviteArray: ActivitesPres[] = [];
 
-  carouselCard1 !:Carouselinfo;
-  carouselCard2 !:Carouselinfo;
+  carouselCard1 !: Carouselinfo;
+  carouselCard2 !: Carouselinfo;
 
-  constructor(private accueil : AccueilService) {
+  constructor(private accueil: AccueilService) {
   }
 
   ngOnInit(): void {

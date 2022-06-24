@@ -3,22 +3,22 @@
   border-color: rgb(136, 76, 60);
 }
 
-button:focus{
+button:focus {
   border: none;
 }
 
-button:hover{
+button:hover {
   border: none;
   background-color: #ffcfc5;
   font-family: LouisGeorgeBold;
 
 }
 
-button:after{
+button:after {
   border: none;
 }
 
-button{
+button {
 
   margin-top: 1em;
   border: none;
@@ -33,10 +33,6 @@ button{
 }
 
 
-
-
-
-
 .rounded-circle {
   border-radius: 50% !important;
   width: 200px;
@@ -49,14 +45,13 @@ button{
 }
 
 
-
-
 .label-file {
   cursor: pointer;
   color: #00b1ca;
   font-weight: bold;
   font-family: LouisGeorge;
 }
+
 .label-file:hover {
   color: #25a5c4;
 }
@@ -66,8 +61,8 @@ button{
   display: none;
 }
 
-.row{
-  background-color: rgb(234,153,132);
+.row {
+  background-color: rgb(234, 153, 132);
   border-radius: 5px;
 }
 
@@ -88,18 +83,18 @@ form {
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'LouisGeorgeBold';
   text-align: center;
 
 
 }
 
-p{
+p {
   font-family: 'LouisGeorge';
   text-align: center;
 }
 
-.col-md-12{
+.col-md-12 {
   margin-bottom: 0.8em;
 }

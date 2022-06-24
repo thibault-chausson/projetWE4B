@@ -17,13 +17,15 @@
             <div class="input-group-append">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <input type="text" name="email" class="form-control input_user" value="" placeholder="Email" [(ngModel)] = "email" autofocus>
+            <input type="text" name="email" class="form-control input_user" value="" placeholder="Email"
+                   [(ngModel)]="email" autofocus>
           </div>
           <div class="input-group mb-2">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fas fa-key"></i></span>
             </div>
-            <input type="password" name="password" class="form-control input_pass" value="" placeholder="Mot de passe" [(ngModel)] = "password">
+            <input type="password" name="password" class="form-control input_pass" value="" placeholder="Mot de passe"
+                   [(ngModel)]="password">
           </div>
           <div class="d-flex justify-content-center mt-3 login_container">
             <button type="button" name="loginButton" class="btn login_btn" (click)="login()">Se connecter</button>
@@ -33,13 +35,13 @@
 
       <div class="mt-4">
         <div class="d-flex justify-content-center links">
-          <p> Pas encore de compte ?   </p>
+          <p> Pas encore de compte ? </p>
         </div>
         <div class="d-flex justify-content-center mt-3 login_container">
-          <button class="btn login_btn2" routerLink="/register">Explorateur </button>
+          <button class="btn login_btn2" routerLink="/register">Explorateur</button>
         </div>
         <div class="d-flex justify-content-center mt-3 login_container">
-        <button class="btn login_btn2" routerLink="/register-pro">Professionel </button>
+          <button class="btn login_btn2" routerLink="/register-pro">Professionel</button>
         </div>
       </div>
     </div>

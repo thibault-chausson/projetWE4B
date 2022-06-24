@@ -1,6 +1,7 @@
 .pad {
   padding-top: 30px;
 }
+
 .carre {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -8,26 +9,44 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
-.photo1 { grid-area: 1 / 1 / 4 / 7; max-width: 25vw; max-height: 25vw;}
-.photo2 { grid-area: 1 / 7 / 4 / 13; max-width: 25vw; max-height: 25vw;}
-.photo3 { grid-area: 4 / 1 / 7 / 7; max-width: 25vw; max-height: 25vw;}
-.photo4 { grid-area: 4 / 7 / 7 / 13; max-width: 25vw; max-height: 25vw;}
 
-.image1{
+.photo1 {
+  grid-area: 1 / 1 / 4 / 7;
+  max-width: 25vw;
+  max-height: 25vw;
+}
+
+.photo2 {
+  grid-area: 1 / 7 / 4 / 13;
+  max-width: 25vw;
+  max-height: 25vw;
+}
+
+.photo3 {
+  grid-area: 4 / 1 / 7 / 7;
+  max-width: 25vw;
+  max-height: 25vw;
+}
+
+.photo4 {
+  grid-area: 4 / 7 / 7 / 13;
+  max-width: 25vw;
+  max-height: 25vw;
+}
+
+.image1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
   padding: 5px;
 }
 
-.image2{
+.image2 {
   object-fit: cover;
   padding: 5px;
   width: 100%;
   height: 100%;
 }
-
-
 
 
 .mainPhoto {
@@ -37,40 +56,48 @@
   grid-column-gap: 0px;
 
 }
-.mainGauche { grid-area: 1 / 1 / 5 / 7; max-width: 50vw; max-height: 50vw; }
-.mainDroit { grid-area: 1 / 7 / 5 / 13; }
+
+.mainGauche {
+  grid-area: 1 / 1 / 5 / 7;
+  max-width: 50vw;
+  max-height: 50vw;
+}
+
+.mainDroit {
+  grid-area: 1 / 7 / 5 / 13;
+}
 
 .info {
 
 }
 
 
-
-
-.ad{
+.ad {
   list-style: none;
   padding-left: 20px;
 }
 
-.adInfo{
+.adInfo {
   list-style: none;
   text-decoration: underline;
   font-weight: bold;
 }
 
-.centre{
+.centre {
   text-align: center;
 }
 
 .rating {
   direction: rtl;
 }
+
 .rating a {
   color: #aaa;
   text-decoration: none;
   font-size: 3em;
   transition: color .4s;
 }
+
 .rating a:hover,
 .rating a:focus,
 .rating a:hover ~ a,
@@ -89,50 +116,50 @@
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'LouisGeorge';
   margin-left: 20px;
 }
 
-h1{
+h1 {
   font-size: 250%;
 
 }
 
-.info-rapide h2{
+.info-rapide h2 {
   display: inline-block;
   padding-left: 1vw;
   font-size: 100%;
 
 }
 
-.fa-star{
-  color : gold;
+.fa-star {
+  color: gold;
 }
 
-.fa-cog{
+.fa-cog {
   font-size: 60%;
 }
 
-.fa-location-dot{
-  color : #fc2222;
+.fa-location-dot {
+  color: #fc2222;
 }
 
-.fa-money-bill-1-wave{
-  color : #62be4d;
+.fa-money-bill-1-wave {
+  color: #62be4d;
 }
 
-.info-rapide{
+.info-rapide {
   padding-bottom: 0.5vw;
   font-size: 150%;
 }
 
-p{
+p {
   font-family: 'LouisGeorge';
   margin-left: 20px;
 }
 
-hr{
+hr {
   width: 95vw;
   margin: auto;
   padding-bottom: 1em;

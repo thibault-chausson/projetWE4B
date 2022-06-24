@@ -1,5 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import { FirebaseService } from '../services/firebase.service';
+import {FirebaseService} from '../services/firebase.service';
 
 @Component({
   selector: 'app-menu-logged',
@@ -8,34 +8,34 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class MenuLoggedComponent implements OnInit {
 
-  isPro : boolean = false;
-  isUser : boolean = false;
-  role : string | null | undefined;
+  isPro: boolean = false;
+  isUser: boolean = false;
+  role: string | null | undefined;
 
-  des1 : boolean = false;
-  des2 : boolean = false;
-  des3 : boolean = false;
+  des1: boolean = false;
+  des2: boolean = false;
+  des3: boolean = false;
 
 
   ordi !: boolean;
   innerWidth !: number;
 
 
-  constructor(public log : FirebaseService) { }
+  constructor(public log: FirebaseService) {
+  }
 
   ngOnInit(): void {
     this.role = localStorage.getItem('ROLE');
-    if(this.role == 'pro'){
+    if (this.role == 'pro') {
       this.isPro = true;
     }
-    if (this.role == 'user'){
+    if (this.role == 'user') {
       this.isUser = true;
     }
 
     if (window.innerWidth < 1127) { //768px portrait
       this.ordi = false;
-    }
-    else {
+    } else {
       this.ordi = true;
     }
 
@@ -43,12 +43,11 @@ export class MenuLoggedComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-    onResize(event : any) {
+  onResize(event: any) {
     this.innerWidth = window.innerWidth;
     if (this.innerWidth < 1127) { //768px portrait
       this.ordi = false;
-    }
-    else {
+    } else {
       this.ordi = true;
     }
   }
@@ -59,25 +58,21 @@ export class MenuLoggedComponent implements OnInit {
     window.location.replace('/accueil');
   }
 
-  des(num : number) {
+  des(num: number) {
     if (num == 1) {
       this.des1 = !this.des1;
       this.des2 = false;
       this.des3 = false;
-    }
-    else if (num == 2) {
+    } else if (num == 2) {
       this.des2 = !this.des2;
       this.des1 = false;
       this.des3 = false;
-    }
-    else if (num == 3) {
+    } else if (num == 3) {
       this.des3 = !this.des3;
       this.des1 = false;
       this.des2 = false;
     }
   }
-
-
 
 
 }

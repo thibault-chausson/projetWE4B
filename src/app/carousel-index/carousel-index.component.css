@@ -1,11 +1,11 @@
-.slide{
+.slide {
   padding-top: 20px;
   background-color: white;
   height: 70vh;
   margin-bottom: 10px;
 }
 
-.w-100{
+.w-100 {
   object-fit: cover;
   height: 70vh;
 }
@@ -20,15 +20,15 @@
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'LouisGeorgeBold';
 
 }
 
-p{
+p {
   font-family: 'LouisGeorge';
 }
 
-a{
+a {
   cursor: pointer;
 }

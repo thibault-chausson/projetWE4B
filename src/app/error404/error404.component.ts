@@ -11,8 +11,10 @@ import {FirebaseService} from "../services/firebase.service";
 
 export class Error404Component implements OnInit {
 
-  isLogged : boolean = false;
-  constructor(public fs : FirebaseService) { }
+  isLogged: boolean = false;
+
+  constructor(public fs: FirebaseService) {
+  }
 
 
   ngOnInit(): void {

@@ -1,73 +1,69 @@
-
-  <div class="pad">
-    <h1>Voici votre activité</h1>
-    <div class="mainPhoto">
-      <div class="mainGauche">
-        <img src="{{infoActi.image1}}" class="image1 img-fluid" alt="image1">
-      </div>
-      <div class="mainDroit">
-        <div class="carre">
-          <div class="photo1">
-            <img src="{{infoActi.image2}}" class="image2 img-fluid" alt="image2">
-          </div>
-          <div class="photo2">
-            <img src="{{infoActi.image3}}" class="image2 img-fluid" alt="image3">
-          </div>
-          <div class="photo3">
-            <img src="{{infoActi.image4}}" class="image2 img-fluid" alt="image4">
-          </div>
-          <div class="photo4">
-            <img src="{{infoActi.image5}}" class="image2 img-fluid" alt="image5">
-          </div>
+<div class="pad">
+  <h1>Voici votre activité</h1>
+  <div class="mainPhoto">
+    <div class="mainGauche">
+      <img src="{{infoActi.image1}}" class="image1 img-fluid" alt="image1">
+    </div>
+    <div class="mainDroit">
+      <div class="carre">
+        <div class="photo1">
+          <img src="{{infoActi.image2}}" class="image2 img-fluid" alt="image2">
+        </div>
+        <div class="photo2">
+          <img src="{{infoActi.image3}}" class="image2 img-fluid" alt="image3">
+        </div>
+        <div class="photo3">
+          <img src="{{infoActi.image4}}" class="image2 img-fluid" alt="image4">
+        </div>
+        <div class="photo4">
+          <img src="{{infoActi.image5}}" class="image2 img-fluid" alt="image5">
         </div>
       </div>
     </div>
-
-
-
-
-    <h1>{{infoActi.inputNomActi}}</h1>
-
-    <hr>
-
-
-    <div class="info-rapide">
-    <h2><i class="fa-solid fa-star"></i><i class="fa-solid fa-cog fa-spin"></i> En construction !</h2>
-      <h2><i class="fa-solid fa-location-dot"></i> {{infoActi.inputCity}} </h2>
-      <h2><i class="fa-solid fa-money-bill-1-wave"></i> {{infoActi.inputPrix}} </h2>
-      <h2><i class="fa-solid fa-phone"></i> {{infoActi.inputTel}}</h2>
-    </div>
-
-    <hr>
-
-
-    <div class="row">
-      <div class="col-sm-8">
-        <h2>Description</h2>
-        <p>
-          {{infoActi.inputDes}}
-        </p>
-        <p>
-          Dernière modification le {{infoActi.jour}}
-        </p>
-      </div>
-      <div class="col-sm-4">
-        <h2>Adresse :</h2>
-
-          <p>Rue :  {{infoActi.inputAddress}}, {{infoActi.inputAddress2}}</p>
-
-          <p>Ville :   {{infoActi.inputCity}}</p>
-          <p>Code postal :   {{infoActi.inputZip}}</p>
-
-          <p>Pays :    {{infoActi.inputState}}</p>
-
-
-      </div>
-    </div>
-
-
-
   </div>
+
+
+  <h1>{{infoActi.inputNomActi}}</h1>
+
+  <hr>
+
+
+  <div class="info-rapide">
+    <h2><i class="fa-solid fa-star"></i><i class="fa-solid fa-cog fa-spin"></i> En construction !</h2>
+    <h2><i class="fa-solid fa-location-dot"></i> {{infoActi.inputCity}} </h2>
+    <h2><i class="fa-solid fa-money-bill-1-wave"></i> {{infoActi.inputPrix}} </h2>
+    <h2><i class="fa-solid fa-phone"></i> {{infoActi.inputTel}}</h2>
+  </div>
+
+  <hr>
+
+
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Description</h2>
+      <p>
+        {{infoActi.inputDes}}
+      </p>
+      <p>
+        Dernière modification le {{infoActi.jour}}
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <h2>Adresse :</h2>
+
+      <p>Rue :  {{infoActi.inputAddress}}, {{infoActi.inputAddress2}}</p>
+
+      <p>Ville :   {{infoActi.inputCity}}</p>
+      <p>Code postal :   {{infoActi.inputZip}}</p>
+
+      <p>Pays :    {{infoActi.inputState}}</p>
+
+
+    </div>
+  </div>
+
+
+</div>
 
 
 

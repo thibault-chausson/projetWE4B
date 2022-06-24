@@ -1,6 +1,6 @@
-import { Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Activite} from "../classes/activites";
-import { Router } from "@angular/router";
+import {Router} from "@angular/router";
 import {GestionProService} from "../services/gestionPro/gestion-pro.service";
 
 
@@ -14,8 +14,8 @@ export class CardActiviteGestionProComponent implements OnInit {
   filtersLoaded!: Promise<boolean>;
 
 
-
-  constructor(private router: Router, private gestion : GestionProService) { }
+  constructor(private router: Router, private gestion: GestionProService) {
+  }
 
   readMore() {
     //this.router.navigate(['/', 'gestion-pro', 'activites', 'modifierActivite', this.activite.idActivite]);

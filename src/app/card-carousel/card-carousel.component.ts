@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Activite} from "../classes/activites";
 import {DomSanitizer} from "@angular/platform-browser";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
@@ -26,17 +26,15 @@ export class CardCarouselComponent implements OnInit {
   @Input() carouse!: Carouselinfo;
 
 
-
   filtersLoaded2!: Promise<boolean>;
 
-  constructor(private _sanitizer: DomSanitizer, private db : AngularFirestore, private auth : AngularFireAuth, private accueil : AccueilService) { }
+  constructor(private _sanitizer: DomSanitizer, private db: AngularFirestore, private auth: AngularFireAuth, private accueil: AccueilService) {
+  }
 
   ngOnInit(): void {
     this.accueil.afficheActiviteLittleCarousel(this);
 
   }
-
-
 
 
 }

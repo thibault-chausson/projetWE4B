@@ -1,22 +1,22 @@
-.addAct{
+.addAct {
   text-align: center;
   color: white;
-  background-color: rgb(50,155,156);
+  background-color: rgb(50, 155, 156);
   border-radius: 30px;
   padding: 20px;
   margin-top: 40px;
   text-decoration: none;
 }
 
-.addAct:hover{
+.addAct:hover {
   text-align: center;
   color: white;
-  background-color: rgb(186,209,210);
+  background-color: rgb(186, 209, 210);
   border-radius: 30px;
   padding: 20px;
 }
 
-.centre{
+.centre {
   text-align: center;
 }
 
@@ -30,11 +30,11 @@
   src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'LouisGeorgeBold';
 
 }
 
-p{
+p {
   font-family: 'LouisGeorge';
 }

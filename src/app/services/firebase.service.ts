@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
@@ -11,21 +11,22 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 export class FirebaseService {
 
 
-  userIsPro : boolean = false;
+  userIsPro: boolean = false;
   isLogin: boolean = false;
   roleAs: string | null | undefined;
 
 
-  constructor(private firebaseAuth : AngularFireAuth, private router : Router, private UserDb : AngularFirestore) { }
+  constructor(private firebaseAuth: AngularFireAuth, private router: Router, private UserDb: AngularFirestore) {
+  }
 
   console = console;
 
 
   //login method
-  login(email : string, password : string){
-    this.firebaseAuth.signInWithEmailAndPassword(email,password).then( cred => {
+  login(email: string, password: string) {
+    this.firebaseAuth.signInWithEmailAndPassword(email, password).then(cred => {
       this.UserDb.collection('users').doc(cred?.user?.uid).ref.get().then(user => {
-        if (user.get('isPro') == true){
+        if (user.get('isPro') == true) {
           localStorage.setItem('STATE', 'true');
           this.roleAs = 'pro';
           localStorage.setItem('ROLE', this.roleAs);
@@ -43,7 +44,7 @@ export class FirebaseService {
           window.location.replace('/accueil');
         }
         return user;
-      }).catch(function(error) {
+      }).catch(function (error) {
         console.log("Error getting document:", error);
       });
     }, err => {
@@ -54,8 +55,8 @@ export class FirebaseService {
 
   }
 
-  registerPro(email : string, password : string, nomEntreprise: string, numNomRue : string, ville : string, pays : string, codePostale : string, telephone : string ){
-    this.firebaseAuth.createUserWithEmailAndPassword(email, password).then( cred => {
+  registerPro(email: string, password: string, nomEntreprise: string, numNomRue: string, ville: string, pays: string, codePostale: string, telephone: string) {
+    this.firebaseAuth.createUserWithEmailAndPassword(email, password).then(cred => {
       this.UserDb.collection('professional').doc(cred?.user?.uid).set({
         emailPro: email,
         nomEntreprise: nomEntreprise,
@@ -68,7 +69,7 @@ export class FirebaseService {
       return this.UserDb.collection('users').doc(cred?.user?.uid).set({
         isPro: true,
       });
-    }).then( () => {
+    }).then(() => {
       alert('register successful');
       this.login(email, password)
       //this.router.navigate(['gestion-pro']);
@@ -80,29 +81,29 @@ export class FirebaseService {
 
   }
 
-  register(email : string, password : string){
-    this.firebaseAuth.createUserWithEmailAndPassword(email,password).then( cred => {
+  register(email: string, password: string) {
+    this.firebaseAuth.createUserWithEmailAndPassword(email, password).then(cred => {
       return this.UserDb.collection('users').doc(cred?.user?.uid).set({
         isPro: false,
       });
-    }).then( () => {
-        alert('registration successful');
-        this.login(email, password)
-        //this.router.navigate(['/accueil']);
-      }, err =>{
+    }).then(() => {
+      alert('registration successful');
+      this.login(email, password)
+      //this.router.navigate(['/accueil']);
+    }, err => {
       alert(err.message);
       this.router.navigate(['/register']);
-    } )
+    })
   }
 
-  logout(){
-    this.firebaseAuth.signOut().then( () =>{
+  logout() {
+    this.firebaseAuth.signOut().then(() => {
       this.isLogin = false;
       this.roleAs = '';
       localStorage.removeItem('ROLE');
       this.router.navigate(['/accueil']).then(r =>
         alert('logout successful'));
-    }, err =>{
+    }, err => {
       alert(err.message);
     })
 
@@ -123,11 +124,9 @@ export class FirebaseService {
   }
 
 
-
-
-  noter(note : number, id : string){
+  noter(note: number, id: string) {
     console.log(note);
-    this.firebaseAuth.currentUser.then( user => {
+    this.firebaseAuth.currentUser.then(user => {
       return this.UserDb.collection('activites').doc(user?.uid).collection('sous-acti').doc(id).set({
         note: note,
       });
@@ -135,7 +134,7 @@ export class FirebaseService {
   }
 
 
-  modifProfil( nomEntreprise: string, numNomRue : string, ville : string, pays : string, codePostale : string, telephone : string ) {
+  modifProfil(nomEntreprise: string, numNomRue: string, ville: string, pays: string, codePostale: string, telephone: string) {
     this.firebaseAuth.currentUser.then(user => {
       return this.UserDb.collection('professional').doc(user?.uid).set({
         nomEntreprise: nomEntreprise,
@@ -146,17 +145,13 @@ export class FirebaseService {
         telephone: telephone,
       }).then(() => {
         alert('profil modifié');
-        this.router.navigateByUrl('/', {skipLocationChange : true}).then( () => this.router.navigate(['/gestion-pro/profil']));
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => this.router.navigate(['/gestion-pro/profil']));
       });
     });
   }
 
 
-
-
 }
-
-
 
 
 // End of file

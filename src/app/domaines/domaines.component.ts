@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivitesPres} from "../classes/activitesPres";
 import {ActivatedRoute} from "@angular/router";
 import {DomaineCategorieService} from "../services/domaineCategorie/domaine-categorie.service";
@@ -10,23 +10,22 @@ import {DomaineCategorieService} from "../services/domaineCategorie/domaine-cate
 })
 export class DomainesComponent implements OnInit {
 
-  nom : string = '';
-  description : string = '';
-  identifiant : string = '';
-  photo : any;
-  date : string = '';
-  prix : number = 0;
+  nom: string = '';
+  description: string = '';
+  identifiant: string = '';
+  photo: any;
+  date: string = '';
+  prix: number = 0;
 
-  ActivitesPresArray : ActivitesPres[] = [];
+  ActivitesPresArray: ActivitesPres[] = [];
 
-  domaineActi : any;
+  domaineActi: any;
 
-  cateDoma : string = "inputDoma";
-
-
+  cateDoma: string = "inputDoma";
 
 
-  constructor(private activatedroute : ActivatedRoute, private domaineCat : DomaineCategorieService) { }
+  constructor(private activatedroute: ActivatedRoute, private domaineCat: DomaineCategorieService) {
+  }
 
   ngOnInit(): void {
     this.domaineActi = this.activatedroute.snapshot.paramMap.get('id');

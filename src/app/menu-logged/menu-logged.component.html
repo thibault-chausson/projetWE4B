@@ -1,12 +1,16 @@
 <div *ngIf="this.ordi,  else taille">
   <nav>
     <ul>
-      <li class="menu"><a href="accueil"><img src="./assets/ressources/logo/logoRightOf.png" class="logo_titre"></a></li>
-      <li class="menu"><button class="btn  dropdown-toggle"  routerLink="/accueil">Accueil</button></li>
+      <li class="menu"><a href="accueil"><img src="./assets/ressources/logo/logoRightOf.png" class="logo_titre"></a>
+      </li>
+      <li class="menu">
+        <button class="btn  dropdown-toggle" routerLink="/accueil">Accueil</button>
+      </li>
       <li class="menu">
 
         <div class="dropdown">
-          <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                  aria-expanded="false">
             Domaines <img src="assets/ressources/icon/reseau.png" class="logo_button">
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
@@ -22,7 +26,8 @@
       <li class="menu">
 
         <div class="dropdown">
-          <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                  aria-expanded="false">
             Catégories <img src="assets/ressources/icon/categories.png" class="logo_button">
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -36,18 +41,22 @@
 
       </li>
 
-      <li class="menu"><button class="btn btn-secondary dropdown-toggle" routerLink="/recherches">Recherches <img src="assets/ressources/icon/recherche.png" class="logo_button"></button></li>
+      <li class="menu">
+        <button class="btn btn-secondary dropdown-toggle" routerLink="/recherches">Recherches <img
+          src="assets/ressources/icon/recherche.png" class="logo_button"></button>
+      </li>
 
       <div *ngIf="this.role == 'pro', else else1">
         <li class="menu">
 
           <div class="dropdown">
-            <button class="btn dropdown-toggle2" type="button" id="dropdownMenuButtonPro" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn dropdown-toggle2" type="button" id="dropdownMenuButtonPro" data-bs-toggle="dropdown"
+                    aria-expanded="false">
               <img src="assets/ressources/connexion/Illustration_sans_titre.png" class="logo_button2">
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonPro">
               <a class="dropdown-item" routerLink="/gestion-pro">Tableau de bord</a>
-              <a  class="dropdown-item" (click)="logoutFunction()">Deconnection</a>
+              <a class="dropdown-item" (click)="logoutFunction()">Deconnection</a>
             </ul>
           </div>
         </li>
@@ -56,27 +65,31 @@
       <ng-template #else1>
 
 
-      <div *ngIf="this.role == 'user', else else2">
-        <li class="menu">
+        <div *ngIf="this.role == 'user', else else2">
+          <li class="menu">
 
-          <div class="dropdown">
-            <button class="btn dropdown-toggle2" type="button" id="dropdownMenuButtonUser" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="assets/ressources/accueil/Hamburger_icon.svg" class="logo_button3">
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonUser">
-              <a class="dropdown-item"><i class="fa-solid fa-address-card"></i><i class="fa-solid fa-cog fa-spin"></i> En construction !</a>
-              <a  class="dropdown-item" (click)="logoutFunction()">Déconnexion</a>
-            </ul>
+            <div class="dropdown">
+              <button class="btn dropdown-toggle2" type="button" id="dropdownMenuButtonUser" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                <img src="assets/ressources/accueil/Hamburger_icon.svg" class="logo_button3">
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonUser">
+                <a class="dropdown-item"><i class="fa-solid fa-address-card"></i><i class="fa-solid fa-cog fa-spin"></i>
+                  En construction !</a>
+                <a class="dropdown-item" (click)="logoutFunction()">Déconnexion</a>
+              </ul>
+            </div>
+          </li>
+        </div>
+
+        <ng-template #else2>
+          <div>
+            <li class="menu">
+              <button class="btn  drop_login_icon" routerLink="/connexion"><img
+                src="assets/ressources/accueil/kisspng-computer-icons-user-login-swiggy-5b242906b59ed4.4170042515290964547439.png"
+                class="logo_button2"></button>
+            </li>
           </div>
-        </li>
-      </div>
-
-      <ng-template #else2>
-      <div>
-        <li class="menu">
-          <button class="btn  drop_login_icon" routerLink="/connexion"><img src="assets/ressources/accueil/kisspng-computer-icons-user-login-swiggy-5b242906b59ed4.4170042515290964547439.png" class="logo_button2"></button>
-        </li>
-      </div>
         </ng-template>
       </ng-template>
 
@@ -87,87 +100,87 @@
 <ng-template #taille>
 
   <nav>
-      <div class="navbar">
-        <div class="container nav-container">
-          <input class="checkbox" type="checkbox" name="" id="" />
-          <div class="hamburger-lines">
-            <span class="line line1"></span>
-            <span class="line line2"></span>
-            <span class="line line3"></span>
-          </div>
-          <div class="logo">
-            <a href="/accueil"><img src="./assets/ressources/logo/logoRightOf.png" class="logo_titre"></a>
-          </div>
-          <div class="menu-items">
-            <li><a href="#">Accueil</a></li>
+    <div class="navbar">
+      <div class="container nav-container">
+        <input class="checkbox" type="checkbox" name="" id=""/>
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        <div class="logo">
+          <a href="/accueil"><img src="./assets/ressources/logo/logoRightOf.png" class="logo_titre"></a>
+        </div>
+        <div class="menu-items">
+          <li><a href="#">Accueil</a></li>
+          <li>
+            <a (click)="des(1)"> Domaines </a>
+            <div *ngIf="this.des1">
+              <ul>
+                <li><a href="domaines/nature">Nature</a></li>
+                <li><a href="domaines/sensationForte">Sensation fore</a></li>
+                <li><a href="domaines/sport">Sport</a></li>
+                <li><a href="domaines/jeux">Jeux</a></li>
+                <li><a href="domaines/autre">Autre</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a (click)="des(2)"> Catégories </a>
+            <div *ngIf="this.des2">
+              <ul>
+                <li><a href="categories/famille">En famille</a></li>
+                <li><a href="categories/couple">En couple</a></li>
+                <li><a href="categories/amis">Entre amis</a></li>
+                <li><a href="categories/seul">Tout seul</a></li>
+                <li><a href="categories/autre">Autre</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="/recherches">Recherche</a></li>
+
+          <div *ngIf="this.role == 'pro', else else1">
+
+
             <li>
-              <a (click)="des(1)"> Domaines </a>
-              <div *ngIf="this.des1">
-                <ul>
-                  <li><a  href="domaines/nature">Nature</a></li>
-                  <li><a  href="domaines/sensationForte">Sensation fore</a></li>
-                  <li><a  href="domaines/sport">Sport</a></li>
-                  <li><a  href="domaines/jeux">Jeux</a></li>
-                  <li><a  href="domaines/autre">Autre</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <a (click)="des(2)"> Catégories </a>
-              <div *ngIf="this.des2">
-                <ul>
-                  <li><a href="categories/famille">En famille</a></li>
-                  <li><a href="categories/couple">En couple</a></li>
-                  <li><a  href="categories/amis">Entre amis</a></li>
-                  <li><a  href="categories/seul">Tout seul</a></li>
-                  <li><a  href="categories/autre">Autre</a></li>
-                </ul>
-              </div>
-            </li>
-            <li><a href="/recherches">Recherche</a></li>
-
-            <div *ngIf="this.role == 'pro', else else1">
-
-
-              <li>
               <a (click)="des(3)"> Compte </a>
               <div *ngIf="this.des3">
                 <ul>
                   <li><a href="/gestion-pro">Tableau de bord</a></li>
-                  <li><a  (click)="logoutFunction()">Deconnection</a></li>
+                  <li><a (click)="logoutFunction()">Deconnection</a></li>
                 </ul>
               </div>
-              </li>
+            </li>
 
-
-            </div>
-
-            <ng-template #else1>
-
-
-              <div *ngIf="this.role == 'user', else else2">
-
-                <a (click)="des(3)"> Compte </a>
-                <div *ngIf="this.des3">
-                  <ul>
-                  <li><a>Profil <i class="fa-solid fa-cog fa-spin"></i> En construction !</a></li>
-                  <li><a  (click)="logoutFunction()">Déconnexion</a></li>
-                </ul>
-                </div>
-              </div>
-
-              <ng-template #else2>
-                <div>
-                  <li>
-                  <a href="/connexion">Connexion</a>
-                  </li>
-                </div>
-              </ng-template>
-            </ng-template>
 
           </div>
+
+          <ng-template #else1>
+
+
+            <div *ngIf="this.role == 'user', else else2">
+
+              <a (click)="des(3)"> Compte </a>
+              <div *ngIf="this.des3">
+                <ul>
+                  <li><a>Profil <i class="fa-solid fa-cog fa-spin"></i> En construction !</a></li>
+                  <li><a (click)="logoutFunction()">Déconnexion</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <ng-template #else2>
+              <div>
+                <li>
+                  <a href="/connexion">Connexion</a>
+                </li>
+              </div>
+            </ng-template>
+          </ng-template>
+
         </div>
       </div>
+    </div>
   </nav>
 
 </ng-template>

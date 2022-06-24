@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
@@ -15,13 +15,15 @@ export class AfficherActiviteComponent implements OnInit {
 
   filtersLoaded!: Promise<boolean>;
 
-  infoActi : GestionProActi = new GestionProActi( "",  "",  "", "", "", "",  "",  "",  "",  "",  "",  "",  "", 0, "", "", "",  "",  "");
+  infoActi: GestionProActi = new GestionProActi("", "", "", "", "", "", "", "", "", "", "", "", "", 0, "", "", "", "", "");
 
 
-  numeroActi : any;
+  numeroActi: any;
 
 
-  constructor(private activatedroute : ActivatedRoute, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService, private afficher : AffichageService) { }
+  constructor(private activatedroute: ActivatedRoute, private db: AngularFirestore, private auth: AngularFireAuth, private fb: FirebaseService, private afficher: AffichageService) {
+  }
+
   ngOnInit(): void {
     this.numeroActi = this.activatedroute.snapshot.paramMap.get('id');
     this.afficher.afficher(this.filtersLoaded, this.infoActi, this.numeroActi);

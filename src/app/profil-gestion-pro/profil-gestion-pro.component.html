@@ -5,22 +5,43 @@
 <form class="container">
   <div class="row">
 
-      <div class="p-3 py-5">
+    <div class="p-3 py-5">
 
 
-        <div class="row mt-3">
-          <div class="col-md-12"><label class="labels"><i class="fa-solid fa-building"></i> Nom de votre entreprise</label><input type="text" class="form-control" [placeholder]="nomEntrepriseTemp"  value="" name="nomEntreprise" [(ngModel)]="this.nomEntreprise"></div>
-          <div class="col-md-12"><label class="labels"><i class="fa-solid fa-phone"></i> Téléphone</label><input type="text" class="form-control" [placeholder]="telephoneTemp"  value="" name="telephone" [(ngModel)]="this.telephone"></div>
-          <div class="col-md-12"><label class="labels"><i class="fa-solid fa-thumbtack"></i> Numéro et nom de rue</label><input type="text" class="form-control" [placeholder]="numNomRueTemp"  value="" name="numNomRue" [(ngModel)]="this.numNomRue"></div>
-          <div class="col-md-12"><label class="labels"><i class="fa-solid fa-location-dot"></i> Code postal</label><input type="text" class="form-control" [placeholder]="codePostaleTemp" value="" name="codePostale" [(ngModel)]="this.codePostale"></div>
+      <div class="row mt-3">
+        <div class="col-md-12"><label class="labels"><i class="fa-solid fa-building"></i> Nom de votre
+          entreprise</label><input type="text" class="form-control" [placeholder]="nomEntrepriseTemp" value=""
+                                   name="nomEntreprise" [(ngModel)]="this.nomEntreprise"></div>
+        <div class="col-md-12"><label class="labels"><i class="fa-solid fa-phone"></i> Téléphone</label><input
+          type="text" class="form-control" [placeholder]="telephoneTemp" value="" name="telephone"
+          [(ngModel)]="this.telephone"></div>
+        <div class="col-md-12"><label class="labels"><i class="fa-solid fa-thumbtack"></i> Numéro et nom de
+          rue</label><input type="text" class="form-control" [placeholder]="numNomRueTemp" value="" name="numNomRue"
+                            [(ngModel)]="this.numNomRue"></div>
+        <div class="col-md-12"><label class="labels"><i class="fa-solid fa-location-dot"></i> Code postal</label><input
+          type="text" class="form-control" [placeholder]="codePostaleTemp" value="" name="codePostale"
+          [(ngModel)]="this.codePostale"></div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-md-6"><label class="labels"><i class="fa-solid fa-road"></i> Ville</label><input type="text"
+                                                                                                         class="form-control"
+                                                                                                         [placeholder]="villeTemp"
+                                                                                                         value=""
+                                                                                                         name="ville"
+                                                                                                         [(ngModel)]="this.ville">
         </div>
-        <div class="row mt-2">
-          <div class="col-md-6"><label class="labels"><i class="fa-solid fa-road"></i> Ville</label><input type="text" class="form-control" [placeholder]="villeTemp" value="" name="ville" [(ngModel)]="this.ville"></div>
-          <div class="col-md-6"><label class="labels"><i class="fa-solid fa-globe"></i> Pays</label><input type="text" class="form-control" [placeholder]="paysTemp"value="" name="pays" [(ngModel)]="this.pays"></div>
-        </div>
-        <div class="mt-5 text-center"><button class="btn profile-button" type="submit" (click)="ModifProfil()">Mettre à jour le profil</button>
+        <div class="col-md-6"><label class="labels"><i class="fa-solid fa-globe"></i> Pays</label><input type="text"
+                                                                                                         class="form-control"
+                                                                                                         [placeholder]="paysTemp"
+                                                                                                         value=""
+                                                                                                         name="pays"
+                                                                                                         [(ngModel)]="this.pays">
         </div>
       </div>
+      <div class="mt-5 text-center">
+        <button class="btn profile-button" type="submit" (click)="ModifProfil()">Mettre à jour le profil</button>
+      </div>
+    </div>
 
   </div>
 </form>

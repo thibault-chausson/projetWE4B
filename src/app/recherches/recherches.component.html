@@ -5,13 +5,15 @@
   <div class="container">
     <div class="rech">
       <form class="form-inline" action="/recherche/" method="get">
-          <div class="input-group">
-            <input id="oLocalisation" name="oLocalisation" type="text" class="form-control" aria-label="Localisation" placeholder="Localisation" required="required" [(ngModel)]="lieu">
+        <div class="input-group">
+          <input id="oLocalisation" name="oLocalisation" type="text" class="form-control" aria-label="Localisation"
+                 placeholder="Localisation" required="required" [(ngModel)]="lieu">
 
-            <div class="input-group-append">
-              <button class="btn" type="submit"><img class="imaRech" src="assets/ressources/icon/recherche.png" alt="" (click)="lancherRecherche()"></button>
-            </div>
+          <div class="input-group-append">
+            <button class="btn" type="submit"><img class="imaRech" src="assets/ressources/icon/recherche.png" alt=""
+                                                   (click)="lancherRecherche()"></button>
           </div>
+        </div>
       </form>
     </div>
   </div>
@@ -23,7 +25,8 @@
     <div *ngIf="ActivitesPresArray.length != 0; else elseBlock2">
       <h1>Votre recherche</h1>
       <p>Profiter des activités de cette ville</p>
-      <app-card-domaine *ngFor="let activitesPresVar of ActivitesPresArray" [activitesPres]="activitesPresVar"></app-card-domaine>
+      <app-card-domaine *ngFor="let activitesPresVar of ActivitesPresArray"
+                        [activitesPres]="activitesPresVar"></app-card-domaine>
     </div>
     <ng-template #elseBlock2>
       <div class="centre">
@@ -42,10 +45,6 @@
     </div>
   </ng-template>
   <br>
-
-
-
-
 
 
 </div>

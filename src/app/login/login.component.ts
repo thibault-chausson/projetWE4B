@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FirebaseService} from "../services/firebase.service";
 
 @Component({
@@ -10,21 +10,23 @@ export class LoginComponent implements OnInit {
 
 
   //création variable pour récupérer les données du formulaire
-  email : string = '';
-  password : string = '';
-  constructor(private auth : FirebaseService) { }
+  email: string = '';
+  password: string = '';
+
+  constructor(private auth: FirebaseService) {
+  }
 
   ngOnInit(): void {
   }
 
-  login(){
+  login() {
 
-    if(this.email == ''){
+    if (this.email == '') {
       alert('Please enter email');
       return;
     }
 
-    if(this.password == ''){
+    if (this.password == '') {
       alert('Please enter password');
       return;
     }

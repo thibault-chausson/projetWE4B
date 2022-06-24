@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FirebaseService} from "../services/firebase.service";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
@@ -11,23 +11,24 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 export class ProfilGestionProComponent implements OnInit {
 
 
-  nomEntreprise : string = '';
-  numNomRue : string = '';
-  ville : string = '';
-  codePostale : string = '';
-  pays : string = '';
-  telephone : string = '';
+  nomEntreprise: string = '';
+  numNomRue: string = '';
+  ville: string = '';
+  codePostale: string = '';
+  pays: string = '';
+  telephone: string = '';
 
 
-  nomEntrepriseTemp : string = '';
-  numNomRueTemp : string = '';
-  villeTemp : string = '';
-  codePostaleTemp : string = '';
-  paysTemp : string = '';
-  telephoneTemp : string = '';
+  nomEntrepriseTemp: string = '';
+  numNomRueTemp: string = '';
+  villeTemp: string = '';
+  codePostaleTemp: string = '';
+  paysTemp: string = '';
+  telephoneTemp: string = '';
 
 
-  constructor(private auth : FirebaseService, private fbAuth : AngularFireAuth, private db : AngularFirestore) { }
+  constructor(private auth: FirebaseService, private fbAuth: AngularFireAuth, private db: AngularFirestore) {
+  }
 
   ngOnInit(): void {
     this.fbAuth.currentUser.then(user => {
@@ -42,41 +43,39 @@ export class ProfilGestionProComponent implements OnInit {
 
       });
     });
-    }
+  }
 
 
   ModifProfil() {
 
 
-
-    if(this.nomEntreprise == ''){
+    if (this.nomEntreprise == '') {
       alert("Le nom de l'entreprise est obligatoire");
       return;
     }
-    if(this.numNomRue == ''){
+    if (this.numNomRue == '') {
       alert("l'adresse de l'entreprise est obligatoire");
       return;
     }
-    if(this.codePostale == ''){
+    if (this.codePostale == '') {
       alert("le code postale de l'entreprise est obligatoire");
       return;
     }
-    if(this.ville == ''){
+    if (this.ville == '') {
       alert("la ville de l'entreprise est obligatoire");
       return;
     }
-    if(this.pays == ''){
+    if (this.pays == '') {
       alert("Le pays d'origine de l'entreprise est obligatoire");
       return;
     }
-    if(this.telephone == ''){
+    if (this.telephone == '') {
       alert("le numéro de téléphone de l'entreprise est obligatoire");
       return;
     }
 
 
-    this.auth.modifProfil( this.nomEntreprise, this.numNomRue, this.ville, this.codePostale, this.pays, this.telephone);
-
+    this.auth.modifProfil(this.nomEntreprise, this.numNomRue, this.ville, this.codePostale, this.pays, this.telephone);
 
 
     this.nomEntreprise = '';

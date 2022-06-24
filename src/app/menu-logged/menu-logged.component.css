@@ -1,18 +1,18 @@
 /*Menu*/
 
-.menu-items{
+.menu-items {
   background-color: rgba(255, 255, 255, 0.72);
   font-family: LouisGeorgeBold;
 
 }
 
-.fa-address-card{
+.fa-address-card {
   font-size: 1.4em;
   padding-right: 0.3em;
 }
 
 
-nav{
+nav {
   width: 100%;
   background-color: #ffffff;
   position: sticky;
@@ -27,194 +27,187 @@ nav{
 @media only screen and (min-width: 1127px) {
 
 
-.logo_titre
-{
-  height: 75px;
+  .logo_titre {
+    height: 75px;
 
-  margin-left: -2em;
-  padding-top: 6px;
-  padding-bottom: -20px;
-  margin-bottom: -20px;
-}
-
+    margin-left: -2em;
+    padding-top: 6px;
+    padding-bottom: -20px;
+    margin-bottom: -20px;
+  }
 
 
+  nav ul {
+    list-style-type: none;
+    border: none;
 
-nav ul{
-  list-style-type: none;
-  border : none;
+  }
 
-}
+  nav li {
+    float: left;
+    width: 16.666%; /*100% divisé par le nombre d'éléments de menu*/
+    text-align: center; /*Centre le texte dans les éléments de menu*/
+  }
 
-nav li{
-  float: left;
-  width: 16.666%;/*100% divisé par le nombre d'éléments de menu*/
-  text-align: center;/*Centre le texte dans les éléments de menu*/
-}
-
-/*Evite que le menu n'ait une hauteur nulle*/
-nav ul::after{
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-.menu{
-  display: block; /*Toute la surface sera cliquable*/
-  text-decoration: none;
-  color: black;
-  border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
-  padding: 5px 0cm;/*Agrandit le menu et espace la bordure du texte*/
-  font-family: 'LouisGeorge';
-}
-
-.menulog{
-  display: block; /*Toute la surface sera cliquable*/
-  text-decoration: none;
-  color: black;
-  border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
-  padding: 2px 0cm;/*Agrandit le menu et espace la bordure du texte*/
-  font-family: 'LouisGeorge';
-}
-
-.logo_button2{
-  height: 55px;
-
-  margin-right: -0.5em;
-
-}
-
-.drop_login_icon{
-  margin-top: 10px;
-  height: 70px;
-  margin-bottom: -40px;
-}
-
-.logo_button3{
-
-  height: 2.5em;
-  margin-right: -0.5em;
-}
-
-.logo_button{
-  height: 35px;
-  margin: 0;
-  padding-top: 6px;
-}
-/*Fin menu*/
-
-/*Dropdown*/
-
-.drop_login_icon{
-  background-color: #ffffff;
-  color: black;
-  border: none;
-  border-radius: 30px;
-  height: 60px;
-  font-size: 1em;
-  width: 100%;
-
-}
-
-.drop_login_icon:after{
-  display: none;
-}
+  /*Evite que le menu n'ait une hauteur nulle*/
+  nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
 
+  .menu {
+    display: block; /*Toute la surface sera cliquable*/
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent; /*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
+    padding: 5px 0cm; /*Agrandit le menu et espace la bordure du texte*/
+    font-family: 'LouisGeorge';
+  }
+
+  .menulog {
+    display: block; /*Toute la surface sera cliquable*/
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent; /*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
+    padding: 2px 0cm; /*Agrandit le menu et espace la bordure du texte*/
+    font-family: 'LouisGeorge';
+  }
+
+  .logo_button2 {
+    height: 55px;
+
+    margin-right: -0.5em;
+
+  }
+
+  .drop_login_icon {
+    margin-top: 10px;
+    height: 70px;
+    margin-bottom: -40px;
+  }
+
+  .logo_button3 {
+
+    height: 2.5em;
+    margin-right: -0.5em;
+  }
+
+  .logo_button {
+    height: 35px;
+    margin: 0;
+    padding-top: 6px;
+  }
+
+  /*Fin menu*/
+  /*Dropdown*/
+  .drop_login_icon {
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    height: 60px;
+    font-size: 1em;
+    width: 100%;
+
+  }
+
+  .drop_login_icon:after {
+    display: none;
+  }
 
 
+  .drop_login_icon:focus {
+    border: none;
 
-.drop_login_icon:focus{
-  border: none;
+  }
 
-}
+  .dropdown-toggle2 {
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    height: 55px;
+    font-size: 1em;
+    width: 90%;
 
-.dropdown-toggle2{
-  background-color: #ffffff;
-  color: black;
-  border: none;
-  border-radius: 30px;
-  height: 55px;
-  font-size: 1em;
-  width: 90%;
-
-}
-
-
-.dropdown-toggle{
-  background-color: #ffffff;
-  color: black;
-  border: none;
-  border-radius: 30px;
-  height: 55px;
-  font-size: 1em;
-  width: 90%;
-  margin-top: 0.5em;
-
-}
-
-.dropdown-toggle:after{
-  display: none;
-}
-
-.dropdown-toggle:hover{
-  background-color: #E5F4F6;
-}
-
-.dropdown-toggle:focus{
-  border-color: #E5F4F6 ;
-  background-color: #E5F4F6;
-}
-
-.dropdown-menu{
-  background-color: #ffffff;
-  color: black;
-  border: none;
-  border-radius: 10px;
-  font-size: 0.8em;
-  width: 90%;
-  text-align: center;
-  font-family: 'LouisGeorgeBold'
-}
-
-button:focus{
-  border: none;
-}
-
-button:hover{
-  border: none;
-}
-
-button:after{
-  border: none;
-}
-
-button{
-  border: none;
-}
+  }
 
 
+  .dropdown-toggle {
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    height: 55px;
+    font-size: 1em;
+    width: 90%;
+    margin-top: 0.5em;
 
-@font-face {
-  font-family: 'LouisGeorge';
-  src: url('src/assets/ressources/Font/Louis George Cafe.ttf');
-}
+  }
 
-@font-face {
-  font-family: 'LouisGeorgeBold';
-  src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
-}
+  .dropdown-toggle:after {
+    display: none;
+  }
 
-h1, h2, h3, h4, h5, h6{
-  font-family: 'LouisGeorgeBold';
+  .dropdown-toggle:hover {
+    background-color: #E5F4F6;
+  }
 
-}
+  .dropdown-toggle:focus {
+    border-color: #E5F4F6;
+    background-color: #E5F4F6;
+  }
 
-p{
-  font-family: 'LouisGeorge';
-}
-/*Fin Dropdown*/
+  .dropdown-menu {
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    font-family: 'LouisGeorgeBold'
+  }
+
+  button:focus {
+    border: none;
+  }
+
+  button:hover {
+    border: none;
+  }
+
+  button:after {
+    border: none;
+  }
+
+  button {
+    border: none;
+  }
+
+
+  @font-face {
+    font-family: 'LouisGeorge';
+    src: url('src/assets/ressources/Font/Louis George Cafe.ttf');
+  }
+
+  @font-face {
+    font-family: 'LouisGeorgeBold';
+    src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'LouisGeorgeBold';
+
+  }
+
+  p {
+    font-family: 'LouisGeorge';
+  }
+
+  /*Fin Dropdown*/
 
 }
 
@@ -365,7 +358,7 @@ p{
     display: none;
   }
 
-  .logo_titre{
+  .logo_titre {
     width: 130px;
   }
 

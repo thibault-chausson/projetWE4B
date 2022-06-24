@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Activite} from "../classes/activites";
 import {Router} from "@angular/router";
 
@@ -10,12 +10,13 @@ import {Router} from "@angular/router";
 export class SousCarouselCardComponent implements OnInit {
   @Input() ActiviteArray!: Activite[];
 
-  constructor(private router : Router) { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
-  readMore(num:number) {
+  readMore(num: number) {
     console.log(this.ActiviteArray[num].idActivite);
     this.router.navigate(['/', 'afficher-activite', this.ActiviteArray[num].idActivite]);
   }
