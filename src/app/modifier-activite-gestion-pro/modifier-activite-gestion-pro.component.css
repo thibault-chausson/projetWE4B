@@ -1,14 +1,29 @@
-.carre {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+.ligne1 {
+ display: flex;
+
 }
-.photo1 { grid-area: 1 / 1 / 4 / 7; }
-.photo2 { grid-area: 1 / 7 / 4 / 13; }
-.photo3 { grid-area: 4 / 1 / 7 / 7; }
-.photo4 { grid-area: 4 / 7 / 7 / 13; }
+
+.ligne2 {
+  display: flex;
+
+}
+.photo1 {
+  flex:1;
+
+
+}
+.photo2 {
+  flex:1;
+
+}
+.photo3 {
+  flex:1;
+
+}
+.photo4 {
+  flex:1;
+
+}
 
 .image{
   width: 100%;
@@ -117,14 +132,25 @@ hr{
 }
 
 .mainPhoto {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 1em;
+  padding-bottom: 3em;
 }
-.mainGauche { grid-area: 1 / 1 / 5 / 7; }
-.mainDroit { grid-area: 1 / 7 / 5 / 13; }
+.mainGauche img {
+
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.mainDroit img {
+
+  max-width: 60%;
+  max-height: 60%;
+
+}
 
 .info {
   display: grid;

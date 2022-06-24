@@ -7,7 +7,7 @@
     <input type="text" class="form-control" id="inputNomActi" name="inputNomActi" formControlName='nomActi'>
 
     <div *ngIf="nom?.invalid && (nom?.dirty || nom?.touched)">
-      <div *ngIf="nom?.errors?.['required']">Name is required</div>
+      <div class="rouge" *ngIf="nom?.errors?.['required']">Le nom est obligatoire</div>
     </div>
 
 
@@ -17,7 +17,7 @@
     <input type="text" class="form-control" id="inputNomRes" name="inputNomRes" formControlName='nomRes'>
 
     <div *ngIf="nomRespon?.invalid && (nomRespon?.dirty || nomRespon?.touched)">
-      <div *ngIf="nomRespon?.errors?.['required']">Leader name is required</div>
+      <div class="rouge" *ngIf="nomRespon?.errors?.['required']">Le nom du responsable est obligatoire</div>
     </div>
 
 
@@ -27,17 +27,17 @@
     <input type="text" class="form-control" id="inputAddress" name="inputAddress" formControlName='addresseOne'>
 
     <div *ngIf="addr1?.invalid && (addr1?.dirty || addr1?.touched)">
-      <div *ngIf="addr1?.errors?.['required']">Addresse is required</div>
+      <div class="rouge" *ngIf="addr1?.errors?.['required']">L'adresse est obligatoire</div>
     </div>
 
 
   </div>
   <div class="col-12">
-    <label for="inputAddress2" class="form-label">Complément d'adresse<span class="rouge">*</span></label>
+    <label for="inputAddress2" class="form-label">Complément d'adresse</label>
     <input type="text" class="form-control" id="inputAddress2" name="inputAddress2" formControlName='addresseTwo'>
 
     <div *ngIf="addr2?.invalid && (addr2?.dirty || addr2?.touched)">
-      <div *ngIf="addr2?.errors?.['required']">Addresse is required</div>
+
     </div>
 
   </div>
@@ -46,7 +46,7 @@
     <input type="text" class="form-control" id="inputCity" name="inputCity" formControlName='ville'>
 
     <div *ngIf="city?.invalid && (city?.dirty || city?.touched)">
-      <div *ngIf="city?.errors?.['required']">City is required</div>
+      <div class="rouge" *ngIf="city?.errors?.['required']">La ville est obligatoire</div>
     </div>
 
   </div>
@@ -285,7 +285,7 @@
     </select>
 
     <div *ngIf="state?.invalid && (state?.dirty || state?.touched)">
-      <div *ngIf="state?.errors?.['required']">State is required</div>
+      <div class="rouge" *ngIf="state?.errors?.['required']">Le pays est obligatoire</div>
     </div>
 
   </div>
@@ -294,7 +294,7 @@
     <input type="text" class="form-control" id="inputZip" name="inputZip" formControlName='codePos'>
 
     <div *ngIf="zipCode?.invalid && (zipCode?.dirty || zipCode?.touched)">
-      <div *ngIf="zipCode?.errors?.['required']">Zip Code is required</div>
+      <div class="rouge" *ngIf="zipCode?.errors?.['required']">Le code postale est obligatoire</div>
     </div>
 
 
@@ -305,7 +305,9 @@
     <input type="tel" class="form-control" id="inputTel" name="inputTel" formControlName='telephone'>
 
     <div *ngIf="tel?.invalid && (tel?.dirty || tel?.touched)">
-      <div *ngIf="tel?.errors?.['required']">Phone is required</div>
+      <div class="rouge" *ngIf="tel?.errors?.['required']">Un numéro de téléphone est obligatoire</div>
+      <div class="rouge" *ngIf="tel?.errors?.['pattern']">Votre numéro de téléphone ne doit comporter que des chiffres</div>
+      <div class="rouge" *ngIf="tel?.errors?.['minlength']">Votre numéro de téléphone n'est pas valide</div>
     </div>
 
 
@@ -315,8 +317,8 @@
     <input type="text" class="form-control" id="inputPrix" name="inputPrix" formControlName='prix'>
 
     <div *ngIf="price?.invalid && (price?.dirty || price?.touched)">
-      <div *ngIf="price?.errors?.['required']">Price is required</div>
-      <div *ngIf="price?.errors?.['pattern']">Price must be a number</div>
+      <div class="rouge" *ngIf="price?.errors?.['required']">Le prix est obligatoire</div>
+      <div class="rouge" *ngIf="price?.errors?.['pattern']">Le prix doit être un nombre</div>
     </div>
 
   </div>
@@ -334,7 +336,7 @@
     </select>
 
     <div *ngIf="category?.invalid && (category?.dirty || category?.touched)">
-      <div *ngIf="category?.errors?.['required']">Category is required</div>
+      <div class="rouge" *ngIf="category?.errors?.['required']">La catégorie est obligatoire</div>
     </div>
 
 
@@ -351,7 +353,7 @@
     </select>
 
     <div *ngIf="doma?.invalid && (doma?.dirty || doma?.touched)">
-      <div *ngIf="doma?.errors?.['required']">Domaine is required</div>
+      <div class="rouge" *ngIf="doma?.errors?.['required']">Le domaine est obligatoire</div>
     </div>
 
   </div>
@@ -361,7 +363,7 @@
     <textarea type="text" class="form-control" id="inputDes" placeholder="Décriver du mieux possible votre activité" name="inputDes" formControlName='description'></textarea>
 
     <div *ngIf="desc?.invalid && (desc?.dirty || desc?.touched)">
-      <div *ngIf="desc?.errors?.['required']">Description is required</div>
+      <div class="rouge" *ngIf="desc?.errors?.['required']">Une description est obligatoire</div>
     </div>
 
   </div>
