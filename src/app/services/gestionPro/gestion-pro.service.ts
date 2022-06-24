@@ -9,6 +9,7 @@ import {GestionProActi} from "../../classes/gestionProActi";
 @Injectable({
   providedIn: 'root'
 })
+
 export class GestionProService {
 
   constructor(private firebaseAuth: AngularFireAuth, private UserDb: AngularFirestore, private router: Router) {
