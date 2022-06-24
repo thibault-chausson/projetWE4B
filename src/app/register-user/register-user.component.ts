@@ -15,7 +15,7 @@ export class RegisterUserComponent implements OnInit {
 
   user = new FormGroup({
     email : new FormControl('', [Validators.required, Validators.email]),
-    pwd : new FormControl('', [Validators.required]),
+    pwd : new FormControl('', [Validators.required, Validators.minLength(6)]),
     pwdCheck : new FormControl('', [Validators.required]),
 
   });
