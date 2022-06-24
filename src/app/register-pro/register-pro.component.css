@@ -1,6 +1,6 @@
 .user_card {
-  height: 950px;
-  width: 500px;
+  height: 150%;
+  width: 35em;
   margin-top: 5em;
   margin-bottom: auto;
   background: rgb(241,162,140);
@@ -110,6 +110,7 @@ p{
 
 .rouge{
   color: red;
+  pading: 10px;
 }
 
 
