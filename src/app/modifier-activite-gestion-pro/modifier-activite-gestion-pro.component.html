@@ -334,35 +334,39 @@
 
   <hr>
   <div class="mainPhoto">
-    <div class="mainGauche">
+
       <input type="file" id="image1" name="image1" class="input-file" (change)="onClick($event, 1)">
       <img src="{{infoActi.image1}}" class="image">
-    </div>
-    <div class="mainDroit">
-      <div class="ligne1">
-        <div class="photo1">
-          <input type="file" id="image2" name="image1" class="input-file" (change)="onClick($event, 2)">
-          <img src="{{infoActi.image2}}" class="image">
-        </div>
-        <div class="photo2">
-          <input type="file" id="image3" name="image1" class="input-file" (change)="onClick($event, 3)">
-          <img src="{{infoActi.image3}}" class="image">
-        </div>
-      </div>
-      <div class="ligne2">
-        <div class="photo3">
-          <input type="file" id="image4" name="image1" class="input-file" (change)="onClick($event, 4)">
-          <img src="{{infoActi.image4}}" class="image">
-        </div>
-        <div class="photo4">
-          <input type="file" id="image5" name="image1" class="input-file" (change)="onClick($event, 5)">
-          <img src="{{infoActi.image5}}" class="image">
-        </div>
-      </div>
+
+
+      <input type="file" id="image2" name="image1" class="input-file" (change)="onClick($event, 2)">
+      <img src="{{infoActi.image2}}" class="image">
+
+
+    <input type="file" id="image3" name="image1" class="input-file" (change)="onClick($event, 3)">
+    <img src="{{infoActi.image3}}" class="image">
+
+
+      <input type="file" id="image4" name="image1" class="input-file" (change)="onClick($event, 4)">
+      <img src="{{infoActi.image4}}" class="image">
+
+
+
+
+
+
+      <input type="file" id="image5" name="image1" class="input-file" (change)="onClick($event, 5)">
+      <img src="{{infoActi.image5}}" class="image">
+
+  </div>
+<hr>
+  <div class="centre">
+    <div class="col-12">
+      <button type="submit" class="btn" (click)="modifActivite()">Modifier l'activité</button>
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary" (click)="modifActivite()">Modifier l'activité</button>
+  <hr>
 
 </form>
 

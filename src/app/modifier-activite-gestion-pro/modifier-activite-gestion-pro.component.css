@@ -1,36 +1,6 @@
-.ligne1 {
- display: flex;
-
-}
-
-.ligne2 {
-  display: flex;
-
-}
-.photo1 {
-  flex:1;
 
 
-}
-.photo2 {
-  flex:1;
 
-}
-.photo3 {
-  flex:1;
-
-}
-.photo4 {
-  flex:1;
-
-}
-
-.image{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  padding: 10px;
-}
 
 .name{
   display: flex;
@@ -131,26 +101,37 @@ hr{
   padding-right: 0.5em;
 }
 
-.mainPhoto {
+.mainPhoto2{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 1em;
+
   padding-bottom: 3em;
 }
-.mainGauche img {
 
-  max-width: 80%;
-  max-height: 80%;
-}
 
-.mainDroit img {
 
-  max-width: 60%;
-  max-height: 60%;
+.mainPhoto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 1em;
 
 }
+
+.mainPhoto img{
+  max-width: 200px;
+  min-height: 200px;
+}
+
+.image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 10px;
+}
+
+
+
+
 
 .info {
   display: grid;
@@ -291,6 +272,8 @@ input::-webkit-file-upload-button:hover{
 }
 
 
+
+
 @font-face {
   font-family: 'LouisGeorge';
   src: url('src/assets/ressources/Font/Louis George Cafe.ttf');
@@ -317,4 +300,32 @@ h2{
 .fa-feather{
   font-size: 1.1em;
   padding-right: 0.5em;
+}
+
+button:focus{
+  border: none;
+}
+
+button:hover{
+  border: none;
+  background-color: #5ad9ca;
+  font-family: LouisGeorgeBold;
+}
+
+button:after{
+  border: none;
+}
+
+button{
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-family: LouisGeorgeBold;
+  text-align: left;
+  font-size: 1.5em;
+  background-color: #00c5af;
+  min-width: 10em;
+  text-align: center;
+  border-radius: 25px;
+  margin-bottom: 1em;
 }
