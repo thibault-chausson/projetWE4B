@@ -30,7 +30,6 @@
     <div class="info2">
       <div class="domaine">
         <h2><i class="fa-solid fa-list"></i>Domaine</h2>
-        <p> <samp class="adInfo"> Domaine :</samp>
 
           <select id="inputDoma" class="form-select" name="inputDoma" value="{{infoActi.inputDoma}}" [(ngModel)]="infoActi.inputDoma">
             <option selected>Choisir...</option>
@@ -40,11 +39,10 @@
             <option value="jeux">Jeux</option>
             <option value="autre">autre</option>
           </select>
-        </p>
+
       </div>
       <div class="categorie">
         <h2><i class="fa-solid fa-tags"></i>Catégorie</h2>
-        <p> <samp class="adInfo"> Catégorie :</samp>
           <select id="inputCate" class="form-select" name="inputCate" value="{{infoActi.inputCate}}" [(ngModel)]="infoActi.inputCate">
             <option selected>Choisir...</option>
             <option value="En famille">Nature</option>
@@ -53,7 +51,6 @@
             <option value="Tout seul">Jeux</option>
             <option value="autre">autre</option>
           </select>
-        </p>
 
       </div>
       <div class="prix">
@@ -66,6 +63,8 @@
         </div>
     </div>
   </div>
+
+  <br>
 
   <hr>
 
