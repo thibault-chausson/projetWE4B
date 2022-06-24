@@ -1,5 +1,3 @@
-
-
 <div class="container h-100">
   <div class="d-flex justify-content-center h-100">
     <div class="user_card">
@@ -49,7 +47,7 @@
           </div>
           <div class="input-group mb-2">
             <div *ngIf="passwordCheck?.invalid && (passwordCheck?.dirty || passwordCheck?.touched)">
-              <div  class="rouge"*ngIf="passwordCheck?.errors?.['required']">La confirmation de votre mot de passe est requise</div>
+              <div  class="rouge" *ngIf="passwordCheck?.errors?.['required']">La confirmation de votre mot de passe est requise</div>
             </div>
           </div>
 
@@ -141,7 +139,7 @@
 
       <div class="mt-4">
         <div class="d-flex justify-content-center links">
-          <p> Vous avez déjà un compte ? <a href="connexion" class="ml-2"> Se connecter</a> </p>
+          <p> Vous avez déjà un compte ? <a href="/connexion" class="ml-2"> Se connecter</a> </p>
         </div>
         <div class="d-flex justify-content-center links">
         </div>

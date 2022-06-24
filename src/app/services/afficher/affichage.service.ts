@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {ActivatedRoute} from "@angular/router";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {FirebaseService} from "../firebase.service";
-import {AfficherActiviteComponent} from "../../afficher-activite/afficher-activite.component";
 import {GestionProActi} from "../../classes/gestionProActi";
 
 @Injectable({
@@ -11,7 +9,7 @@ import {GestionProActi} from "../../classes/gestionProActi";
 })
 export class AffichageService {
 
-  constructor(private activatedroute : ActivatedRoute, private db : AngularFirestore, private auth : AngularFireAuth, private fb : FirebaseService) { }
+  constructor(private activatedroute : ActivatedRoute, private db : AngularFirestore, private auth : AngularFireAuth) { }
 
 
   afficher(filtersLoaded : Promise<boolean>, infoActi : GestionProActi, numeroActi : string) {

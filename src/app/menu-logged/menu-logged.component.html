@@ -86,90 +86,89 @@
 
 <ng-template #taille>
 
-<nav>
-    <div class="navbar">
-      <div class="container nav-container">
-        <input class="checkbox" type="checkbox" name="" id="" />
-        <div class="hamburger-lines">
-          <span class="line line1"></span>
-          <span class="line line2"></span>
-          <span class="line line3"></span>
-        </div>
-        <div class="logo">
-          <a href="/accueil"><img src="./assets/ressources/logo/logoRightOf.png" class="logo_titre"></a>
-        </div>
-        <div class="menu-items">
-          <li><a href="#">Accueil</a></li>
-          <li>
-            <a (click)="des(1)"> Domaines </a>
-            <div *ngIf="this.des1">
-              <ul>
-                <li><a  href="domaines/nature">Nature</a></li>
-                <li><a  href="domaines/sensationForte">Sensation fore</a></li>
-                <li><a  href="domaines/sport">Sport</a></li>
-                <li><a  href="domaines/jeux">Jeux</a></li>
-                <li><a  href="domaines/autre">Autre</a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a (click)="des(2)"> Catégories </a>
-            <div *ngIf="this.des2">
-              <ul>
-                <li><a href="categories/famille">En famille</a></li>
-                <li><a href="categories/couple">En couple</a></li>
-                <li><a  href="categories/amis">Entre amis</a></li>
-                <li><a  href="categories/seul">Tout seul</a></li>
-                <li><a  href="categories/autre">Autre</a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="/recherches">Recherche</a></li>
-
-          <div *ngIf="this.role == 'pro', else else1">
-
-
-            <li>
-            <a (click)="des(3)"> Compte </a>
-            <div *ngIf="this.des3">
-              <ul>
-                <li><a href="/gestion-pro">Tableau de bord</a></li>
-                <li><a  (click)="logoutFunction()">Deconnection</a></li>
-              </ul>
-            </div>
-            </li>
-
-
+  <nav>
+      <div class="navbar">
+        <div class="container nav-container">
+          <input class="checkbox" type="checkbox" name="" id="" />
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
           </div>
+          <div class="logo">
+            <a href="/accueil"><img src="./assets/ressources/logo/logoRightOf.png" class="logo_titre"></a>
+          </div>
+          <div class="menu-items">
+            <li><a href="#">Accueil</a></li>
+            <li>
+              <a (click)="des(1)"> Domaines </a>
+              <div *ngIf="this.des1">
+                <ul>
+                  <li><a  href="domaines/nature">Nature</a></li>
+                  <li><a  href="domaines/sensationForte">Sensation fore</a></li>
+                  <li><a  href="domaines/sport">Sport</a></li>
+                  <li><a  href="domaines/jeux">Jeux</a></li>
+                  <li><a  href="domaines/autre">Autre</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a (click)="des(2)"> Catégories </a>
+              <div *ngIf="this.des2">
+                <ul>
+                  <li><a href="categories/famille">En famille</a></li>
+                  <li><a href="categories/couple">En couple</a></li>
+                  <li><a  href="categories/amis">Entre amis</a></li>
+                  <li><a  href="categories/seul">Tout seul</a></li>
+                  <li><a  href="categories/autre">Autre</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="/recherches">Recherche</a></li>
 
-          <ng-template #else1>
+            <div *ngIf="this.role == 'pro', else else1">
 
 
-            <div *ngIf="this.role == 'user', else else2">
-
+              <li>
               <a (click)="des(3)"> Compte </a>
               <div *ngIf="this.des3">
                 <ul>
-                <li><a>Profil <i class="fa-solid fa-cog fa-spin"></i> En construction !</a></li>
-                <li><a  (click)="logoutFunction()">Déconnexion</a></li>
-              </ul>
+                  <li><a href="/gestion-pro">Tableau de bord</a></li>
+                  <li><a  (click)="logoutFunction()">Deconnection</a></li>
+                </ul>
               </div>
+              </li>
+
+
             </div>
 
-            <ng-template #else2>
-              <div>
-                <li>
-                <a href="/connexion">Connexion</a>
-                </li>
-              </div>
-            </ng-template>
-          </ng-template>
+            <ng-template #else1>
 
+
+              <div *ngIf="this.role == 'user', else else2">
+
+                <a (click)="des(3)"> Compte </a>
+                <div *ngIf="this.des3">
+                  <ul>
+                  <li><a>Profil <i class="fa-solid fa-cog fa-spin"></i> En construction !</a></li>
+                  <li><a  (click)="logoutFunction()">Déconnexion</a></li>
+                </ul>
+                </div>
+              </div>
+
+              <ng-template #else2>
+                <div>
+                  <li>
+                  <a href="/connexion">Connexion</a>
+                  </li>
+                </div>
+              </ng-template>
+            </ng-template>
+
+          </div>
         </div>
       </div>
-    </div>
-</nav>
-
+  </nav>
 
 </ng-template>
 

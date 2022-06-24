@@ -12,7 +12,6 @@ export class RecherchesComponent implements OnInit {
   reche: boolean = false;
 
   lieu: string = '';
-  trouve: boolean = false;
 
   nom : string = '';
   description : string = '';

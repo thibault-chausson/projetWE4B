@@ -14,7 +14,8 @@ export class AccueilService {
 
   afficheActiviteBigCarousel(acti : AccueilComponent){
     acti.ActiviteArray = [];
-    this.UserDb.collectionGroup('sous-acti', ref => ref.limit(3)).get().subscribe(querrySnapshot => {
+    this.UserDb.collectionGroup('sous-acti', ref => ref.limit(3)).get()
+      .subscribe(querrySnapshot => {
       querrySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         acti.nom = doc.get('inputNomActi');
@@ -39,7 +40,8 @@ export class AccueilService {
         acti.prix = doc.get('inputPrix');
 
 
-        acti.ActiviteArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo, acti.prix));
+        acti.ActiviteArray.push(new ActivitesPres(acti.nom, acti.description, acti.date, acti.identifiant, acti.photo,
+          acti.prix));
 
       });
       acti.filtersLoaded = Promise.resolve(true);
@@ -49,7 +51,8 @@ export class AccueilService {
 
 
   afficheActiviteLittleCarousel(acti : CardCarouselComponent){
-    this.UserDb.collectionGroup('sous-acti', ref => ref.orderBy(acti.carouse.tri)).get().subscribe(querrySnapshot => {
+    this.UserDb.collectionGroup('sous-acti', ref => ref.orderBy(acti.carouse.tri)).get()
+      .subscribe(querrySnapshot => {
       querrySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         acti.nom = doc.get('inputNomActi');
