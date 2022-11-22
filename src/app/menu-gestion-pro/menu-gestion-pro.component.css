@@ -1,0 +1,77 @@
+
+
+.menu{
+  margin-left: 0.5em;
+  display: block; /*Toute la surface sera cliquable*/
+  text-decoration: none;
+  border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
+  font-family: 'LouisGeorge';
+}
+
+.dropdown-toggle{
+
+  border: none;
+  border-radius: 30px;
+  height: 55px;
+  font-size: 1.2em;
+  width: 90%;
+
+}
+
+.dropdown-toggle:after{
+  display: none;
+}
+
+.dropdown-toggle:hover{
+  color: #005d52;
+  background-color: rgb(231,241,244);
+}
+
+.dropdown-toggle:focus{
+  border-color: #E5F4F6 ;
+  background-color: #E5F4F6;
+}
+
+
+button:focus{
+  border: none;
+}
+
+button:hover{
+  border: none;
+}
+
+button:after{
+  border: none;
+}
+
+button{
+  margin-top: 2em;
+  border: none;
+  color: #005d52;
+  text-align: left;
+}
+
+i{
+  padding-right: 15px;
+}
+
+@font-face {
+  font-family: 'LouisGeorge';
+  src: url('src/assets/ressources/Font/Louis George Cafe.ttf');
+}
+
+
+@font-face {
+  font-family: 'LouisGeorgeBold';
+  src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'LouisGeorgeBold';
+
+}
+
+p{
+  font-family: 'LouisGeorge';
+}

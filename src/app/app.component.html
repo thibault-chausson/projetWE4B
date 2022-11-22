@@ -1,16 +1,22 @@
-<nav>
-  <ul>
-    <li class="menu"><button routerLink="/accueil">Accueil</button></li>
-    <li class="menu"><button>Nos temps forts</button></li>
-    <li class="menu"><button>Nos temps forts</button></li>
-    <li class="menu"><button>Nos temps forts</button></li>
-    <li class="menu"><button>Nos temps forts</button></li>
-    <li class="menu"><button routerLink="/connexion">Connexion</button></li>
-  </ul>
-</nav>
+<div class="page-wrapper">
+  <div class="header">
+    <app-menu-logged></app-menu-logged>
+  </div>
 
-<router-outlet></router-outlet>
+<div class="content-wrapper">
 
-<app-my-footer></app-my-footer>
+<div class="back">
+  <router-outlet></router-outlet>
+</div>
+</div>
+
+<div class="footer">
+  <app-my-footer></app-my-footer>
+</div>
+
+</div>
+
+
+
 
 

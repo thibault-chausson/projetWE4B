@@ -1,0 +1,151 @@
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="user_card">
+      <div class="d-flex justify-content-center">
+        <div class="brand_logo_container">
+          <div class="brand_logo_container2">
+            <img src="assets/ressources/logo/logoUnder.png" class="brand_logo" alt="Logo">
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center form_container">
+        <form [formGroup]="inscriptionPro" (ngSubmit)='doSth'>
+          <div class="seCo">
+            <p class="centre">Rejoins-nous Super Guide</p>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+            </div>
+            <input formControlName='emailPro' type="email" name="emailPro" class="form-control input_user" value="" placeholder="Email" autofocus > <!--[(ngModel)] = "emailPro"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+              <div  class="rouge" *ngIf="email?.errors?.['required']">Une email est requise</div>
+              <div  class="rouge" *ngIf="email?.errors?.['email']">Email invalide</div>
+            </div>
+          </div>
+
+          <div class="input-group mb-2">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+            </div>
+            <input type="password" name="passwordPro" class="form-control input_pass" value="" placeholder="Mot de passe" formControlName='passwordPro'> <!--[(ngModel)] = "password"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+              <div  class="rouge" *ngIf="password?.errors?.['required']">Un mot de passe est requis</div>
+              <div  class="rouge" *ngIf="password?.errors?.['minlength']">Le mot de passe doit être supérieur à 6 caractères</div>
+            </div>
+          </div>
+
+          <div class="input-group mb-2">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa fa-check fa-lg" aria-hidden="true"></i></span>
+            </div>
+            <input type="password" id="form3Example4cd" class="form-control" name="passwordCheckPro" placeholder="Vérification" formControlName='passwordCheckPro'/> <!--[(ngModel)]="passwordCheck"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="passwordCheck?.invalid && (passwordCheck?.dirty || passwordCheck?.touched)">
+              <div  class="rouge" *ngIf="passwordCheck?.errors?.['required']">La confirmation de votre mot de passe est requise</div>
+            </div>
+          </div>
+
+          <div class="seCo">
+            <p class="centre">Vos informations</p>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa-solid fa-business-time"></i></span>
+            </div>
+            <input type="text" name="nomEntreprise" class="form-control input_user" value="" placeholder="Le nom de votre entreprise" formControlName='nomEntreprise'> <!--[(ngModel)] = "email"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="nomEntre?.invalid && (nomEntre?.dirty || nomEntre?.touched)">
+              <div  class="rouge" *ngIf="nomEntre?.errors?.['required']">Le nom de l'entreprise est requise</div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa-solid fa-road"></i></span>
+            </div>
+            <input type="text" name="numNomRue" class="form-control input_user" value="" placeholder="Numéro et nom de rue" formControlName='numNomRue'> <!--[(ngModel)] = "email"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="numEtNomRue?.invalid && (numEtNomRue?.dirty || numEtNomRue?.touched)">
+              <div  class="rouge" *ngIf="numEtNomRue?.errors?.['required']">L'adresse de l'entreprise est obligatoire</div>
+            </div>
+          </div>
+
+
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa-solid fa-city"></i></span>
+            </div>
+            <input type="text" name="ville" class="form-control input_user" value="" placeholder="Ville" formControlName='ville'> <!--[(ngModel)] = "email"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="villeEntre?.invalid && (villeEntre?.dirty || villeEntre?.touched)">
+              <div  class="rouge" *ngIf="villeEntre?.errors?.['required']">La ville est obligatoire</div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa-solid fa-map-location-dot"></i></span>
+            </div>
+            <input type="text" name="codePostale" class="form-control input_user" value="" placeholder="Code postal" formControlName='codePostale'> <!--[(ngModel)] = "email"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="codePost?.invalid && (codePost?.dirty || codePost?.touched)">
+              <div  class="rouge" *ngIf="codePost?.errors?.['required']">Le code postale est obligatoire</div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa-solid fa-earth-europe"></i></span>
+            </div>
+            <input type="text" name="pays" class="form-control input_user" value="" placeholder="Pays" formControlName='pays'> <!--[(ngModel)] = "email"-->
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="paysEntre?.invalid && (paysEntre?.dirty || paysEntre?.touched)">
+              <div  class="rouge" *ngIf="paysEntre?.errors?.['required']">Le pays est obligatoire</div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+            </div>
+            <input type="text" name="telephone" class="form-control input_user" value="" placeholder="Téléphone" formControlName='telephone'> <!---->
+          </div>
+          <div class="input-group mb-2">
+            <div class="rouge" *ngIf="telEntre?.invalid && (telEntre?.dirty || telEntre?.touched)">
+              <div  class="rouge" *ngIf="telEntre?.errors?.['required']">Le numéro de téléphone est obligatoire</div>
+              <div  class="rouge" *ngIf="telEntre?.errors?.['minlength']">Le numéro de téléphone n'est pas valide</div>
+            </div>
+          </div>
+
+
+
+          <div class="d-flex justify-content-center mt-3 login_container">
+            <button type="button" name="loginButton" class="btn login_btn" (click)="registerPro()" >S'inscrire</button> <!--"-->
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-4">
+        <div class="d-flex justify-content-center links">
+          <p> Vous avez déjà un compte ? <a href="/connexion" class="ml-2"> Se connecter</a> </p>
+        </div>
+        <div class="d-flex justify-content-center links">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

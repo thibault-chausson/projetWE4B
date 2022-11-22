@@ -1,0 +1,105 @@
+.form-control:focus {
+  box-shadow: none;
+  border-color: rgb(136, 76, 60);
+}
+
+button:focus{
+  border: none;
+}
+
+button:hover{
+  border: none;
+  background-color: #ffcfc5;
+  font-family: LouisGeorgeBold;
+
+}
+
+button:after{
+  border: none;
+}
+
+button{
+
+  margin-top: 1em;
+  border: none;
+  font-family: LouisGeorgeBold;
+  text-align: left;
+  font-size: 1.5em;
+  background-color: #c5614c;
+  min-width: 10em;
+  text-align: center;
+  border-radius: 25px;
+
+}
+
+
+
+
+
+
+.rounded-circle {
+  border-radius: 50% !important;
+  width: 200px;
+  height: 200px;
+}
+
+
+.labels {
+  font-size: 1.2em;
+}
+
+
+
+
+.label-file {
+  cursor: pointer;
+  color: #00b1ca;
+  font-weight: bold;
+  font-family: LouisGeorge;
+}
+.label-file:hover {
+  color: #25a5c4;
+}
+
+
+.input-file {
+  display: none;
+}
+
+.row{
+  background-color: rgb(234,153,132);
+  border-radius: 5px;
+}
+
+form {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-width: 30em;
+}
+
+@font-face {
+  font-family: 'LouisGeorge';
+  src: url('src/assets/ressources/Font/Louis George Cafe.ttf');
+}
+
+@font-face {
+  font-family: 'LouisGeorgeBold';
+  src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'LouisGeorgeBold';
+  text-align: center;
+
+
+}
+
+p{
+  font-family: 'LouisGeorge';
+  text-align: center;
+}
+
+.col-md-12{
+  margin-bottom: 0.8em;
+}

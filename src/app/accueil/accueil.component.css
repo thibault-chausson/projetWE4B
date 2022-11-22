@@ -1,0 +1,34 @@
+.etoile{
+  height: 1em;
+}
+
+.pad{
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+
+.espace{
+  padding-top: 30px;
+}
+
+@font-face {
+  font-family: 'LouisGeorge';
+  src: url('src/assets/ressources/Font/Louis George Cafe.ttf');
+}
+
+@font-face {
+  font-family: 'LouisGeorgeBold';
+  src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
+}
+
+h2{
+  font-family: 'LouisGeorgeBold';
+}
+
+
+
+
+
+
+

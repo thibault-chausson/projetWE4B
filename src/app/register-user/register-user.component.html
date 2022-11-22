@@ -1,0 +1,75 @@
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="user_card">
+      <div class="d-flex justify-content-center">
+        <div class="brand_logo_container">
+          <div class="brand_logo_container2">
+            <img src="assets/ressources/logo/logoUnder.png" class="brand_logo" alt="Logo">
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center form_container">
+        <form [formGroup]="user" (ngSubmit)='doSth'>
+          <div class="seCo">
+            <p class="centre">Rejoins-nous explorateur</p>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+            </div>
+            <input type="text" name="email" class="form-control input_user" value="" placeholder="Email" formControlName='email' autofocus>
+          </div>
+
+          <div class="input-group mb-3">
+            <div *ngIf="emailControl?.invalid && (emailControl?.dirty || emailControl?.touched)">
+              <div  class="rouge" *ngIf="emailControl?.errors?.['required']">L'email est obligatoire</div>
+              <div  class="rouge" *ngIf="emailControl?.errors?.['email']">L'email n'est pas valide</div>
+            </div>
+          </div>
+
+          <div class="input-group mb-2">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+            </div>
+            <input type="password" name="password" class="form-control input_pass" value="" placeholder="Mot de passe" formControlName='pwd'>
+
+          </div>
+
+          <div class="input-group mb-2">
+            <div *ngIf="pass1?.invalid && (pass1?.dirty || pass1?.touched)">
+              <div  class="rouge" *ngIf="pass1?.errors?.['required']">Le mot de passe est obligatoire</div>
+              <div  class="rouge" *ngIf="pass1?.errors?.['minlength']">Le mot de passe doit être supérieur à 6 caractères</div>
+            </div>
+          </div>
+
+
+
+          <div class="input-group mb-2">
+            <div class="input-group-append">
+            <span class="input-group-text"><i class="fa fa-check fa-lg" aria-hidden="true"></i></span>
+              </div>
+              <input type="password" id="form3Example4cd" class="form-control" name="passwordCheck" placeholder="Vérification" formControlName='pwdCheck'/>
+          </div>
+          <div class="input-group mb-2">
+            <div *ngIf="pass2?.invalid && (pass2?.dirty || pass2?.touched)">
+              <div class="rouge" *ngIf="pass2?.errors?.['required']">La confirmation du mot de passe est requise</div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center mt-3 login_container">
+            <button type="button" name="loginButton" class="btn login_btn" (click)="register()">S'inscrire</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-4">
+        <div class="d-flex justify-content-center links">
+          <p> Vous avez déjà un compte ? <a href="/connexion" class="ml-2"> Se connecter</a> </p>
+        </div>
+        <div class="d-flex justify-content-center links">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

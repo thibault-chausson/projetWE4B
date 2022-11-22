@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Router} from "@angular/router";
+import {ActivitesPres} from "../classes/activitesPres";
 
 @Component({
   selector: 'app-carousel-index',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselIndexComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  @Input() ActiviteArray!: ActivitesPres[];
+
+  constructor(private router: Router) {
   }
 
+  ngOnInit(): void {
+
+
+  }
+
+  readMore(id: string) {
+    this.router.navigate(['/', 'afficher-activite', id]);
+  }
 }

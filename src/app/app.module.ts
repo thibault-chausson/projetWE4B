@@ -1,38 +1,89 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AngularFireModule} from "@angular/fire/compat";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarouselIndexComponent } from './carousel-index/carousel-index.component';
 import { MyFooterComponent } from './my-footer/my-footer.component';
 import { CardCarouselComponent } from './card-carousel/card-carousel.component';
-import {RouterModule, Routes} from "@angular/router";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { LoginComponent } from './login/login.component';
+import { FirebaseService } from "./services/firebase.service";
+import { RegisterUserComponent } from './register-user/register-user.component';
+import { DomainesComponent } from './domaines/domaines.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { RecherchesComponent } from './recherches/recherches.component';
+import { RegisterProComponent } from './register-pro/register-pro.component';
+import { Error404Component} from "./error404/error404.component";
+import { MenuLoggedComponent } from './menu-logged/menu-logged.component';
+import {  AngularFireAuthGuardModule,} from '@angular/fire/compat/auth-guard';
+import { GestionProComponent } from './gestion-pro/gestion-pro.component';
+import { MenuGestionProComponent } from './menu-gestion-pro/menu-gestion-pro.component';
+import { StatistiquesGestionProComponent } from './statistiques-gestion-pro/statistiques-gestion-pro.component';
+import { ProfilGestionProComponent } from './profil-gestion-pro/profil-gestion-pro.component';
+import { AddActiviteGestionProComponent } from './add-activite-gestion-pro/add-activite-gestion-pro.component';
+import { AfficherActiviteComponent } from './afficher-activite/afficher-activite.component';
+import { ModifierActiviteGestionProComponent } from './modifier-activite-gestion-pro/modifier-activite-gestion-pro.component';
+import { ActivitesGestionProComponent } from './activites-gestion-pro/activites-gestion-pro.component';
+import { CardActiviteGestionProComponent } from './card-activite-gestion-pro/card-activite-gestion-pro.component';
+import { CardDomaineComponent } from './card-domaine/card-domaine.component';
+import { CardForIndexComponent } from './card-for-index/card-for-index.component';
+import { SousCarouselCardComponent } from './sous-carousel-card/sous-carousel-card.component';
 
-const route:Routes=[
- {path:'connexion', component:ConnexionComponent},
-  {path:'accueil', component:AccueilComponent},
-  {path:'',redirectTo:'/accueil', pathMatch:'full'}
-];
+
 
 @NgModule({
   declarations: [
+    Error404Component,
     AppComponent,
     CarouselIndexComponent,
     MyFooterComponent,
     CardCarouselComponent,
     AccueilComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    LoginComponent,
+    RegisterUserComponent,
+    DomainesComponent,
+    CategoriesComponent,
+    RecherchesComponent,
+    RegisterProComponent,
+    MenuLoggedComponent,
+    GestionProComponent,
+    MenuGestionProComponent,
+    StatistiquesGestionProComponent,
+    ProfilGestionProComponent,
+    AddActiviteGestionProComponent,
+    AfficherActiviteComponent,
+    ModifierActiviteGestionProComponent,
+    ActivitesGestionProComponent,
+    CardActiviteGestionProComponent,
+    CardDomaineComponent,
+    CardForIndexComponent,
+    SousCarouselCardComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(route)
+    AngularFireAuthGuardModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyCmbXbwKnwP8IUx1Vkkt-HYgtooBotiBW8",
+      authDomain: "we4b-30eb7.firebaseapp.com",
+      databaseURL: "https://we4b-30eb7-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "we4b-30eb7",
+      storageBucket: "we4b-30eb7.appspot.com",
+      messagingSenderId: "552542801312",
+      appId: "1:552542801312:web:36c899627d4c518c3228c5",
+      measurementId: "G-ESJGG5DEXF"
+    }),
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+
+export class AppModule {}

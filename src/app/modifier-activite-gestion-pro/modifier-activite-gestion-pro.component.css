@@ -1,0 +1,331 @@
+
+
+
+
+.name{
+  display: flex;
+  padding-bottom: 1.3em;
+}
+
+input{
+  color: #606060;
+  font-family: 'LouisGeorge';
+}
+
+.name1{
+  flex: 1;
+  text-align: left;
+  padding-right: 1em;
+  font-family: 'LouisGeorgeBold';
+  font-size: 1.5em;
+  color: black;
+
+}
+
+.descrip textarea{
+  min-height: 150px;
+
+}
+
+.descrip p{
+  padding-bottom: 1em;
+}
+
+.fa-signature{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+.name2{
+  flex: 1;
+  text-align: left;
+  font-family: 'LouisGeorgeBold';
+  font-size: 1.5em;
+}
+
+.fa-user-tie{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+hr{
+  width: 65vw;
+  margin: auto;
+  padding-bottom: 1em;
+  padding-top: 1em;
+
+}
+
+.info2{
+  display: flex;
+}
+
+.domaine{
+  flex: 1;
+  padding-right: 1em;
+}
+
+.categorie{
+  flex: 1;
+
+}
+
+.prix{
+  flex: 1;
+  padding-left: 1em;
+}
+
+.telephone{
+  flex: 1;
+  padding-left: 1em;
+}
+
+.fa-phone{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-dollar-sign{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-tags{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+
+
+.fa-list{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.mainPhoto2{
+  display: flex;
+
+  padding-bottom: 3em;
+}
+
+
+
+.mainPhoto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 1em;
+
+}
+
+.mainPhoto img{
+  max-width: 200px;
+  min-height: 200px;
+}
+
+.image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 10px;
+}
+
+
+
+
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 10px;
+}
+.descrip {
+  grid-area: 1 / 1 / 2 / 10;
+  text-align: justify;
+
+}
+.adresse {
+  grid-area: 1 / 1 / 2 / 10;
+  text-align: justify;
+  padding-bottom: 2em;
+
+}
+
+.input-file{
+  margin-top: 1em;
+  margin-left: 1em;
+  font-family: LouisGeorgeBold;
+  color: #666666;
+}
+
+input{
+  font-family: LouisGeorge;
+}
+
+
+input::-webkit-file-upload-button{
+  border: none;
+  text-align: center;
+  font-family: LouisGeorge;
+  background-color: #53938c;
+  height: 2.3em;
+  border-radius: 25px;
+  width: 10em;
+  margin-right: 1em;
+}
+
+input::-webkit-file-upload-button:hover{
+  border: none;
+  text-align: center;
+  font-family: LouisGeorgeBold;
+  background-color: #a0d9d2;
+  height: 2.3em;
+  border-radius: 25px;
+  width: 10em;
+}
+
+
+.adresse2{
+  flex:1;
+  padding-right: 1em;
+}
+
+.adresse3{
+  flex:1;
+}
+
+.block1{
+  display: flex;
+  padding-bottom: 1.3em;
+}
+
+.block2{
+  display: flex;
+
+}
+
+.ville {
+  flex: 1;
+  padding-right: 1em;
+}
+
+.code{
+  flex: 1;
+
+}
+
+.pays {
+  flex: 1;
+  padding-left: 1em;
+}
+
+.fa-location-dot{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-map-location{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-city{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-location-crosshairs{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+.fa-earth-africa{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+
+.droite{
+  text-align: right;
+}
+
+.ad{
+  list-style: none;
+  padding-left: 20px;
+}
+
+.adInfo{
+  list-style: none;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.centre{
+  text-align: center;
+}
+
+.pad{
+
+  padding-right: 1em;
+}
+
+
+
+
+@font-face {
+  font-family: 'LouisGeorge';
+  src: url('src/assets/ressources/Font/Louis George Cafe.ttf');
+}
+
+@font-face {
+  font-family: 'LouisGeorgeBold';
+  src: url('src/assets/ressources/Font/Louis George Cafe Bold.ttf');
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'LouisGeorgeBold';
+
+}
+
+p{
+  font-family: 'LouisGeorge';
+}
+
+h2{
+  font-size: 1.5em;
+}
+
+.fa-feather{
+  font-size: 1.1em;
+  padding-right: 0.5em;
+}
+
+button:focus{
+  border: none;
+}
+
+button:hover{
+  border: none;
+  background-color: #5ad9ca;
+  font-family: LouisGeorgeBold;
+}
+
+button:after{
+  border: none;
+}
+
+button{
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-family: LouisGeorgeBold;
+  text-align: left;
+  font-size: 1.5em;
+  background-color: #00c5af;
+  min-width: 10em;
+  text-align: center;
+  border-radius: 25px;
+  margin-bottom: 1em;
+}
